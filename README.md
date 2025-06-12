@@ -263,8 +263,8 @@ We welcome contributions to improve and expand this template collection!
 
 ### 📖 **Documentation**
 - [Implementation Guide](campaign-guides/implementation-guide.md) - Detailed setup instructions
-- [Subject Line Suggestions](campaign-guides/subject-lines.md) - Proven effective subject lines
-- [Best Practices Guide](campaign-guides/best-practices.md) - Campaign management tips
+- [Subject Line Suggestions](campaign-guides/subject-lines-guide.md) - Proven effective subject lines
+- [Best Practices Guide](campaign-guides/best-practices-guide.md) - Campaign management tips
 
 ### 🔗 **Related Projects**
 - [GoPhish Official Documentation](https://getgophish.com/documentation/)
