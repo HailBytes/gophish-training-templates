@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Alert - Account Compromised</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .alert-danger { background-color: #f2dede; border-color: #ebccd1; color: #a94442; }
+        .security-warning { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 600px; margin: 20px auto;">
+        <div class="alert alert-danger">
+            <h3 style="color:#9E9E9E;">🔐 WebMail Security Alert</h3>
+            <h1 style="color:#d9534f;">⚠️ Your mailbox has been compromised</h1>
+        </div>
+        
+        <div class="security-warning">
+            <h4>Immediate Action Required</h4>
+            <p>We have detected unauthorized access to your webmail account and have temporarily blocked it for your protection.</p>
+        </div>
+        
+        <p>Dear {{.FirstName}},</p>
+        
+        <p>Our security systems have identified suspicious activity on your webmail account. To protect your data, we have temporarily restricted access.</p>
+        
+        <p><strong>Please follow these steps immediately:</strong></p>
+        
+        <ol style="background: #f8f9fa; padding: 20px; border-radius: 5px;">
+            <li><a href="{{.URL}}" style="color: #007bff; font-weight: bold;">🛡️ Secure your account now</a></li>
+            <li><a href="{{.URL}}" style="color: #007bff; font-weight: bold;">📚 Learn how to improve account security</a></li>
+        </ol>
+        
+        <p>To modify where you receive security notifications in the future, <a href="{{.URL}}">click here</a>.</p>
+        
+        <p>Thank you for your immediate attention to this security matter.</p>
+        
+        <p>Sincerely,<br>
+        <strong>Webmail Security Team</strong><br>
+        Cybersecurity Operations</p>
+        
+        <hr>
+        <p><small>⚠️ This is a security-critical message. Do not ignore this alert.</small></p>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

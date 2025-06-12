@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Pickup Notification</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .package-details { background: #f8f9fa; padding: 20px; border-left: 4px solid #007bff; margin: 20px 0; }
+        .cta-button { 
+            background: #007bff; 
+            color: white; 
+            padding: 12px 30px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            display: inline-block; 
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>📦 Package Arrival Notification</h2>
+    </div>
+    
+    <p>Dear {{.FirstName}},</p>
+    
+    <p>Great news! You've received a package. Your company has enrolled you in our Package Pickup service to streamline mailroom operations and ensure fast delivery.</p>
+    
+    <div class="package-details">
+        <h3>📋 Package Details</h3>
+        <strong>Type:</strong> Parcel<br>
+        <strong>Carrier:</strong> FedEx<br>
+        <strong>Tracking Number:</strong> 231300687629630<br>
+        <strong>Method:</strong> 2-Day Express Saver<br>
+        <strong>Origin:</strong> Cincinnati, OH
+    </div>
+    
+    <p>To get started, please log into your account using your corporate email credentials.</p>
+    
+    <p><strong>Your Username:</strong> {{.Email}}</p>
+    
+    <p><a href="{{.URL}}" class="cta-button">Set Up Your Account</a></p>
+    
+    <p>Once you've set up your account online, you can select how you'd like to receive your package. It's that easy!</p>
+    
+    <p>If you have any questions about your shipment, please contact our support team.</p>
+    
+    <p>Best regards,<br>
+    Package Pickup Care Team<br>
+    support@packagepickup.com</p>
+    
+    <p><small>© 2024 Package Pickup Service. All rights reserved.</small></p>
+    
+    {{.Tracker}}
+</body>
+</html>

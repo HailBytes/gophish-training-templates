@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn - You Have Pending Messages</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f3f2ef; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header { background: #0077b5; color: white; padding: 20px; }
+        .content { padding: 30px; }
+        .message-preview { background: #f8f9fa; border-left: 4px solid #0077b5; padding: 15px; margin: 20px 0; }
+        .cta-button { 
+            background: #0077b5; 
+            color: white; 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            display: inline-block; 
+            margin: 15px 0;
+            font-weight: 500;
+        }
+        .stats { background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; }
+        h1 { color: #0077b5; margin: 0; }
+        h2 { color: #0077b5; margin-top: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>in LinkedIn</h1>
+            <p style="margin: 0;">Professional Network</p>
+        </div>
+        
+        <div class="content">
+            <h2>📬 REMINDER: Pending Messages</h2>
+            
+            <p>Hi {{.FirstName}},</p>
+            
+            <p>You have <strong>multiple unread messages</strong> and connection requests waiting for your response.</p>
+            
+            <div class="message-preview">
+                <h4>📨 Recent Activity:</h4>
+                <p><strong>New invitation from:</strong> Steve Donaghy, Senior Director</p>
+                <p><em>"I'd like to connect with you on LinkedIn and discuss potential opportunities..."</em></p>
+            </div>
+            
+            <div class="stats">
+                <h3>📊 Your Pending Items</h3>
+                <p><strong>4 messages</strong> awaiting your reply<br>
+                <strong>7 connection requests</strong> pending<br>
+                <strong>12 profile views</strong> this week</p>
+            </div>
+            
+            <p>Don't miss out on valuable networking opportunities!</p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">📧 Go to INBOX</a>
+            </p>
+            
+            <p><strong>Tip:</strong> Responding quickly to messages and connection requests helps build stronger professional relationships.</p>
+            
+            <hr style="margin: 30px 0; border: 1px solid #e0e0e0;">
+            
+            <p style="font-size: 12px; color: #666;">
+                Don't want to receive email notifications? <a href="{{.URL}}" style="color: #0077b5;">Manage your settings</a><br>
+                LinkedIn values your privacy. We never make your email address available to other users without permission.<br>
+                © 2024 LinkedIn Corporation. All rights reserved.
+            </p>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

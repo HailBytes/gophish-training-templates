@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBB - Complaint Filed Against Your Business</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f8f9fa; 
+            line-height: 1.6;
+        }
+        .container { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            background: white; 
+            border: 2px solid #1565c0; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header { 
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%); 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+        }
+        .bbb-logo {
+            width: 90px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #1565c0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .organization-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .organization-tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            margin: 0;
+        }
+        .content { 
+            padding: 35px 30px; 
+        }
+        .complaint-alert {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .alert-badge {
+            background: #f44336;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .complaint-details {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #1565c0;
+            font-size: 14px;
+        }
+        .detail-value {
+            color: #0d47a1;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .customer-complaint {
+            background: #fff3e0;
+            border: 1px solid #ff9800;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .complaint-text {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+            font-style: italic;
+            color: #424242;
+            margin: 15px 0;
+        }
+        .rating-impact {
+            background: #ffebee;
+            border: 1px solid #f44336;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .current-rating {
+            font-size: 48px;
+            font-weight: 700;
+            color: #f44336;
+            margin: 15px 0;
+        }
+        .rating-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .rating-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        .rating-score {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f44336;
+            margin-bottom: 5px;
+        }
+        .rating-label {
+            font-size: 12px;
+            color: #757575;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .resolution-process {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .deadline-warning {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .timer-display {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff9800;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .cta-button { 
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%); 
+            color: white; 
+            padding: 18px 36px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            display: inline-block; 
+            margin: 25px 0;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 3px 12px rgba(21,101,192,0.3);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(21,101,192,0.4);
+            text-decoration: none;
+            color: white;
+        }
+        .business-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .footer {
+            background: #1565c0;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .footer-text {
+            font-size: 12px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        .footer-text a {
+            color: #81d4fa;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .content {
+                padding: 25px 20px;
+            }
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .current-rating {
+                font-size: 36px;
+            }
+            .timer-display {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="bbb-logo">BBB</div>
+            <div class="organization-name">Better Business Bureau</div>
+            <div class="organization-tagline">Advancing marketplace trust since 1912</div>
+        </div>
+        
+        <div class="content">
+            <div class="complaint-alert">
+                <div class="alert-badge">⚠️ CUSTOMER COMPLAINT FILED</div>
+                <h2 style="margin: 10px 0; color: #f44336; font-size: 22px;">Formal Complaint Requires Your Response</h2>
+                <p style="margin: 0; color: #f44336; font-size: 14px;">Case Status: UNDER REVIEW - Business Response Required</p>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px; margin: 0 0 20px 0;"><strong>Dear Business Owner,</strong></p>
+            
+            <p style="color: #212529; font-size: 16px;">The Better Business Bureau has received a formal complaint against your business. This complaint has been assigned to our resolution team and requires your immediate attention to maintain your BBB accreditation and business rating.</p>
+            
+            <div class="business-info">
+                <h3 style="margin: 0 0 20px 0; color: #1565c0;">🏢 Business Information on File</h3>
+                <div class="detail-grid">
+                    <span class="detail-label">Business Contact:</span>
+                    <span class="detail-value">{{.FirstName}} {{.LastName}}</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">Email Address:</span>
+                    <span class="detail-value">{{.Email}}</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">BBB File #:</span>
+                    <span class="detail-value">BBB-2024-{{.FirstName | upper}}-{{.LastName | slice 0 3 | upper}}</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">Current BBB Rating:</span>
+                    <span class="detail-value" style="color: #f44336;">A+ (At Risk Due to Complaint)</span>
+                </div>
+            </div>
+            
+            <div class="complaint-details">
+                <h3 style="margin: 0 0 20px 0; color: #1565c0;">📋 Complaint Details</h3>
+                <div class="detail-grid">
+                    <span class="detail-label">Complaint ID:</span>
+                    <span class="detail-value">BBB-COMP-2024-789456</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">Date Filed:</span>
+                    <span class="detail-value">December 11, 2024</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">Complaint Type:</span>
+                    <span class="detail-value">Service/Product Quality</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">Customer Location:</span>
+                    <span class="detail-value">Chicago, IL</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">Requested Resolution:</span>
+                    <span class="detail-value">Full Refund + Damages</span>
+                </div>
+                <div class="detail-grid">
+                    <span class="detail-label">Amount in Dispute:</span>
+                    <span class="detail-value" style="color: #f44336;">$2,847.00</span>
+                </div>
+            </div>
+            
+            <div class="customer-complaint">
+                <h3 style="margin: 0 0 15px 0; color: #e65100;">💬 Customer's Complaint Statement</h3>
+                <div class="complaint-text">
+                    "I am extremely disappointed with the service provided. Despite paying full price, the work was completed poorly and does not meet industry standards. The company has been unresponsive to my attempts to resolve this matter. I am seeking a full refund plus compensation for additional costs incurred due to their negligence. This business should be held accountable for their unprofessional conduct."
+                </div>
+                <p style="margin: 10px 0 0 0; color: #e65100; font-size: 14px;"><strong>Customer:</strong> Margaret K. Thompson | <strong>Purchase Date:</strong> November 15, 2024</p>
+            </div>
+            
+            <div class="rating-impact">
+                <h3 style="margin: 0 0 15px 0; color: #f44336;">📊 Impact on Your BBB Rating</h3>
+                <p style="margin: 0 0 15px 0; color: #f44336; font-size: 14px;">This complaint will negatively affect your business rating if not resolved within the required timeframe.</p>
+                <div class="current-rating">C-</div>
+                <p style="margin: 0; color: #f44336; font-size: 14px;"><strong>Projected rating if complaint unresolved</strong></p>
+                
+                <div class="rating-breakdown">
+                    <div class="rating-item">
+                        <div class="rating-score">23</div>
+                        <div class="rating-label">Complaints</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-score">67%</div>
+                        <div class="rating-label">Response Rate</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-score">4.2</div>
+                        <div class="rating-label">Avg Resolution</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-score">C-</div>
+                        <div class="rating-label">New Rating</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="deadline-warning">
+                <h4 style="margin: 0 0 8px 0; color: #ff9800;">⏰ Response Deadline</h4>
+                <div class="timer-display">3 Days 14 Hours</div>
+                <p style="margin: 0; font-size: 14px; color: #ff9800;">Failure to respond within the required timeframe will result in an automatic rating downgrade and potential loss of BBB accreditation.</p>
+            </div>
+            
+            <div class="resolution-process">
+                <h3 style="margin: 0 0 15px 0; color: #2e7d32;">✅ Resolution Process</h3>
+                <p style="margin: 0 0 15px 0; color: #2e7d32; font-size: 14px;">To maintain your BBB rating and resolve this complaint:</p>
+                <ol style="margin: 0; color: #2e7d32; font-size: 14px;">
+                    <li>Access the secure BBB business portal</li>
+                    <li>Review the complete complaint details and evidence</li>
+                    <li>Provide your official business response</li>
+                    <li>Propose a resolution or refute the claims</li>
+                    <li>Upload supporting documentation if available</li>
+                </ol>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px; text-align: center;"><strong>Protect your business reputation and BBB accreditation. Respond to this complaint immediately.</strong></p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🔐 Access BBB Business Portal</a>
+            </p>
+            
+            <div style="background: #e3f2fd; border: 1px solid #2196f3; border-radius: 8px; padding: 20px; margin: 25px 0;">
+                <h4 style="margin: 0 0 8px 0; color: #1565c0;">🛡️ Why Respond Quickly Matters</h4>
+                <ul style="margin: 0; font-size: 14px; color: #1565c0;">
+                    <li>Maintains your BBB accreditation and A+ rating</li>
+                    <li>Demonstrates commitment to customer service</li>
+                    <li>Prevents negative online reviews and publicity</li>
+                    <li>Shows professionalism to potential customers</li>
+                    <li>Protects your business's online reputation</li>
+                </ul>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px;"><strong>Need assistance?</strong> Contact our Business Relations team at 1-888-BBB-HELP or email businesssupport@bbb.org for guidance on responding to this complaint.</p>
+            
+            <p style="color: #212529; font-size: 16px;">Thank you for your prompt attention to this matter.</p>
+            
+            <p style="color: #212529; font-size: 16px;"><strong>Sincerely,</strong><br>
+            <strong>BBB Complaint Resolution Team</strong><br>
+            Better Business Bureau</p>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                <p style="margin: 0 0 8px 0;">Better Business Bureau | Advancing Marketplace Trust Since 1912</p>
+                <p style="margin: 0 0 8px 0;">This business notification was sent to {{.Email}} regarding BBB Case #BBB-COMP-2024-789456</p>
+                <p style="margin: 0 0 12px 0;">
+                    <a href="#">BBB Standards</a> • 
+                    <a href="#">File a Complaint</a> • 
+                    <a href="#">Business Directory</a> • 
+                    <a href="#">Contact BBB</a>
+                </p>
+                <p style="margin: 0;">© 2024 Better Business Bureau. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

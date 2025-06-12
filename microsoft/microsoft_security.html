@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Account Security Alert</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header { background: #0078d4; color: white; padding: 20px; text-align: center; }
+        .content { padding: 30px; }
+        .security-alert { background: #fff4ce; border: 1px solid #ffb900; padding: 20px; border-radius: 6px; margin: 20px 0; }
+        .location-info { background: #f3f2f1; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        .cta-button { 
+            background: #0078d4; 
+            color: white; 
+            padding: 12px 30px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            display: inline-block; 
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        h1 { color: #0078d4; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔒 Microsoft Account</h1>
+            <p style="margin: 0;">Security & Privacy</p>
+        </div>
+        
+        <div class="content">
+            <div class="security-alert">
+                <h3>⚠️ Unusual Sign-in Activity Detected</h3>
+            </div>
+            
+            <p>Dear {{.FirstName}},</p>
+            
+            <p>We detected multiple sign-in attempts to your Microsoft account from an unrecognized location.</p>
+            
+            <div class="location-info">
+                <h4>📍 Sign-in Details:</h4>
+                <strong>Location:</strong> Bogotá, Colombia<br>
+                <strong>Device:</strong> Unknown Windows PC<br>
+                <strong>Time:</strong> {{.Date}} at 3:47 AM<br>
+                <strong>Status:</strong> <span style="color: #d13438;">Blocked for security</span>
+            </div>
+            
+            <p><strong>What happened?</strong> Someone attempted to access your account multiple times from a location that doesn't match your usual sign-in pattern.</p>
+            
+            <p>If this was you traveling or using a new device, you can ignore this message. However, if you don't recognize this activity, please take immediate action to secure your account.</p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🛡️ Review Account Activity</a>
+            </p>
+            
+            <p><strong>To better protect your account:</strong></p>
+            <ul>
+                <li>Enable two-factor authentication</li>
+                <li>Use a strong, unique password</li>
+                <li>Review your account regularly</li>
+                <li>Keep your recovery information updated</li>
+            </ul>
+            
+            <p>If you believe this was fraudulent activity, please report it immediately through the link above.</p>
+            
+            <p>Sincerely,<br>
+            <strong>Microsoft Account Team</strong><br>
+            Security & Privacy Division</p>
+            
+            <hr style="margin: 30px 0; border: 1px solid #e1dfdd;">
+            
+            <p style="font-size: 12px; color: #605e5c;">
+                This email was sent to {{.Email}}. Microsoft respects your privacy. To learn more, please read our <a href="#" style="color: #0078d4;">Privacy Statement</a>.<br>
+                Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+            </p>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

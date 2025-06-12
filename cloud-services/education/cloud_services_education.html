@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Training: Cloud Services Phishing</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f8f9fa; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 12px; 
+            padding: 40px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+        .alert { 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }
+        .alert-warning { 
+            background: #fff3cd; 
+            border: 1px solid #ffeaa7; 
+            color: #856404; 
+        }
+        .alert-info { 
+            background: #d1ecf1; 
+            border: 1px solid #bee5eb; 
+            color: #0c5460; 
+        }
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .platform-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            text-align: center;
+        }
+        .threat-scenario {
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .protection-tips {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .quiz-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .red-flags-list {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        h1 { 
+            color: #007bff; 
+        }
+        h2 { 
+            color: #495057; 
+            border-bottom: 2px solid #007bff; 
+            padding-bottom: 10px; 
+        }
+        .emoji { 
+            font-size: 1.2em; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☁️ Cloud Services Phishing - Security Training</h1>
+            <div class="alert alert-warning">
+                <strong>📧 You clicked on a simulated cloud services phishing email!</strong><br>
+                This training will help you recognize and avoid cloud platform impersonation attacks.
+            </div>
+        </div>
+
+        <section>
+            <h2>☁️ Understanding Cloud Services Phishing</h2>
+            <p>You interacted with a simulated phishing email that impersonated a popular cloud storage service (Google Drive, Dropbox, OneDrive, etc.). These attacks are highly effective because:</p>
+            <ul>
+                <li><strong>Universal Usage:</strong> Most employees use cloud storage services daily</li>
+                <li><strong>Work Integration:</strong> Cloud platforms are essential business tools</li>
+                <li><strong>File Sharing:</strong> We expect to receive shared documents regularly</li>
+                <li><strong>Trust Factor:</strong> We trust notifications from legitimate services</li>
+                <li><strong>Urgency:</strong> "Time-sensitive document" creates pressure to act quickly</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎯 Common Cloud Platform Targets</h2>
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <h4>📁 Google Workspace</h4>
+                    <p>Drive, Docs, Gmail sharing notifications</p>
+                </div>
+                <div class="platform-card">
+                    <h4>📦 Dropbox</h4>
+                    <p>File sharing, collaboration invites</p>
+                </div>
+                <div class="platform-card">
+                    <h4>🔷 Microsoft 365</h4>
+                    <p>OneDrive, SharePoint, Teams files</p>
+                </div>
+                <div class="platform-card">
+                    <h4>📊 Box</h4>
+                    <p>Enterprise file sharing, folder access</p>
+                </div>
+                <div class="platform-card">
+                    <h4>☁️ iCloud</h4>
+                    <p>Document sharing, photo access</p>
+                </div>
+                <div class="platform-card">
+                    <h4>🗃️ Other Platforms</h4>
+                    <p>WeTransfer, Adobe Creative Cloud, Slack</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎭 Attack Techniques You Encountered</h2>
+            <div class="threat-scenario">
+                <h3>Common Cloud Phishing Tactics:</h3>
+                <ul>
+                    <li><span style="color: #dc3545;">📄</span> <strong>Document Sharing:</strong> "Important file has been shared with you"</li>
+                    <li><span style="color: #dc3545;">👥</span> <strong>Collaboration Invites:</strong> "You've been added to a shared folder"</li>
+                    <li><span style="color: #dc3545;">⏰</span> <strong>Time Pressure:</strong> "Review needed for tomorrow's meeting"</li>
+                    <li><span style="color: #dc3545;">🔒</span> <strong>Access Expiration:</strong> "Your access expires in 24 hours"</li>
+                    <li><span style="color: #dc3545;">💼</span> <strong>Work Context:</strong> "Budget reports need your approval"</li>
+                    <li><span style="color: #dc3545;">👤</span> <strong>Colleague Impersonation:</strong> "Shared by Sarah from Accounting"</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 Red Flags You Should Have Noticed</h2>
+            <div class="red-flags-list">
+                <h3>Warning Signs in Cloud Service Emails:</h3>
+                <ul>
+                    <li><strong>Unexpected Sharing:</strong> You weren't expecting a shared document</li>
+                    <li><strong>Generic Sender:</strong> Email doesn't come from a known colleague</li>
+                    <li><strong>Suspicious URLs:</strong> Links don't go to the official platform domain</li>
+                    <li><strong>Pressure Tactics:</strong> "Urgent review needed" or "Access expires soon"</li>
+                    <li><strong>Login Requests:</strong> Asking you to sign in through the email link</li>
+                    <li><strong>Poor Design:</strong> Layout doesn't match the real service's emails</li>
+                    <li><strong>Grammar Issues:</strong> Typos or awkward phrasing in professional emails</li>
+                    <li><strong>Generic Content:</strong> Vague file names or project descriptions</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ How to Verify Cloud Service Communications</h2>
+            <div class="protection-tips">
+                <h3>Verification Best Practices:</h3>
+                <ol>
+                    <li><strong>Log in directly:</strong> Go to the cloud service's website independently</li>
+                    <li><strong>Check your notifications:</strong> Look for sharing notifications in the actual app</li>
+                    <li><strong>Verify the sender:</strong> Contact the supposed sender through known channels</li>
+                    <li><strong>Examine URLs carefully:</strong> Hover over links to see the actual destination</li>
+                    <li><strong>Use official apps:</strong> Check for notifications in mobile apps or desktop clients</li>
+                    <li><strong>Ask colleagues:</strong> "Did you share a document with me today?"</li>
+                    <li><strong>Check recent activity:</strong> Look at your platform's sharing/access logs</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>💡 Real vs. Fake: Key Differences</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                <div style="background: #e8f5e8; padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #28a745;">✅ Legitimate Cloud Emails</h4>
+                    <ul>
+                        <li>Come from official domains (drive-shares-noreply@google.com)</li>
+                        <li>Show specific file names and details</li>
+                        <li>Include sender's actual name and email</li>
+                        <li>Match your expected sharing activities</li>
+                        <li>Have consistent, professional design</li>
+                        <li>Allow access through your existing login</li>
+                    </ul>
+                </div>
+                <div style="background: #fff5f5; padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #dc3545;">❌ Phishing Cloud Emails</h4>
+                    <ul>
+                        <li>Come from suspicious or generic domains</li>
+                        <li>Have vague or generic file descriptions</li>
+                        <li>Claim to be from unknown senders</li>
+                        <li>Create unexpected urgency or pressure</li>
+                        <li>Have design inconsistencies or poor quality</li>
+                        <li>Require you to "verify" your credentials</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 What Attackers Were After</h2>
+            <div class="alert alert-info">
+                <strong>This attack aimed to steal:</strong>
+                <ul>
+                    <li>Your cloud storage account credentials</li>
+                    <li>Access to your corporate documents and files</li>
+                    <li>Information about your colleagues and projects</li>
+                    <li>Your contact lists and shared folder contents</li>
+                    <li>Potential access to connected business applications</li>
+                </ul>
+                <p><strong>The Impact:</strong> Compromised cloud accounts can lead to data theft, further phishing attacks on colleagues, and corporate espionage.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Cloud Services Security Quiz</h2>
+            <div class="quiz-section">
+                <h3>Test Your Knowledge:</h3>
+                <p><strong>Scenario:</strong> You receive an email saying "Sarah Martinez shared 'Q4_Budget_CONFIDENTIAL.xlsx' with you on Dropbox. Click here to view." You don't know Sarah Martinez. What should you do?</p>
+                
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link to see what Sarah shared</label><br>
+                    
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Reply to the email asking who Sarah Martinez is</label><br>
+                    
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Log into Dropbox directly to check for shared files</label><br>
+                    
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Forward the email to IT security to report it</label>
+                </div>
+                
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer & Explanation</strong></summary>
+                    <div style="background: #e8f5e8; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Best Answer: C (with D as follow-up)</strong> - Log into Dropbox directly to check for any shared files. If you don't see any legitimate shares, report the suspicious email to IT security. Never click links from unknown senders, even if they mention work-related documents.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <h2>📱 Platform-Specific Security Tips</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div class="protection-tips">
+                    <h4>📁 Google Drive Security</h4>
+                    <ul>
+                        <li>Check notifications in Gmail or Drive app</li>
+                        <li>Review sharing activity in Drive settings</li>
+                        <li>Enable 2-factor authentication</li>
+                        <li>Monitor account access logs</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-tips">
+                    <h4>📦 Dropbox Security</h4>
+                    <ul>
+                        <li>Use Dropbox app or website directly</li>
+                        <li>Check "Shared with me" section</li>
+                        <li>Review security tab in settings</li>
+                        <li>Enable device notifications</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-tips">
+                    <h4>🔷 Microsoft 365 Security</h4>
+                    <ul>
+                        <li>Check OneDrive sharing notifications</li>
+                        <li>Use Office apps to verify shares</li>
+                        <li>Review security dashboard</li>
+                        <li>Enable advanced threat protection</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔒 Enhanced Security Practices</h2>
+            <div class="protection-tips">
+                <h3>Advanced Protection Strategies:</h3>
+                <ul>
+                    <li><strong>Multi-Factor Authentication:</strong> Enable 2FA on all cloud accounts</li>
+                    <li><strong>Regular Audits:</strong> Periodically review shared files and folder permissions</li>
+                    <li><strong>Device Management:</strong> Monitor and manage connected devices</li>
+                    <li><strong>Link Expiration:</strong> Set expiration dates on shared links</li>
+                    <li><strong>Download Restrictions:</strong> Limit download permissions when possible</li>
+                    <li><strong>Version Control:</strong> Monitor file version changes for unusual activity</li>
+                    <li><strong>Access Logs:</strong> Regularly review who accessed your files</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 If You Think You've Been Compromised</h2>
+            <div class="alert alert-warning">
+                <h3>Immediate Actions if You Clicked or Entered Credentials:</h3>
+                <ol>
+                    <li><strong>Change passwords immediately</strong> for affected cloud accounts</li>
+                    <li><strong>Enable 2-factor authentication</strong> if not already active</li>
+                    <li><strong>Review recent file activity</strong> for unauthorized access</li>
+                    <li><strong>Check sharing permissions</strong> and revoke suspicious access</li>
+                    <li><strong>Scan connected devices</strong> for malware</li>
+                    <li><strong>Monitor account activity</strong> for unusual behavior</li>
+                    <li><strong>Report to IT security</strong> immediately</li>
+                    <li><strong>Notify colleagues</strong> who may have been affected</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🤝 Building Team Awareness</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3>Help Your Colleagues Stay Safe:</h3>
+                <ul>
+                    <li><strong>Share this knowledge:</strong> Discuss cloud phishing with your team</li>
+                    <li><strong>Establish protocols:</strong> Create team procedures for verifying file shares</li>
+                    <li><strong>Report suspicious activity:</strong> Alert security about phishing attempts</li>
+                    <li><strong>Use official channels:</strong> Share files through approved corporate methods</li>
+                    <li><strong>Double-check requests:</strong> Verify unusual sharing requests verbally</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔍 Advanced Threat Awareness</h2>
+            <div class="threat-scenario">
+                <h3>Sophisticated Cloud Attacks to Watch For:</h3>
+                <ul>
+                    <li><strong>Account Takeover:</strong> Compromised colleague accounts sharing malicious files</li>
+                    <li><strong>Domain Spoofing:</strong> Nearly identical URLs (googIe-drive.com vs google-drive.com)</li>
+                    <li><strong>Business Email Compromise:</strong> Attackers using real company information</li>
+                    <li><strong>Supply Chain Attacks:</strong> Compromised third-party integrations</li>
+                    <li><strong>AI-Generated Content:</strong> Deepfake documents or communications</li>
+                </ul>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #007bff 0%, #28a745 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Cloud Security Training Complete!</h2>
+            <p>You're now better equipped to identify cloud services phishing attacks. Remember: always verify independently before clicking or sharing credentials!</p>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 6px; margin: 20px 0;">
+                <h3>🔑 Key Takeaways:</h3>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>Always verify file sharing through the official platform</li>
+                    <li>Be suspicious of unexpected or urgent document requests</li>
+                    <li>Check URLs carefully before clicking</li>
+                    <li>Use multi-factor authentication on all cloud accounts</li>
+                    <li>Report suspicious emails to your security team</li>
+                </ul>
+            </div>
+            
+            <p><strong>Questions or concerns?</strong> Contact our Security Awareness Team at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

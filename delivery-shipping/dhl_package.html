@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHL Package Notification</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .logo { text-align: center; margin-bottom: 20px; }
+        .details { background: #f5f5f5; padding: 15px; margin: 15px 0; }
+        .cta-button { 
+            background: #d40511; 
+            color: white; 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            display: inline-block; 
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="DHL" width="120" height="40">
+    </div>
+    
+    <p>Hi {{.FirstName}},</p>
+    
+    <p>Your package has arrived at our distribution center. Here are your shipping details and DHL receipt for tracking, including the bill of lading and tracking number per our new Import/Export policy.</p>
+    
+    <p>Please verify your address information before we dispatch to your destination.</p>
+    
+    <div class="details">
+        <strong>Label Number:</strong> E727D5151D<br>
+        <strong>Class:</strong> Package Services<br>
+        <strong>Service:</strong> Delivery Confirmation<br>
+        <strong>Status:</strong> eNotification sent
+    </div>
+    
+    <p><a href="{{.URL}}" class="cta-button">View Package Details</a></p>
+    
+    <p>Your item will arrive within 2-5 business days.</p>
+    
+    <p>Thank you for using DHL Express services.</p>
+    
+    <p><small>DHL Express - Connecting People, Improving Lives</small></p>
+    
+    {{.Tracker}}
+</body>
+</html>

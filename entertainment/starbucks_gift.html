@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks - You've Received a $50 Gift Card!</title>
+    <style>
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f7f7f7; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+        }
+        .header { 
+            background: linear-gradient(135deg, #00704a 0%, #006341 100%); 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+            position: relative;
+        }
+        .starbucks-logo {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        .gift-badge {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+            color: #00704a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(212,175,55,0.3);
+        }
+        .content { padding: 35px 30px; }
+        .gift-card-container { 
+            background: linear-gradient(135deg, #00704a 0%, #006341 100%); 
+            border-radius: 16px; 
+            padding: 30px; 
+            margin: 25px 0; 
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .gift-card-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .gift-amount {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .gift-code {
+            background: rgba(255,255,255,0.9);
+            color: #00704a;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 20px 0;
+            border: 2px dashed #00704a;
+        }
+        .sender-info {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .sender-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            float: left;
+            margin-right: 15px;
+        }
+        .sender-details {
+            overflow: hidden;
+        }
+        .sender-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #212529;
+            margin: 0 0 4px 0;
+        }
+        .sender-message {
+            font-size: 14px;
+            color: #6c757d;
+            margin: 0;
+            font-style: italic;
+        }
+        .expiry-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+        }
+        .rewards-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .reward-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .reward-item:hover {
+            background: #e8f5e8;
+            border-color: #28a745;
+        }
+        .cta-button { 
+            background: linear-gradient(135deg, #00704a 0%, #006341 100%); 
+            color: white; 
+            padding: 18px 36px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            display: inline-block; 
+            margin: 25px 0;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,112,74,0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #006341 0%, #00704a 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,112,74,0.4);
+            text-decoration: none;
+            color: white;
+        }
+        .store-locator {
+            background: #e8f5e8;
+            border: 1px solid #8bc34a;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        .footer {
+            background: #00704a;
+            color: white;
+            padding: 24px 30px;
+            text-align: center;
+        }
+        .footer-text {
+            font-size: 12px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        .footer-text a {
+            color: #8bc34a;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .gift-amount {
+                font-size: 36px;
+            }
+            .gift-code {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="gift-badge">🎁 Gift Card Received</div>
+            <div class="starbucks-logo">☕ Starbucks</div>
+            <p style="margin: 0; opacity: 0.9; font-size: 16px;">Fuel your day with premium coffee</p>
+        </div>
+        
+        <div class="content">
+            <h2 style="color: #00704a; margin: 0 0 16px 0; font-size: 28px; font-weight: 700; text-align: center;">You've Got a Gift! ☕</h2>
+            
+            <p style="color: #212529; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0; text-align: center;">Hi {{.FirstName}},</p>
+            
+            <p style="color: #212529; font-size: 16px; line-height: 1.6; text-align: center;">Great news! Someone special has sent you a Starbucks Gift Card. Start your day with your favorite coffee, tea, or treat!</p>
+            
+            <div class="sender-info">
+                <div class="sender-avatar">{{.FirstName | slice 0 1 | upper}}</div>
+                <div class="sender-details">
+                    <div class="sender-name">From: Your Secret Admirer 💝</div>
+                    <div class="sender-message">"Hope this brightens your day! Enjoy your favorite Starbucks treat on me. You deserve it after all your hard work!"</div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            
+            <div class="gift-card-container">
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin: 0 0 10px 0; font-size: 20px; font-weight: 600;">🎁 Digital Gift Card</h3>
+                    <div class="gift-amount">$50.00</div>
+                    <p style="margin: 0 0 15px 0; opacity: 0.9;">Valid at all Starbucks locations</p>
+                    <div class="gift-code">SB-{{.FirstName | upper}}-2024-GIFT</div>
+                    <p style="margin: 10px 0 0 0; font-size: 14px; opacity: 0.8;">Gift Card Code (click to copy)</p>
+                </div>
+            </div>
+            
+            <div class="expiry-warning">
+                <h4 style="margin: 0 0 8px 0; color: #e65100;">⏰ Limited Time Offer</h4>
+                <p style="margin: 0; font-size: 14px; color: #e65100;">This gift card expires in 48 hours if not activated. Don't miss out on your free coffee!</p>
+            </div>
+            
+            <h4 style="color: #00704a; margin: 20px 0 16px 0; text-align: center;">☕ What You Can Get:</h4>
+            <div class="rewards-preview">
+                <div class="reward-item">
+                    <div style="font-size: 24px; margin-bottom: 8px;">☕</div>
+                    <div style="font-size: 12px; font-weight: 600;">Any Coffee</div>
+                    <div style="font-size: 11px; color: #6c757d;">Hot or Iced</div>
+                </div>
+                <div class="reward-item">
+                    <div style="font-size: 24px; margin-bottom: 8px;">🫖</div>
+                    <div style="font-size: 12px; font-weight: 600;">Premium Teas</div>
+                    <div style="font-size: 11px; color: #6c757d;">All Varieties</div>
+                </div>
+                <div class="reward-item">
+                    <div style="font-size: 24px; margin-bottom: 8px;">🥐</div>
+                    <div style="font-size: 12px; font-weight: 600;">Food Items</div>
+                    <div style="font-size: 11px; color: #6c757d;">Pastries & More</div>
+                </div>
+                <div class="reward-item">
+                    <div style="font-size: 24px; margin-bottom: 8px;">🧊</div>
+                    <div style="font-size: 12px; font-weight: 600;">Frappuccinos</div>
+                    <div style="font-size: 11px; color: #6c757d;">All Flavors</div>
+                </div>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px; line-height: 1.6; text-align: center;">Ready to redeem your gift? Click below to activate your gift card and add it to your Starbucks account. You can use it immediately at any location or for mobile orders!</p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🎁 Activate Gift Card</a>
+            </p>
+            
+            <div class="store-locator">
+                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">📍 Find Your Nearest Starbucks</h4>
+                <p style="margin: 0; font-size: 14px; color: #2e7d32;">Over 30,000 locations worldwide • Mobile order available • Drive-thru and pickup options</p>
+            </div>
+            
+            <div style="background: #f1f8e9; border: 1px solid #8bc34a; border-radius: 8px; padding: 16px; margin: 20px 0;">
+                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">💰 Bonus Rewards</h4>
+                <p style="margin: 0; font-size: 14px; color: #2e7d32;">Join Starbucks Rewards when you activate and earn 2 stars for every $1 spent. Free drinks and food await!</p>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px; line-height: 1.6; text-align: center;"><strong>Questions?</strong> Visit any Starbucks location or contact our customer service team. Gift cards never expire and can be reloaded anytime.</p>
+            
+            <p style="color: #212529; font-size: 16px; line-height: 1.6; text-align: center;">Enjoy your coffee experience!</p>
+            
+            <p style="color: #212529; font-size: 16px; line-height: 1.6; text-align: center;">Warmly,<br>
+            <strong>The Starbucks Team</strong></p>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                <p style="margin: 0 0 8px 0;">This gift card was sent to {{.Email}}. Valid at participating Starbucks locations.</p>
+                <p style="margin: 0 0 12px 0;">
+                    <a href="#">Privacy Policy</a> • 
+                    <a href="#">Terms & Conditions</a> • 
+                    <a href="#">Store Locator</a> • 
+                    <a href="#">Help</a>
+                </p>
+                <p style="margin: 0;">© 2024 Starbucks Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

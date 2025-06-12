@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Training: Microsoft Service Phishing</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f8f9fa; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 12px; 
+            padding: 40px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+        .alert { 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }
+        .alert-warning { 
+            background: #fff3cd; 
+            border: 1px solid #ffeaa7; 
+            color: #856404; 
+        }
+        .alert-info { 
+            background: #d1ecf1; 
+            border: 1px solid #bee5eb; 
+            color: #0c5460; 
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .service-card {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0078d4;
+            text-align: center;
+        }
+        .threat-scenario {
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .protection-tips {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .quiz-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .red-flags-list {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        h1 { 
+            color: #0078d4; 
+        }
+        h2 { 
+            color: #495057; 
+            border-bottom: 2px solid #0078d4; 
+            padding-bottom: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🪟 Microsoft Service Phishing - Security Training</h1>
+            <div class="alert alert-warning">
+                <strong>📧 You clicked on a simulated Microsoft phishing email!</strong><br>
+                This training will help you recognize and avoid Microsoft service impersonation attacks.
+            </div>
+        </div>
+
+        <section>
+            <h2>🎯 Why Microsoft Phishing Works</h2>
+            <p>Microsoft phishing attacks are highly effective because:</p>
+            <ul>
+                <li><strong>Universal Usage:</strong> Most people use Microsoft products daily</li>
+                <li><strong>Business Integration:</strong> Microsoft services are critical to organizations</li>
+                <li><strong>Trust Factor:</strong> People trust Microsoft security communications</li>
+                <li><strong>Security Context:</strong> Security alerts create urgency and bypass skepticism</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🪟 Commonly Targeted Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>📧 Outlook/Office 365</h4>
+                    <p>Email security alerts, mailbox upgrades</p>
+                </div>
+                <div class="service-card">
+                    <h4>☁️ OneDrive</h4>
+                    <p>File sharing, storage notifications</p>
+                </div>
+                <div class="service-card">
+                    <h4>👥 Teams</h4>
+                    <p>Meeting invites, collaboration requests</p>
+                </div>
+                <div class="service-card">
+                    <h4>🔐 Azure/Active Directory</h4>
+                    <p>Account verification, security updates</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 Red Flags You Should Have Noticed</h2>
+            <div class="red-flags-list">
+                <h3>Warning Signs in Microsoft Phishing:</h3>
+                <ul>
+                    <li><strong>Sender Domain:</strong> Not from @microsoft.com</li>
+                    <li><strong>Generic Greetings:</strong> "Dear Customer" instead of your name</li>
+                    <li><strong>Urgent Language:</strong> "Immediate action required"</li>
+                    <li><strong>Suspicious Links:</strong> URLs not going to official Microsoft domains</li>
+                    <li><strong>Poor Design:</strong> Low-quality graphics or inconsistent branding</li>
+                    <li><strong>Unexpected Requests:</strong> Asking for information Microsoft already has</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ How to Verify Microsoft Communications</h2>
+            <div class="protection-tips">
+                <h3>Verification Steps:</h3>
+                <ol>
+                    <li><strong>Check sender domain:</strong> Legitimate emails come from @microsoft.com</li>
+                    <li><strong>Log in directly:</strong> Go to the Microsoft service website independently</li>
+                    <li><strong>Check your account dashboard:</strong> Look for notifications in your actual account</li>
+                    <li><strong>Review URL destinations:</strong> Hover over links to see where they lead</li>
+                    <li><strong>Contact IT support:</strong> Ask your IT team about suspicious communications</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 What Attackers Were After</h2>
+            <div class="alert alert-info">
+                <strong>This attack aimed to steal:</strong>
+                <ul>
+                    <li>Your Microsoft account credentials</li>
+                    <li>Access to your Office 365 or business email</li>
+                    <li>OneDrive files and documents</li>
+                    <li>Corporate data and communications</li>
+                </ul>
+                <p><strong>Impact:</strong> Compromised Microsoft accounts can lead to business email compromise, data theft, and further attacks on colleagues.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Microsoft Security Quiz</h2>
+            <div class="quiz-section">
+                <p><strong>Scenario:</strong> You receive "Microsoft Security Alert: Suspicious login from Russia" from "security-alerts@microsoftsecurity.net" asking you to click a link. What should you do?</p>
+                
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Log into my Microsoft account directly to check for alerts</label><br>
+                    
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link immediately to secure my account</label><br>
+                    
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Forward the email to my IT department</label>
+                </div>
+                
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #e8f5e8; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct: First option + reporting to IT.</strong> Always log into Microsoft services directly. The domain "microsoftsecurity.net" is not legitimate (@microsoft.com is correct).</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔒 Essential Protection Steps</h2>
+            <div class="protection-tips">
+                <h3>Immediate Actions:</h3>
+                <ul>
+                    <li><strong>Enable MFA:</strong> Multi-factor authentication on all Microsoft accounts</li>
+                    <li><strong>Review Security:</strong> Check account security settings regularly</li>
+                    <li><strong>Verify Communications:</strong> Always check through official channels</li>
+                    <li><strong>Report Suspicious Emails:</strong> Forward to your IT security team</li>
+                    <li><strong>Stay Updated:</strong> Learn about Microsoft security features</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 If You've Been Compromised</h2>
+            <div class="alert alert-warning">
+                <h3>Emergency Response:</h3>
+                <ol>
+                    <li><strong>Change password</strong> from a secure device</li>
+                    <li><strong>Review security info</strong> and remove unauthorized methods</li>
+                    <li><strong>Check sign-in activity</strong> for unauthorized access</li>
+                    <li><strong>Revoke app permissions</strong> for suspicious applications</li>
+                    <li><strong>Notify IT security</strong> immediately</li>
+                </ol>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #0078d4 0%, #28a745 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>You're now better equipped to identify Microsoft service phishing attacks!</p>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 6px; margin: 20px 0;">
+                <h3>🔑 Key Takeaways:</h3>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>Always verify through official Microsoft channels</li>
+                    <li>Check sender domains (@microsoft.com is legitimate)</li>
+                    <li>Log into services directly when receiving alerts</li>
+                    <li>Enable MFA on all accounts</li>
+                    <li>Report suspicious emails to IT</li>
+                </ul>
+            </div>
+            
+            <p><strong>Questions?</strong> Contact our Security Team at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

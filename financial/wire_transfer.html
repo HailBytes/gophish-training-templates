@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wire Transfer Alert - Federal Reserve</title>
+    <style>
+        body { font-family: Georgia, serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border: 2px solid #003366; border-radius: 8px; overflow: hidden; }
+        .header { background: #003366; color: white; padding: 20px; text-align: center; }
+        .content { padding: 30px; }
+        .alert-box { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .cta-button { 
+            background: #dc3545; 
+            color: white; 
+            padding: 14px 28px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            display: inline-block; 
+            margin: 20px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .footer { background: #f8f9fa; padding: 15px; font-size: 12px; color: #6c757d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>🏛️ FEDERAL RESERVE WIRE NETWORK</h2>
+            <p>Official Transaction Alert</p>
+        </div>
+        
+        <div class="content">
+            <div class="alert-box">
+                <h3>⚠️ URGENT: Wire Transfer Cancellation Notice</h3>
+            </div>
+            
+            <p>Dear {{.FirstName}} {{.LastName}},</p>
+            
+            <p>This is an <strong>official alert notice</strong> regarding your bank account activity.</p>
+            
+            <p>A wire transfer recently initiated from your bank account was <strong>cancelled by the Federal Reserve Wire Network</strong> due to security protocols.</p>
+            
+            <p><strong>Transaction Details:</strong></p>
+            <ul style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                <li>Date: {{.Date}}</li>
+                <li>Amount: [CONFIDENTIAL]</li>
+                <li>Status: <span style="color: #dc3545;">CANCELLED</span></li>
+                <li>Reason: Security Review Required</li>
+            </ul>
+            
+            <p><strong>Immediate Action Required:</strong> You must verify your identity and account information to complete this transaction or formally cancel it.</p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🔒 Verify Transaction Status</a>
+            </p>
+            
+            <p><strong>Important:</strong> Failure to respond within 48 hours may result in additional security holds on your account.</p>
+            
+            <p>Sincerely,<br>
+            <strong>Vincent Crabbe</strong><br>
+            Team Lead, Wire Transfer Division<br>
+            Federal Reserve Financial Services</p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an official communication from the Federal Reserve System. Reference ID: {{.Date}}-{{.Email}}</p>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

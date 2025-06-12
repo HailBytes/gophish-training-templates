@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webmail System Upgrade Notification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: #f1f3f4; 
+            margin: 0; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 10px; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+            overflow: hidden;
+        }
+        .header { 
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%); 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+        }
+        .content { padding: 35px; }
+        .upgrade-announcement { 
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); 
+            border: 2px solid #4caf50; 
+            padding: 25px; 
+            border-radius: 10px; 
+            margin: 25px 0; 
+            text-align: center;
+        }
+        .security-notice { 
+            background: #fff3e0; 
+            border: 2px solid #ff9800; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 25px 0; 
+            border-left: 5px solid #ff9800;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .feature-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4285f4;
+        }
+        .storage-comparison {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .cta-button { 
+            background: linear-gradient(135deg, #4285f4 0%, #1976d2 100%); 
+            color: white; 
+            padding: 16px 30px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            display: inline-block; 
+            margin: 25px 0;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .phishing-alert {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .steps-list {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #4285f4;
+        }
+        .step-icon {
+            background: #4285f4;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 12px;
+        }
+        @media (max-width: 600px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 style="margin: 0 0 10px 0;">📧 Corporate Webmail System</h2>
+            <p style="margin: 0; opacity: 0.9; font-size: 18px;">Major Upgrade Notification</p>
+        </div>
+        
+        <div class="content">
+            <div class="upgrade-announcement">
+                <h3 style="color: #2e7d32; margin: 0 0 15px 0;">🎉 Major Webmail Upgrade Available!</h3>
+                <p style="margin: 0; font-size: 16px;">Enhanced security, increased storage, and improved performance</p>
+            </div>
+            
+            <p>Dear {{.FirstName}},</p>
+            
+            <p>We're excited to announce a major upgrade to our corporate webmail system! Based on user feedback and recent security assessments, we're implementing significant improvements to enhance your email experience.</p>
+            
+            <div class="security-notice">
+                <h4 style="color: #e65100; margin: 0 0 10px 0;">🛡️ Enhanced Security Response</h4>
+                <p style="margin: 0;">Due to an increase in phishing and spam emails reported by our webmail users, we're upgrading our security infrastructure and expanding storage capacity as part of our comprehensive security enhancement initiative.</p>
+            </div>
+            
+            <div class="storage-comparison">
+                <h4 style="color: #1565c0;">📊 Storage Upgrade Details</h4>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin: 20px 0;">
+                    <div>
+                        <div style="font-size: 24px; color: #666;">Current</div>
+                        <div style="font-size: 32px; font-weight: bold; color: #f44336;">250MB</div>
+                    </div>
+                    <div style="font-size: 30px; color: #4caf50;">→</div>
+                    <div>
+                        <div style="font-size: 24px; color: #666;">Upgraded</div>
+                        <div style="font-size: 32px; font-weight: bold; color: #4caf50;">500MB</div>
+                    </div>
+                </div>
+                <p style="margin: 0; font-weight: 600;">That's 100% more storage space for your emails!</p>
+            </div>
+            
+            <h4>🚀 New Features & Improvements</h4>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h5 style="color: #1976d2;">🔒 Advanced Security</h5>
+                    <p style="margin: 0; font-size: 14px;">Enhanced spam filtering and phishing protection</p>
+                </div>
+                <div class="feature-item">
+                    <h5 style="color: #1976d2;">⚡ Faster Performance</h5>
+                    <p style="margin: 0; font-size: 14px;">Improved loading speeds and responsiveness</p>
+                </div>
+                <div class="feature-item">
+                    <h5 style="color: #1976d2;">📱 Mobile Optimization</h5>
+                    <p style="margin: 0; font-size: 14px;">Better mobile device compatibility</p>
+                </div>
+                <div class="feature-item">
+                    <h5 style="color: #1976d2;">🔄 Auto-Sync</h5>
+                    <p style="margin: 0; font-size: 14px;">Seamless synchronization across devices</p>
+                </div>
+            </div>
+            
+            <div class="steps-list">
+                <h4>📋 Upgrade Process - Simple 3-Step Activation</h4>
+                <p>Your account ({{.Email}}) has been pre-approved for the upgrade. Complete these simple steps to activate your enhanced webmail:</p>
+                
+                <div class="step-item">
+                    <div class="step-icon">1</div>
+                    <div>
+                        <strong>Account Verification:</strong> Log in to confirm your identity and current email settings
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-icon">2</div>
+                    <div>
+                        <strong>Upgrade Confirmation:</strong> Review and accept the new features and storage allocation
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-icon">3</div>
+                    <div>
+                        <strong>Activation Complete:</strong> Your account will be automatically upgraded with enhanced features
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🚀 Start Webmail Upgrade</a>
+            </p>
+            
+            <div class="phishing-alert">
+                <h4 style="color: #c62828; margin: 0 0 10px 0;">🚨 Important Security Notice</h4>
+                <p style="margin: 0;"><strong>Why this upgrade is necessary:</strong> We've seen a significant increase in sophisticated phishing attempts targeting our webmail users. This upgrade includes advanced threat detection and user education features to keep you safer.</p>
+            </div>
+            
+            <p><strong>Upgrade Benefits Summary:</strong></p>
+            <ul style="background: #f8f9fa; padding: 20px; border-radius: 6px; margin: 20px 0;">
+                <li><strong>Doubled Storage:</strong> From 250MB to 500MB</li>
+                <li><strong>Enhanced Security:</strong> Advanced phishing and malware protection</li>
+                <li><strong>Improved Performance:</strong> Faster email loading and search</li>
+                <li><strong>Better Mobile Support:</strong> Optimized for smartphones and tablets</li>
+                <li><strong>Automatic Backup:</strong> Enhanced data protection and recovery</li>
+            </ul>
+            
+            <p><strong>Timeline:</strong> Your account will remain fully functional during the upgrade process. The enhancement typically takes 2-3 minutes to complete and requires no downtime.</p>
+            
+            <p><strong>Need Help?</strong> If you experience any issues during the upgrade process, please contact our IT Help Desk at extension 2847 or email support@company.com.</p>
+            
+            <p>We're committed to providing you with the best possible email experience while maintaining the highest security standards.</p>
+            
+            <p>Thank you for your continued vigilance in reporting suspicious emails, which helped us identify the need for these security enhancements.</p>
+            
+            <p>Best regards,<br>
+            <strong>IT Support Team</strong><br>
+            Email Systems Administration<br>
+            Corporate Technology Services</p>
+            
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
+            
+            <p style="font-size: 12px; color: #6c757d;">
+                <strong>Upgrade Notification ID:</strong> WMU-{{.Date}}-{{.Email}}<br>
+                This upgrade is free of charge and part of our ongoing commitment to email security.<br>
+                Questions? Visit our internal IT portal or contact the help desk during business hours.
+            </p>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

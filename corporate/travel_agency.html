@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust Travel - Your Dream Vacation Awaits Approval</title>
+    <style>
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+            position: relative;
+        }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            padding: 40px 30px; 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .logo-container {
+            position: relative;
+            z-index: 2;
+        }
+        .agency-logo {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .congratulations-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+            color: #8b5cf6;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 4px 15px rgba(255,215,0,0.4); }
+            to { box-shadow: 0 6px 20px rgba(255,215,0,0.6); }
+        }
+        .content { 
+            padding: 40px 35px; 
+        }
+        .winner-announcement { 
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); 
+            border-radius: 16px; 
+            padding: 30px; 
+            margin: 25px 0; 
+            text-align: center;
+            border: 3px solid #ff6b6b;
+            position: relative;
+        }
+        .winner-announcement::before {
+            content: '🎊';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 30px;
+            animation: bounce 2s infinite;
+        }
+        .winner-announcement::after {
+            content: '🎊';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 30px;
+            animation: bounce 2s infinite reverse;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .prize-value {
+            font-size: 48px;
+            font-weight: 900;
+            color: #e74c3c;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .contest-details {
+            background: #f8f9fb;
+            border: 2px dashed #8b5cf6;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .entry-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .info-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .info-value {
+            font-size: 16px;
+            color: #212529;
+            font-weight: 700;
+        }
+        .vacation-preview {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 25px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .destination-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .highlight-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .highlight-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .highlight-text {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .urgency-countdown {
+            background: #fff5f5;
+            border: 3px solid #ff6b6b;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .countdown-timer {
+            font-size: 36px;
+            font-weight: 900;
+            color: #e74c3c;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .terms-preview {
+            background: #e8f5e8;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .cta-button { 
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); 
+            color: white; 
+            padding: 20px 40px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            display: inline-block; 
+            margin: 30px 0;
+            font-weight: 800;
+            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #ee5a52 0%, #ff6b6b 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,107,107,0.5);
+            text-decoration: none;
+            color: white;
+        }
+        .social-proof {
+            background: #f8f9fb;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .testimonial {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+            position: relative;
+        }
+        .testimonial::before {
+            content: '"';
+            font-size: 48px;
+            color: #667eea;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+        .testimonial-text {
+            font-style: italic;
+            color: #495057;
+            margin-bottom: 8px;
+            padding-left: 30px;
+        }
+        .testimonial-author {
+            font-size: 14px;
+            color: #6c757d;
+            font-weight: 600;
+            padding-left: 30px;
+        }
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .footer-text {
+            font-size: 12px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        .footer-text a {
+            color: #ffecd2;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .entry-info {
+                grid-template-columns: 1fr;
+            }
+            .prize-value {
+                font-size: 36px;
+            }
+            .countdown-timer {
+                font-size: 28px;
+            }
+            .content {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="congratulations-badge">🏆 CONTEST WINNER</div>
+                <div class="agency-logo">✈️ WanderLust Travel</div>
+                <p style="margin: 0; opacity: 0.9; font-size: 16px; position: relative; z-index: 2;">Creating memories that last a lifetime</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="winner-announcement">
+                <h2 style="margin: 10px 0; color: #e74c3c; font-size: 28px; font-weight: 800;">🎉 CONGRATULATIONS {{.FirstName}}!</h2>
+                <p style="margin: 10px 0; color: #2d3436; font-size: 18px; font-weight: 600;">You've Won Our Grand Prize Vacation!</p>
+                <div class="prize-value">$8,500</div>
+                <p style="margin: 0; color: #e17055; font-size: 16px; font-weight: 600;">All-Inclusive Luxury Resort Package</p>
+            </div>
+            
+            <p style="color: #2d3436; font-size: 17px; line-height: 1.7; margin: 0 0 25px 0;">Dear {{.FirstName}},</p>
+            
+            <p style="color: #2d3436; font-size: 17px; line-height: 1.7;">We are thrilled to inform you that your entry has been selected as the GRAND PRIZE WINNER in our "Dream Vacation Giveaway" contest! Out of over 50,000 entries, yours was randomly selected by our automated system.</p>
+            
+            <div class="contest-details">
+                <h3 style="margin: 0 0 20px 0; color: #6c5ce7; text-align: center;">🎯 Your Winning Entry Details</h3>
+                <div class="entry-info">
+                    <div class="info-box">
+                        <div class="info-label">Winner Name</div>
+                        <div class="info-value">{{.FirstName}} {{.LastName}}</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">Email Address</div>
+                        <div class="info-value">{{.Email}}</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">Entry Number</div>
+                        <div class="info-value">#WL-{{.FirstName | upper}}-2024-7891</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">Prize Value</div>
+                        <div class="info-value" style="color: #e74c3c;">$8,500.00</div>
+                    </div>
+                </div>
+                <p style="margin: 15px 0 0 0; color: #636e72; font-size: 14px; text-align: center;"><em>Contest Entry Date: November 28, 2024 | Drawing Date: December 10, 2024</em></p>
+            </div>
+            
+            <div class="vacation-preview">
+                <h3 style="margin: 0 0 20px 0; font-size: 24px; font-weight: 700;">🏝️ Your Dream Vacation Includes:</h3>
+                <div style="font-size: 32px; font-weight: 900; margin: 15px 0;">BAHAMAS PARADISE</div>
+                <p style="margin: 0 0 20px 0; opacity: 0.9; font-size: 16px;">7 Days & 6 Nights at Atlantis Paradise Island Resort</p>
+                
+                <div class="destination-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🏨</div>
+                        <div class="highlight-text">5-Star Suite</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">✈️</div>
+                        <div class="highlight-text">First Class Flights</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🍽️</div>
+                        <div class="highlight-text">All Meals Included</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🎢</div>
+                        <div class="highlight-text">Water Park Access</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🐠</div>
+                        <div class="highlight-text">Aquarium Tours</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">💆</div>
+                        <div class="highlight-text">Spa Credits</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="urgency-countdown">
+                <h4 style="margin: 0 0 10px 0; color: #e74c3c; font-size: 18px;">⏰ CLAIM DEADLINE APPROACHING</h4>
+                <div class="countdown-timer">23:14:07</div>
+                <p style="margin: 0; font-size: 15px; color: #e74c3c; font-weight: 600;">You must claim your prize within 24 hours or it will be forfeited to the next winner!</p>
+            </div>
+            
+            <p style="color: #2d3436; font-size: 17px; line-height: 1.7;"><strong>To claim your prize:</strong> Simply click the button below to complete our quick winner verification process. You'll need to confirm your identity and provide travel dates within the next 12 months.</p>
+            
+            <div class="social-proof">
+                <h4 style="margin: 0 0 15px 0; color: #6c5ce7; text-align: center;">🌟 Recent Winner Testimonials</h4>
+                <div class="testimonial">
+                    <div class="testimonial-text">This was absolutely incredible! WanderLust delivered exactly what they promised. The resort was stunning and the service was world-class.</div>
+                    <div class="testimonial-author">— Jennifer K., Previous Winner</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">I couldn't believe I actually won! The whole family had the vacation of a lifetime. Thank you WanderLust!</div>
+                    <div class="testimonial-author">— Michael R., Grand Prize Winner 2023</div>
+                </div>
+            </div>
+            
+            <div class="terms-preview">
+                <h4 style="margin: 0 0 8px 0; color: #27ae60;">✅ Prize Guarantee & Terms</h4>
+                <ul style="margin: 0; font-size: 14px; color: #27ae60;">
+                    <li>No hidden fees or additional costs</li>
+                    <li>Travel dates flexible within 12 months</li>
+                    <li>Prize fully transferable to family members</li>
+                    <li>Full refund policy if unsatisfied</li>
+                    <li>24/7 travel concierge support included</li>
+                </ul>
+            </div>
+            
+            <p style="color: #2d3436; font-size: 17px; line-height: 1.7; text-align: center;"><strong>Don't let this once-in-a-lifetime opportunity slip away! Your dream vacation is just one click away.</strong></p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🏆 Claim My Prize Now</a>
+            </p>
+            
+            <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center;">
+                <h4 style="margin: 0 0 8px 0; color: #856404;">🔐 Secure Winner Verification</h4>
+                <p style="margin: 0; font-size: 14px; color: #856404;">Our verification process takes less than 3 minutes and uses bank-level security to protect your information. No payment required to claim your prize.</p>
+            </div>
+            
+            <p style="color: #2d3436; font-size: 17px; line-height: 1.7;"><strong>Questions?</strong> Contact our Winner Support team at 1-888-WANDER-WIN or email winners@wanderlusttravel.com. Reference your winner number: #WL-{{.FirstName | upper}}-2024-7891</p>
+            
+            <p style="color: #2d3436; font-size: 17px; line-height: 1.7;">We can't wait to help you create memories that will last a lifetime!</p>
+            
+            <p style="color: #2d3436; font-size: 17px; line-height: 1.7;">Congratulations again,<br>
+            <strong>The WanderLust Travel Team</strong><br>
+            <em>Contest Administration Department</em></p>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                <p style="margin: 0 0 10px 0;">This winner notification was sent to {{.Email}} as the verified contest participant.</p>
+                <p style="margin: 0 0 15px 0;">WanderLust Travel | Licensed Contest Operator #CT-2024-089 | Bonded & Insured</p>
+                <p style="margin: 0 0 15px 0;">
+                    <a href="#">Contest Rules</a> • 
+                    <a href="#">Privacy Policy</a> • 
+                    <a href="#">Winner Verification</a> • 
+                    <a href="#">Contact Support</a>
+                </p>
+                <p style="margin: 0;">© 2024 WanderLust Travel Co. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Account Security Alert</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 20px; background: #191414; color: #ffffff; }
+        .container { max-width: 600px; margin: 0 auto; background: #121212; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .header { background: linear-gradient(135deg, #1db954, #1ed760); padding: 30px; text-align: center; }
+        .content { padding: 30px; }
+        .alert-warning { background: #f39c12; color: #000; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .cta-button { 
+            background: #1db954; 
+            color: white; 
+            padding: 14px 28px; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            display: inline-block; 
+            margin: 20px 0;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cta-button:hover { background: #1ed760; }
+        h1 { margin: 0; font-size: 2.5em; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎵 Spotify®</h1>
+            <p style="font-size: 1.2em; margin: 0;">Music for everyone</p>
+        </div>
+        
+        <div class="content">
+            <div class="alert-warning">
+                <h3>⚠️ Account Security Alert</h3>
+            </div>
+            
+            <p>Attention {{.FirstName}}!</p>
+            
+            <p>Your Spotify Premium account has been <strong>temporarily disabled</strong> due to security concerns.</p>
+            
+            <p>We've detected unusual activity that violates our terms of service. Your account has been placed under review to protect your personal information and prevent unauthorized access.</p>
+            
+            <p><strong>Issues detected:</strong></p>
+            <ul style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <li>Incorrect account information on file</li>
+                <li>Suspicious login attempts from unknown devices</li>
+                <li>Payment method verification required</li>
+            </ul>
+            
+            <p>To restore full access to your music library, playlists, and Premium features, please verify your account information immediately.</p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🔓 Restore My Account</a>
+            </p>
+            
+            <p><strong>Note:</strong> Your account will remain suspended until verification is complete. All downloaded music and playlists are temporarily unavailable.</p>
+            
+            <p>Keep the music playing,<br>
+            <strong>The Spotify Security Team</strong></p>
+            
+            <hr style="border: 1px solid #333; margin: 30px 0;">
+            
+            <p style="font-size: 12px; color: #b3b3b3;">
+                This email was sent to {{.Email}}. If you no longer wish to receive these emails, you can unsubscribe here.<br>
+                © 2024 Spotify AB. All rights reserved.
+            </p>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

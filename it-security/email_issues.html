@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Server Migration Notice</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .alert-warning { border-left: 4px solid #f0ad4e; }
+        .btn-primary { background-color: #0066cc; border-color: #0066cc; }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 600px; margin: 20px auto;">
+        <div class="alert alert-warning">
+            <h4>🔧 IT Department Notice</h4>
+        </div>
+        
+        <p>Hello {{.FirstName}},</p>
+        
+        <p>The IT Department completed an email server migration last night and encountered errors with several email accounts, including yours ({{.Email}}).</p>
+        
+        <p>We believe we have resolved the issue, but need to verify your account is functioning properly.</p>
+        
+        <p><strong>Action Required:</strong> If your email has been working normally, please confirm by validating your email address through our secure verification system.</p>
+        
+        <p style="text-align: center; margin: 30px 0;">
+            <a href="{{.URL}}" class="btn btn-primary btn-lg">🔒 Validate Email Account</a>
+        </p>
+        
+        <p>This verification ensures your account remains secure and functional after the migration.</p>
+        
+        <p>Thank you for your prompt cooperation.</p>
+        
+        <p>Best regards,<br>
+        <strong>IT Support Team</strong><br>
+        Internal Systems & Security</p>
+        
+        <hr>
+        <p><small>This is an automated message from IT Support. Please do not reply to this email.</small></p>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

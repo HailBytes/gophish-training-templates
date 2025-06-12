@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical System Update Required</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: #f5f5f5; 
+            margin: 0; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            overflow: hidden;
+        }
+        .header { 
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+        }
+        .microsoft-logo {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .content { padding: 35px; }
+        .critical-alert { 
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); 
+            color: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 25px 0; 
+            text-align: center;
+        }
+        .update-info { 
+            background: #e3f2fd; 
+            padding: 25px; 
+            border-radius: 8px; 
+            margin: 25px 0; 
+            border-left: 4px solid #0078d4;
+        }
+        .steps-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #0078d4;
+        }
+        .step-number {
+            background: #0078d4;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .cta-button { 
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); 
+            color: white; 
+            padding: 16px 32px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            display: inline-block; 
+            margin: 25px 0;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .urgency-timer {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .system-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="microsoft-logo">🪟 Microsoft Windows</div>
+            <h2 style="margin: 0;">System Update Center</h2>
+            <p style="margin: 0; opacity: 0.9;">Critical Security Updates Available</p>
+        </div>
+        
+        <div class="content">
+            <div class="critical-alert">
+                <h3 style="margin: 0 0 10px 0;">🚨 CRITICAL SYSTEM UPDATE REQUIRED</h3>
+                <p style="margin: 0;">Your computer is critically out of date and requires immediate attention</p>
+            </div>
+            
+            <p>Dear {{.FirstName}},</p>
+            
+            <p>The Information Technology Department has detected that your computer system is <strong>critically out of date</strong> and poses significant security risks to our corporate network.</p>
+            
+            <div class="update-info">
+                <h4>🛡️ Security Alert Details</h4>
+                <p><strong>User Account:</strong> {{.Email}}</p>
+                <p><strong>System Status:</strong> <span style="color: #dc3545; font-weight: bold;">CRITICALLY OUTDATED</span></p>
+                <p><strong>Risk Level:</strong> <span style="color: #dc3545; font-weight: bold;">HIGH - Network Disconnection Imminent</span></p>
+                <p><strong>Updates Pending:</strong> 23 critical security patches</p>
+                <p><strong>Last Update:</strong> More than 45 days ago</p>
+            </div>
+            
+            <div class="urgency-timer">
+                <h4 style="color: #856404; margin: 0 0 10px 0;">⏰ 24-Hour Compliance Deadline</h4>
+                <p style="margin: 0;">To avoid disconnection from the corporate network, system updates must be applied within the next 24 hours.</p>
+            </div>
+            
+            <p><strong>Immediate Security Risks:</strong></p>
+            <ul style="background: #fff5f5; padding: 20px; border-radius: 6px; border-left: 4px solid #dc3545; margin: 20px 0;">
+                <li>Vulnerability to ransomware and malware attacks</li>
+                <li>Potential data breach and corporate espionage</li>
+                <li>Non-compliance with corporate security policies</li>
+                <li>Risk of automatic network disconnection</li>
+                <li>Exposure of sensitive company information</li>
+            </ul>
+            
+            <div class="steps-container">
+                <h4>📋 Required Update Procedure</h4>
+                <p>To update your system and maintain network access, perform the following actions:</p>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <strong>SAVE and CLOSE</strong> any documents or files you're currently working on to prevent data loss during the update process.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <strong>LOG IN</strong> to your corporate account and access the secure update portal to verify your system configuration.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <strong>WAIT</strong> for the verification and update process to complete. This typically takes 5-10 minutes depending on your system.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div>
+                        <strong>REBOOT</strong> your computer when prompted. Some critical security updates require a system restart to take effect.
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🔒 Access Secure Update Portal</a>
+            </p>
+            
+            <div class="system-details">
+                <strong>System Information:</strong><br>
+                Target System: {{.Email}}<br>
+                Update Server: update.microsoft.com/corporate<br>
+                Authentication: Corporate Domain Required<br>
+                Estimated Time: 5-10 minutes<br>
+                Restart Required: Conditional
+            </div>
+            
+            <p><strong>Alternative Options:</strong></p>
+            <p>If you need additional time to complete critical work, you may request a 72-hour extension by logging into the update portal and selecting "<em>Delay My Updates</em>". However, this extension can only be granted once per quarter.</p>
+            
+            <div class="urgency-timer">
+                <p style="margin: 0;"><strong>⚠️ Important:</strong> Failure to complete updates within the specified timeframe will result in automatic network disconnection for security compliance.</p>
+            </div>
+            
+            <p>Please contact the IT Department at extension 2847 if you have any questions or experience technical difficulties during the update process.</p>
+            
+            <p>Thank you for your immediate attention to this critical security matter.</p>
+            
+            <p>Sincerely,<br>
+            <strong>Information Technology Department</strong><br>
+            Network Security & Compliance Division<br>
+            Corporate IT Services</p>
+            
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
+            
+            <p style="font-size: 12px; color: #6c757d;">
+                This mailbox is not monitored. Please do not reply to this automated message.<br>
+                <strong>Security Reminder:</strong> The Information Technology department will never ask for your password via email.<br>
+                <strong>Update ID:</strong> MSU-{{.Date}}-{{.Email}} | <strong>Priority:</strong> Critical
+            </p>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

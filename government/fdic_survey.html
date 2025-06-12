@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDIC - Mandatory Consumer Protection Survey</title>
+    <style>
+        body { 
+            font-family: 'Times New Roman', Times, serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f8f9fa; 
+            line-height: 1.6;
+        }
+        .container { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            background: white; 
+            border: 2px solid #003d7a; 
+            border-radius: 8px; 
+            overflow: hidden; 
+        }
+        .header { 
+            background: linear-gradient(135deg, #003d7a 0%, #002855 100%); 
+            color: white; 
+            padding: 25px 30px; 
+            text-align: center; 
+        }
+        .fdic-seal {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #003d7a;
+            font-weight: 700;
+        }
+        .agency-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .agency-full {
+            font-size: 14px;
+            opacity: 0.9;
+            margin: 0;
+        }
+        .content { 
+            padding: 30px; 
+        }
+        .official-notice {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .notice-badge {
+            background: #1976d2;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .survey-details {
+            background: #fff3e0;
+            border: 1px solid #ff9800;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .deadline-warning {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .compliance-info {
+            background: #f1f8e9;
+            border: 1px solid #8bc34a;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .bank-details {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        .detail-value {
+            color: #212529;
+        }
+        .cta-button { 
+            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%); 
+            color: white; 
+            padding: 16px 32px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            display: inline-block; 
+            margin: 25px 0;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(25,118,210,0.3);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(25,118,210,0.4);
+            text-decoration: none;
+            color: white;
+        }
+        .legal-notice {
+            background: #f8f9fa;
+            border-left: 4px solid #6c757d;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 12px;
+            color: #495057;
+        }
+        .footer {
+            background: #003d7a;
+            color: white;
+            padding: 20px 30px;
+            text-align: center;
+        }
+        .footer-text {
+            font-size: 11px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        .footer-text a {
+            color: #81d4fa;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+            .detail-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="fdic-seal">🏛️</div>
+            <div class="agency-name">FDIC</div>
+            <div class="agency-full">Federal Deposit Insurance Corporation</div>
+        </div>
+        
+        <div class="content">
+            <div class="official-notice">
+                <div class="notice-badge">OFFICIAL GOVERNMENT SURVEY</div>
+                <h2 style="margin: 10px 0; color: #1976d2; font-size: 20px;">Mandatory Consumer Banking Protection Survey</h2>
+                <p style="margin: 0; color: #1976d2; font-size: 14px;">Required by Federal Banking Regulation 12 CFR Part 330</p>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px; margin: 0 0 20px 0;"><strong>Dear Bank Customer,</strong></p>
+            
+            <p style="color: #212529; font-size: 16px;">As part of our ongoing commitment to protect consumers and ensure the stability of the U.S. banking system, the Federal Deposit Insurance Corporation (FDIC) is conducting a mandatory survey of banking customers nationwide.</p>
+            
+            <div class="survey-details">
+                <h3 style="margin: 0 0 15px 0; color: #e65100;">📋 Survey Requirements</h3>
+                <p style="margin: 0 0 15px 0; color: #e65100; font-size: 14px;"><strong>Your participation is required under federal banking regulations. Failure to complete this survey may affect your deposit insurance coverage.</strong></p>
+                <ul style="margin: 0; color: #e65100; font-size: 14px;">
+                    <li>Survey Duration: Approximately 10-15 minutes</li>
+                    <li>Completion Deadline: Within 72 hours of receipt</li>
+                    <li>All FDIC-insured bank customers must participate</li>
+                    <li>Responses are confidential and secure</li>
+                </ul>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px;">This survey is being sent to customers of FDIC-insured institutions to gather critical data about banking practices, customer satisfaction, and deposit insurance awareness. Your bank has provided your contact information as required by federal regulation.</p>
+            
+            <div class="bank-details">
+                <h4 style="margin: 0 0 15px 0; color: #495057;">🏦 Your Banking Information on File</h4>
+                <div class="detail-row">
+                    <span class="detail-label">Account Holder:</span>
+                    <span class="detail-value">{{.FirstName}} {{.LastName}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Email Address:</span>
+                    <span class="detail-value">{{.Email}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Survey Reference:</span>
+                    <span class="detail-value">FDIC-2024-{{.FirstName | upper}}-{{.LastName | upper}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Priority Level:</span>
+                    <span class="detail-value" style="color: #f44336; font-weight: 600;">HIGH - Immediate Response Required</span>
+                </div>
+            </div>
+            
+            <div class="deadline-warning">
+                <h4 style="margin: 0 0 8px 0; color: #f44336;">⏰ URGENT: Response Deadline</h4>
+                <p style="margin: 0; font-size: 14px; color: #f44336;"><strong>You have 72 hours from receipt to complete this survey.</strong> Failure to respond may result in a compliance review of your deposit insurance status and potential restrictions on your account.</p>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px;"><strong>Survey Topics Include:</strong></p>
+            <ul style="color: #212529; font-size: 16px;">
+                <li>Current banking relationships and account types</li>
+                <li>Understanding of FDIC deposit insurance coverage</li>
+                <li>Recent banking experiences and satisfaction levels</li>
+                <li>Knowledge of consumer protection rights</li>
+                <li>Awareness of potential banking fraud schemes</li>
+                <li>Verification of account security measures</li>
+            </ul>
+            
+            <div class="compliance-info">
+                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">✅ Why This Survey is Required</h4>
+                <p style="margin: 0; font-size: 14px; color: #2e7d32;">Federal banking regulations require the FDIC to periodically assess consumer awareness and satisfaction to ensure adequate protection of depositors. This data directly influences policy decisions that protect your deposits and banking rights.</p>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px; text-align: center;"><strong>Your participation helps us protect all American depositors. Complete your survey now to ensure continued FDIC protection.</strong></p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">🔒 Complete Official FDIC Survey</a>
+            </p>
+            
+            <div class="legal-notice">
+                <p style="margin: 0 0 8px 0;"><strong>LEGAL NOTICE:</strong> This survey is conducted under the authority of the Federal Deposit Insurance Act (12 U.S.C. 1811 et seq.) and related regulations. Your response is required for compliance with federal banking oversight requirements.</p>
+                <p style="margin: 0;"><strong>PRIVACY:</strong> Information collected will be used solely for regulatory oversight purposes and will be protected under federal privacy laws.</p>
+            </div>
+            
+            <p style="color: #212529; font-size: 16px;"><strong>Questions about this survey?</strong> Contact the FDIC Consumer Response Center at 1-877-ASK-FDIC (1-877-275-3342) or visit www.fdic.gov for more information about your rights as a depositor.</p>
+            
+            <p style="color: #212529; font-size: 16px;">Thank you for your cooperation in this important consumer protection initiative.</p>
+            
+            <p style="color: #212529; font-size: 16px;"><strong>Sincerely,</strong><br>
+            <strong>FDIC Division of Depositor and Consumer Protection</strong><br>
+            Federal Deposit Insurance Corporation</p>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                <p style="margin: 0 0 8px 0;">Federal Deposit Insurance Corporation | 550 17th Street, NW | Washington, DC 20429</p>
+                <p style="margin: 0 0 8px 0;">This official communication was sent to {{.Email}} as required by federal banking regulations.</p>
+                <p style="margin: 0 0 12px 0;">
+                    <a href="#">Privacy Policy</a> • 
+                    <a href="#">Consumer Rights</a> • 
+                    <a href="#">Contact FDIC</a> • 
+                    <a href="#">File a Complaint</a>
+                </p>
+                <p style="margin: 0;">© 2024 Federal Deposit Insurance Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>

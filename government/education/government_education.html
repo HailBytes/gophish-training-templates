@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Training: Government Impersonation Phishing</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f8f9fa; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 12px; 
+            padding: 40px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+        .alert { 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }
+        .alert-warning { 
+            background: #fff3cd; 
+            border: 1px solid #ffeaa7; 
+            color: #856404; 
+        }
+        .alert-info { 
+            background: #d1ecf1; 
+            border: 1px solid #bee5eb; 
+            color: #0c5460; 
+        }
+        .government-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .agency-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            text-align: center;
+        }
+        .threat-scenario {
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .protection-tips {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .quiz-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .red-flags-list {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .verification-steps {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        h1 { 
+            color: #dc3545; 
+        }
+        h2 { 
+            color: #495057; 
+            border-bottom: 2px solid #dc3545; 
+            padding-bottom: 10px; 
+        }
+        .emoji { 
+            font-size: 1.2em; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Government Impersonation Phishing - Security Training</h1>
+            <div class="alert alert-info">
+                <strong>These attacks aimed to steal:</strong>
+                <ul>
+                    <li>Social Security numbers and tax identification</li>
+                    <li>Banking and financial account information</li>
+                    <li>Personal identifying information for identity theft</li>
+                    <li>Business tax IDs and financial records</li>
+                    <li>Login credentials for government portals</li>
+                </ul>
+                <p><strong>The Impact:</strong> Government impersonation scams can lead to identity theft, tax fraud, financial loss, and legal complications when your identity is used for criminal activities.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Government Phishing Quiz</h2>
+            <div class="quiz-section">
+                <h3>Test Your Knowledge:</h3>
+                <p><strong>Scenario:</strong> You receive an email claiming to be from the FDIC saying "Mandatory Consumer Protection Survey - Required by Federal Banking Regulation. You have 72 hours to complete or risk losing deposit insurance coverage." What should you do?</p>
+                
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Complete the survey immediately to protect my accounts</label><br>
+                    
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Call the phone number provided in the email to verify</label><br>
+                    
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Visit the official FDIC website to check for legitimate surveys</label><br>
+                    
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Contact my bank directly to ask about the survey</label>
+                </div>
+                
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer & Explanation</strong></summary>
+                    <div style="background: #e8f5e8; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Best Answer: C (with D as additional verification)</strong> - Visit the official FDIC website directly (fdic.gov) to check for any legitimate surveys or warnings about scams. The FDIC doesn't send unsolicited email surveys requiring immediate action, and deposit insurance isn't contingent on survey participation. Also contact your bank to verify.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔍 Agency-Specific Verification Methods</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div class="protection-tips">
+                    <h4>🏦 FDIC Verification</h4>
+                    <ul>
+                        <li>Visit fdic.gov directly</li>
+                        <li>Call 1-877-ASK-FDIC</li>
+                        <li>Check their scam alerts page</li>
+                        <li>Contact your bank directly</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-tips">
+                    <h4>💰 IRS Verification</h4>
+                    <ul>
+                        <li>Visit irs.gov directly</li>
+                        <li>Call 1-800-829-1040</li>
+                        <li>Check for scam warnings</li>
+                        <li>Remember: IRS doesn't initiate contact via email</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-tips">
+                    <h4>👮 Law Enforcement</h4>
+                    <ul>
+                        <li>Call your local police department directly</li>
+                        <li>Visit the department's official website</li>
+                        <li>Ask for the detective's badge number and verify</li>
+                        <li>Legitimate cases have verifiable documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔒 Protection Strategies</h2>
+            <div class="protection-tips">
+                <h3>Advanced Government Scam Protection:</h3>
+                <ul>
+                    <li><strong>Know Communication Methods:</strong> Learn how each agency actually contacts citizens</li>
+                    <li><strong>Bookmark Official Sites:</strong> Keep bookmarks to official .gov websites</li>
+                    <li><strong>Verify Before Acting:</strong> Always confirm through official channels first</li>
+                    <li><strong>Keep Records:</strong> Save legitimate government correspondence for comparison</li>
+                    <li><strong>Stay Informed:</strong> Follow agency social media for scam alerts</li>
+                    <li><strong>Trust Your Instincts:</strong> If something feels wrong, it probably is</li>
+                    <li><strong>Ask for Help:</strong> Consult family, friends, or professionals when unsure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>📞 Official Government Contact Methods</h2>
+            <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3>How Government Agencies Actually Contact You:</h3>
+                <ul>
+                    <li><strong>Primary Method:</strong> Official postal mail to your address on file</li>
+                    <li><strong>Phone Calls:</strong> Only if you've initiated contact or have an ongoing case</li>
+                    <li><strong>In-Person:</strong> Through scheduled appointments or official visits</li>
+                    <li><strong>Secure Portals:</strong> Through authenticated online accounts you've created</li>
+                    <li><strong>NOT Email:</strong> Agencies don't send unsolicited emails for sensitive matters</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 If You Think You've Been Compromised</h2>
+            <div class="alert alert-warning">
+                <h3>Immediate Actions if You Provided Information:</h3>
+                <ol>
+                    <li><strong>Don't panic</strong> - take immediate protective action</li>
+                    <li><strong>Contact the real agency</strong> using official contact methods</li>
+                    <li><strong>Monitor your accounts</strong> for unauthorized activity</li>
+                    <li><strong>Place fraud alerts</strong> with credit bureaus if SSN was compromised</li>
+                    <li><strong>Change passwords</strong> for any accounts that might be affected</li>
+                    <li><strong>Report the scam</strong> to FTC at reportfraud.ftc.gov</li>
+                    <li><strong>File a police report</strong> if you've lost money or suffered identity theft</li>
+                    <li><strong>Keep detailed records</strong> of all your protective actions</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>📊 Government Scam Statistics</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center;">
+                    <h3 style="color: #dc3545; margin: 0; font-size: 32px;">$1.8B</h3>
+                    <p style="margin: 5px 0 0 0; color: #6c757d;">Lost to government impersonation scams in 2023</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center;">
+                    <h3 style="color: #dc3545; margin: 0; font-size: 32px;">3x</h3>
+                    <p style="margin: 5px 0 0 0; color: #6c757d;">Increase in government scams since 2020</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center;">
+                    <h3 style="color: #dc3545; margin: 0; font-size: 32px;">78%</h3>
+                    <p style="margin: 5px 0 0 0; color: #6c757d;">Of victims are over age 50</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🤝 Help Others Stay Safe</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3>Spread Awareness:</h3>
+                <ul>
+                    <li><strong>Share knowledge:</strong> Educate family and friends about government scams</li>
+                    <li><strong>Report scams:</strong> Help authorities track and stop scammers</li>
+                    <li><strong>Support vulnerable populations:</strong> Elderly relatives are frequent targets</li>
+                    <li><strong>Verify together:</strong> Help others verify suspicious communications</li>
+                    <li><strong>Stay updated:</strong> Follow official agency warnings and alerts</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔍 Advanced Threat Awareness</h2>
+            <div class="threat-scenario">
+                <h3>Sophisticated Government Impersonation Techniques:</h3>
+                <ul>
+                    <li><strong>Voice Cloning:</strong> AI-generated phone calls mimicking officials</li>
+                    <li><strong>Caller ID Spoofing:</strong> Fake phone numbers appearing to be from agencies</li>
+                    <li><strong>Deep Fake Documents:</strong> Realistic-looking official correspondence</li>
+                    <li><strong>Multi-Channel Attacks:</strong> Coordinated email, phone, and text campaigns</li>
+                    <li><strong>Social Engineering:</strong> Using public records to personalize attacks</li>
+                </ul>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #dc3545 0%, #28a745 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Government Phishing Training Complete!</h2>
+            <p>You're now better equipped to identify government impersonation scams. Remember: when in doubt, verify through official channels!</p>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 6px; margin: 20px 0;">
+                <h3>🔑 Key Takeaways:</h3>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>Government agencies don't send unsolicited emails for sensitive matters</li>
+                    <li>Always verify through official websites and phone numbers</li>
+                    <li>Be suspicious of urgent deadlines and threatening language</li>
+                    <li>Never provide personal information via email links</li>
+                    <li>Report suspicious communications to help protect others</li>
+                </ul>
+            </div>
+            
+            <p><strong>Questions or concerns?</strong> Contact our Security Awareness Team at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>="alert alert-warning">
+                <strong>🚨 You clicked on a simulated government impersonation phishing email!</strong><br>
+                This training will help you recognize and avoid fraudulent government communications.
+            </div>
+        </div>
+
+        <section>
+            <h2>🎯 Understanding Government Impersonation Phishing</h2>
+            <p>You interacted with a simulated phishing email that impersonated a government agency or official organization. These attacks are extremely dangerous because they:</p>
+            <ul>
+                <li><strong>Exploit Authority:</strong> People naturally trust government communications</li>
+                <li><strong>Create Fear:</strong> Use threats of legal consequences or financial penalties</li>
+                <li><strong>Appear Official:</strong> Mimic legitimate government websites and communications</li>
+                <li><strong>Demand Urgency:</strong> Impose artificial deadlines to pressure victims</li>
+                <li><strong>Steal Sensitive Data:</strong> Target Social Security numbers, tax information, and financial data</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🏛️ Commonly Impersonated Government Agencies</h2>
+            <div class="government-types">
+                <div class="agency-card">
+                    <h4>🏦 FDIC</h4>
+                    <p>Banking surveys, deposit insurance notifications</p>
+                </div>
+                <div class="agency-card">
+                    <h4>👮 Police Departments</h4>
+                    <p>Fake crime reports, identity theft alerts</p>
+                </div>
+                <div class="agency-card">
+                    <h4>📊 BBB</h4>
+                    <p>Business complaints, rating threats</p>
+                </div>
+                <div class="agency-card">
+                    <h4>💰 IRS</h4>
+                    <p>Tax audits, refund notifications</p>
+                </div>
+                <div class="agency-card">
+                    <h4>🛡️ Social Security</h4>
+                    <p>Benefit suspensions, account verification</p>
+                </div>
+                <div class="agency-card">
+                    <h4>🚨 FBI/DHS</h4>
+                    <p>Security alerts, investigation notices</p>
+                </div>
+                <div class="agency-card">
+                    <h4>⚖️ Courts</h4>
+                    <p>Jury duty, legal summons</p>
+                </div>
+                <div class="agency-card">
+                    <h4>🏥 Health Departments</h4>
+                    <p>Public health alerts, compliance notices</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎭 Attack Techniques You Encountered</h2>
+            <div class="threat-scenario">
+                <h3>Government Phishing Tactics:</h3>
+                <ul>
+                    <li><span style="color: #dc3545;">⚖️</span> <strong>Legal Threats:</strong> "Failure to respond will result in penalties"</li>
+                    <li><span style="color: #dc3545;">🔴</span> <strong>Urgent Deadlines:</strong> "You have 72 hours to comply"</li>
+                    <li><span style="color: #dc3545;">🏛️</span> <strong>Official Appearance:</strong> Government seals, formal language, official letterhead</li>
+                    <li><span style="color: #dc3545;">💰</span> <strong>Financial Consequences:</strong> "Fines up to $500,000"</li>
+                    <li><span style="color: #dc3545;">🎯</span> <strong>Personal Information:</strong> Including your name, email, and reference numbers</li>
+                    <li><span style="color: #dc3545;">📞</span> <strong>Contact Information:</strong> Fake phone numbers and case references</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 Red Flags You Should Have Noticed</h2>
+            <div class="red-flags-list">
+                <h3>Warning Signs in Government Phishing:</h3>
+                <ul>
+                    <li><strong>Unsolicited Contact:</strong> Legitimate agencies don't initiate contact via email for sensitive matters</li>
+                    <li><strong>Immediate Action Required:</strong> Real government processes have reasonable timeframes</li>
+                    <li><strong>Threats and Pressure:</strong> Official communications are professional, not threatening</li>
+                    <li><strong>Email-Only Contact:</strong> Real agencies provide multiple contact methods</li>
+                    <li><strong>Generic Information:</strong> Vague details that could apply to anyone</li>
+                    <li><strong>Suspicious Links:</strong> URLs that don't match official government domains</li>
+                    <li><strong>Request for Sensitive Data:</strong> Agencies already have your information on file</li>
+                    <li><strong>Poor Grammar/Spelling:</strong> Official communications are professionally written</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ How to Verify Government Communications</h2>
+            <div class="verification-steps">
+                <h3>Government Communication Verification Process:</h3>
+                <ol>
+                    <li><strong>Visit official websites directly:</strong> Type the agency's URL manually into your browser</li>
+                    <li><strong>Call official phone numbers:</strong> Use numbers from official websites, not from the email</li>
+                    <li><strong>Check official communication methods:</strong> Most agencies send official notices by postal mail</li>
+                    <li><strong>Verify case numbers:</strong> Call the agency to confirm any case or reference numbers</li>
+                    <li><strong>Look up the specific program:</strong> Research whether the agency actually runs the mentioned program</li>
+                    <li><strong>Check for recent alerts:</strong> Official agency websites often warn about current scams</li>
+                    <li><strong>Contact a local office:</strong> Visit or call your local branch of the agency</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>💡 Real vs. Fake: Key Differences</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                <div style="background: #e8f5e8; padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #28a745;">✅ Legitimate Government Communications</h4>
+                    <ul>
+                        <li>Sent via official postal mail for important matters</li>
+                        <li>Include specific, verifiable contact information</li>
+                        <li>Reference specific laws or regulations</li>
+                        <li>Provide reasonable response timeframes</li>
+                        <li>Never request sensitive information via email</li>
+                        <li>Can be verified through multiple official channels</li>
+                    </ul>
+                </div>
+                <div style="background: #fff5f5; padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #dc3545;">❌ Government Phishing Emails</h4>
+                    <ul>
+                        <li>Arrive unexpectedly via email only</li>
+                        <li>Use generic or fake contact information</li>
+                        <li>Make vague legal references</li>
+                        <li>Demand immediate action or response</li>
+                        <li>Request personal information via email links</li>
+                        <li>Cannot be verified through official channels</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 What Attackers Were After</h2>
+            <div class

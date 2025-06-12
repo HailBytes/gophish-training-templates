@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox - Files Shared With You</title>
+    <style>
+        body { 
+            font-family: 'Atlas Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f7f9fa; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+        }
+        .header { 
+            background: linear-gradient(135deg, #0061ff 0%, #0053d6 100%); 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+        }
+        .dropbox-logo {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .content { padding: 35px 30px; }
+        .notification-badge {
+            background: linear-gradient(135deg, #ff6900 0%, #ff5722 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .file-container { 
+            background: #f8f9fb; 
+            border: 1px solid #e7ebf0; 
+            border-radius: 12px; 
+            padding: 24px; 
+            margin: 25px 0; 
+        }
+        .file-grid {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .file-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #0061ff 0%, #0053d6 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        .file-info {
+            min-width: 0;
+        }
+        .file-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e1919;
+            margin: 0 0 4px 0;
+            word-break: break-word;
+        }
+        .file-details {
+            font-size: 14px;
+            color: #637282;
+            margin: 0;
+        }
+        .file-count {
+            background: #0061ff;
+            color: white;
+            border-radius: 12px;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .shared-info {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .collaborator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0061ff 0%, #9c27b0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+        .collaborator-info {
+            flex: 1;
+        }
+        .collaborator-name {
+            font-weight: 600;
+            color: #1e1919;
+            margin: 0;
+            font-size: 14px;
+        }
+        .collaborator-email {
+            color: #637282;
+            margin: 0;
+            font-size: 13px;
+        }
+        .urgency-note {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+        }
+        .cta-button { 
+            background: linear-gradient(135deg, #0061ff 0%, #0053d6 100%); 
+            color: white; 
+            padding: 16px 32px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            display: inline-block; 
+            margin: 25px 0;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0,97,255,0.3);
+            transition: all 0.2s ease;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #0053d6 0%, #0061ff 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,97,255,0.4);
+            text-decoration: none;
+            color: white;
+        }
+        .security-notice {
+            background: #f1f8e9;
+            border: 1px solid #8bc34a;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        .footer {
+            background: #f8f9fb;
+            padding: 24px 30px;
+            border-top: 1px solid #e7ebf0;
+            text-align: center;
+        }
+        .footer-text {
+            font-size: 12px;
+            color: #637282;
+            line-height: 1.5;
+        }
+        .footer-text a {
+            color: #0061ff;
+            text-decoration: none;
+        }
+        .mobile-responsive {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .file-grid {
+                grid-template-columns: auto 1fr;
+                gap: 12px;
+            }
+            .file-count {
+                grid-column: 1 / -1;
+                justify-self: start;
+                margin-top: 8px;
+            }
+            .mobile-responsive {
+                display: block;
+            }
+            .desktop-only {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="dropbox-logo">📁 Dropbox</div>
+            <p style="margin: 0; opacity: 0.9; font-size: 16px;">Secure file sharing and collaboration</p>
+        </div>
+        
+        <div class="content">
+            <div class="notification-badge">🔔 New Shared Files</div>
+            
+            <h2 style="color: #1e1919; margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">Files shared with you</h2>
+            
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">Hi {{.FirstName}},</p>
+            
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">Your colleague has shared important documents with you via Dropbox. These files require your immediate review and input for an upcoming project deadline.</p>
+            
+            <div class="shared-info">
+                <h4 style="margin: 0 0 16px 0; color: #1e1919;">👥 Shared by team member</h4>
+                <div class="collaborator">
+                    <div class="avatar">{{.FirstName | slice 0 1 | upper}}</div>
+                    <div class="collaborator-info">
+                        <div class="collaborator-name">Sarah Martinez</div>
+                        <div class="collaborator-email">sarah.martinez@company.com</div>
+                    </div>
+                </div>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #637282;">Shared 3 hours ago • Project Team Member</p>
+            </div>
+            
+            <div class="file-container">
+                <h4 style="margin: 0 0 20px 0; color: #1e1919;">📂 Shared Content</h4>
+                
+                <div class="file-grid">
+                    <div class="file-icon">📊</div>
+                    <div class="file-info">
+                        <div class="file-name">Project_Timeline_Q4_2024.xlsx</div>
+                        <div class="file-details">Excel Spreadsheet • 1.2 MB • Modified 2 hours ago</div>
+                    </div>
+                    <div class="file-count desktop-only">+5 more</div>
+                </div>
+                
+                <div class="mobile-responsive">
+                    <div class="file-count">+5 more files</div>
+                </div>
+                
+                <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e7ebf0;">
+                    <p style="margin: 0; font-size: 14px; color: #637282;">
+                        <strong>Folder contents:</strong> Project timelines, budget reports, team assignments, client presentations, and meeting notes
+                    </p>
+                </div>
+            </div>
+            
+            <div class="urgency-note">
+                <h4 style="margin: 0 0 8px 0; color: #e65100;">⏰ Time-Sensitive Review Required</h4>
+                <p style="margin: 0; font-size: 14px; color: #e65100;">These documents are needed for tomorrow's client presentation. Please review and provide feedback by end of day today.</p>
+            </div>
+            
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">To access these files and collaborate with your team, please click the button below. You'll need to sign in with your work account to maintain security compliance.</p>
+            
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">📂 View Shared Files</a>
+            </p>
+            
+            <div class="security-notice">
+                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">🔒 Secure Access</h4>
+                <p style="margin: 0; font-size: 14px; color: #2e7d32;">These files are protected by enterprise-grade security. Access is limited to authorized team members only.</p>
+            </div>
+            
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;"><strong>Need help?</strong> If you're new to Dropbox or have trouble accessing the files, contact IT support or reply to this email for assistance.</p>
+            
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">Thanks for being part of the team!</p>
+            
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">Best regards,<br>
+            <strong>The Dropbox Team</strong></p>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                <p style="margin: 0 0 8px 0;">This email was sent to {{.Email}} because files were shared with you on Dropbox.</p>
+                <p style="margin: 0 0 12px 0;">
+                    <a href="#">Privacy Policy</a> • 
+                    <a href="#">Terms</a> • 
+                    <a href="#">Help Center</a> • 
+                    <a href="#">Unsubscribe</a>
+                </p>
+                <p style="margin: 0;">© 2024 Dropbox, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+    {{.Tracker}}
+</body>
+</html>
