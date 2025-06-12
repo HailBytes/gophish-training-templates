@@ -325,20 +325,30 @@ Industry standard targets for mature security awareness programs:
 ### 📧 **Contact**
 For questions about implementation or customization:
 - **Email:** [info@hailbytes.com]
-- **GitHub Issues:** [Repository Issues Page]
+- **GitHub Issues:** [https://github.com/HailBytes/gophish-training-templates/issues]
 - **Security Team:** security@hailbytes.com
 
 ## 📄 **License**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Mozilla Public License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-### 🔓 **MIT License Summary**
+### 🔓 **MPL 2.0 License Summary**
 - **Commercial use:** ✅ Allowed
-- **Modification:** ✅ Allowed
-- **Distribution:** ✅ Allowed
+- **Modification:** ✅ Allowed (with source disclosure requirements)
+- **Distribution:** ✅ Allowed (with license preservation)
 - **Private use:** ✅ Allowed
+- **Patent use:** ✅ Granted (with termination clause for patent litigation)
+- **Trademark use:** ❌ Not granted
 - **Liability:** ❌ Limited
 - **Warranty:** ❌ Limited
+- **Copyleft:** 📄 File-level (modified files must remain open source)
+
+### 🔍 **Key MPL 2.0 Requirements**
+- **Source Disclosure:** Modified files must include source code and license notice
+- **License Preservation:** MPL 2.0 license must be included with distributions
+- **Patent Protection:** Automatic patent license grant for contributors
+- **Compatibility:** Can be combined with proprietary code (file-level copyleft)
+- **Modifications:** Changes to MPL-licensed files must remain under MPL 2.0
 
 ## 🙏 **Acknowledgments**
 
