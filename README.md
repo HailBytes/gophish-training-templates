@@ -294,12 +294,14 @@ We welcome contributions to improve and expand this template collection!
 <div align="center">
   <img src="subject_lines.jpg" alt="Security Policy Templates" width="100%" />
 </div>
+
 - [Subject Line Suggestions](campaign-guides/subject-lines-guide.md) - Proven effective subject lines
 
 
 <div align="center">
   <img src="best_practices.jpg" alt="Security Policy Templates" width="100%" />
 </div>
+
 - [Best Practices Guide](campaign-guides/best-practices-guide.md) - Campaign management tips
 
 ### 🔗 **Related Projects**
