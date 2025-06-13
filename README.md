@@ -8,6 +8,11 @@ A comprehensive collection of professionally designed email templates and landin
 
 ## 🎯 **What's Included**
 
+
+<div align="center">
+  <img src="travel_phishing.jpg" alt="Security Policy Templates" width="100%" />
+</div>
+
 ### 📧 **Email Templates (20+ Templates)**
 - **Realistic phishing scenarios** mimicking common attack vectors
 - **Corporate communication themes** (IT updates, HR notifications, security alerts)
@@ -17,6 +22,11 @@ A comprehensive collection of professionally designed email templates and landin
 - **Cloud service phishing** (Dropbox, Google Drive, Office 365)
 - **Multi-category coverage** for comprehensive training programs
 
+
+<div align="center">
+  <img src="corporate_education.jpg" alt="Security Policy Templates" width="100%" />
+</div>
+
 ### 🎓 **Educational Modules**
 - **Immediate learning opportunities** after simulation clicks
 - **Category-specific training** tailored to attack types
@@ -24,6 +34,11 @@ A comprehensive collection of professionally designed email templates and landin
 - **Real-world statistics** and impact data
 - **Actionable protection strategies** employees can implement
 - **Progressive difficulty levels** for ongoing education
+
+
+<div align="center">
+  <img src="credential_harvest.jpg" alt="Security Policy Templates" width="100%" />
+</div>
 
 ### 🎯 **Landing Pages**
 - **Credential harvesting pages** for testing user behavior
@@ -38,6 +53,11 @@ A comprehensive collection of professionally designed email templates and landin
 - Drop-in templates requiring minimal configuration
 - Modern GoPhish syntax with proper template variables
 - Mobile-responsive design for all screen sizes
+
+
+<div align="center">
+  <img src="best_practices.jpg" alt="Security Policy Templates" width="100%" />
+</div>
 
 ### 🎨 **Industry Best Practices**
 - Based on real-world attack patterns and methodologies
@@ -262,8 +282,24 @@ We welcome contributions to improve and expand this template collection!
 ## 📚 **Additional Resources**
 
 ### 📖 **Documentation**
+
+
+<div align="center">
+  <img src="implementation_guide.jpg" alt="Security Policy Templates" width="100%" />
+</div>
+
 - [Implementation Guide](campaign-guides/implementation-guide.md) - Detailed setup instructions
+
+
+<div align="center">
+  <img src="subject_lines.jpg" alt="Security Policy Templates" width="100%" />
+</div>
 - [Subject Line Suggestions](campaign-guides/subject-lines-guide.md) - Proven effective subject lines
+
+
+<div align="center">
+  <img src="best_practices.jpg" alt="Security Policy Templates" width="100%" />
+</div>
 - [Best Practices Guide](campaign-guides/best-practices-guide.md) - Campaign management tips
 
 ### 🔗 **Related Projects**
