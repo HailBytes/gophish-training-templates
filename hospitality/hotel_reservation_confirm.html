@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation Confirmation Required</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .tagline {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .confirmation-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .confirmation-box h3 {
+            margin: 0 0 8px 0;
+            color: #856404;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .confirmation-box p {
+            margin: 0;
+            color: #856404;
+            font-size: 14px;
+        }
+        .reservation-details {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .cta-button {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #1a252f;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Grand Hotel & Resorts</div>
+            <div class="tagline">Luxury Accommodations Worldwide</div>
+        </div>
+
+        <div class="content">
+            <div class="confirmation-box">
+                <h3>Reservation Confirmation Required</h3>
+                <p>Your booking needs verification to avoid cancellation</p>
+            </div>
+
+            <h1>Confirm Your Reservation</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>We're looking forward to welcoming you to Grand Hotel & Resorts. However, we need you to confirm your reservation details to ensure everything is in order for your arrival.</p>
+
+            <div class="reservation-details">
+                <div class="detail-row">
+                    <span style="font-weight: 600;">Confirmation Number:</span>
+                    <span>GH{{.Email | slice 0 8}}</span>
+                </div>
+                <div class="detail-row">
+                    <span style="font-weight: 600;">Guest Name:</span>
+                    <span>{{.FirstName}} {{.LastName}}</span>
+                </div>
+                <div class="detail-row">
+                    <span style="font-weight: 600;">Check-in:</span>
+                    <span>February 20, 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span style="font-weight: 600;">Check-out:</span>
+                    <span>February 23, 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span style="font-weight: 600;">Room Type:</span>
+                    <span>Deluxe King Suite</span>
+                </div>
+                <div class="detail-row">
+                    <span style="font-weight: 600;">Status:</span>
+                    <span style="color: #ff9800; font-weight: 600;">Pending Confirmation</span>
+                </div>
+            </div>
+
+            <p><strong>Why confirmation is needed:</strong></p>
+            <ul>
+                <li>Verify your payment method on file</li>
+                <li>Confirm special requests (early check-in, room preferences)</li>
+                <li>Update your loyalty program information</li>
+                <li>Ensure accuracy of contact details</li>
+            </ul>
+
+            <p><strong>Important:</strong> If not confirmed within 48 hours, your reservation may be automatically cancelled to make the room available for other guests.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Confirm Reservation</a>
+            </p>
+
+            <p>Need to make changes or have questions? Contact our Reservations Team:</p>
+            <p>Phone: (555) 444-5555<br>
+            Email: reservations@grandhotel.com<br>
+            Available 24/7</p>
+
+            <p>We look forward to hosting you!</p>
+
+            <p>Warm regards,<br>
+            <strong>Reservations Team</strong><br>
+            Grand Hotel & Resorts</p>
+        </div>
+
+        <div class="footer">
+            <p>This confirmation request was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">
+                Grand Hotel & Resorts | Luxury Hospitality Group<br>
+                © 2024 Grand Hotel & Resorts. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

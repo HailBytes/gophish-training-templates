@@ -13,14 +13,23 @@ A comprehensive collection of professionally designed email templates and landin
   <img src="travel_phishing.jpg" alt="Security Policy Templates" width="100%" />
 </div>
 
-### Email Templates (32 Templates)
+### Email Templates (45+ Templates Across 19 Industries)
 - Realistic phishing scenarios mimicking common attack vectors
 - Corporate communication themes (IT updates, HR notifications, security alerts)
 - Social engineering templates (delivery notifications, account suspensions, payment alerts)
 - Entertainment platform impersonations (Spotify, Starbucks)
 - Financial service attacks (banking, wire transfers, payment confirmations)
 - Cloud service phishing (Dropbox, Google Drive, Office 365)
-- Multi-category coverage for comprehensive training programs
+- **Healthcare**: HIPAA compliance, patient portals, insurance verification
+- **Education**: Student portals, financial aid, academic systems
+- **Manufacturing**: Supplier portals, vendor compliance, supply chain
+- **Legal**: Case management, confidential document sharing
+- **HR/Payroll**: Benefits enrollment, direct deposit, payroll systems
+- **Technology/SaaS**: API keys, developer portals, system updates
+- **Retail**: Loyalty programs, customer accounts, inventory systems
+- **Hospitality**: Hotel reservations, loyalty programs, booking systems
+- **Utilities**: Billing credits, service notifications, account management
+- Multi-industry coverage for comprehensive training programs
 
 
 <div align="center">
@@ -78,57 +87,41 @@ A comprehensive collection of professionally designed email templates and landin
 
 ```
 gophish-training-templates/
-├── delivery-shipping/
-│   ├── dhl_package.html
-│   ├── package_pickup.html
-│   └── education/
-│       └── delivery_phishing_education.html
-├── it-security/
-│   ├── email_issues.html
-│   ├── mailbox_compromised.html
-│   ├── email_size_limit.html
-│   ├── system_update.html
-│   ├── webmail_upgrade.html
-│   └── education/
-│       └── it_security_education.html
-├── cloud-services/
-│   ├── dropbox_share.html
-│   ├── google_drive.html
-│   └── education/
-│       └── cloud_services_education.html
-├── social-media/
-│   ├── linkedin_reminder.html
-│   └── education/
-│       └── social_media_education.html
-├── financial/
-│   ├── wire_transfer.html
-│   ├── skype_payment.html
-│   └── education/
-│       └── financial_education.html
-├── entertainment/
-│   ├── spotify_account.html
-│   ├── starbucks_gift.html
-│   └── education/
-│       └── entertainment_education.html
-├── corporate/
-│   ├── breaking_news.html
-│   ├── travel_agency.html
-│   └── education/
-│       └── corporate_education.html
-├── government/
-│   ├── fdic_survey.html
-│   ├── crime_report.html
-│   ├── better_business.html
-│   └── education/
-│       └── government_education.html
-├── microsoft/
-│   ├── microsoft_security.html
-│   └── education/
-│       └── microsoft_education.html
-├── landing-pages/
+├── delivery-shipping/          # Package delivery and shipping notifications
+├── it-security/                # IT security alerts and system updates
+├── cloud-services/             # Cloud platform phishing (Dropbox, Drive)
+├── social-media/               # Social media platform impersonations
+├── financial/                  # Banking and wire transfer scams
+├── entertainment/              # Entertainment service phishing
+├── corporate/                  # Corporate communications and news
+├── government/                 # Government agency impersonations
+├── microsoft/                  # Microsoft service themed templates
+├── healthcare/                 # HIPAA, patient portals, insurance
+│   ├── hipaa_compliance_alert.html
+│   ├── patient_portal_security.html
+│   └── insurance_verification.html
+├── education/                  # Student portals, financial aid
+│   ├── student_portal_lockout.html
+│   └── financial_aid_urgent.html
+├── manufacturing/              # Supply chain and vendor portals
+│   └── supplier_portal_update.html
+├── legal/                      # Case management, document sharing
+│   └── case_document_sharing.html
+├── hr-payroll/                 # Benefits, payroll, HR systems
+│   ├── payroll_direct_deposit.html
+│   └── benefits_enrollment.html
+├── technology/                 # API keys, developer portals
+│   └── api_key_expiration.html
+├── retail/                     # Loyalty programs, customer accounts
+│   └── loyalty_rewards_expiring.html
+├── hospitality/                # Hotel reservations, booking systems
+│   └── hotel_reservation_confirm.html
+├── utilities/                  # Power/utility billing and credits
+│   └── power_outage_credit.html
+├── landing-pages/              # Credential harvest & education pages
 │   ├── credential-harvest.html
 │   └── education-notification.html
-└── campaign-guides/
+└── campaign-guides/            # Implementation guides & best practices
     ├── implementation-guide.md
     ├── subject-lines-guide.md
     └── best-practices-guide.md
@@ -189,9 +182,13 @@ Establish current security awareness levels across your organization
 
 ### Department-Specific Training
 Focus on risks relevant to specific roles and departments
-- **IT Department:** Advanced technical phishing, software updates
-- **Finance Team:** Wire transfer scams, payment confirmations
-- **HR Personnel:** Resume attachments, employee-themed attacks
+- **IT Department:** Advanced technical phishing, software updates, API security
+- **Finance Team:** Wire transfer scams, payment confirmations, invoice fraud
+- **HR Personnel:** Benefits enrollment, payroll updates, employee verification
+- **Healthcare Workers:** HIPAA compliance, patient portal security, insurance verification
+- **Legal Teams:** Case management, confidential document sharing
+- **Manufacturing/Supply Chain:** Vendor portals, supplier compliance
+- **Customer Service:** Account verification, loyalty programs
 - **General Staff:** Social media, entertainment, delivery scams
 
 ### Progressive Difficulty

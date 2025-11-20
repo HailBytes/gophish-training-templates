@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Key Expiration Notice</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #252526;
+            border: 1px solid #3e3e42;
+        }
+        .header {
+            background-color: #007acc;
+            color: #ffffff;
+            padding: 24px 40px;
+            font-family: Arial, sans-serif;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .tagline {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+            font-family: Arial, sans-serif;
+        }
+        .warning-box {
+            background-color: #4a3c00;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 2px;
+        }
+        .warning-box h3 {
+            margin: 0 0 8px 0;
+            color: #ffa726;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .warning-box p {
+            margin: 0;
+            color: #ffcc80;
+            font-size: 14px;
+        }
+        .code-block {
+            background-color: #1e1e1e;
+            border: 1px solid #3e3e42;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block code {
+            color: #ce9178;
+            font-size: 13px;
+        }
+        .api-details {
+            background-color: #1e1e1e;
+            border: 1px solid #3e3e42;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .detail-line {
+            padding: 6px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+        }
+        .cta-button {
+            background-color: #007acc;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #005a9e;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #1e1e1e;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #858585;
+            line-height: 1.5;
+            border-top: 1px solid #3e3e42;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #d4d4d4;
+        }
+        p {
+            line-height: 1.6;
+            color: #cccccc;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 700px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Developer Platform API</div>
+            <div class="tagline">API Key Management</div>
+        </div>
+
+        <div class="content">
+            <div class="warning-box">
+                <h3>API Key Expiring in 7 Days</h3>
+                <p>Action required to prevent service disruption</p>
+            </div>
+
+            <h1>Renew Your API Key</h1>
+
+            <p>Hello {{.FirstName}},</p>
+
+            <p>Your API key is set to expire in 7 days. To prevent interruption of service to your applications, you must renew your key before the expiration date.</p>
+
+            <p><strong>API Key Details:</strong></p>
+
+            <div class="api-details">
+                <div class="detail-line"><span style="color: #569cd6;">Key ID:</span> <span style="color: #ce9178;">sk_live_{{.Email | slice 0 16}}</span></div>
+                <div class="detail-line"><span style="color: #569cd6;">Created:</span> <span style="color: #b5cea8;">2024-01-15</span></div>
+                <div class="detail-line"><span style="color: #569cd6;">Expires:</span> <span style="color: #f48771;">2025-02-07</span></div>
+                <div class="detail-line"><span style="color: #569cd6;">Status:</span> <span style="color: #ff9800;">Expiring Soon</span></div>
+            </div>
+
+            <p><strong>What happens if your key expires?</strong></p>
+            <ul>
+                <li>All API requests will be rejected with 401 Unauthorized</li>
+                <li>Your applications will lose access to our platform</li>
+                <li>Users will experience service disruptions</li>
+                <li>Webhook deliveries will fail</li>
+            </ul>
+
+            <p><strong>Renewal Process:</strong></p>
+            <p>1. Log in to your developer dashboard<br>
+            2. Navigate to API Keys section<br>
+            3. Click "Renew Key" next to the expiring key<br>
+            4. Update your applications with the new key</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Renew API Key Now</a>
+            </p>
+
+            <p><strong>Important:</strong> After renewal, update your applications with the new key. Both keys will be valid for 48 hours to allow for a smooth transition.</p>
+
+            <div class="code-block">
+                <code># Example: Update your API key in your application<br>
+API_KEY='your_new_api_key_here'<br>
+curl -H "Authorization: Bearer $API_KEY" https://api.platform.com/v1/</code>
+            </div>
+
+            <p>Need help? Visit our documentation at docs.platform.com or contact developer support at api-support@platform.com.</p>
+
+            <p>Best regards,<br>
+            <strong>Platform API Team</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>This notification was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">
+                Developer Platform | API Services<br>
+                © 2024 Platform Inc. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
