@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Document Sharing - Legal Matter</title>
+    <style>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #212121;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .firm-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .tagline {
+            font-size: 13px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .content {
+            padding: 40px;
+            font-family: Arial, sans-serif;
+        }
+        .confidential-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .confidential-box h3 {
+            margin: 0 0 8px 0;
+            color: #0d47a1;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .confidential-box p {
+            margin: 0;
+            color: #0d47a1;
+            font-size: 14px;
+        }
+        .matter-details {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .cta-button {
+            background-color: #1976d2;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #1565c0;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 11px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="firm-name">Smith & Associates LLP</div>
+            <div class="tagline">Attorneys at Law</div>
+        </div>
+
+        <div class="content">
+            <div class="confidential-box">
+                <h3>CONFIDENTIAL: Attorney-Client Privileged Communication</h3>
+                <p>Secure document access required</p>
+            </div>
+
+            <h1>Secure Document Access Request</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>We have uploaded confidential documents related to your legal matter to our secure client portal. These documents require your immediate review and digital signature.</p>
+
+            <div class="matter-details">
+                <p style="margin: 0; font-weight: 600;">Matter: Case #2024-{{.Email | slice 0 6}}</p>
+                <p style="margin: 8px 0 0 0;">Attorney: Michael Smith, Esq.</p>
+                <p style="margin: 8px 0 0 0;">Documents: 3 files pending review</p>
+                <p style="margin: 8px 0 0 0;">Action Required: Signature needed</p>
+            </div>
+
+            <p><strong>Documents available for review:</strong></p>
+            <ul>
+                <li>Settlement Agreement (Draft v3)</li>
+                <li>Client Consent Form</li>
+                <li>Confidential Disclosure Agreement</li>
+            </ul>
+
+            <p><strong>Important Deadline:</strong> Please review and sign these documents within 48 hours. Time-sensitive filing deadlines require your prompt attention to avoid complications with your case.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Access Secure Documents</a>
+            </p>
+
+            <p><strong>Security Notice:</strong> This link provides access to confidential attorney-client communications. Do not forward this email or share access credentials. The link will expire in 7 days for security purposes.</p>
+
+            <p>If you have questions or difficulty accessing the documents, please contact our office at (555) 987-6543 or legal@smithassociates.com.</p>
+
+            <p>Respectfully,<br>
+            <strong>Michael Smith, Esq.</strong><br>
+            Partner, Smith & Associates LLP</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>CONFIDENTIALITY NOTICE:</strong> This email and any attachments are confidential and may contain legally privileged information. If you are not the intended recipient, any disclosure, copying, distribution, or use of this communication is strictly prohibited. Please notify the sender immediately and delete this message.</p>
+            <p style="margin-top: 12px;">
+                Smith & Associates LLP | 789 Legal Plaza, Suite 1200<br>
+                © 2024 Smith & Associates LLP. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

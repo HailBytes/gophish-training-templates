@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal Security Alert</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #00796b;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .tagline {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .security-alert {
+            background-color: #fee;
+            border-left: 4px solid #d32f2f;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .security-alert h3 {
+            margin: 0 0 8px 0;
+            color: #b71c1c;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .security-alert p {
+            margin: 0;
+            color: #b71c1c;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .activity-box {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .activity-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        .activity-label {
+            font-weight: 600;
+            color: #333333;
+        }
+        .activity-value {
+            color: #666666;
+        }
+        .cta-button {
+            background-color: #d32f2f;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #b71c1c;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">MyHealth Patient Portal</div>
+            <div class="tagline">Secure access to your medical records</div>
+        </div>
+
+        <div class="content">
+            <div class="security-alert">
+                <h3>Security Alert: Unusual Account Activity</h3>
+                <p>We detected login attempts from an unrecognized device</p>
+            </div>
+
+            <h1>Verify Your Account Activity</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>Our security systems detected unusual activity on your MyHealth Patient Portal account. As a precaution, we've temporarily restricted access until you verify your identity.</p>
+
+            <p><strong>Suspicious Activity Detected:</strong></p>
+
+            <div class="activity-box">
+                <div class="activity-item">
+                    <span class="activity-label">Date/Time:</span>
+                    <span class="activity-value">Today, 3:42 AM EST</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-label">Location:</span>
+                    <span class="activity-value">Unknown (IP: 185.220.xxx.xxx)</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-label">Device:</span>
+                    <span class="activity-value">Unrecognized device</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-label">Status:</span>
+                    <span class="activity-value" style="color: #d32f2f; font-weight: 600;">Blocked - Verification Required</span>
+                </div>
+            </div>
+
+            <p><strong>Your Account Status:</strong></p>
+            <p>Your patient portal account has been temporarily locked to protect your medical records and personal health information. To restore access, you must verify your identity immediately.</p>
+
+            <p><strong>What Information May Be At Risk:</strong></p>
+            <ul>
+                <li>Medical history and current diagnoses</li>
+                <li>Prescription medication records</li>
+                <li>Laboratory and test results</li>
+                <li>Insurance and billing information</li>
+                <li>Appointment schedules and provider notes</li>
+            </ul>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Verify Identity & Restore Access</a>
+            </p>
+
+            <p>If you did not attempt to access your account from this location, your credentials may have been compromised. Please verify your account immediately to prevent unauthorized access to your medical records.</p>
+
+            <p><strong>Important:</strong> Failure to verify within 24 hours will result in permanent account suspension pending manual identity verification at our Patient Services desk.</p>
+
+            <p>For immediate assistance, contact Patient Portal Support:<br>
+            Phone: (800) 555-HEALTH<br>
+            Hours: Monday-Friday, 8:00 AM - 6:00 PM EST</p>
+
+            <p>Thank you for helping us protect your healthcare information.</p>
+
+            <p>Sincerely,<br>
+            <strong>MyHealth Security Team</strong><br>
+            Patient Portal Services</p>
+        </div>
+
+        <div class="footer">
+            <p>This security alert was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">
+                MyHealth Patient Portal | Medical Center Health System<br>
+                © 2024 MyHealth. All rights reserved. | <a href="#" style="color: #00796b;">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

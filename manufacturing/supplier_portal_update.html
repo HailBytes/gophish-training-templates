@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Portal - Action Required</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #37474f;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .alert-box h3 {
+            margin: 0 0 8px 0;
+            color: #856404;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .alert-box p {
+            margin: 0;
+            color: #856404;
+            font-size: 14px;
+        }
+        .supplier-info {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .cta-button {
+            background-color: #37474f;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #263238;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Manufacturing Corp Supplier Portal</div>
+        </div>
+
+        <div class="content">
+            <div class="alert-box">
+                <h3>Supplier Compliance Update Required</h3>
+                <p>Annual vendor certification deadline approaching</p>
+            </div>
+
+            <h1>Update Your Supplier Information</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>As part of our annual supplier compliance review, all vendors must update and certify their information in our Supplier Portal by February 15, 2025.</p>
+
+            <div class="supplier-info">
+                <p style="margin: 0; font-weight: 600;">Vendor ID: SUP-{{.Email | slice 0 8}}</p>
+                <p style="margin: 8px 0 0 0;">Company: {{.Company}}</p>
+                <p style="margin: 8px 0 0 0; color: #d32f2f; font-weight: 600;">Certification Status: INCOMPLETE</p>
+            </div>
+
+            <p><strong>Required Updates:</strong></p>
+            <ul>
+                <li>W-9 tax form and certifications</li>
+                <li>Insurance certificates (updated)</li>
+                <li>Banking information for ACH payments</li>
+                <li>Quality management system documentation</li>
+                <li>Safety compliance certifications</li>
+            </ul>
+
+            <p><strong>Important:</strong> Suppliers who do not complete this update by the deadline will be placed on hold status and cannot receive new purchase orders until compliance is verified.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Update Supplier Information</a>
+            </p>
+
+            <p>For questions, contact Supplier Relations at supplier-support@manufacturing.com or call (555) 789-0123.</p>
+
+            <p>Thank you for your partnership,<br>
+            <strong>Procurement Department</strong><br>
+            Manufacturing Corp</p>
+        </div>
+
+        <div class="footer">
+            <p>This notice was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">
+                Manufacturing Corp | Supplier Relations<br>
+                © 2024 Manufacturing Corp. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

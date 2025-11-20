@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Coverage Verification Required</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #1565c0;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .notice-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1565c0;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .notice-box h3 {
+            margin: 0 0 8px 0;
+            color: #0d47a1;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .notice-box p {
+            margin: 0;
+            color: #0d47a1;
+            font-size: 14px;
+        }
+        .policy-info {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #333333;
+        }
+        .info-value {
+            color: #666666;
+        }
+        .cta-button {
+            background-color: #1565c0;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #0d47a1;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">HealthCare Insurance Group</div>
+        </div>
+
+        <div class="content">
+            <div class="notice-box">
+                <h3>Annual Coverage Verification Required</h3>
+                <p>Action needed to maintain continuous coverage</p>
+            </div>
+
+            <h1>Verify Your Insurance Information</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>As part of our annual verification process, we need you to confirm your current insurance information to ensure uninterrupted coverage and accurate billing.</p>
+
+            <p><strong>Your Current Policy Information:</strong></p>
+
+            <div class="policy-info">
+                <div class="info-row">
+                    <span class="info-label">Policy Holder:</span>
+                    <span class="info-value">{{.FirstName}} {{.LastName}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Policy Number:</span>
+                    <span class="info-value">HC-{{.Email | slice 0 8}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Coverage Type:</span>
+                    <span class="info-value">Individual Health Plan</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Verification Status:</span>
+                    <span class="info-value" style="color: #d32f2f; font-weight: 600;">Pending - Action Required</span>
+                </div>
+            </div>
+
+            <p><strong>Why is this verification necessary?</strong></p>
+            <ul>
+                <li>Federal healthcare regulations require annual confirmation</li>
+                <li>Ensure your coverage details are current and accurate</li>
+                <li>Prevent claim denials due to outdated information</li>
+                <li>Verify beneficiary and dependent information</li>
+                <li>Update payment method if needed</li>
+            </ul>
+
+            <p><strong>What you need to verify:</strong></p>
+            <ul>
+                <li>Current mailing and contact information</li>
+                <li>Employment status (if applicable)</li>
+                <li>Dependent coverage details</li>
+                <li>Preferred pharmacy network</li>
+                <li>Primary care provider selection</li>
+            </ul>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Complete Verification Now</a>
+            </p>
+
+            <p><strong>Important Deadline:</strong> Please complete this verification within 10 days. Failure to verify your information may result in temporary suspension of benefits or coverage gaps that could affect your claims processing.</p>
+
+            <p>The verification process takes approximately 5 minutes. You will need:</p>
+            <ul>
+                <li>Your policy number (shown above)</li>
+                <li>Current photo ID</li>
+                <li>Recent proof of address</li>
+            </ul>
+
+            <p>If you have questions or need assistance, please contact our Member Services team at (800) 555-CARE or visit your local office.</p>
+
+            <p>Thank you for your prompt attention to this matter.</p>
+
+            <p>Sincerely,<br>
+            <strong>Member Services Department</strong><br>
+            HealthCare Insurance Group</p>
+        </div>
+
+        <div class="footer">
+            <p>This notice was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">
+                HealthCare Insurance Group | 456 Insurance Plaza<br>
+                © 2024 HealthCare Insurance Group. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

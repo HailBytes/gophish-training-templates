@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIPAA Compliance - Action Required</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #005eb8;
+            color: #ffffff;
+            padding: 24px 40px;
+            text-align: center;
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .header-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .alert-box h3 {
+            margin: 0 0 8px 0;
+            color: #856404;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .alert-box p {
+            margin: 0;
+            color: #856404;
+            font-size: 14px;
+        }
+        .compliance-info {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .compliance-info ul {
+            margin: 12px 0 0 0;
+            padding-left: 20px;
+        }
+        .compliance-info li {
+            margin: 8px 0;
+            color: #333333;
+        }
+        .cta-button {
+            background-color: #005eb8;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #004a94;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">HIPAA Compliance Office</div>
+            <div class="header-subtitle">Health Information Privacy & Security</div>
+        </div>
+
+        <div class="content">
+            <div class="alert-box">
+                <h3>Mandatory HIPAA Compliance Training Required</h3>
+                <p>Annual recertification deadline: 72 hours</p>
+            </div>
+
+            <h1>Action Required: HIPAA Compliance Recertification</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>As required by federal law and organizational policy, all healthcare personnel with access to Protected Health Information (PHI) must complete annual HIPAA compliance recertification.</p>
+
+            <p><strong>Your Current Status:</strong></p>
+
+            <div class="compliance-info">
+                <p style="margin: 0; font-weight: 600; color: #d00000;">COMPLIANCE STATUS: EXPIRED</p>
+                <p style="margin: 8px 0 0 0; font-size: 14px;">Last certification: January 2024<br>
+                Expiration date: January 2025<br>
+                Days overdue: 15</p>
+            </div>
+
+            <p><strong>Required Actions:</strong></p>
+
+            <div class="compliance-info">
+                <ul>
+                    <li>Review updated HIPAA Privacy Rule requirements</li>
+                    <li>Complete security awareness assessment</li>
+                    <li>Acknowledge PHI handling procedures</li>
+                    <li>Verify current contact information</li>
+                    <li>Complete compliance certification exam</li>
+                </ul>
+            </div>
+
+            <p><strong>Consequences of Non-Compliance:</strong></p>
+            <p>Failure to complete recertification within 72 hours will result in:</p>
+            <ul>
+                <li>Immediate suspension of EHR system access</li>
+                <li>Temporary revocation of facility access credentials</li>
+                <li>Mandatory in-person compliance training</li>
+                <li>Documentation in personnel file</li>
+            </ul>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Complete HIPAA Recertification</a>
+            </p>
+
+            <p>This training typically takes 25-30 minutes to complete. Your progress will be saved if you need to complete it in multiple sessions.</p>
+
+            <p>If you have questions about this requirement, please contact the Compliance Office at compliance@healthcare.org or extension 4500.</p>
+
+            <p>Thank you for your commitment to patient privacy and data security.</p>
+
+            <p>Sincerely,<br>
+            <strong>Healthcare Compliance Office</strong><br>
+            HIPAA Privacy & Security Division</p>
+        </div>
+
+        <div class="footer">
+            <p>This email was sent to {{.Email}} as part of our mandatory HIPAA compliance program.</p>
+            <p style="margin-top: 12px;">
+                Healthcare Organization | 123 Medical Center Drive<br>
+                © 2024 Healthcare Compliance Office. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

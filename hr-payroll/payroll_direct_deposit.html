@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll - Direct Deposit Verification</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #1976d2;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .alert-box h3 {
+            margin: 0 0 8px 0;
+            color: #856404;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .alert-box p {
+            margin: 0;
+            color: #856404;
+            font-size: 14px;
+        }
+        .payroll-info {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .cta-button {
+            background-color: #1976d2;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #1565c0;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Human Resources - Payroll Services</div>
+        </div>
+
+        <div class="content">
+            <div class="alert-box">
+                <h3>Direct Deposit Verification Required</h3>
+                <p>Annual banking information update</p>
+            </div>
+
+            <h1>Verify Your Direct Deposit Information</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>As part of our annual payroll audit and compliance review, all employees must verify their direct deposit information to ensure accurate payment processing.</p>
+
+            <div class="payroll-info">
+                <p style="margin: 0; font-weight: 600;">Employee ID: EMP-{{.Email | slice 0 6}}</p>
+                <p style="margin: 8px 0 0 0;">Current Direct Deposit: Active</p>
+                <p style="margin: 8px 0 0 0; color: #d32f2f; font-weight: 600;">Verification Status: PENDING</p>
+            </div>
+
+            <p><strong>Why is this verification necessary?</strong></p>
+            <ul>
+                <li>Comply with federal banking regulations</li>
+                <li>Prevent payroll processing delays</li>
+                <li>Ensure accurate deposit routing</li>
+                <li>Update any changed banking information</li>
+            </ul>
+
+            <p><strong>Deadline:</strong> Please complete verification within 5 business days. Unverified accounts will temporarily receive paper checks until verification is complete.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Verify Direct Deposit</a>
+            </p>
+
+            <p>For questions, contact Payroll Services at payroll@company.com or extension 4200.</p>
+
+            <p>Thank you,<br>
+            <strong>Payroll Services Department</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>This notice was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">© 2024 Company HR Department. All rights reserved.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

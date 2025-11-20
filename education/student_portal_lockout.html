@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal Account Alert</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #8b0000;
+            color: #ffffff;
+            padding: 24px 40px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .alert-box h3 {
+            margin: 0 0 8px 0;
+            color: #856404;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .alert-box p {
+            margin: 0;
+            color: #856404;
+            font-size: 14px;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .cta-button {
+            background-color: #8b0000;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #660000;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">University Portal</div>
+            <div class="tagline">Student Information System</div>
+        </div>
+
+        <div class="content">
+            <div class="alert-box">
+                <h3>Account Access Suspended</h3>
+                <p>Immediate action required to restore portal access</p>
+            </div>
+
+            <h1>Verify Your Student Account</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>Your student portal account has been temporarily suspended due to incomplete identity verification required by the Family Educational Rights and Privacy Act (FERPA).</p>
+
+            <p><strong>Affected Services:</strong></p>
+            <ul>
+                <li>Course registration and schedule access</li>
+                <li>Grade viewing and academic records</li>
+                <li>Financial aid status and billing information</li>
+                <li>Campus housing and meal plan management</li>
+                <li>Library resources and online databases</li>
+                <li>Email and campus communication systems</li>
+            </ul>
+
+            <div class="info-box">
+                <p style="margin: 0; font-weight: 600;">Student ID: UNIV-{{.Email | slice 0 8}}</p>
+                <p style="margin: 8px 0 0 0;">Email: {{.Email}}</p>
+                <p style="margin: 8px 0 0 0; color: #d32f2f; font-weight: 600;">Status: SUSPENDED - Verification Required</p>
+            </div>
+
+            <p><strong>Why is this verification necessary?</strong></p>
+            <p>Recent federal regulations require all educational institutions to re-verify student identity information annually. This process ensures the security of your academic records and personal information.</p>
+
+            <p><strong>Verification Deadline:</strong> You must complete this verification within 48 hours to avoid:</p>
+            <ul>
+                <li>Inability to register for upcoming semester courses</li>
+                <li>Loss of access to academic transcripts</li>
+                <li>Delays in financial aid processing</li>
+                <li>Holds placed on your student account</li>
+            </ul>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Verify Account Now</a>
+            </p>
+
+            <p>The verification process takes approximately 3-5 minutes. You will need:</p>
+            <ul>
+                <li>Your student ID number (shown above)</li>
+                <li>Date of birth</li>
+                <li>Last four digits of SSN or student ID</li>
+            </ul>
+
+            <p>If you have questions or need technical assistance, please contact the IT Help Desk:</p>
+            <p>Phone: (555) 123-4567<br>
+            Email: helpdesk@university.edu<br>
+            Hours: Monday-Friday, 8:00 AM - 5:00 PM</p>
+
+            <p>Sincerely,<br>
+            <strong>Office of the Registrar</strong><br>
+            University Student Services</p>
+        </div>
+
+        <div class="footer">
+            <p>This notification was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">
+                University Portal | Office of the Registrar<br>
+                © 2024 University. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

@@ -15,7 +15,12 @@ grep -r "🎯\|🔒\|⚠️\|📧\|💰\|🎵\|☕\|🏛️\|📰\|🚨" --inclu
 
 List all email templates:
 ```bash
-find . -name "*.html" -not -path "*/education/*" -not -path "*/landing-pages/*" | sort
+find . -name "*.html" -not -path "*/education/*" -not -path "*/landing-pages/*" -not -path "*/.git/*" | sort
+```
+
+List templates by industry:
+```bash
+for dir in healthcare education manufacturing legal hr-payroll technology retail hospitality utilities; do echo "=== $dir ==="; find "$dir" -name "*.html" 2>/dev/null; done
 ```
 
 List all landing pages:
@@ -76,7 +81,9 @@ wc -w campaign-guides/*.md
 
 ### Template Categories
 
-Current template structure:
+Current template structure (19 industries, 45+ templates):
+
+**Original Categories:**
 - delivery-shipping/ - Package delivery themed templates
 - it-security/ - IT security alerts and system updates
 - cloud-services/ - Cloud platform phishing (Dropbox, Google Drive)
@@ -86,6 +93,19 @@ Current template structure:
 - corporate/ - Corporate communications and news
 - government/ - Government agency impersonations
 - microsoft/ - Microsoft service themed templates
+
+**Industry-Specific Categories:**
+- healthcare/ - HIPAA compliance, patient portals, insurance (3 templates)
+- education/ - Student portals, financial aid, academic systems (2 templates)
+- manufacturing/ - Supplier portals, vendor compliance (1 template)
+- legal/ - Case management, confidential documents (1 template)
+- hr-payroll/ - Benefits, payroll, direct deposit (2 templates)
+- technology/ - API keys, developer portals, SaaS (1 template)
+- retail/ - Loyalty programs, customer accounts (1 template)
+- hospitality/ - Hotel reservations, booking systems (1 template)
+- utilities/ - Power/utility billing, service credits (1 template)
+
+**Landing Pages:**
 - landing-pages/ - Credential harvest and education pages
 
 ### Development Workflow

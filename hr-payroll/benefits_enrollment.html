@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits Enrollment Deadline</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #00796b;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .urgent-box {
+            background-color: #fee;
+            border-left: 4px solid #d32f2f;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .urgent-box h3 {
+            margin: 0 0 8px 0;
+            color: #b71c1c;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .urgent-box p {
+            margin: 0;
+            color: #b71c1c;
+            font-size: 14px;
+        }
+        .benefits-box {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .cta-button {
+            background-color: #d32f2f;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #b71c1c;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Employee Benefits Enrollment</div>
+        </div>
+
+        <div class="content">
+            <div class="urgent-box">
+                <h3>URGENT: Benefits Enrollment Ends in 48 Hours</h3>
+                <p>You have not completed your enrollment - Coverage at risk</p>
+            </div>
+
+            <h1>Complete Your Benefits Enrollment Now</h1>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>Our records show you have not completed your annual benefits enrollment. The enrollment window closes in 48 hours. If you do not enroll by the deadline, you will lose coverage for the entire year.</p>
+
+            <div class="benefits-box">
+                <p style="margin: 0; font-weight: 600;">Enrollment Period: Open Now</p>
+                <p style="margin: 8px 0 0 0;">Deadline: January 31, 2025 at 11:59 PM</p>
+                <p style="margin: 8px 0 0 0; color: #d32f2f; font-weight: 600;">Your Status: NOT ENROLLED</p>
+            </div>
+
+            <p><strong>Benefits Available:</strong></p>
+            <ul>
+                <li>Medical, dental, and vision insurance</li>
+                <li>Life and disability insurance</li>
+                <li>401(k) retirement savings plan</li>
+                <li>Flexible spending accounts (FSA/HSA)</li>
+                <li>Paid time off and sick leave</li>
+            </ul>
+
+            <p><strong>Important:</strong> If you miss this deadline, you cannot enroll until next year's open enrollment period, unless you experience a qualifying life event.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Complete Enrollment Now</a>
+            </p>
+
+            <p>The enrollment process takes approximately 15 minutes. If you need assistance, contact HR Benefits at benefits@company.com or call (555) 123-4567.</p>
+
+            <p>Best regards,<br>
+            <strong>Human Resources Benefits Team</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>This urgent notice was sent to {{.Email}}</p>
+            <p style="margin-top: 12px;">© 2024 Company HR Department. All rights reserved.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
