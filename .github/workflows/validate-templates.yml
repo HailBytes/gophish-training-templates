@@ -1,0 +1,260 @@
+name: Validate Templates
+
+on:
+  pull_request:
+    paths:
+      - "**/*.html"
+      - "**/metadata.json"
+      - "tools/validate_templates.py"
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - "**/*.html"
+      - "**/metadata.json"
+      - "tools/validate_templates.py"
+  workflow_dispatch:  # Allow manual runs
+
+jobs:
+  validate:
+    name: Template Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run template validator
+        id: validate
+        run: |
+          python3 tools/validate_templates.py --verbose 2>&1 | tee validation_output.txt
+          exit ${PIPESTATUS[0]}
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: validation_output.txt
+          retention-days: 14
+
+      - name: Post PR comment on failure
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('validation_output.txt', 'utf8');
+
+            // Extract just errors and warnings for the comment
+            const lines = output.split('\n');
+            const issues = lines.filter(l =>
+              l.includes('ERROR') || l.includes('WARN') || l.includes('FAIL') || l.includes('✗')
+            ).slice(0, 50);  // Limit to 50 lines
+
+            const body = [
+              '## ❌ Template Validation Failed',
+              '',
+              'The automated template validator found issues with one or more templates in this PR.',
+              'Please fix these before merging:',
+              '',
+              '```',
+              issues.join('\n') || output.slice(0, 2000),
+              '```',
+              '',
+              '**To fix locally:**',
+              '```bash',
+              'python3 tools/validate_templates.py --verbose',
+              '```',
+              '',
+              'See [CONTRIBUTING.md](CONTRIBUTING.md) for the submission checklist.',
+            ].join('\n');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body,
+            });
+
+      - name: Post PR comment on success
+        if: success() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('validation_output.txt', 'utf8');
+
+            // Extract summary line
+            const summaryMatch = output.match(/Summary:.*\n[\s\S]*?─+/);
+            const summary = summaryMatch ? summaryMatch[0] : 'All templates passed validation.';
+
+            // Count warnings
+            const warnCount = (output.match(/WARN/g) || []).length;
+            const warnNote = warnCount > 0
+              ? `\n> ⚠️ ${warnCount} warning(s) found — not blocking but worth reviewing.`
+              : '';
+
+            const body = [
+              '## ✅ Template Validation Passed',
+              '',
+              'All templates in this PR passed the automated validation checks.',
+              warnNote,
+              '',
+              '**Checks performed:**',
+              '- ✓ GoPhish variables present (`{{.URL}}`, `{{.Tracker}}`)',
+              '- ✓ Mobile viewport meta tag',
+              '- ✓ HTML structure validity',
+              '- ✓ Education page exists',
+              '- ✓ Metadata.json coverage',
+            ].join('\n');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body,
+            });
+
+  lint-metadata:
+    name: Validate metadata.json files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate all metadata.json files are valid JSON
+        run: |
+          EXIT_CODE=0
+          find . -name "metadata.json" -not -path "*/.git/*" | while read f; do
+            if python3 -c "import json; json.load(open('$f'))" 2>/dev/null; then
+              echo "✓ $f"
+            else
+              echo "✗ INVALID JSON: $f"
+              EXIT_CODE=1
+            fi
+          done
+          exit $EXIT_CODE
+
+      - name: Check required metadata fields
+        run: |
+          python3 - << 'EOF'
+          import json
+          import sys
+          from pathlib import Path
+
+          ROOT = Path(".")
+          errors = []
+          required_template_fields = ["filename", "name", "attack_vector", "difficulty",
+                                       "gophish_variables", "suggested_subject_lines"]
+          valid_difficulties = {"beginner", "intermediate", "advanced"}
+          valid_attack_vectors = {"credential_harvest", "malware_delivery",
+                                   "information_gathering", "awareness_only"}
+
+          for meta_file in sorted(ROOT.rglob("metadata.json")):
+              if ".git" in str(meta_file):
+                  continue
+              try:
+                  data = json.loads(meta_file.read_text())
+              except json.JSONDecodeError as e:
+                  errors.append(f"{meta_file}: Invalid JSON — {e}")
+                  continue
+
+              for i, tmpl in enumerate(data.get("templates", [])):
+                  label = f"{meta_file}[{i}] ({tmpl.get('filename', '?')})"
+                  for field in required_template_fields:
+                      if not tmpl.get(field):
+                          errors.append(f"{label}: Missing required field '{field}'")
+
+                  diff = tmpl.get("difficulty", "")
+                  if diff and diff not in valid_difficulties:
+                      errors.append(f"{label}: Invalid difficulty '{diff}' — must be one of {valid_difficulties}")
+
+                  av = tmpl.get("attack_vector", "")
+                  if av and av not in valid_attack_vectors:
+                      errors.append(f"{label}: Invalid attack_vector '{av}' — must be one of {valid_attack_vectors}")
+
+                  # Verify referenced HTML file exists
+                  fname = tmpl.get("filename", "")
+                  if fname:
+                      expected = meta_file.parent / fname
+                      if not expected.exists():
+                          errors.append(f"{label}: Referenced file '{fname}' does not exist")
+
+          if errors:
+              print("Metadata validation errors:")
+              for e in errors:
+                  print(f"  ✗ {e}")
+              sys.exit(1)
+          else:
+              print(f"✓ All metadata.json files are valid")
+          EOF
+
+  check-new-templates:
+    name: Check PR adds education page and metadata
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.base_ref }}
+
+      - name: Check new templates have required companions
+        run: |
+          python3 - << 'EOF'
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          ROOT = Path(".")
+          SKIP = {".git", "tools", "campaign-guides", "landing-pages"}
+          EDUCATION_DIRS = {"education"}
+
+          # Get new HTML files added in this PR
+          result = subprocess.run(
+              ["git", "diff", "--name-only", "--diff-filter=A",
+               f"origin/${{ github.base_ref }}...HEAD"],
+              capture_output=True, text=True
+          )
+          new_files = [Path(f) for f in result.stdout.strip().split("\n") if f.endswith(".html")]
+
+          warnings = []
+          for f in new_files:
+              parts_set = set(f.parts)
+              if SKIP & parts_set:
+                  continue
+              if any(p in EDUCATION_DIRS for p in f.parts):
+                  continue  # Is itself an education page
+
+              # Check for education directory
+              edu_dir = ROOT / f.parent / "education"
+              if not edu_dir.exists():
+                  warnings.append(f"⚠️  {f}: No education/ directory in category — please add educational content")
+              elif not list(edu_dir.glob("*.html")):
+                  warnings.append(f"⚠️  {f}: education/ directory exists but has no HTML files")
+
+              # Check for metadata
+              meta = ROOT / f.parent / "metadata.json"
+              if not meta.exists():
+                  warnings.append(f"⚠️  {f}: No metadata.json found — please add template metadata")
+
+          if warnings:
+              print("New template companion checks:")
+              for w in warnings:
+                  print(f"  {w}")
+              print()
+              print("These are warnings, not errors. Consider adding the missing files before merging.")
+              # Don't fail — just inform
+          else:
+              print("✓ All new templates have education pages and metadata")
+          EOF

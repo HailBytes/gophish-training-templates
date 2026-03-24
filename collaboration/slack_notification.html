@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack: You have a new direct message</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f4f4f4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+        .header { background: #4A154B; padding: 20px 30px; display: flex; align-items: center; }
+        .header svg { width: 32px; height: 32px; }
+        .header span { color: white; font-size: 22px; font-weight: 700; margin-left: 12px; letter-spacing: -0.5px; }
+        .content { padding: 32px 30px; }
+        .message-preview { border-left: 4px solid #4A154B; padding: 16px 20px; background: #f9f5f9; border-radius: 0 6px 6px 0; margin: 24px 0; }
+        .sender { font-weight: 700; color: #1d1c1d; font-size: 15px; }
+        .workspace { color: #616061; font-size: 14px; margin-top: 2px; }
+        .msg-text { color: #1d1c1d; margin-top: 10px; font-size: 14px; line-height: 1.5; }
+        .cta-button { display: inline-block; background: #4A154B; color: white; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 15px; margin: 10px 0; }
+        .footer { font-size: 12px; color: #888; margin-top: 30px; border-top: 1px solid #e8e8e8; padding-top: 20px; }
+        p { color: #1d1c1d; font-size: 15px; line-height: 1.6; margin: 0 0 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.712 13.677c0 2.143-1.74 3.884-3.883 3.884-2.143 0-3.884-1.74-3.884-3.884 0-2.142 1.74-3.883 3.884-3.883 2.143 0 3.883 1.74 3.883 3.883z" fill="#ECB22E"/>
+                <path d="M26.826 13.677c0 2.143-1.74 3.884-3.883 3.884H19.712V9.794h3.231c2.143 0 3.883 1.74 3.883 3.883z" fill="#ECB22E"/>
+                <path d="M13.829 20.79c-2.143 0-3.884-1.74-3.884-3.884s1.74-3.883 3.884-3.883v7.768z" fill="#E01E5A"/>
+                <path d="M13.829 27.902c-2.143 0-3.884-1.74-3.884-3.883 0-2.143 1.74-3.884 3.884-3.884h3.231v3.884c0 2.143-1.74 3.883-3.231 3.883z" fill="#E01E5A"/>
+            </svg>
+            <span>Slack</span>
+        </div>
+
+        <div class="content">
+            <p>Hi {{.FirstName}},</p>
+
+            <p>You have an unread direct message waiting for you in Slack. Your workspace admin has flagged this message as urgent.</p>
+
+            <div class="message-preview">
+                <div class="sender">Alex Rivera <span style="color:#888; font-weight:400;">— IT Workspace Admin</span></div>
+                <div class="workspace">Your Company Workspace</div>
+                <div class="msg-text">
+                    "Hey {{.FirstName}}, quick heads up — we're doing an account audit this afternoon. I need you to verify your Slack credentials before 3pm or your account access will be paused during the review. Click below to confirm."
+                </div>
+            </div>
+
+            <p>To view and respond to this message, sign in to your Slack workspace:</p>
+
+            <p style="text-align: center; margin: 28px 0;">
+                <a href="{{.URL}}" class="cta-button">Open in Slack</a>
+            </p>
+
+            <p>This link will expire in 24 hours.</p>
+
+            <div class="footer">
+                <p style="font-size:12px; color:#888;">You're receiving this email because {{.Email}} is registered with Slack.<br>
+                Slack Technologies, 500 Howard Street, San Francisco, CA 94105</p>
+            </div>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

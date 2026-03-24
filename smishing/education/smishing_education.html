@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Smishing (SMS Phishing)</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        .stat-box { background: #e9ecef; border-radius: 8px; padding: 16px 20px; margin: 12px 0; display: flex; align-items: center; gap: 16px; }
+        .stat-num { font-size: 32px; font-weight: 700; color: #dc3545; min-width: 80px; text-align: center; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Smishing (SMS Phishing) — Training</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You encountered a simulated smishing attack.</strong><br>
+                Smishing attacks arrive as text messages (SMS) — not just email. They use the same social engineering techniques but are often harder to spot on a small screen.
+            </div>
+        </div>
+
+        <section>
+            <h2>📊 Why Smishing Is Growing Fast</h2>
+            <div class="stat-box">
+                <div class="stat-num">98%</div>
+                <div>SMS open rate — compared to ~20% for email. Attackers know your texts get read.</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">3×</div>
+                <div>Higher click rate on mobile phishing links vs desktop, due to smaller screens hiding URLs.</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">1 in 3</div>
+                <div>US adults report receiving a smishing text in any given month (2023 Proofpoint data).</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎭 Most Common Smishing Scenarios</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Package delivery:</strong> "Your USPS/FedEx/UPS package couldn't be delivered — reschedule here" (especially effective since everyone orders online)</li>
+                    <li><strong>Bank fraud alerts:</strong> "Suspicious transaction blocked — verify now" using fear of financial loss</li>
+                    <li><strong>Government impersonation:</strong> IRS, Social Security, DMV, Customs — unpaid fees, refunds, or arrest warrants</li>
+                    <li><strong>Prize/lottery scams:</strong> "You've won — click to claim before it expires"</li>
+                    <li><strong>Corporate IT:</strong> "Your VPN certificate is expiring — renew via this link"</li>
+                    <li><strong>Two-factor code requests:</strong> "We need to verify your identity — click here to confirm your 2FA code"</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 How to Spot Smishing</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Unexpected messages:</strong> Real delivery companies only text if you specifically signed up for alerts</li>
+                    <li><strong>Shortened or suspicious URLs:</strong> <code>bit.ly/delivery</code> or <code>usps-track.net</code> instead of <code>usps.com</code></li>
+                    <li><strong>Urgency + financial threat:</strong> "Act now or your account is suspended / package returned / fee charged"</li>
+                    <li><strong>Unknown sender numbers:</strong> Often overseas numbers or short codes not associated with the real company</li>
+                    <li><strong>Grammar and formatting:</strong> Unusual capitalization, awkward phrasing, generic greetings</li>
+                    <li><strong>Requests for credentials or payment:</strong> Legitimate services handle these in-app or on their verified website</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ How to Stay Safe from Smishing</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Never click links in unexpected texts</strong> — go directly to the company's website or app to check status</li>
+                    <li><strong>Verify via official channels:</strong> For package alerts, use the tracking number on the carrier's official app/website</li>
+                    <li><strong>Don't reply or call back</strong> unknown numbers — this confirms your number is active</li>
+                    <li><strong>Report smishing to your carrier:</strong> Forward suspicious texts to <strong>7726 (SPAM)</strong> — works on all major US carriers</li>
+                    <li><strong>Report to IT Security</strong> if you receive a work-related smishing text</li>
+                    <li><strong>Use your phone's built-in spam filtering</strong> (iOS/Android both have SMS filtering features)</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive a text from an unknown number saying your Chase account has been locked due to suspicious activity and you must click a link to verify. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link since your account might be locked</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Call the number on the back of your Chase card or log into the Chase app directly</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply "STOP" to unsubscribe</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Ignore it and wait to see if your card gets declined</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Always verify bank alerts by going directly to the official app or calling the number on your card. Never click links in texts about financial accounts. Replying "STOP" to a smishing text may confirm your number is active.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Smishing is one of the fastest-growing attack vectors. Treat unexpected texts with the same skepticism as suspicious emails.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

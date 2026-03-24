@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Required: Re-enroll in Multi-Factor Authentication</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: 'Segoe UI', Arial, Helvetica, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+        .header { background: #0078D4; padding: 20px 28px; }
+        .header-title { color: white; font-size: 20px; font-weight: 600; }
+        .header-sub { color: rgba(255,255,255,0.8); font-size: 13px; margin-top: 4px; }
+        .content { padding: 30px 28px; }
+        .notice-box { background: #FFF4CE; border: 1px solid #FFB900; border-radius: 4px; padding: 14px 18px; margin-bottom: 24px; font-size: 14px; color: #5D4200; }
+        .qr-section { text-align: center; margin: 24px 0; padding: 24px; border: 2px dashed #CCCCCC; border-radius: 8px; background: #FAFAFA; }
+        .qr-label { font-size: 13px; color: #555; margin-bottom: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        /* SVG QR code placeholder — in real deployment, replace with actual campaign QR image */
+        .qr-placeholder { width: 200px; height: 200px; margin: 0 auto; position: relative; }
+        .qr-placeholder svg { width: 100%; height: 100%; }
+        .qr-caption { font-size: 13px; color: #777; margin-top: 12px; }
+        .steps { margin: 24px 0; }
+        .step { display: flex; align-items: flex-start; margin-bottom: 14px; font-size: 14px; color: #333; }
+        .step-num { background: #0078D4; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-right: 12px; margin-top: 1px; }
+        .deadline { background: #FDE7E9; border: 1px solid #FCA5A5; border-radius: 4px; padding: 12px 16px; font-size: 14px; color: #991B1B; font-weight: 600; text-align: center; margin: 20px 0; }
+        p { color: #333; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+        .footer { background: #F7F7F7; border-top: 1px solid #E0E0E0; padding: 14px 28px; font-size: 12px; color: #888; }
+        .also-link { text-align: center; margin: 16px 0; font-size: 13px; color: #555; }
+        .also-link a { color: #0078D4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">IT Security — Action Required</div>
+            <div class="header-sub">Multi-Factor Authentication Re-enrollment</div>
+        </div>
+
+        <div class="content">
+            <p>Dear {{.FirstName}},</p>
+
+            <div class="notice-box">
+                ⚠️ <strong>Your MFA enrollment expires soon.</strong> Due to a security policy update, all employees must re-enroll their authenticator app by the deadline below.
+            </div>
+
+            <p>Our identity platform has been upgraded. Your existing MFA registration will be invalidated and you will be locked out of company systems unless you complete re-enrollment.</p>
+
+            <p><strong>To re-enroll, scan the QR code below with your Microsoft Authenticator or Google Authenticator app:</strong></p>
+
+            <div class="qr-section">
+                <div class="qr-label">Scan with your Authenticator App</div>
+                <!--
+                    DEPLOYMENT NOTE: Replace this SVG placeholder with an actual QR code
+                    image that encodes your GoPhish campaign URL ({{.URL}}).
+                    Generate using: qrencode -o qr.png "{{.URL}}"
+                    Then embed as base64: <img src="data:image/png;base64,..." />
+
+                    This placeholder visually simulates a QR code for training purposes.
+                -->
+                <div class="qr-placeholder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+                        <rect width="200" height="200" fill="white"/>
+                        <!-- Finder patterns -->
+                        <rect x="10" y="10" width="60" height="60" fill="black"/>
+                        <rect x="16" y="16" width="48" height="48" fill="white"/>
+                        <rect x="22" y="22" width="36" height="36" fill="black"/>
+                        <rect x="130" y="10" width="60" height="60" fill="black"/>
+                        <rect x="136" y="16" width="48" height="48" fill="white"/>
+                        <rect x="142" y="22" width="36" height="36" fill="black"/>
+                        <rect x="10" y="130" width="60" height="60" fill="black"/>
+                        <rect x="16" y="136" width="48" height="48" fill="white"/>
+                        <rect x="22" y="142" width="36" height="36" fill="black"/>
+                        <!-- Timing patterns -->
+                        <rect x="80" y="10" width="8" height="8" fill="black"/>
+                        <rect x="96" y="10" width="8" height="8" fill="black"/>
+                        <rect x="112" y="10" width="8" height="8" fill="black"/>
+                        <rect x="10" y="80" width="8" height="8" fill="black"/>
+                        <rect x="10" y="96" width="8" height="8" fill="black"/>
+                        <rect x="10" y="112" width="8" height="8" fill="black"/>
+                        <!-- Data modules (representative) -->
+                        <rect x="80" y="80" width="8" height="8" fill="black"/>
+                        <rect x="96" y="80" width="8" height="8" fill="black"/>
+                        <rect x="80" y="96" width="8" height="8" fill="black"/>
+                        <rect x="112" y="96" width="8" height="8" fill="black"/>
+                        <rect x="96" y="112" width="8" height="8" fill="black"/>
+                        <rect x="80" y="130" width="8" height="8" fill="black"/>
+                        <rect x="112" y="130" width="8" height="8" fill="black"/>
+                        <rect x="96" y="145" width="8" height="8" fill="black"/>
+                        <rect x="130" y="80" width="8" height="8" fill="black"/>
+                        <rect x="146" y="80" width="8" height="8" fill="black"/>
+                        <rect x="162" y="80" width="8" height="8" fill="black"/>
+                        <rect x="130" y="96" width="8" height="8" fill="black"/>
+                        <rect x="162" y="96" width="8" height="8" fill="black"/>
+                        <rect x="146" y="112" width="8" height="8" fill="black"/>
+                        <rect x="130" y="130" width="8" height="8" fill="black"/>
+                        <rect x="162" y="130" width="8" height="8" fill="black"/>
+                        <rect x="146" y="146" width="8" height="8" fill="black"/>
+                        <rect x="162" y="162" width="8" height="8" fill="black"/>
+                        <rect x="80" y="162" width="8" height="8" fill="black"/>
+                        <rect x="112" y="162" width="8" height="8" fill="black"/>
+                    </svg>
+                </div>
+                <div class="qr-caption">Open your authenticator app → Add Account → Scan QR code</div>
+            </div>
+
+            <div class="deadline">
+                ⏰ Enrollment deadline: <strong>End of Business Today</strong>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div>Open Microsoft Authenticator or Google Authenticator on your mobile device</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div>Tap <strong>Add Account</strong> → <strong>Work or School Account</strong> → <strong>Scan QR Code</strong></div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div>Point your camera at the QR code above to complete enrollment</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div>If you cannot scan, <a href="{{.URL}}" style="color:#0078D4;">click here to enroll manually</a></div>
+                </div>
+            </div>
+
+            <p>If you have already re-enrolled or need assistance, contact the IT Help Desk.</p>
+        </div>
+
+        <div class="footer">
+            This message was sent to {{.Email}}. This is an automated security notification from IT.<br>
+            Do not reply to this email — contact the Help Desk for support.
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

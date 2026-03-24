@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Identity Provider Phishing (Okta)</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        .danger-highlight { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; padding: 16px 20px; margin: 16px 0; color: #721c24; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Identity Provider Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated Okta/identity provider phishing email.</strong><br>
+                This is one of the highest-value attack vectors in modern cybercrime. A compromised identity provider account means access to ALL your company applications.
+            </div>
+        </div>
+
+        <section>
+            <h2>🔑 Why Identity Provider Attacks Are So Dangerous</h2>
+            <p>Okta and similar identity providers (Azure AD, Google Workspace, Ping Identity) are the keys to your entire company's digital infrastructure. A successful Okta phishing attack means:</p>
+
+            <div class="danger-highlight">
+                <strong>Single compromise → access to ALL connected apps:</strong>
+                <ul>
+                    <li>Salesforce, Workday, GitHub, AWS, ServiceNow</li>
+                    <li>Email, HR systems, financial platforms</li>
+                    <li>Any internal application behind SSO</li>
+                    <li>Ability to pivot to other employee accounts</li>
+                </ul>
+                <p><em>This is why identity provider attacks are prized by nation-state actors and ransomware groups alike.</em></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎭 Common Identity Provider Attack Techniques</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Suspicious sign-in alerts:</strong> Fake security notifications with a "This wasn't me" button that steals credentials</li>
+                    <li><strong>MFA fatigue attacks:</strong> Bombarding you with push notifications until you approve by mistake (separate from email phishing)</li>
+                    <li><strong>Account suspension warnings:</strong> "Your Okta access will be revoked" pressuring urgent action</li>
+                    <li><strong>Admin impersonation:</strong> Appearing to come from your IT/security team via the identity portal</li>
+                    <li><strong>Adversary-in-the-middle (AiTM):</strong> Real-time credential relay that defeats standard MFA</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags in Identity Provider Emails</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Sender domain:</strong> Real Okta emails come from <code>@okta.com</code> — watch for <code>okta-security.com</code> or similar</li>
+                    <li><strong>Unfamiliar location claims:</strong> While real, these can be faked — always verify via the app, not the email link</li>
+                    <li><strong>Fear + urgency combination:</strong> "Your account was accessed AND you must act now" is a classic manipulation pair</li>
+                    <li><strong>Multiple app access claimed:</strong> Attackers list high-value apps (Salesforce, GitHub) to maximize panic</li>
+                    <li><strong>Link destination:</strong> The "Secure Account" button should point to your company's Okta domain, not a generic URL</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ How to Safely Verify Identity Alerts</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Navigate directly</strong> to your company's Okta URL (e.g., <code>yourcompany.okta.com</code>) — never via the email</li>
+                    <li><strong>Check sign-in history</strong> in your Okta dashboard to see actual recent activity</li>
+                    <li><strong>Call IT Security immediately</strong> if you see real suspicious activity — use the known help desk number</li>
+                    <li><strong>Use phishing-resistant MFA</strong> — hardware security keys (YubiKey) or passkeys defeat AiTM attacks</li>
+                    <li><strong>Never click "This wasn't me"</strong> in email — go to the app and use the account recovery flow there</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive an Okta security alert email saying someone in Ukraine signed into your account and accessed Salesforce and GitHub. The email has a red "This Wasn't Me — Secure Account" button. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click "This Wasn't Me" immediately to stop the breach</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Navigate directly to your company's Okta URL, check sign-in history, and call IT Security</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Forward the email to your manager</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Change your password using the link in the email</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — The most dangerous thing about identity provider phishing is that the emotional urgency of a real-looking breach makes you act immediately. Always verify independently through the known URL, then contact IT. Never use email links for identity recovery.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #007DC1 0%, #005A8E 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Identity provider phishing is the highest-value target for attackers. Verify every security alert via the app — not the email.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

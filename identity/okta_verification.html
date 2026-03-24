@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okta - New Sign-In Detected</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+        .header { background: #007DC1; padding: 20px 28px; display: flex; align-items: center; }
+        .header span { color: white; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+        .content { padding: 32px 28px; }
+        .alert-banner { background: #FFF4E5; border: 1px solid #FFAB40; border-radius: 4px; padding: 14px 18px; margin: 0 0 24px; display: flex; align-items: flex-start; gap: 12px; }
+        .alert-icon { font-size: 20px; flex-shrink: 0; }
+        .alert-text { font-size: 14px; color: #7B3B00; }
+        .signin-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .signin-table td { padding: 10px 14px; border-bottom: 1px solid #F0F0F0; }
+        .signin-table td:first-child { color: #6E6E6E; width: 160px; font-weight: 500; }
+        .signin-table td:last-child { color: #1A1A1A; font-weight: 600; }
+        .signin-table tr:last-child td { border-bottom: none; }
+        .btn-danger { display: inline-block; background: #E0341B; color: white; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 14px; margin-right: 12px; }
+        .btn-safe { display: inline-block; background: white; color: #007DC1; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; border: 2px solid #007DC1; }
+        p { color: #333; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+        .footer { background: #F7F8FA; border-top: 1px solid #E5E5E5; padding: 16px 28px; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>Okta</span>
+        </div>
+
+        <div class="content">
+            <p>Hi {{.FirstName}},</p>
+
+            <div class="alert-banner">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-text">
+                    <strong>New sign-in to your Okta account from an unrecognized device.</strong><br>
+                    If this was you, no action is needed. If you don't recognize this activity, secure your account immediately.
+                </div>
+            </div>
+
+            <p><strong>Sign-in Details:</strong></p>
+
+            <table class="signin-table">
+                <tr>
+                    <td>Time</td>
+                    <td>{{.Date}} — 6:12 AM</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>Kyiv, Ukraine</td>
+                </tr>
+                <tr>
+                    <td>Device</td>
+                    <td>Linux — Firefox 121</td>
+                </tr>
+                <tr>
+                    <td>IP Address</td>
+                    <td>185.220.101.47</td>
+                </tr>
+                <tr>
+                    <td>Apps Accessed</td>
+                    <td>Workday, Salesforce, GitHub</td>
+                </tr>
+            </table>
+
+            <p>Your Okta account is the key to all company applications. If someone else accessed your account, they may have reached sensitive company data.</p>
+
+            <p style="margin: 24px 0;">
+                <a href="{{.URL}}" class="btn-danger">This Wasn't Me — Secure Account</a>
+            </p>
+
+            <p>If you did sign in from this location, you can ignore this email.</p>
+        </div>
+
+        <div class="footer">
+            This security notification was sent to {{.Email}}.<br>
+            Okta, Inc. | 100 First Street, San Francisco, CA 94105
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

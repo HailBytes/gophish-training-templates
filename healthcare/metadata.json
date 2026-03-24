@@ -1,0 +1,55 @@
+{
+  "category": "healthcare",
+  "industry": "Healthcare / Cross-industry",
+  "description": "Phishing templates exploiting healthcare anxiety and HIPAA compliance",
+  "templates": [
+    {
+      "filename": "patient_portal_security.html",
+      "name": "Patient Portal Security Alert",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Security Alert: Unusual access to your patient records",
+        "Action Required: Verify your patient portal account",
+        "MyChart: Suspicious login detected on your account"
+      ],
+      "education_page": "education/healthcare_education.html",
+      "tags": ["healthcare", "patient-portal", "security-alert", "credential-theft", "intermediate"]
+    },
+    {
+      "filename": "insurance_verification.html",
+      "name": "Insurance Verification Request",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Action Required: Your insurance verification is incomplete",
+        "Insurance coverage update needed before your appointment",
+        "Your health insurance information needs to be verified"
+      ],
+      "education_page": "education/healthcare_education.html",
+      "tags": ["healthcare", "insurance", "verification", "credential-theft", "beginner"]
+    },
+    {
+      "filename": "hipaa_compliance_alert.html",
+      "name": "HIPAA Compliance Alert",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "HIPAA Compliance: Mandatory training due by Friday",
+        "Compliance Alert: Your HIPAA certification has expired",
+        "Required: Complete HIPAA security awareness update"
+      ],
+      "education_page": "education/healthcare_education.html",
+      "tags": ["healthcare", "hipaa", "compliance", "credential-theft", "intermediate"],
+      "notes": "Best for healthcare sector employees. The regulatory authority of HIPAA creates strong urgency."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

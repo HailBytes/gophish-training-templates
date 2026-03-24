@@ -1,0 +1,25 @@
+{
+  "category": "retail",
+  "industry": "Cross-industry (consumer-facing)",
+  "description": "Phishing templates impersonating retail brands and loyalty programs",
+  "templates": [
+    {
+      "filename": "loyalty_rewards_expiring.html",
+      "name": "Loyalty Rewards Expiration",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Your rewards points expire in 48 hours — claim now",
+        "Don't lose your rewards! Points expiring soon",
+        "Last chance: Redeem your loyalty points before they disappear"
+      ],
+      "education_page": "education/retail_education.html",
+      "tags": ["retail", "loyalty", "rewards", "points", "fomo", "credential-theft", "beginner"],
+      "notes": "FOMO (fear of missing out) template. High click rate due to universal appeal of not wanting to lose value."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

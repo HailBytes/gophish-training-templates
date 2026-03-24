@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Hospitality Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Hospitality Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated travel/hospitality phishing email.</strong><br>
+                Hotel, airline, and travel phishing exploits the excitement and anxiety of travel plans to steal credentials and payment information.
+            </div>
+        </div>
+
+        <section>
+            <h2>✈️ Why Travel Phishing Works</h2>
+            <p>Business travelers receive legitimate hotel and travel emails constantly. Attackers blend into this noise with fake:</p>
+            <ul>
+                <li>Booking confirmations with slightly wrong details</li>
+                <li>Check-in/check-out reminders requesting credit card updates</li>
+                <li>Loyalty program account alerts</li>
+                <li>Corporate travel policy change notifications</li>
+                <li>Last-minute price change or cancellation notices</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Common Travel Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Fake reservation confirmations:</strong> Sent when you're likely traveling — "confirm payment method for your upcoming stay"</li>
+                    <li><strong>Loyalty account security alerts:</strong> "Your Marriott/Hilton/IHG points have been redeemed — verify now"</li>
+                    <li><strong>Corporate travel portal credential theft:</strong> Fake Concur, Egencia, or Amex GBT login pages</li>
+                    <li><strong>Booking modification scams:</strong> "Your reservation requires action due to a policy change"</li>
+                    <li><strong>WiFi credential harvesting:</strong> Fake hotel WiFi login pages that capture credentials</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags in Travel Emails</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Unexpected reservation emails:</strong> If you didn't book it, contact the hotel/airline directly</li>
+                    <li><strong>Credit card update requests:</strong> Real hotels don't request payment re-entry via email</li>
+                    <li><strong>Loyalty alert + immediate action:</strong> Check your loyalty account directly via the brand's app</li>
+                    <li><strong>Sender domain mismatch:</strong> <code>hilton-reservations.com</code> instead of <code>hilton.com</code></li>
+                    <li><strong>Suspicious check-in links:</strong> Digital key/check-in is done through the official brand app</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Safe Travel Booking Habits</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Use official brand apps</strong> for check-in, loyalty points, and reservation management</li>
+                    <li><strong>Verify reservations</strong> by logging directly into the booking platform (hotel website, Expedia, etc.)</li>
+                    <li><strong>Use virtual credit cards</strong> for travel bookings when possible to limit exposure</li>
+                    <li><strong>Call the hotel directly</strong> if you receive unexpected reservation or payment emails</li>
+                    <li><strong>Use VPN on hotel WiFi</strong> and avoid logging into sensitive accounts on public networks</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive an email that appears to be from a hotel where you have an upcoming reservation, saying your credit card on file was declined and you need to update it within 24 hours or your reservation will be cancelled. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link in the email and update your credit card</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Call the hotel directly using the number from the hotel's official website to verify and update if needed</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply to the email with your credit card number</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Wait to see if your reservation is actually cancelled</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Real hotels have your payment on file and contact you by phone for payment issues. Always call the hotel using a number from their official website, never the number in a suspicious email.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #795548 0%, #4E342E 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Travel phishing exploits the anxiety of upcoming trips. Always verify reservations and payments through official channels.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

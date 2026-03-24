@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Acrobat Sign - Signature Required</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: 'Adobe Clean', Arial, Helvetica, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); overflow: hidden; }
+        .header { background: #FA0F00; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { color: white; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+        .content { padding: 32px 28px; }
+        .intro-line { font-size: 18px; font-weight: 600; color: #2C2C2C; margin-bottom: 24px; }
+        .agreement-card { border: 1px solid #D5D5D5; border-radius: 4px; padding: 20px; margin: 20px 0; }
+        .agreement-title { font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 12px; }
+        .agreement-meta { font-size: 13px; color: #6E6E6E; line-height: 1.8; }
+        .badge { display: inline-block; background: #FFF3CD; border: 1px solid #FBBF24; color: #92400E; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; }
+        .cta-button { display: block; background: #FA0F00; color: white; padding: 14px 0; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 15px; text-align: center; margin: 28px 0; }
+        .steps { list-style: none; padding: 0; margin: 0; }
+        .steps li { padding: 8px 0; padding-left: 28px; position: relative; font-size: 14px; color: #444; border-bottom: 1px solid #F0F0F0; }
+        .steps li:last-child { border: none; }
+        .steps li::before { content: attr(data-n); position: absolute; left: 0; background: #FA0F00; color: white; width: 18px; height: 18px; border-radius: 50%; text-align: center; font-size: 11px; font-weight: 700; line-height: 18px; top: 10px; }
+        p { color: #444; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+        .footer { background: #FAFAFA; border-top: 1px solid #E5E5E5; padding: 16px 28px; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Adobe Acrobat Sign</div>
+        </div>
+
+        <div class="content">
+            <p class="intro-line">Action Required: Sign your document</p>
+
+            <p>Hi {{.FirstName}},</p>
+            <p>Your colleague has sent you an agreement to review and sign using Adobe Acrobat Sign.</p>
+
+            <div class="agreement-card">
+                <div class="badge">⏰ EXPIRES IN 72 HOURS</div>
+                <div class="agreement-title">Employment Agreement Amendment — {{.LastName}}</div>
+                <div class="agreement-meta">
+                    <strong>From:</strong> HR Business Partner &lt;hr-noreply@yourcompany.com&gt;<br>
+                    <strong>Document type:</strong> Amendment / Policy Update<br>
+                    <strong>Sent to:</strong> {{.Email}}<br>
+                    <strong>Requires:</strong> Your signature only
+                </div>
+            </div>
+
+            <ol class="steps">
+                <li data-n="1">Click the button below to open the document</li>
+                <li data-n="2">Read the agreement carefully</li>
+                <li data-n="3">Click the signature fields and follow the prompts</li>
+                <li data-n="4">Submit — your signed copy will be emailed to you</li>
+            </ol>
+
+            <a href="{{.URL}}" class="cta-button">Click Here to Review &amp; Sign</a>
+
+            <p>This is a legally binding e-signature. If you did not expect this request, please contact HR immediately and do not sign.</p>
+        </div>
+
+        <div class="footer">
+            This automatic notification was sent to {{.Email}}.<br>
+            Adobe Inc., 345 Park Avenue, San Jose, CA 95110 | Powered by Adobe Acrobat Sign
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

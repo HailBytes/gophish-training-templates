@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Collaboration Tool Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .alert-success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        .tool-box { background: #f8f9fa; border: 1px solid #dee2e6; padding: 16px 20px; border-radius: 8px; margin: 12px 0; }
+        .tool-box h4 { margin: 0 0 8px; color: #343a40; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Collaboration Tool Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated collaboration platform phishing email.</strong><br>
+                This was a training exercise — let's learn how to spot these attacks.
+            </div>
+        </div>
+
+        <section>
+            <h2>💬 Why Attackers Target Slack, Teams, and Zoom</h2>
+            <p>Collaboration platforms are among the most trusted tools in the modern workplace. Attackers exploit this trust by sending notifications that look identical to real platform emails. These attacks are particularly dangerous because:</p>
+            <ul>
+                <li><strong>High trust:</strong> Employees expect and rely on these notifications daily</li>
+                <li><strong>Volume:</strong> Heavy users receive dozens of real notifications, making fake ones easy to miss</li>
+                <li><strong>Urgency:</strong> "Your account will be suspended" or "approval required by 5pm" triggers panic</li>
+                <li><strong>Workplace authority:</strong> Messages appear to come from managers or admins</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Platform-Specific Attack Patterns</h2>
+
+            <div class="tool-box">
+                <h4>Slack Attacks</h4>
+                <ul>
+                    <li>Fake "account audit" requiring credential re-verification</li>
+                    <li>Forged DM previews appearing to be from your admin</li>
+                    <li>Workspace suspension warnings with urgent login links</li>
+                    <li>Fake app authorization requests</li>
+                </ul>
+            </div>
+
+            <div class="tool-box">
+                <h4>Microsoft Teams Attacks</h4>
+                <ul>
+                    <li>Fabricated guest access approval requests with auto-approve deadlines</li>
+                    <li>Fake meeting invitations with malicious join links</li>
+                    <li>Impersonated IT admin messages requesting credential confirmation</li>
+                    <li>Spoofed file-sharing notifications</li>
+                </ul>
+            </div>
+
+            <div class="tool-box">
+                <h4>Zoom Attacks</h4>
+                <ul>
+                    <li>Fake recording-ready notifications (especially for "sensitive" meetings)</li>
+                    <li>Account storage-full warnings forcing immediate download</li>
+                    <li>Fake meeting invitations with malicious links</li>
+                    <li>Credential theft via fake sign-in pages</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags to Watch For</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Sender domain:</strong> Real Slack emails come from <code>@slack.com</code>, Teams from <code>@microsoft.com</code>, Zoom from <code>@zoom.us</code> — hover before clicking</li>
+                    <li><strong>Login-via-email links:</strong> These platforms never require you to re-enter credentials via an email link</li>
+                    <li><strong>Auto-approve threats:</strong> "Your access will be granted automatically if you don't respond" is a pressure tactic</li>
+                    <li><strong>Mismatched urgency:</strong> Real platform notifications aren't urgent unless you've set up actual alerts</li>
+                    <li><strong>Generic recordings:</strong> You would know if you hosted a meeting — check your app directly</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Safe Habits for Collaboration Platforms</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Go to the app directly</strong> — never sign in via an email link; open the app or navigate to the known URL</li>
+                    <li><strong>Hover over sender addresses</strong> — verify the domain before clicking anything</li>
+                    <li><strong>Treat urgency as a red flag</strong> — real approval workflows don't auto-approve without you</li>
+                    <li><strong>Enable login notifications</strong> in your Slack/Teams/Zoom settings so you know about real sign-ins</li>
+                    <li><strong>Use SSO/MFA</strong> — even if credentials are stolen, MFA prevents account takeover</li>
+                    <li><strong>Report suspicious emails</strong> to IT before clicking — even if they look real</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive a Slack email saying your workspace account is under audit and you must verify credentials by 3 PM or lose access. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link and enter your credentials before 3 PM</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Open the Slack app directly and check for any notifications or admin messages there</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply to the email asking if it's legitimate</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Wait until after 3 PM to see if you actually lose access</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Always go directly to the application. Slack, Teams, and Zoom will surface real account issues in the app itself. Audit notifications via email with credential links are a hallmark of phishing.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #6264A7 0%, #4A154B 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>You now know how to identify collaboration tool phishing. Remember: when in doubt, go directly to the app.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

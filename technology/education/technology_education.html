@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Technology/Developer Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Developer/API Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated developer/technology phishing email.</strong><br>
+                Developers and technical staff are high-value targets — API keys, cloud credentials, and code repository access can expose entire systems.
+            </div>
+        </div>
+
+        <section>
+            <h2>💻 Why Developers Are Prime Targets</h2>
+            <p>Attackers specifically target technical staff because they have elevated access to:</p>
+            <ul>
+                <li>Cloud infrastructure (AWS, Azure, GCP) with potential to spin up resources or steal data</li>
+                <li>Source code repositories containing proprietary code and secrets</li>
+                <li>API keys and service credentials that control production systems</li>
+                <li>CI/CD pipelines that can be poisoned to inject malicious code</li>
+                <li>Database credentials and connection strings</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Developer-Specific Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>API key expiration notices:</strong> "Your API key expires tonight — regenerate now" leads to a fake developer console</li>
+                    <li><strong>GitHub/GitLab alerts:</strong> Fake security notifications about repository access or code scanning results</li>
+                    <li><strong>NPM/PyPI package compromise notices:</strong> "A dependency you use has a vulnerability — update credentials"</li>
+                    <li><strong>Cloud billing alerts:</strong> "Unusual charges on your AWS account" with a fake console link</li>
+                    <li><strong>CI/CD pipeline notifications:</strong> "Your build failed — click to view logs" with malicious links</li>
+                    <li><strong>Code review invitations:</strong> Fake PR reviews containing malicious repository links</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags for Technical Staff</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>API/credential management via email:</strong> Real developer platforms handle key rotation in the console, not via email links</li>
+                    <li><strong>Urgency around production credentials:</strong> "Expires tonight" for API keys is a pressure tactic</li>
+                    <li><strong>GitHub emails with external links:</strong> Real GitHub notifications link to github.com, not external domains</li>
+                    <li><strong>Package security notices asking for credentials:</strong> Package managers don't handle security via email credential re-entry</li>
+                    <li><strong>Cloud billing alerts with login links:</strong> Check your AWS/Azure/GCP console directly via your bookmark</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Developer Security Best Practices</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Use a password manager</strong> with separate entries for each developer platform</li>
+                    <li><strong>Enable MFA on all developer accounts:</strong> GitHub, npm, cloud consoles, CI/CD platforms</li>
+                    <li><strong>Use short-lived credentials</strong> and rotate API keys on a schedule — not when prompted by email</li>
+                    <li><strong>Audit repository access regularly</strong> — check OAuth app authorizations on GitHub and revoke unused ones</li>
+                    <li><strong>Never store secrets in code</strong> — use secrets managers; enable secret scanning on repositories</li>
+                    <li><strong>Verify package integrity</strong> before installing new dependencies (check signatures, maintainer reputation)</li>
+                    <li><strong>Bookmark developer consoles</strong> — navigate to AWS/GitHub/npm via bookmarks, never email links</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive an email saying your production API key for Stripe expires tonight and you need to click to regenerate it. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link immediately since production API key expiration would break things</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Navigate directly to the Stripe dashboard using your bookmark and check key expiration status there</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply asking Stripe for more details</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Ignore it since your app is currently working</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — API key management is done in the developer console, not via email links. The urgency around production breakage is designed to bypass your normally careful instincts. Always navigate directly to the platform to verify any credential or key status.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #1a237e 0%, #283593 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Developer credentials are the keys to the kingdom. Manage keys in your console, never via email links.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

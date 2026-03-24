@@ -1,0 +1,39 @@
+{
+  "category": "entertainment",
+  "industry": "Cross-industry",
+  "description": "Phishing templates impersonating entertainment and consumer reward services",
+  "templates": [
+    {
+      "filename": "spotify_account.html",
+      "name": "Spotify Account Issue",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Spotify: We couldn't charge your payment method",
+        "Your Spotify Premium subscription is about to expire",
+        "Spotify: Action required to keep your account"
+      ],
+      "education_page": "education/entertainment_education.html",
+      "tags": ["entertainment", "spotify", "subscription", "payment", "credential-theft", "beginner"]
+    },
+    {
+      "filename": "starbucks_gift.html",
+      "name": "Starbucks Gift Card Offer",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "You have a Starbucks reward waiting — claim it now",
+        "Your Starbucks Stars are expiring soon",
+        "Congratulations! You have a $10 Starbucks reward"
+      ],
+      "education_page": "education/entertainment_education.html",
+      "tags": ["entertainment", "starbucks", "gift-card", "reward", "credential-theft", "beginner"]
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

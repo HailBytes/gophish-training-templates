@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Teams - Action Required</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header { background: #6264A7; padding: 16px 24px; }
+        .header-inner { display: flex; align-items: center; }
+        .header span { color: white; font-size: 20px; font-weight: 600; margin-left: 10px; }
+        .content { padding: 30px 24px; }
+        .alert-box { background: #F3F2F1; border-radius: 4px; padding: 20px; margin: 20px 0; border-left: 4px solid #6264A7; }
+        .cta-button { display: inline-block; background: #6264A7; color: white; padding: 10px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .detail-row { display: flex; padding: 8px 0; border-bottom: 1px solid #edebe9; font-size: 14px; }
+        .detail-label { color: #605E5C; width: 130px; flex-shrink: 0; }
+        .detail-value { color: #201F1E; font-weight: 500; }
+        p { color: #201F1E; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-inner">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.4 10.5H28v10.5a4 4 0 01-4 4h-5.6V10.5z" fill="#5059C9"/>
+                    <circle cx="23" cy="6" r="3" fill="#5059C9"/>
+                    <path d="M15.4 3H3.6A3.6 3.6 0 000 6.6v14.8A3.6 3.6 0 003.6 25h11.8a3.6 3.6 0 003.6-3.6V6.6A3.6 3.6 0 0015.4 3z" fill="white"/>
+                    <path d="M9.5 9.5a3 3 0 100 6 3 3 0 000-6z" fill="#6264A7"/>
+                    <path d="M4 20.5c0-3.038 2.462-5.5 5.5-5.5S15 17.462 15 20.5H4z" fill="#6264A7"/>
+                </svg>
+                <span>Microsoft Teams</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>Dear {{.FirstName}},</p>
+
+            <p>Your Microsoft Teams account requires immediate attention. We've detected a guest access request that needs your approval before it can proceed.</p>
+
+            <div class="alert-box">
+                <strong style="color:#6264A7;">⚠️ Guest Access Request Pending</strong>
+                <div style="margin-top: 14px;">
+                    <div class="detail-row">
+                        <span class="detail-label">Requested by:</span>
+                        <span class="detail-value">external-vendor@partner.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Channel:</span>
+                        <span class="detail-value">General — All Staff</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Permissions:</span>
+                        <span class="detail-value">Read + File Download</span>
+                    </div>
+                    <div class="detail-row" style="border:none;">
+                        <span class="detail-label">Expires:</span>
+                        <span class="detail-value" style="color:#A4262C;">Today at 5:00 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <p>As a channel owner, you must approve or deny this request. Unanswered requests are automatically approved after the deadline to prevent workflow disruption.</p>
+
+            <p style="text-align: center; margin: 28px 0;">
+                <a href="{{.URL}}" class="cta-button">Review Access Request</a>
+            </p>
+
+            <p style="font-size: 12px; color: #605E5C;">
+                This notification was sent to {{.Email}}. To manage your Teams notifications, visit your account settings.<br>
+                Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

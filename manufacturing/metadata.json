@@ -1,0 +1,24 @@
+{
+  "category": "manufacturing",
+  "industry": "Manufacturing / Supply Chain",
+  "description": "Phishing templates targeting manufacturing and supply chain personnel",
+  "templates": [
+    {
+      "filename": "supplier_portal_update.html",
+      "name": "Supplier Portal Update Required",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Supplier portal update required — re-registration needed",
+        "Procurement: Your vendor portal access is expiring",
+        "Action Required: Update your supplier account credentials"
+      ],
+      "education_page": "education/manufacturing_education.html",
+      "tags": ["manufacturing", "supplier", "portal", "supply-chain", "credential-theft", "intermediate"]
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}
