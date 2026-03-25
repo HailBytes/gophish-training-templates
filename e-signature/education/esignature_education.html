@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: E-Signature Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 E-Signature Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated e-signature phishing email.</strong><br>
+                Attackers impersonate DocuSign, Adobe Sign, and similar platforms to steal credentials or get victims to sign fraudulent documents.
+            </div>
+        </div>
+
+        <section>
+            <h2>✍️ Why E-Signature Attacks Are Effective</h2>
+            <p>E-signature platforms are used for legally binding agreements — NDAs, contracts, HR documents. Attackers exploit these because:</p>
+            <ul>
+                <li><strong>High-stakes feeling:</strong> "Legal document requiring signature" creates urgency and importance</li>
+                <li><strong>Trusted platforms:</strong> DocuSign and Adobe Sign are used by nearly every business</li>
+                <li><strong>Expiration pressure:</strong> "Document expires in 48 hours" prevents careful evaluation</li>
+                <li><strong>Credential theft:</strong> Fake signing pages steal your SSO/Microsoft/Google credentials</li>
+                <li><strong>Malware delivery:</strong> Some attacks deliver malicious "document" files instead of real PDFs</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Common Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Fake NDA/contract signing:</strong> Convincing you to enter credentials to access a document that doesn't exist</li>
+                    <li><strong>HR document spoofing:</strong> Impersonating HR for policy changes, offer letters, or amendments</li>
+                    <li><strong>Vendor impersonation:</strong> Fake documents appearing to come from partners or clients</li>
+                    <li><strong>Credential-harvesting signing pages:</strong> The "signing portal" is a fake login page</li>
+                    <li><strong>Malicious PDF payloads:</strong> The downloaded "document" executes malware</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 How to Spot Fake E-Signature Emails</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Sender domain:</strong> Real DocuSign emails come from <code>@docusign.net</code>, Adobe Sign from <code>@adobesign.com</code> — verify before clicking</li>
+                    <li><strong>Unexpected documents:</strong> If you weren't told to expect a document to sign, verify with the sender via a separate channel (call, not reply)</li>
+                    <li><strong>Tight deadlines:</strong> "Sign in 48 hours or it expires" is pressure to act without thinking</li>
+                    <li><strong>Login required before viewing:</strong> DocuSign shows the document before asking for credentials</li>
+                    <li><strong>Generic sender:</strong> Real signing requests identify the specific person or organization sending the document</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Safe E-Signature Habits</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Verify with the sender</strong> before signing anything — call or message them through a separate channel</li>
+                    <li><strong>Check the sender domain</strong> carefully: <code>docusign.net</code> vs <code>docu-sign.net</code></li>
+                    <li><strong>Log in directly</strong> to DocuSign/Adobe Sign by navigating to the known URL, not via the email link</li>
+                    <li><strong>Real signing links don't ask for your Microsoft/Google password</strong> — signing is done via the platform's own authentication</li>
+                    <li><strong>When in doubt, ask your IT or Legal team</strong> to verify a document request before you sign</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive a DocuSign email saying you need to sign an NDA before tomorrow or the project is delayed. The email asks you to sign in with your Microsoft account to view it. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Sign in with Microsoft and complete the signature quickly</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Call or message the sender using their known contact info to verify before clicking</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply to the email saying you'll sign tomorrow</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Forward it to a colleague to see if they got it too</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Always verify document requests out-of-band before acting. Urgency and deadlines are manipulation tactics. A real legal document can always be resent after verification.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #FF6600 0%, #FA0F00 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>You now know how to spot e-signature phishing. Verify before you sign — always.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

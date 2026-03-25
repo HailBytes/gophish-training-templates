@@ -1,0 +1,25 @@
+{
+  "category": "identity",
+  "industry": "Cross-industry",
+  "description": "Phishing templates impersonating identity providers and SSO platforms",
+  "templates": [
+    {
+      "filename": "okta_verification.html",
+      "name": "Okta Suspicious Sign-In Alert",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "25-45%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Date}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Okta: New sign-in from Kyiv, Ukraine",
+        "[Security Alert] Unrecognized device accessed your Okta account",
+        "Action required: Suspicious activity on your company SSO account"
+      ],
+      "education_page": "education/identity_education.html",
+      "tags": ["okta", "sso", "identity-provider", "credential-theft", "security-alert", "advanced"],
+      "notes": "Advanced difficulty — lower click rate expected but highest-value target. Listing specific apps (Salesforce, GitHub) accessed increases panic. Use {{.Date}} for realism."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Manufacturing & Supply Chain Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Manufacturing/Supply Chain Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated supplier/manufacturing phishing email.</strong><br>
+                Supply chain attacks target the trusted relationships between manufacturers, suppliers, and vendors — compromising one can cascade to many.
+            </div>
+        </div>
+
+        <section>
+            <h2>🏭 Why Manufacturing Is a High-Value Target</h2>
+            <p>Manufacturing and supply chain phishing targets the interconnected relationships between companies. Attackers aim to:</p>
+            <ul>
+                <li>Steal intellectual property (blueprints, formulas, manufacturing processes)</li>
+                <li>Commit invoice fraud by redirecting payments to attacker accounts</li>
+                <li>Access ERP systems (SAP, Oracle) containing sensitive business data</li>
+                <li>Compromise OT/ICS credentials for potential sabotage</li>
+                <li>Use supplier access to pivot into customer networks (supply chain attacks)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Common Supply Chain Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Supplier portal credential theft:</strong> Fake "update required" emails for supplier portals (Ariba, Coupa, etc.)</li>
+                    <li><strong>Invoice fraud (BEC):</strong> Compromised supplier email used to redirect payment to attacker accounts</li>
+                    <li><strong>RFQ/bid document delivery:</strong> Malicious attachments in quote requests</li>
+                    <li><strong>Shipping/logistics notifications:</strong> Fake tracking updates with malware links</li>
+                    <li><strong>ERP access re-verification:</strong> "Your SAP/Oracle access requires renewal" credential theft</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Unexpected portal access requests:</strong> Contact IT or your supplier directly to verify</li>
+                    <li><strong>Banking change requests from suppliers:</strong> Always verify by phone using a number from your records, not the email</li>
+                    <li><strong>Urgency around payments or orders:</strong> "Confirm by EOD or the order is cancelled"</li>
+                    <li><strong>Unfamiliar supplier domains:</strong> Attackers register lookalike domains (supplier-corp.com vs suppliercorp.com)</li>
+                    <li><strong>Attachments in RFQ responses:</strong> Verify the supplier sent it before opening</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Protecting the Supply Chain</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Verify banking changes by phone</strong> — call your supplier contact using your existing records before changing payment details</li>
+                    <li><strong>Access portals directly</strong> — use bookmarked URLs for supplier portals, not email links</li>
+                    <li><strong>Implement payment verification procedures</strong> for any changes to payment information</li>
+                    <li><strong>Be suspicious of urgency</strong> around payments, access, or document deadlines</li>
+                    <li><strong>Report suspicious supplier communications</strong> to both IT Security and your procurement team</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive an email that appears to be from a regular supplier saying they've changed banks and asking you to update their payment details for upcoming invoices. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Update the payment details since you know this supplier</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Call your supplier contact using the number from your existing records to verify the change</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply to the email asking them to confirm it's legitimate</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Forward to your manager without taking action</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Business Email Compromise (BEC) targeting payment changes is one of the costliest cybercrime categories. The attacker may have compromised your supplier's email — always call using your existing contact number, never the one in the email.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #E65100 0%, #BF360C 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Supply chain phishing can compromise entire networks. Always verify payment changes and portal access requests out-of-band.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

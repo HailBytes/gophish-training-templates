@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Retail & Loyalty Program Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Retail / Loyalty Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated retail or loyalty program phishing email.</strong><br>
+                Fake rewards expiration notices and exclusive offers are designed to create FOMO (fear of missing out) that bypasses careful thinking.
+            </div>
+        </div>
+
+        <section>
+            <h2>🛒 Why Retail Phishing Is Common</h2>
+            <p>Most people have 5-20 loyalty and rewards accounts. The high volume of legitimate retail emails makes fraudulent ones easy to miss. Key tactics include:</p>
+            <ul>
+                <li><strong>Points expiration scarcity:</strong> "Your 4,200 points expire tomorrow"</li>
+                <li><strong>Exclusive offer urgency:</strong> "24-hour flash sale — click to unlock"</li>
+                <li><strong>Order notification spoofing:</strong> Fake shipping updates for orders you didn't place (or did place)</li>
+                <li><strong>Account security alerts:</strong> "Unauthorized redemption detected on your account"</li>
+                <li><strong>Gift card scams:</strong> Fake gift card balances with instructions to "transfer" them</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Common Retail Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Points expiration warnings:</strong> Fake urgency about losing valuable rewards</li>
+                    <li><strong>Order confirmation fraud:</strong> "Your $347 Amazon order is confirmed — click to cancel if you didn't order"</li>
+                    <li><strong>Loyalty account compromise alerts:</strong> Fake security warnings that steal credentials</li>
+                    <li><strong>Refund/rebate notifications:</strong> "Your refund of $89 is waiting — click to claim"</li>
+                    <li><strong>Survey scams:</strong> "Complete this quick survey for a $50 gift card" — credential or payment theft</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Unexpected expiration notices:</strong> Check your account directly — real points expiration is shown in your account dashboard</li>
+                    <li><strong>Too-good-to-be-true offers:</strong> "Exclusive 90% off for you specifically" is a manipulation tactic</li>
+                    <li><strong>Order confirmations for things you didn't buy:</strong> Log into the retailer directly to check your order history</li>
+                    <li><strong>Sender domain not matching the brand:</strong> <code>amazon-orders.net</code> instead of <code>amazon.com</code></li>
+                    <li><strong>Login required to claim rewards:</strong> Navigate directly to the retailer's website instead of clicking the email link</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Protecting Your Retail Accounts</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Log into retail accounts directly</strong> to check points balances — don't trust email notifications</li>
+                    <li><strong>Use unique passwords</strong> for retail/loyalty accounts — credential stuffing is common in retail phishing</li>
+                    <li><strong>Enable 2FA on retail accounts</strong> that hold payment information or significant points value</li>
+                    <li><strong>Be skeptical of urgency</strong> — if an offer expires in 24 hours, check the brand's website directly</li>
+                    <li><strong>Check order status in the app</strong> — don't use order confirmation email links to dispute charges</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You get an email saying your 8,500 loyalty points will expire in 48 hours. It asks you to log in to redeem them before they disappear. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link quickly to save the points before they expire</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Navigate directly to the retailer's website or app using your bookmark to check your actual points balance</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply to the email asking them to extend the deadline</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Delete the email since you don't use that retailer much</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Points expiration notices are a classic scarcity tactic. Your actual points balance is always visible in your account when you log in directly. If the points are really expiring, you'll see it there — and you can redeem them safely through the official site.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #880E4F 0%, #C62828 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Retail phishing exploits FOMO. Your loyalty points and order history are always visible directly in the brand's app — no email link needed.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

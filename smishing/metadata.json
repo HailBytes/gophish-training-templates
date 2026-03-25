@@ -1,0 +1,42 @@
+{
+  "category": "smishing",
+  "industry": "Cross-industry",
+  "description": "SMS phishing (smishing) simulation templates rendered as email. These train employees to recognize text-message-based phishing attacks.",
+  "delivery_note": "These templates render an SMS conversation inside an email to simulate smishing. They are delivered via GoPhish email campaigns but educate on SMS-based attack vectors.",
+  "templates": [
+    {
+      "filename": "package_delivery_sms.html",
+      "name": "USPS Package Delivery Smishing",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Action Required: Your USPS package could not be delivered",
+        "USPS: Package delivery attempt failed — reschedule required",
+        "Delivery Notification: Package #9400111206 requires action"
+      ],
+      "education_page": "education/smishing_education.html",
+      "tags": ["smishing", "sms", "usps", "delivery", "package", "beginner"],
+      "notes": "One of the highest click-rate attack vectors. Nearly universal — almost everyone orders packages. The phone mockup inside the email helps train employees to recognize the SMS format."
+    },
+    {
+      "filename": "bank_alert_sms.html",
+      "name": "Chase Bank Fraud Alert Smishing",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "URGENT: Suspicious transaction on your account",
+        "Chase Alert: $847 Amazon purchase was blocked",
+        "ACTION REQUIRED: Verify recent transaction"
+      ],
+      "education_page": "education/smishing_education.html",
+      "tags": ["smishing", "sms", "banking", "fraud-alert", "financial", "intermediate"],
+      "notes": "Fear of financial loss is a powerful motivator. Works across all employee levels. Specific dollar amount ($847) and merchant (Amazon) increase realism."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

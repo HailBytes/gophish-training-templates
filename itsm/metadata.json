@@ -1,0 +1,25 @@
+{
+  "category": "itsm",
+  "industry": "Cross-industry (IT/Ops staff)",
+  "description": "Phishing templates impersonating IT Service Management platforms",
+  "templates": [
+    {
+      "filename": "servicenow_ticket.html",
+      "name": "ServiceNow Emergency Change Approval",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "20-40%",
+      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "ServiceNow: Change Request CHG0042891 requires your approval",
+        "[ITSM] Critical change request — SLA breach imminent",
+        "Action Required: Emergency production access approval"
+      ],
+      "education_page": "education/itsm_education.html",
+      "tags": ["servicenow", "itsm", "change-management", "credential-theft", "sla", "approval", "advanced"],
+      "notes": "Best targeted at IT operations, DevOps, and change advisory board members. Advanced difficulty — requires target to be familiar with ITSM workflows. Ticket numbers and grid layout add realism."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

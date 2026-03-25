@@ -1,0 +1,99 @@
+{
+  "category": "it-security",
+  "industry": "Cross-industry",
+  "description": "Phishing templates impersonating internal IT department communications",
+  "templates": [
+    {
+      "filename": "email_issues.html",
+      "name": "Email Server Migration Notice",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "55-75%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "IT: Email server migration — account verification required",
+        "Action Required: Verify your email account after migration",
+        "IT Department: Your email may be affected by last night's maintenance"
+      ],
+      "education_page": "education/it_security_education.html",
+      "tags": ["it", "email", "migration", "credential-theft", "beginner"]
+    },
+    {
+      "filename": "email_size_limit.html",
+      "name": "Email Mailbox Size Limit",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Your mailbox is almost full — action required",
+        "IT: Email storage limit reached for your account",
+        "Warning: Your email account is at 95% capacity"
+      ],
+      "education_page": "education/it_security_education.html",
+      "tags": ["it", "email", "storage", "credential-theft", "beginner"]
+    },
+    {
+      "filename": "mailbox_compromised.html",
+      "name": "Mailbox Compromised Alert",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Security Alert: Unusual activity detected on your email account",
+        "IT Security: Your mailbox may have been compromised",
+        "Urgent: Suspicious sign-in activity on {{.Email}}"
+      ],
+      "education_page": "education/it_security_education.html",
+      "tags": ["it", "security-alert", "compromised", "credential-theft", "intermediate"]
+    },
+    {
+      "filename": "system_update.html",
+      "name": "Mandatory System Update",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "IT: Mandatory system update required by end of business",
+        "Action Required: Install critical security patch",
+        "Your computer requires an immediate software update"
+      ],
+      "education_page": "education/it_security_education.html",
+      "tags": ["it", "system-update", "patch", "credential-theft", "beginner"]
+    },
+    {
+      "filename": "webmail_ugprade.html",
+      "name": "Webmail Upgrade Required",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "IT: Webmail upgrade requires your action",
+        "Your webmail client is being upgraded — verify your account",
+        "Action required: Complete your email upgrade by Friday"
+      ],
+      "education_page": "education/it_security_education.html",
+      "tags": ["it", "webmail", "upgrade", "credential-theft", "beginner"]
+    },
+    {
+      "filename": "dropbox_share.html",
+      "name": "Dropbox File Share (IT Variant)",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "IT has shared a document with you via Dropbox",
+        "Shared: IT Security Policy Update 2024.pdf",
+        "You have a new file share from IT"
+      ],
+      "education_page": "education/it_security_education.html",
+      "tags": ["it", "dropbox", "file-share", "credential-theft", "intermediate"]
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

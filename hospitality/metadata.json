@@ -1,0 +1,25 @@
+{
+  "category": "hospitality",
+  "industry": "Cross-industry (business travelers)",
+  "description": "Phishing templates impersonating hotel and travel booking services",
+  "templates": [
+    {
+      "filename": "hotel_reservation_confirm.html",
+      "name": "Hotel Reservation Confirmation",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Your reservation confirmation — action required",
+        "Hotel booking: Payment verification needed",
+        "Upcoming stay: Credit card on file needs updating"
+      ],
+      "education_page": "education/hospitality_education.html",
+      "tags": ["hospitality", "hotel", "travel", "reservation", "credential-theft", "intermediate"],
+      "notes": "Best for frequent business travelers. Timed near known travel periods for maximum effectiveness."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

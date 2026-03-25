@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Quishing (QR Code Phishing)</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        .why-box { background: #f3e5f5; border: 1px solid #ce93d8; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📷 Quishing (QR Code Phishing) — Training</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You scanned or clicked a simulated malicious QR code.</strong><br>
+                "Quishing" uses QR codes to bypass email security filters and redirect victims to phishing pages — a rapidly growing attack vector since 2023.
+            </div>
+        </div>
+
+        <section>
+            <h2>🔍 Why QR Codes Are Weaponized</h2>
+            <div class="why-box">
+                <strong>QR codes defeat traditional email security because:</strong>
+                <ul>
+                    <li><strong>Security scanners can't read image URLs</strong> — the malicious URL is hidden inside a picture, bypassing link-scanning filters</li>
+                    <li><strong>Scan happens on your phone</strong> — mobile devices often have fewer security controls than corporate laptops</li>
+                    <li><strong>People trust QR codes</strong> — pandemic-era QR menu adoption normalized scanning unknown codes</li>
+                    <li><strong>No visible link to hover over</strong> — you can't see where the QR code leads before scanning</li>
+                </ul>
+            </div>
+            <p>Quishing attacks increased <strong>over 500%</strong> in 2023 as attackers adapted to bypass email security gateways that now scan links but not images.</p>
+        </section>
+
+        <section>
+            <h2>🎭 Common Quishing Attack Scenarios</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>MFA re-enrollment:</strong> "Security upgrade requires you to re-register your authenticator" — QR leads to credential harvest page</li>
+                    <li><strong>WiFi credential provisioning:</strong> "Scan to connect to new secure network" — QR leads to fake portal</li>
+                    <li><strong>Parking payment:</strong> Physical QR code stickers placed on parking meters (in-person quishing)</li>
+                    <li><strong>Package tracking:</strong> "Scan to confirm delivery address" — extremely effective</li>
+                    <li><strong>Microsoft/Office 365 MFA:</strong> Fake "scan to set up Microsoft Authenticator" links in HR onboarding emails</li>
+                    <li><strong>Conference/event check-in:</strong> Fake event QR codes that capture registration credentials</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags Before Scanning</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Unexpected MFA/security re-enrollment emails</strong> — IT announces these in advance through multiple channels</li>
+                    <li><strong>Urgency + QR code combination:</strong> "Scan immediately or lose access" should always raise suspicion</li>
+                    <li><strong>Physical QR codes in unusual places:</strong> Stickers placed over original QR codes at restaurants, meters, etc.</li>
+                    <li><strong>No company branding on the QR itself:</strong> Legitimate IT tools embed QR codes with identifiable context</li>
+                    <li><strong>The email mentions a "manual link" as backup:</strong> This is the real attack vector — the link and the QR both lead to the same phishing page</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Safe QR Code Practices</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Preview the URL before opening:</strong> iOS and Android both show the destination URL when you scan — read it before tapping "Open"</li>
+                    <li><strong>Verify IT announcements through official channels</strong> — check the intranet or call the help desk before scanning a QR for "mandatory re-enrollment"</li>
+                    <li><strong>Don't scan QR codes in unsolicited emails</strong> — especially those about MFA, credentials, or account security</li>
+                    <li><strong>Inspect physical QR codes</strong> for stickers placed over original codes (common on parking meters, menus)</li>
+                    <li><strong>Use a QR scanner with built-in URL safety checks</strong> — many security apps offer this</li>
+                    <li><strong>Report suspicious QR code emails to IT Security</strong> — they're particularly hard to catch with automated filters</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Your company sends an email saying all employees must scan a QR code to re-enroll their MFA authenticator app by end of business today or they'll be locked out. What should you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Scan the QR code immediately to avoid being locked out</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Call the IT help desk using the number from your company directory to verify the announcement</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Scan the QR code but don't enter your credentials</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Reply to the email asking if it's legitimate</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — IT will never send a same-day mandatory MFA re-enrollment via QR code without prior notice through official channels. Always verify urgent IT security requests via the help desk before scanning. The QR code could lead to a malicious page that harvests credentials before you realize.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #1B1B2F 0%, #4A0080 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>QR codes hide their destinations — always preview the URL before opening and verify MFA/security re-enrollment requests with IT directly.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

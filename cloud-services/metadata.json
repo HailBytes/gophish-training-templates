@@ -1,0 +1,39 @@
+{
+  "category": "cloud-services",
+  "industry": "Cross-industry",
+  "description": "Phishing templates impersonating cloud storage and file sharing services",
+  "templates": [
+    {
+      "filename": "dropbox_share.html",
+      "name": "Dropbox File Share",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Someone shared a file with you on Dropbox",
+        "Dropbox: New shared folder requires your access",
+        "You have a new file share from a colleague"
+      ],
+      "education_page": "education/cloud_services_education.html",
+      "tags": ["dropbox", "cloud", "file-share", "credential-theft", "intermediate"]
+    },
+    {
+      "filename": "google_drive.html",
+      "name": "Google Drive Document Share",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "A document has been shared with you on Google Drive",
+        "Google Drive: Review requested — Q4 Report.xlsx",
+        "Someone shared a file: please review and comment"
+      ],
+      "education_page": "education/cloud_services_education.html",
+      "tags": ["google-drive", "cloud", "file-share", "credential-theft", "intermediate"]
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

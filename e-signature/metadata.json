@@ -1,0 +1,41 @@
+{
+  "category": "e-signature",
+  "industry": "Cross-industry",
+  "description": "Phishing templates impersonating electronic signature platforms",
+  "templates": [
+    {
+      "filename": "docusign_signature.html",
+      "name": "DocuSign NDA Signature Request",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Please DocuSign: Mutual_NDA_2024.pdf",
+        "Action Required: Document awaiting your signature",
+        "DocuSign: Legal & Compliance Team sent you a document"
+      ],
+      "education_page": "education/esignature_education.html",
+      "tags": ["docusign", "e-signature", "credential-theft", "legal", "nda", "urgency"],
+      "notes": "NDA context works across industries. 48-hour expiry adds urgency without seeming implausible."
+    },
+    {
+      "filename": "adobe_sign.html",
+      "name": "Adobe Acrobat Sign Employment Amendment",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Adobe Sign: Signature required — Employment Agreement",
+        "Action required: Please sign your document",
+        "HR has sent you a document via Adobe Acrobat Sign"
+      ],
+      "education_page": "education/esignature_education.html",
+      "tags": ["adobe-sign", "e-signature", "credential-theft", "hr", "employment", "amendment"],
+      "notes": "HR context creates authority. Employment amendment is plausible for any employee."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

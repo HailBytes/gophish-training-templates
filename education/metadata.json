@@ -1,0 +1,40 @@
+{
+  "category": "education-sector",
+  "industry": "Higher Education",
+  "description": "Phishing templates targeting students and educational institution staff",
+  "templates": [
+    {
+      "filename": "financial_aid_urgent.html",
+      "name": "Financial Aid Urgent Notice",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "URGENT: Your financial aid requires immediate action",
+        "Financial Aid Office: Your award is at risk — respond now",
+        "Action Required: FAFSA verification needed before deadline"
+      ],
+      "education_page": "education/education_phishing_education.html",
+      "tags": ["education", "financial-aid", "fafsa", "students", "credential-theft", "beginner"],
+      "notes": "Extremely effective for student populations. Financial aid anxiety is a powerful motivator."
+    },
+    {
+      "filename": "student_portal_lockout.html",
+      "name": "Student Portal Account Lockout",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Your student account has been temporarily suspended",
+        "Action Required: Verify your student portal account",
+        "Account hold detected — resolve before registration opens"
+      ],
+      "education_page": "education/education_phishing_education.html",
+      "tags": ["education", "student-portal", "lockout", "credential-theft", "beginner"]
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2024-01-01"
+}

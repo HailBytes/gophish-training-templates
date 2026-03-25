@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Legal Document Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Legal Document Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated legal document phishing email.</strong><br>
+                Legal threats are some of the most fear-inducing phishing lures — no one wants to ignore a lawsuit, subpoena, or compliance notice.
+            </div>
+        </div>
+
+        <section>
+            <h2>⚖️ Why Legal Phishing Is Effective</h2>
+            <p>Legal-themed phishing emails create immediate fear and a strong desire to respond quickly. They exploit:</p>
+            <ul>
+                <li><strong>Authority:</strong> Law firms, courts, and regulators carry significant perceived authority</li>
+                <li><strong>Fear of consequences:</strong> Lawsuit, subpoena, fine, or compliance violation</li>
+                <li><strong>Urgency:</strong> Legal deadlines are real — attackers manufacture fake ones</li>
+                <li><strong>Unfamiliarity:</strong> Most people don't know enough legal process to spot inconsistencies</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Common Legal Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Subpoena/lawsuit notices:</strong> "You are named in a legal action — click to review documents"</li>
+                    <li><strong>Regulatory compliance deadlines:</strong> SEC, FTC, GDPR, or OSHA compliance notices</li>
+                    <li><strong>Contract sharing via document platforms:</strong> "Review this agreement before the signing deadline"</li>
+                    <li><strong>IP/copyright infringement:</strong> "Your company has infringed — respond immediately to avoid escalation"</li>
+                    <li><strong>Court date notifications:</strong> Fake summons documents with malware payloads</li>
+                    <li><strong>Settlement offer documents:</strong> "Review the confidential settlement offer" attachments</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags in Legal Emails</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Unknown law firms or courts:</strong> Look up the firm independently — don't use contact info from the email</li>
+                    <li><strong>Documents requiring your credentials to access:</strong> Real legal documents don't require you to log in through a link</li>
+                    <li><strong>Email-only notification of serious legal action:</strong> Lawsuits and subpoenas require formal service of process</li>
+                    <li><strong>Generic targeting:</strong> Real legal notices know your exact name, company, and relevant details</li>
+                    <li><strong>Attachments from unknown senders:</strong> Legal document attachments are a primary malware delivery vector</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ How to Handle Legal Emails Safely</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Do not open attachments</strong> in unexpected legal emails — forward to your legal/compliance team first</li>
+                    <li><strong>Verify independently:</strong> Search for the law firm or court using your own search — don't use the email's contact info</li>
+                    <li><strong>Contact your legal team immediately</strong> — forward the email, don't click it</li>
+                    <li><strong>Real legal service is formal:</strong> Lawsuits involve process servers, not email links to DocuSign</li>
+                    <li><strong>Report to IT Security</strong> — legal phishing often precedes targeted attacks on key personnel</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive an email from "Hartwell & Associates Law Firm" saying your company is being sued and you need to click to access the case documents within 48 hours or default judgment will be entered. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click immediately — a default judgment would be very bad</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Forward to your legal/compliance team without clicking anything, and report to IT Security</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply asking for more details</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Call the phone number in the email to verify</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Legal actions require formal service, not email links. Default judgment via email alone is not legally valid. Always escalate to your legal team and IT Security. The phone number and firm details in the email are controlled by the attacker.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #37474F 0%, #263238 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Legal phishing creates panic designed to override your judgment. Escalate to your legal team — never click first.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

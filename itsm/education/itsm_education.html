@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: ITSM / ServiceNow Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 ITSM Phishing Attack Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated ServiceNow/ITSM phishing email.</strong><br>
+                IT service management platforms are targeted because approvals in these systems can grant real access to production systems.
+            </div>
+        </div>
+
+        <section>
+            <h2>🎫 Why ITSM Attacks Are High-Value</h2>
+            <p>IT Service Management platforms like ServiceNow, Jira Service Management, and Freshservice manage change requests, access approvals, and incident escalations. Attackers target these because:</p>
+            <ul>
+                <li><strong>Approval authority:</strong> Approving a fake ticket can grant real system access</li>
+                <li><strong>SLA pressure:</strong> "Breach in 2 hours" forces hasty decisions</li>
+                <li><strong>Technical legitimacy:</strong> IT jargon (CHG numbers, priority levels) makes emails convincing</li>
+                <li><strong>Credential theft:</strong> Fake approval portals capture ITSM login credentials</li>
+                <li><strong>Trust chains:</strong> Escalated tickets appear to have already been reviewed by others</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Common ITSM Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Emergency change requests:</strong> "Critical Priority" tickets with tight deadlines demanding immediate approval</li>
+                    <li><strong>Auto-approve threats:</strong> "Access will be granted automatically if you don't respond" — real ITSM systems don't work this way</li>
+                    <li><strong>Credential theft via fake portals:</strong> The "Review & Approve" link leads to a fake login page</li>
+                    <li><strong>Ticket number spoofing:</strong> Realistic-looking ticket numbers (CHG0042891) increase believability</li>
+                    <li><strong>Escalation from fictional colleagues:</strong> "Requested by J. Martinez, Ops Team" adds fake legitimacy</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags in ITSM Emails</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Auto-approve deadlines:</strong> Real ITSM systems expire tickets — they don't automatically grant access</li>
+                    <li><strong>Sender domain:</strong> Real ServiceNow notifications come from your company's instance domain</li>
+                    <li><strong>Unfamiliar requesters:</strong> Verify ticket requesters through internal directories, not the email</li>
+                    <li><strong>Unsolicited approvals:</strong> If you weren't expecting to be an approver for something, verify out-of-band</li>
+                    <li><strong>Extreme urgency + high-risk action:</strong> "Emergency production DB access" requiring immediate approval is a red flag</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Safe ITSM Practices</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Log into ServiceNow directly</strong> using your bookmarked URL — never approve tickets via email links alone</li>
+                    <li><strong>Verify the requester</strong> through your internal directory before approving high-risk changes</li>
+                    <li><strong>Escalate unusual requests</strong> — if a change request seems suspicious, contact your change advisory board or manager</li>
+                    <li><strong>Know your approval scope:</strong> If a ticket falls outside your normal approval authority, reject and reassign</li>
+                    <li><strong>Report suspicious ITSM emails</strong> to IT Security — especially those claiming SLA breaches for access requests</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive a ServiceNow email with a "Critical Priority" change request for emergency production database access. The email says it will be auto-approved in 2 hours if you don't respond. What should you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click "Review & Approve" quickly to meet the SLA</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Log directly into ServiceNow, verify the ticket exists, and call the requester to confirm</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Wait to see if access is actually granted automatically</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Forward to your manager without clicking anything</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — ServiceNow does not auto-approve access requests. This auto-approve threat is a fabricated pressure tactic. Always verify ITSM tickets directly in the platform and confirm high-risk changes with the requester via phone or internal chat.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #293E40 0%, #62D84E 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>ITSM phishing uses technical jargon and SLA pressure to force bad approvals. Always verify in-platform before approving any access change.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>

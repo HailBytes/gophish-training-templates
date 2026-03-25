@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: Utilities Phishing</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
+        h1 { color: #dc3545; }
+        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 Utilities Phishing Detected!</h1>
+            <div class="alert alert-danger">
+                <strong>⚠️ You clicked on a simulated utility company phishing email.</strong><br>
+                Utility company phishing exploits the fear of service disconnection to steal payment information and credentials.
+            </div>
+        </div>
+
+        <section>
+            <h2>💡 Why Utility Phishing Works</h2>
+            <p>Utility companies (electric, gas, water, internet) have enormous leverage over our daily lives. Attackers exploit this with:</p>
+            <ul>
+                <li><strong>Disconnection threats:</strong> "Pay now or your service will be interrupted"</li>
+                <li><strong>Credit/refund notices:</strong> "You have an outstanding credit — claim it now"</li>
+                <li><strong>Smart meter/account update requirements:</strong> Technical-sounding reasons requiring credential re-verification</li>
+                <li><strong>Suspicious usage alerts:</strong> Fear about abnormally high bills or unauthorized usage</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎭 Common Utility Attack Patterns</h2>
+            <div class="technique-box">
+                <ul>
+                    <li><strong>Overdue bill notices:</strong> "Your account is past due — pay now to avoid service interruption"</li>
+                    <li><strong>Credit/refund claims:</strong> "Power outage credit of $67.40 is available — click to claim"</li>
+                    <li><strong>Account portal "verification" requests:</strong> Fake login pages collecting utility account credentials (which often also contain payment info)</li>
+                    <li><strong>Smart meter enrollment:</strong> "Your meter upgrade requires account re-registration"</li>
+                    <li><strong>Payment plan offers:</strong> "Enroll in a payment plan before disconnection"</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚩 Red Flags</h2>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>Disconnection threat via email only:</strong> Real utility companies send physical notices and follow a regulated disconnection process</li>
+                    <li><strong>Unusual refund or credit:</strong> Check your account directly — real credits appear in your account statement</li>
+                    <li><strong>Payment via non-standard method:</strong> Requests for gift cards, wire transfers, or cryptocurrency for utility payments are always scams</li>
+                    <li><strong>Sender domain mismatch:</strong> <code>pge-billing.net</code> instead of <code>pge.com</code></li>
+                    <li><strong>Urgency + same-day payment demands:</strong> Real utilities give advance notice with regulated timelines</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>✅ Safe Utility Account Practices</h2>
+            <div class="protection-box">
+                <ol>
+                    <li><strong>Pay utility bills through official apps or by typing the URL directly</strong> — bookmark your utility company's payment portal</li>
+                    <li><strong>Call the number on your physical bill</strong> if you receive a disconnection notice via email</li>
+                    <li><strong>Never pay utilities with gift cards, wire transfers, or cryptocurrency</strong> — these are guaranteed scams</li>
+                    <li><strong>Check credits/refunds in your account directly</strong> — log in via your bookmark, not an email link</li>
+                    <li><strong>Set up autopay through official channels</strong> to reduce exposure to fake payment notices</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Knowledge Check</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>You receive an email from your electric company saying you have a $45.20 credit from a recent power outage and you need to click a link to receive your refund. What do you do?</strong></p>
+                <div style="margin: 15px 0;">
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Click the link to claim the refund</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Log into your utility account directly using your bookmark to check if the credit appears there</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Reply to the email to confirm your mailing address for a check</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Ignore it since $45 isn't worth the effort</label>
+                </div>
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                        <p><strong>Correct Answer: B</strong> — Real utility credits are automatically applied to your next bill and visible in your account. Legitimate refunds don't require you to claim them via email links. Check your account directly.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #F57F17 0%, #E65100 100%); color: white; border-radius: 8px;">
+            <h2>🎓 Training Complete!</h2>
+            <p>Utility phishing uses disconnection fear. Real utilities follow regulated processes — sudden payment demands via email are always suspicious.</p>
+            <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
+        </section>
+    </div>
+</body>
+</html>
