@@ -13,9 +13,9 @@ A comprehensive collection of professionally designed email templates and landin
 
 > *[Screenshot: HailBytes SAT dashboard showing this template library loaded alongside campaign analytics and the repeat-offender tracking view — add `docs/sat-ui-preview.png` to display this image]*
 
-Running GoPhish yourself means managing infrastructure, maintaining sending profiles, exporting CSVs to track metrics, and stitching together your own reporting. **HailBytes SAT** gives you all of these templates pre-loaded in a managed GoPhish environment — deployed inside your own AWS or Azure account (BYOC) so your data never leaves your cloud.
+Running GoPhish yourself means managing infrastructure, maintaining sending profiles, exporting CSVs to track metrics, and stitching together your own reporting. **HailBytes SAT** gives you all of these templates pre-loaded in a fully managed security awareness training environment — deployed inside your own AWS or Azure account (BYOC) so your data never leaves your cloud.
 
-HailBytes SAT is built for teams that need results without the ops overhead: a managed GoPhish backend, a live metrics dashboard, multi-tenant MSSP support, and compliance documentation (SOC 2 roadmap, NIST CSF mapping) included. Whether you run one campaign a quarter or manage phishing programs for dozens of clients, SAT scales without additional infrastructure work on your end.
+HailBytes SAT is built for teams that need results without the ops overhead: a hardened enterprise platform, a live metrics dashboard, multi-tenant MSSP support, and compliance documentation (SOC 2 roadmap, NIST CSF mapping) included. Whether you run one campaign a quarter or manage phishing programs for dozens of clients, SAT scales without additional infrastructure work on your end.
 
 <p align="center">
   <a href="https://aws.amazon.com/marketplace/search/results?searchTerms=hailbytes+sat&utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=aws_cta_button">
@@ -27,7 +27,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a m
   </a>
 </p>
 
-### Self-host vs. Managed — At a Glance
+### Self-host vs. HailBytes SAT — At a Glance
 
 | Capability | Self-host GoPhish (this repo) | HailBytes SAT (managed) |
 |---|---|---|
@@ -476,9 +476,9 @@ This project is licensed under the Mozilla Public License 2.0 - see the [LICENSE
 
 <div align="center">
 
-### Managed GoPhish for Security Teams & MSSPs
+### HailBytes SAT — Security Awareness Training for Teams & MSSPs
 
-**[HailBytes SAT](https://hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_banner)** — Deploy GoPhish in your AWS or Azure account in minutes. All these templates included. Built-in metrics, multi-tenant MSSP support, and enterprise SLA.
+**[HailBytes SAT](https://hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_banner)** — Enterprise phishing simulation and security awareness training, deployed in your own AWS or Azure account in minutes. All these templates included. Built-in metrics, multi-tenant MSSP support, and enterprise SLA.
 
 [![AWS Marketplace](https://img.shields.io/badge/AWS-Marketplace-FF9900?style=flat-square&logo=amazonaws)](https://aws.amazon.com/marketplace/search/results?searchTerms=hailbytes+sat&utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_aws)
 [![Azure Marketplace](https://img.shields.io/badge/Azure-Marketplace-0078D4?style=flat-square&logo=microsoftazure)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=hailbytes+sat&utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_azure)
