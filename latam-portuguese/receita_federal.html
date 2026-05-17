@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita Federal - Notificação de Pendência Fiscal</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #cccccc;
+        }
+        .header {
+            background-color: #006400;
+            color: #ffffff;
+            padding: 20px 40px;
+            border-bottom: 4px solid #ffdf00;
+        }
+        .logo-main {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        .logo-title {
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+        .gov-bar {
+            background-color: #ffdf00;
+            color: #006400;
+            padding: 6px 40px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .content {
+            padding: 36px 40px;
+        }
+        .notif-box {
+            border: 2px solid #006400;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+        .notif-box h3 {
+            margin: 0 0 8px 0;
+            font-size: 15px;
+            color: #006400;
+            font-weight: 700;
+        }
+        .notif-box p {
+            margin: 0;
+            font-size: 13px;
+            color: #333333;
+        }
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin: 20px 0;
+        }
+        .detail-table th {
+            background-color: #006400;
+            color: #ffffff;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .detail-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .detail-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+        .status-pending {
+            color: #e53935;
+            font-weight: 700;
+        }
+        .cta-button {
+            background-color: #006400;
+            color: #ffffff;
+            padding: 13px 28px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+        .cta-button:hover {
+            background-color: #004d00;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .disclaimer {
+            font-size: 11px;
+            color: #666666;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 14px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #f0f0f0;
+            padding: 20px 40px;
+            font-size: 11px;
+            color: #555555;
+            border-top: 1px solid #cccccc;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #006400;
+            margin: 0 0 16px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 14px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer, .gov-bar {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-main">MINISTÉRIO DA FAZENDA</div>
+            <div class="logo-title">Receita Federal do Brasil</div>
+        </div>
+        <div class="gov-bar">GOV.BR — PORTAL DE SERVIÇOS DO GOVERNO FEDERAL</div>
+
+        <div class="content">
+            <h1>Notificação de Pendência — Declaração de Imposto de Renda</h1>
+
+            <p>Prezado(a) contribuinte {{.FirstName}},</p>
+
+            <p>Identificamos uma pendência relacionada à sua Declaração de Imposto de Renda Pessoa Física (DIRPF). Sua declaração foi retida em malha fina e requer regularização para evitar a aplicação de multas e juros.</p>
+
+            <div class="notif-box">
+                <h3>Notificação Fiscal n.º NF-2025-{{.RId}}</h3>
+                <p>Data de emissão: 17/05/2025 — Prazo para regularização: 30 dias</p>
+            </div>
+
+            <table class="detail-table">
+                <tr>
+                    <th colspan="2">Detalhes da Pendência</th>
+                </tr>
+                <tr>
+                    <td>CPF / E-mail cadastrado</td>
+                    <td>{{.Email}}</td>
+                </tr>
+                <tr>
+                    <td>Exercício fiscal</td>
+                    <td>2024 (ano-calendário 2024)</td>
+                </tr>
+                <tr>
+                    <td>Motivo</td>
+                    <td>Divergência de rendimentos informados por fonte pagadora</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td class="status-pending">RETIDA EM MALHA FINA</td>
+                </tr>
+                <tr>
+                    <td>Valor estimado de pendência</td>
+                    <td>A calcular após regularização</td>
+                </tr>
+            </table>
+
+            <p>Para regularizar sua situação e verificar os detalhes completos da pendência, acesse o portal seguro da Receita Federal utilizando seu código de acesso ou certificado digital:</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Acessar Portal e-CAC</a>
+            </p>
+
+            <p class="disclaimer">A não regularização no prazo estipulado resultará na lavratura de auto de infração com aplicação de multa de 75% sobre o valor do imposto devido, acrescida de juros SELIC. Esta notificação tem validade legal e dispensa comunicação prévia por carta.</p>
+        </div>
+
+        <div class="footer">
+            <p>Este e-mail foi enviado para {{.Email}} com base no CPF cadastrado no sistema da Receita Federal.</p>
+            <p>Secretaria Especial da Receita Federal do Brasil — Ministério da Fazenda</p>
+            <p>Em caso de dúvidas, acesse <strong>gov.br/receitafederal</strong> ou ligue para <strong>146</strong>.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

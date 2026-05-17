@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceDesk - Ticket de Suporte TI</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #cccccc;
+        }
+        .header {
+            background-color: #1a237e;
+            color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .logo-badge {
+            font-size: 10px;
+            background-color: #e53935;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 10px;
+            vertical-align: middle;
+            font-weight: 700;
+        }
+        .ticket-bar {
+            background-color: #e8eaf6;
+            border-bottom: 2px solid #1a237e;
+            padding: 12px 40px;
+            font-size: 13px;
+            color: #1a237e;
+            font-weight: 600;
+        }
+        .content {
+            padding: 36px 40px;
+        }
+        .ticket-info {
+            background-color: #f5f5f5;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .ticket-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .ticket-info td {
+            padding: 6px 0;
+            vertical-align: top;
+        }
+        .ticket-info td:first-child {
+            font-weight: 600;
+            color: #555555;
+            width: 35%;
+        }
+        .priority-high {
+            color: #d32f2f;
+            font-weight: 700;
+        }
+        .cta-button {
+            background-color: #1a237e;
+            color: #ffffff;
+            padding: 13px 28px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+        .cta-button:hover {
+            background-color: #0d1457;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .deadline-box {
+            background-color: #ffebee;
+            border: 1px solid #ef9a9a;
+            border-radius: 4px;
+            padding: 14px 16px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #b71c1c;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            padding: 20px 40px;
+            font-size: 11px;
+            color: #777777;
+            border-top: 1px solid #dddddd;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a237e;
+            margin: 0 0 16px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 14px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer, .ticket-bar {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="logo">TI ServiceDesk</span>
+                <span class="logo-badge">CORPORATIVO</span>
+            </div>
+        </div>
+        <div class="ticket-bar">Ticket #TKT-2025-{{.RId}} — Atualização de Credenciais Obrigatória</div>
+
+        <div class="content">
+            <h1>Ação Necessária: Revalidação de Senha da Rede Corporativa</h1>
+
+            <p>Olá {{.FirstName}},</p>
+
+            <p>O departamento de TI está realizando a renovação semestral obrigatória de credenciais corporativas conforme a política de segurança da informação (PSI-2025). Sua senha de rede expirou ou está próxima do vencimento e precisa ser atualizada.</p>
+
+            <div class="ticket-info">
+                <table>
+                    <tr>
+                        <td>Usuário</td>
+                        <td>{{.Email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Número do ticket</td>
+                        <td>TKT-2025-{{.RId}}</td>
+                    </tr>
+                    <tr>
+                        <td>Prioridade</td>
+                        <td class="priority-high">ALTA</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>Aguardando ação do usuário</td>
+                    </tr>
+                    <tr>
+                        <td>Responsável</td>
+                        <td>Equipe de Segurança TI</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="deadline-box">
+                <strong>Prazo:</strong> Você tem até <strong>amanhã às 18h00</strong> para concluir a atualização. Após esse prazo, o acesso à rede e ao e-mail será suspenso automaticamente.
+            </div>
+
+            <p>Para evitar interrupções no seu trabalho, acesse o portal de gestão de senhas e atualize suas credenciais agora:</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Atualizar Senha Agora</a>
+            </p>
+
+            <p>Se já realizou a atualização ou tiver dúvidas, responda a este chamado ou entre em contato pelo ramal <strong>4444</strong>.</p>
+
+            <p>Atenciosamente,<br>
+            <strong>Equipe de Segurança da Informação — TI Corporativo</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>Este e-mail foi enviado para {{.Email}} como parte do gerenciamento de identidade corporativa.</p>
+            <p>Por favor, não encaminhe este e-mail. Em caso de dúvidas, contate o ServiceDesk pelo ramal 4444.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

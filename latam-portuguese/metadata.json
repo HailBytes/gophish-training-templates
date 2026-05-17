@@ -1,0 +1,68 @@
+{
+  "category": "latam-portuguese",
+  "language": "pt-BR",
+  "region": "Brazil / LATAM",
+  "description": "Portuguese-language phishing simulation templates targeting Brazilian enterprise environments. Scenarios include banking security alerts, IT helpdesk credential resets, HR onboarding document collection, government tax authority impersonation, and Microsoft 365 account security.",
+  "templates": [
+    {
+      "file": "notificacao_bancaria.html",
+      "name": "Alerta de Segurança Bancária",
+      "description": "Corporate banking security alert requesting identity verification due to suspicious login activity",
+      "difficulty": "medium",
+      "vectors": ["urgency", "fear", "authority"],
+      "suggested_subjects": [
+        "URGENTE: Acesso suspeito detectado em sua conta — ação necessária",
+        "Alerta de Segurança — Verifique sua conta agora",
+        "Sua conta foi temporariamente bloqueada por suspeita de fraude"
+      ]
+    },
+    {
+      "file": "helpdesk_ti.html",
+      "name": "Helpdesk TI — Revalidação de Senha",
+      "description": "IT helpdesk ticket requesting mandatory password renewal with a short deadline before account lockout",
+      "difficulty": "low",
+      "vectors": ["authority", "urgency", "routine-task"],
+      "suggested_subjects": [
+        "Ticket #TKT-2025 — Sua senha corporativa expira amanhã",
+        "AÇÃO NECESSÁRIA: Renove sua senha de rede até 18h",
+        "Atualização obrigatória de credenciais — TI Corporativo"
+      ]
+    },
+    {
+      "file": "onboarding_rh.html",
+      "name": "Onboarding RH — Documentação Pendente",
+      "description": "HR onboarding portal requesting pending documents including banking details for payroll, targeting new hires",
+      "difficulty": "low",
+      "vectors": ["authority", "helpfulness", "urgency"],
+      "suggested_subjects": [
+        "Documentação de integração pendente — RH aguarda seu envio",
+        "Ação necessária: complete seu onboarding até amanhã",
+        "Portal de integração: 3 documentos aguardando envio"
+      ]
+    },
+    {
+      "file": "receita_federal.html",
+      "name": "Receita Federal — Notificação de Malha Fina",
+      "description": "Brazilian tax authority (Receita Federal) impersonation notifying user of a tax declaration held for review",
+      "difficulty": "high",
+      "vectors": ["authority", "fear", "legal-consequence"],
+      "suggested_subjects": [
+        "Receita Federal: sua declaração foi retida em malha fina",
+        "Notificação Fiscal NF-2025 — regularize sua pendência",
+        "IRPF 2024: divergência detectada — prazo 30 dias"
+      ]
+    },
+    {
+      "file": "microsoft365_corporativo.html",
+      "name": "Microsoft 365 — Conta Bloqueada",
+      "description": "Microsoft 365 corporate account security alert claiming the account was blocked due to login from an unrecognized location",
+      "difficulty": "medium",
+      "vectors": ["urgency", "fear", "brand-impersonation"],
+      "suggested_subjects": [
+        "Sua conta Microsoft 365 foi bloqueada — verifique agora",
+        "Alerta de segurança Microsoft: login suspeito detectado",
+        "Acesso bloqueado — confirme sua identidade para restaurar"
+      ]
+    }
+  ]
+}

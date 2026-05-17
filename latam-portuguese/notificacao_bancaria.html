@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Segurança - Verificação de Conta</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #005ca9;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        .logo-sub {
+            font-size: 11px;
+            letter-spacing: 2px;
+            opacity: 0.85;
+        }
+        .banner {
+            background-color: #d32f2f;
+            color: #ffffff;
+            padding: 10px 40px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 40px;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #d32f2f;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .alert-box h3 {
+            margin: 0 0 8px 0;
+            color: #d32f2f;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .alert-box p {
+            margin: 0;
+            color: #333333;
+            font-size: 14px;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .info-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .info-table td:first-child {
+            font-weight: 600;
+            color: #555555;
+            width: 40%;
+            background-color: #f8f9fa;
+        }
+        .cta-button {
+            background-color: #005ca9;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+        .cta-button:hover {
+            background-color: #004a8a;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .warning {
+            font-size: 12px;
+            color: #666666;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 16px;
+            margin-top: 24px;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 11px;
+            color: #666666;
+            line-height: 1.6;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .content, .footer, .header, .banner {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">BANCO CORPORATIVO</div>
+            <div class="logo-sub">SEGURANÇA E PROTEÇÃO</div>
+        </div>
+        <div class="banner">ALERTA DE SEGURANÇA — AÇÃO IMEDIATA NECESSÁRIA</div>
+
+        <div class="content">
+            <div class="alert-box">
+                <h3>Acesso suspeito detectado em sua conta</h3>
+                <p>Identificamos uma tentativa de acesso não autorizado. Verifique sua identidade para manter o acesso à sua conta.</p>
+            </div>
+
+            <h1>Verificação de Segurança Obrigatória</h1>
+
+            <p>Prezado(a) {{.FirstName}},</p>
+
+            <p>Nossa equipe de segurança detectou atividade incomum associada à sua conta corporativa. Para proteger seus dados e garantir a continuidade do acesso, é necessário confirmar sua identidade nas próximas <strong>2 horas</strong>.</p>
+
+            <table class="info-table">
+                <tr>
+                    <td>Data do evento</td>
+                    <td>{{.Date}}</td>
+                </tr>
+                <tr>
+                    <td>IP detectado</td>
+                    <td>189.45.112.78 (São Paulo, SP)</td>
+                </tr>
+                <tr>
+                    <td>Dispositivo</td>
+                    <td>Navegador desconhecido</td>
+                </tr>
+                <tr>
+                    <td>Status da conta</td>
+                    <td style="color: #d32f2f; font-weight: 700;">PENDENTE DE VERIFICAÇÃO</td>
+                </tr>
+            </table>
+
+            <p>Caso não reconheça esta atividade, clique no botão abaixo para verificar sua identidade e bloquear o acesso suspeito imediatamente.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Verificar Minha Identidade Agora</a>
+            </p>
+
+            <p class="warning">Se você não completar a verificação dentro de 2 horas, sua conta será temporariamente suspensa por medida de segurança. Em caso de dúvidas, entre em contato com nossa central: 0800 000 0000.</p>
+        </div>
+
+        <div class="footer">
+            <p>Este e-mail foi enviado para {{.Email}}. Por favor, não responda a este e-mail.</p>
+            <p>© 2025 Banco Corporativo S.A. — CNPJ 00.000.000/0001-00 — Todos os direitos reservados.</p>
+            <p>Av. Paulista, 1000 — São Paulo, SP — 01310-100</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
