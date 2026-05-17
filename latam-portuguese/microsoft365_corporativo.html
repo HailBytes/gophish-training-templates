@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 365 - Alerta de Segurança da Conta</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f3f3;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d6d6d6;
+        }
+        .header {
+            background-color: #0078d4;
+            color: #ffffff;
+            padding: 20px 40px;
+        }
+        .ms-logo {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .ms-product {
+            font-size: 11px;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+        .content {
+            padding: 36px 40px;
+        }
+        .security-icon {
+            text-align: center;
+            font-size: 40px;
+            margin: 0 0 16px 0;
+        }
+        .alert-heading {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0078d4;
+            text-align: center;
+            margin: 0 0 8px 0;
+        }
+        .alert-sub {
+            font-size: 13px;
+            color: #555555;
+            text-align: center;
+            margin: 0 0 24px 0;
+        }
+        .info-block {
+            background-color: #f0f8ff;
+            border: 1px solid #b3d7f5;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .info-block table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-block td {
+            padding: 6px 0;
+        }
+        .info-block td:first-child {
+            color: #555555;
+            width: 40%;
+            font-weight: 600;
+        }
+        .cta-button {
+            background-color: #0078d4;
+            color: #ffffff;
+            padding: 13px 32px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+        .cta-button:hover {
+            background-color: #005a9e;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .secondary-action {
+            font-size: 12px;
+            color: #0078d4;
+            text-decoration: underline;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 24px 0;
+        }
+        .footer {
+            background-color: #f8f8f8;
+            padding: 20px 40px;
+            font-size: 11px;
+            color: #666666;
+            border-top: 1px solid #e0e0e0;
+            line-height: 1.6;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 14px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="ms-logo">Microsoft</div>
+            <div class="ms-product">Microsoft 365 — Segurança da Conta</div>
+        </div>
+
+        <div class="content">
+            <div class="security-icon">&#128274;</div>
+            <div class="alert-heading">Seu acesso foi bloqueado</div>
+            <div class="alert-sub">Detectamos atividade incomum na sua conta corporativa Microsoft 365</div>
+
+            <p>Olá, {{.FirstName}},</p>
+
+            <p>Por medida de segurança, bloqueamos o acesso à sua conta Microsoft 365 corporativa após detectarmos uma tentativa de login de um local não reconhecido. Para restaurar o acesso, é necessário verificar sua identidade agora.</p>
+
+            <div class="info-block">
+                <table>
+                    <tr>
+                        <td>Conta</td>
+                        <td>{{.Email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Localização suspeita</td>
+                        <td>Moscou, Rússia</td>
+                    </tr>
+                    <tr>
+                        <td>Data e hora</td>
+                        <td>17/05/2025 — 14:32 (BRT)</td>
+                    </tr>
+                    <tr>
+                        <td>Ação necessária</td>
+                        <td><strong style="color: #d32f2f;">Verificar identidade</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>Se foi você quem fez login neste local, pode ignorar este aviso. Caso contrário, clique abaixo para verificar sua identidade e proteger sua conta imediatamente.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Verificar Minha Conta</a>
+            </p>
+
+            <p style="text-align: center; font-size: 12px;">
+                <a href="{{.URL}}" class="secondary-action">Fui eu quem fez login — remover bloqueio</a>
+            </p>
+
+            <hr class="divider">
+
+            <p style="font-size: 12px; color: #666666;">Se você não conseguir acessar o link acima, copie e cole o seguinte endereço no seu navegador:<br>
+            <span style="color: #0078d4; word-break: break-all;">https://account.microsoft.com/security?ref=verify&rid={{.RId}}</span></p>
+        </div>
+
+        <div class="footer">
+            <p>Este e-mail foi enviado para {{.Email}}. A Microsoft nunca solicita sua senha por e-mail.</p>
+            <p>Microsoft Corporation — One Microsoft Way, Redmond, WA 98052 USA</p>
+            <p>© 2025 Microsoft Corporation. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

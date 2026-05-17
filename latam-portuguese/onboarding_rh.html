@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RH - Documentação de Integração Pendente</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #2e7d32;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .logo-sub {
+            font-size: 11px;
+            opacity: 0.85;
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+        .progress-bar {
+            background-color: #e8f5e9;
+            border-bottom: 1px solid #c8e6c9;
+            padding: 12px 40px;
+            font-size: 12px;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+        .content {
+            padding: 36px 40px;
+        }
+        .checklist {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eeeeee;
+            color: #333333;
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .check-done {
+            color: #2e7d32;
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 15px;
+        }
+        .check-pending {
+            color: #e53935;
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 15px;
+        }
+        .cta-button {
+            background-color: #2e7d32;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+        .cta-button:hover {
+            background-color: #1b5e20;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .info-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #f9a825;
+            padding: 14px 16px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #555555;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 11px;
+            color: #666666;
+            border-top: 1px solid #d0d0d0;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+            margin: 0 0 20px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 14px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer, .progress-bar {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Recursos Humanos</div>
+            <div class="logo-sub">PORTAL DE INTEGRAÇÃO DE COLABORADORES</div>
+        </div>
+        <div class="progress-bar">Processo de Integração — Etapa 3 de 4: Documentação Pendente</div>
+
+        <div class="content">
+            <h1>Documentação Obrigatória Pendente — Prazo se Encerra em Breve</h1>
+
+            <p>Olá, {{.FirstName}},</p>
+
+            <p>Identificamos que alguns documentos obrigatórios do seu processo de integração ainda não foram enviados ao portal de RH. Para regularizar sua situação e garantir o processamento correto do seu contrato e benefícios, é necessário concluir o envio o quanto antes.</p>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span class="check-done">&#10003;</span> Formulário de dados cadastrais
+                </div>
+                <div class="checklist-item">
+                    <span class="check-done">&#10003;</span> Escolha do plano de saúde
+                </div>
+                <div class="checklist-item">
+                    <span class="check-pending">&#10007;</span> <strong>Dados bancários para depósito salarial</strong>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-pending">&#10007;</span> <strong>Declaração de dependentes (IR)</strong>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-pending">&#10007;</span> <strong>Contrato de trabalho assinado digitalmente</strong>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>Atenção:</strong> O envio dos documentos pendentes deve ser concluído até o próximo dia útil. O não envio pode atrasar o processamento do seu primeiro salário e a ativação dos seus benefícios.
+            </div>
+
+            <p>Acesse o portal de integração abaixo para concluir o envio de forma segura:</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Acessar Portal de Integração</a>
+            </p>
+
+            <p>Em caso de dúvidas ou dificuldades técnicas, entre em contato com seu parceiro de RH pelo e-mail <strong>rh@empresa.com.br</strong> ou pelo ramal <strong>2020</strong>.</p>
+
+            <p>Bem-vindo(a) à equipe!<br>
+            <strong>Departamento de Recursos Humanos</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>Este e-mail foi enviado para {{.Email}} como parte do processo de integração de colaboradores.</p>
+            <p>© 2025 Empresa S.A. — Departamento de Recursos Humanos — Confidencial</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

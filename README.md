@@ -1,10 +1,44 @@
 # GoPhish Training Templates
 
-[![Security Awareness](https://img.shields.io/badge/Security-Awareness-blue.svg)](https://github.com/your-repo/gophish-templates)
+[![Security Awareness](https://img.shields.io/badge/Security-Awareness-blue.svg)](https://github.com/HailBytes/gophish-training-templates)
 [![GoPhish Compatible](https://img.shields.io/badge/GoPhish-Compatible-green.svg)](https://getgophish.com/)
 [![License](https://img.shields.io/badge/License-MPL--2.0-yellow.svg)](LICENSE)
+[![Powered by HailBytes SAT](https://img.shields.io/badge/Powered%20by-HailBytes%20SAT-orange.svg)](https://hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=badge)
 
 A comprehensive collection of professionally designed email templates and landing pages for conducting effective employee security awareness phishing simulation campaigns using the GoPhish framework.
+
+---
+
+## Deploy These in 5 Minutes with HailBytes SAT
+
+> *[Screenshot: HailBytes SAT dashboard showing this template library loaded alongside campaign analytics and the repeat-offender tracking view — add `docs/sat-ui-preview.png` to display this image]*
+
+Running GoPhish yourself means managing infrastructure, maintaining sending profiles, exporting CSVs to track metrics, and stitching together your own reporting. **HailBytes SAT** gives you all of these templates pre-loaded in a managed GoPhish environment — deployed inside your own AWS or Azure account (BYOC) so your data never leaves your cloud.
+
+HailBytes SAT is built for teams that need results without the ops overhead: a managed GoPhish backend, a live metrics dashboard, multi-tenant MSSP support, and compliance documentation (SOC 2 roadmap, NIST CSF mapping) included. Whether you run one campaign a quarter or manage phishing programs for dozens of clients, SAT scales without additional infrastructure work on your end.
+
+<p align="center">
+  <a href="https://aws.amazon.com/marketplace/search/results?searchTerms=hailbytes+sat&utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=aws_cta_button">
+    <img src="https://img.shields.io/badge/Deploy%20on-AWS%20Marketplace-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="Deploy on AWS Marketplace" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=hailbytes+sat&utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=azure_cta_button">
+    <img src="https://img.shields.io/badge/Deploy%20on-Azure%20Marketplace-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Deploy on Azure Marketplace" />
+  </a>
+</p>
+
+### Self-host vs. Managed — At a Glance
+
+| Capability | Self-host GoPhish (this repo) | HailBytes SAT (managed) |
+|---|---|---|
+| Templates | ✅ This repo | ✅ This repo + additional packs |
+| Hosting | You manage | BYOC in your AWS / Azure |
+| Metrics dashboard | DIY (CSV exports) | Built-in (click rate, report rate, time-to-report, repeat offenders) |
+| Compliance docs | DIY | Provided (SOC 2 roadmap, NIST CSF mapping) |
+| MSSP multi-tenant | DIY | Built-in |
+| Support | Community (GitHub Issues) | Enterprise SLA |
+
+---
 
 ## What's Included
 
@@ -13,7 +47,7 @@ A comprehensive collection of professionally designed email templates and landin
   <img src="travel_phishing.jpg" alt="Security Policy Templates" width="100%" />
 </div>
 
-### Email Templates (45+ Templates Across 19 Industries)
+### Email Templates (50+ Templates Across 20 Industries)
 - Realistic phishing scenarios mimicking common attack vectors
 - Corporate communication themes (IT updates, HR notifications, security alerts)
 - Social engineering templates (delivery notifications, account suspensions, payment alerts)
@@ -29,6 +63,7 @@ A comprehensive collection of professionally designed email templates and landin
 - **Retail**: Loyalty programs, customer accounts, inventory systems
 - **Hospitality**: Hotel reservations, loyalty programs, booking systems
 - **Utilities**: Billing credits, service notifications, account management
+- **LATAM / Portuguese**: Banking alerts, IT helpdesk, HR onboarding, government (Brazil)
 - Multi-industry coverage for comprehensive training programs
 
 
@@ -118,9 +153,17 @@ gophish-training-templates/
 │   └── hotel_reservation_confirm.html
 ├── utilities/                  # Power/utility billing and credits
 │   └── power_outage_credit.html
+├── latam-portuguese/           # Portuguese-language templates (Brazil / LATAM)
+│   ├── notificacao_bancaria.html       # Banking security alert
+│   ├── helpdesk_ti.html                # IT helpdesk credential reset
+│   ├── onboarding_rh.html              # HR onboarding document collection
+│   ├── receita_federal.html            # Tax authority (Receita Federal) impersonation
+│   └── microsoft365_corporativo.html   # Microsoft 365 account blocked
 ├── landing-pages/              # Credential harvest & education pages
 │   ├── credential-harvest.html
 │   └── education-notification.html
+├── docs/                       # Guides and program measurement resources
+│   └── measuring-effectiveness.md
 └── campaign-guides/            # Implementation guides & best practices
     ├── implementation-guide.md
     ├── subject-lines-guide.md
@@ -190,6 +233,7 @@ Focus on risks relevant to specific roles and departments
 - **Manufacturing/Supply Chain:** Vendor portals, supplier compliance
 - **Customer Service:** Account verification, loyalty programs
 - **General Staff:** Social media, entertainment, delivery scams
+- **LATAM / Brazil Teams:** Portuguese-language banking, tax, IT, and HR scenarios
 
 ### Progressive Difficulty
 Gradually increase sophistication to build resilience
@@ -201,7 +245,7 @@ Gradually increase sophistication to build resilience
 ### Seasonal Campaigns
 Leverage current events and holidays for realistic scenarios
 - **Holiday Shopping:** Package delivery, shopping confirmations
-- **Tax Season:** IRS communications, financial services
+- **Tax Season:** IRS / Receita Federal communications, financial services
 - **Back-to-School:** Educational platform attacks
 - **Year-End:** HR benefits, company announcements
 
@@ -226,6 +270,8 @@ Track improvement through:
 - Increased reporting of suspicious emails
 - User feedback and comprehension scores
 - Behavioral change metrics
+
+See [docs/measuring-effectiveness.md](docs/measuring-effectiveness.md) for a detailed guide on which metrics matter and what good looks like.
 
 ## Ethical Guidelines & Legal Compliance
 
@@ -272,7 +318,7 @@ We welcome contributions to improve and expand this template collection!
 ### What We Need
 - **Additional attack vectors** (new platforms, services, techniques)
 - **Industry-specific templates** (healthcare, education, manufacturing)
-- **Non-English templates** for international organizations
+- **Non-English templates** for international organizations (see `latam-portuguese/` for the pattern)
 - **Advanced persistent threat scenarios** for mature security programs
 - **Accessibility improvements** for inclusive design
 
@@ -300,6 +346,7 @@ We welcome contributions to improve and expand this template collection!
 </div>
 
 - [Best Practices Guide](campaign-guides/best-practices-guide.md) - Campaign management tips
+- [Measuring Effectiveness](docs/measuring-effectiveness.md) - Metrics that matter for phishing simulation programs
 
 ### Related Projects
 - [GoPhish Official Documentation](https://getgophish.com/documentation/)
@@ -329,9 +376,16 @@ Industry standard targets for mature security awareness programs:
 - **Response Time:** <1 hour average time to report
 - **Training Completion:** >95% completion rate for educational modules
 
+See [docs/measuring-effectiveness.md](docs/measuring-effectiveness.md) for calculation methods and department-level analysis guidance.
+
 ## Version History
 
-### v2.0.0 - Current Release
+### v3.0.0 - Current Release
+- **Added LATAM/Portuguese template pack** (5 Brazilian enterprise scenarios)
+- **Added `/docs/measuring-effectiveness.md`** — metrics guide for SAT programs
+- **README restructured** as top-of-funnel asset with HailBytes SAT integration section
+
+### v2.0.0
 - **Complete template redesign** with modern GoPhish syntax
 - **Added educational modules** for all template categories
 - **Mobile-responsive design** for all templates
@@ -415,5 +469,21 @@ This project is licensed under the Mozilla Public License 2.0 - see the [LICENSE
 *Help us improve cybersecurity one simulation at a time*
 
 [Star this repo](../../stargazers) | [Report Bug](../../issues) | [Request Feature](../../issues) | [Contribute](../../pulls)
+
+</div>
+
+---
+
+<div align="center">
+
+### Managed GoPhish for Security Teams & MSSPs
+
+**[HailBytes SAT](https://hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_banner)** — Deploy GoPhish in your AWS or Azure account in minutes. All these templates included. Built-in metrics, multi-tenant MSSP support, and enterprise SLA.
+
+[![AWS Marketplace](https://img.shields.io/badge/AWS-Marketplace-FF9900?style=flat-square&logo=amazonaws)](https://aws.amazon.com/marketplace/search/results?searchTerms=hailbytes+sat&utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_aws)
+[![Azure Marketplace](https://img.shields.io/badge/Azure-Marketplace-0078D4?style=flat-square&logo=microsoftazure)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=hailbytes+sat&utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_azure)
+[![HailBytes.com](https://img.shields.io/badge/HailBytes-SAT%20Overview-orange?style=flat-square)](https://hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=gophish-training-templates&utm_content=footer_hailbytes)
+
+*BYOC architecture · SOC 2 roadmap · NIST CSF mapping · MSSP-ready multi-tenancy · Enterprise SLA*
 
 </div>
