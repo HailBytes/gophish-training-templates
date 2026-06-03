@@ -64,7 +64,7 @@
       "tags": ["it", "system-update", "patch", "credential-theft", "beginner"]
     },
     {
-      "filename": "webmail_ugprade.html",
+      "filename": "webmail_upgrade.html",
       "name": "Webmail Upgrade Required",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
