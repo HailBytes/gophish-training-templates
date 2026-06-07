@@ -132,16 +132,24 @@ jobs:
 
       - name: Validate all metadata.json files are valid JSON
         run: |
-          EXIT_CODE=0
-          find . -name "metadata.json" -not -path "*/.git/*" | while read f; do
-            if python3 -c "import json; json.load(open('$f'))" 2>/dev/null; then
-              echo "✓ $f"
-            else
-              echo "✗ INVALID JSON: $f"
-              EXIT_CODE=1
-            fi
-          done
-          exit $EXIT_CODE
+          python3 - << 'EOF'
+          import json, sys
+          from pathlib import Path
+
+          failed = []
+          for f in sorted(Path(".").rglob("metadata.json")):
+              if ".git" in f.parts:
+                  continue
+              try:
+                  json.loads(f.read_text())
+                  print(f"✓ {f}")
+              except json.JSONDecodeError as e:
+                  print(f"✗ INVALID JSON: {f} — {e}")
+                  failed.append(str(f))
+
+          if failed:
+              sys.exit(1)
+          EOF
 
       - name: Check required metadata fields
         run: |
