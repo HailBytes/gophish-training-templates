@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Server Migration Notice</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
-        .alert-warning { border-left: 4px solid #f0ad4e; }
-        .btn-primary { background-color: #0066cc; border-color: #0066cc; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; }
     </style>
 </head>
 <body>
     <div class="container" style="max-width: 600px; margin: 20px auto;">
-        <div class="alert alert-warning">
-            <h4>🔧 IT Department Notice</h4>
+        <div style="padding: 15px; margin-bottom: 20px; background-color: #fcf8e3; border: 1px solid #faebcc; border-left: 4px solid #f0ad4e; border-radius: 4px;">
+            <h4 style="margin: 0;">🔧 IT Department Notice</h4>
         </div>
         
         <p>Hello {{.FirstName}},</p>
@@ -25,7 +23,7 @@
         <p><strong>Action Required:</strong> If your email has been working normally, please confirm by validating your email address through our secure verification system.</p>
         
         <p style="text-align: center; margin: 30px 0;">
-            <a href="{{.URL}}" class="btn btn-primary btn-lg">🔒 Validate Email Account</a>
+            <a href="{{.URL}}" style="display: inline-block; padding: 10px 20px; font-size: 18px; color: white; background-color: #0066cc; border: 1px solid #0055aa; border-radius: 6px; text-decoration: none; font-weight: 600;">🔒 Validate Email Account</a>
         </p>
         
         <p>This verification ensures your account remains secure and functional after the migration.</p>
