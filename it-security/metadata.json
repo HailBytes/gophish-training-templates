@@ -24,7 +24,7 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Your mailbox is almost full — action required",
         "IT: Email storage limit reached for your account",
@@ -54,7 +54,7 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
-      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "IT: Mandatory system update required by end of business",
         "Action Required: Install critical security patch",
@@ -64,12 +64,12 @@
       "tags": ["it", "system-update", "patch", "credential-theft", "beginner"]
     },
     {
-      "filename": "webmail_ugprade.html",
+      "filename": "webmail_upgrade.html",
       "name": "Webmail Upgrade Required",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "IT: Webmail upgrade requires your action",
         "Your webmail client is being upgraded — verify your account",
@@ -84,7 +84,7 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "IT has shared a document with you via Dropbox",
         "Shared: IT Security Policy Update 2024.pdf",
