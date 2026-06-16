@@ -9,7 +9,7 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Company}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Supplier portal update required — re-registration needed",
         "Procurement: Your vendor portal access is expiring",

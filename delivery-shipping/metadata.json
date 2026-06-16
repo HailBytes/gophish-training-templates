@@ -25,7 +25,7 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Package ready for pickup — confirm your details",
         "Delivery: Your package is waiting at the facility",

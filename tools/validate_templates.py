@@ -255,6 +255,58 @@ def check_metadata(template_path: Path, result: ValidationResult):
                 )
 
 
+KNOWN_GOPHISH_VARS = {
+    "{{.Email}}", "{{.FirstName}}", "{{.LastName}}", "{{.Position}}",
+    "{{.Phone}}", "{{.Company}}", "{{.URL}}", "{{.Tracker}}",
+    "{{.From}}", "{{.Date}}", "{{.RId}}",
+}
+
+VAR_PATTERN = re.compile(r"\{\{\.([A-Za-z]+)")
+
+
+def check_metadata_variables(content: str, template_path: Path, result: ValidationResult):
+    """Warn when declared gophish_variables in metadata don't match what the template actually uses."""
+    metadata_path = template_path.parent / "metadata.json"
+    if not metadata_path.exists():
+        return
+
+    try:
+        metadata = json.loads(metadata_path.read_text())
+    except json.JSONDecodeError:
+        return
+
+    tmpl_entry = next(
+        (t for t in metadata.get("templates", []) if t.get("filename") == template_path.name),
+        None,
+    )
+    if tmpl_entry is None:
+        return
+
+    declared = set(tmpl_entry.get("gophish_variables", []))
+    used = {f"{{{{.{v}}}}}" for v in VAR_PATTERN.findall(content)}
+
+    missing_from_meta = used - declared
+    extra_in_meta = declared - used
+
+    for var in sorted(missing_from_meta):
+        if var not in KNOWN_GOPHISH_VARS:
+            result.warnings.append(
+                f"Template uses '{var}' which is not a standard GoPhish variable — "
+                f"verify it is supported and add it to gophish_variables in metadata.json"
+            )
+        else:
+            result.warnings.append(
+                f"Template uses '{var}' but it is not listed in gophish_variables in metadata.json — "
+                f"add it so operators know to include it in their campaign target CSV"
+            )
+
+    for var in sorted(extra_in_meta):
+        result.warnings.append(
+            f"metadata.json declares '{var}' in gophish_variables but it is not used in the template — "
+            f"remove it to avoid misleading operators"
+        )
+
+
 def check_tracker_placement(content: str, result: ValidationResult, is_education: bool):
     """Verify {{.Tracker}} is placed correctly (outside of visible content, typically last in body)."""
     if is_education:
@@ -311,6 +363,7 @@ def validate_file(file_path: Path) -> ValidationResult:
     if not is_education:
         check_education_page(file_path, result)
         check_metadata(file_path, result)
+        check_metadata_variables(content, file_path, result)
 
     return result
 

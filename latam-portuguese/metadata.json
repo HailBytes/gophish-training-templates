@@ -9,7 +9,7 @@
       "name": "Alerta de Segurança Bancária",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "URGENTE: Acesso suspeito detectado em sua conta — ação necessária",
         "Alerta de Segurança — Verifique sua conta agora",
@@ -21,7 +21,7 @@
       "name": "Helpdesk TI — Revalidação de Senha",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Ticket #TKT-2025 — Sua senha corporativa expira amanhã",
         "AÇÃO NECESSÁRIA: Renove sua senha de rede até 18h",
@@ -45,7 +45,7 @@
       "name": "Receita Federal — Notificação de Malha Fina",
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Receita Federal: sua declaração foi retida em malha fina",
         "Notificação Fiscal NF-2025 — regularize sua pendência",
@@ -57,7 +57,7 @@
       "name": "Microsoft 365 — Conta Bloqueada",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Sua conta Microsoft 365 foi bloqueada — verifique agora",
         "Alerta de segurança Microsoft: login suspeito detectado",
