@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness: AI-Tool Phishing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        .container {
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 720px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1b2a6b 0%, #0078d4 100%);
+            padding: 40px 48px 32px;
+            color: #ffffff;
+        }
+        .hero-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .hero h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.5;
+        }
+        .body {
+            padding: 40px 48px;
+        }
+        .caught-box {
+            background: #fff4ce;
+            border: 1px solid #f8d22a;
+            border-left: 4px solid #f8d22a;
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+        }
+        .caught-box h2 {
+            font-size: 17px;
+            color: #3b3a39;
+            margin-bottom: 8px;
+        }
+        .caught-box p {
+            font-size: 14px;
+            color: #605e5c;
+            line-height: 1.6;
+        }
+        .section {
+            margin-bottom: 32px;
+        }
+        .section h2 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .section p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 1.65;
+            margin-bottom: 10px;
+        }
+        .red-flag-list {
+            list-style: none;
+            padding: 0;
+        }
+        .red-flag-list li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: #fef0f0;
+            border: 1px solid #f1c0c0;
+            border-radius: 4px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+        }
+        .flag-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .flag-text strong {
+            display: block;
+            font-size: 14px;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+        }
+        .flag-text span {
+            font-size: 13px;
+            color: #605e5c;
+            line-height: 1.5;
+        }
+        .good-habits {
+            list-style: none;
+            padding: 0;
+        }
+        .good-habits li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .good-habits li:last-child { border-bottom: none; }
+        .check-icon {
+            width: 22px;
+            height: 22px;
+            background: #107c10;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .good-habits li > div strong {
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+        .good-habits li > div p {
+            font-size: 13px;
+            color: #605e5c;
+            margin-top: 2px;
+            line-height: 1.5;
+        }
+        .why-ai-box {
+            background: #f0f6ff;
+            border: 1px solid #b3d3f5;
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+        }
+        .why-ai-box p {
+            font-size: 14px;
+            color: #1a3a5c;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .cta-section {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 28px;
+        }
+        .cta-section h3 {
+            font-size: 17px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        .cta-section p {
+            font-size: 14px;
+            color: #606060;
+            margin-bottom: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 11px 26px;
+            background: #0078d4;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+        .footer {
+            border-top: 1px solid #e0e0e0;
+            padding: 20px 48px;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 13px;
+            color: #a0a0a0;
+            line-height: 1.5;
+        }
+        @media (max-width: 600px) {
+            .hero, .body { padding: 28px 24px; }
+            .footer { padding: 20px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="hero">
+            <div class="hero-label">Security Awareness Training</div>
+            <h1>You clicked a simulated AI-tool phishing email</h1>
+            <p>No real harm was done — this was a controlled training exercise. Read on to learn how to spot this attack next time.</p>
+        </div>
+
+        <div class="body">
+
+            <div class="caught-box">
+                <h2>What just happened?</h2>
+                <p>
+                    You received an email appearing to be from <strong>Microsoft Copilot</strong> claiming your license was suspended. In a real attack, clicking the link would have sent you to a fake Microsoft login page designed to steal your credentials — giving attackers full access to your Microsoft 365 account, email, files, and Teams conversations.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Why AI-tool phishing is so effective</h2>
+                <div class="why-ai-box">
+                    <p>
+                        AI tools like Microsoft Copilot, ChatGPT, and GitHub Copilot are now deeply embedded in daily work. Employees depend on them and <strong>fear losing access</strong> — especially mid-task. Attackers exploit this urgency. A "license suspended" notification creates immediate panic, causing people to click before they think.
+                    </p>
+                </div>
+                <p>
+                    These emails are increasingly convincing because AI is used to draft them, because attackers know the exact product names and workflows, and because many employees are still unfamiliar with what legitimate notifications from these services look like.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Red flags in this email</h2>
+                <ul class="red-flag-list">
+                    <li>
+                        <span class="flag-icon">&#128680;</span>
+                        <div class="flag-text">
+                            <strong>Urgency and threat of loss</strong>
+                            <span>"Your license will be permanently revoked within 48 hours" is a pressure tactic. Legitimate services give far longer notice and go through official IT channels.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="flag-icon">&#128680;</span>
+                        <div class="flag-text">
+                            <strong>Suspicious sender address</strong>
+                            <span>Legitimate Microsoft emails come from @microsoft.com. Always hover over the sender name to reveal the actual email address before acting.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="flag-icon">&#128680;</span>
+                        <div class="flag-text">
+                            <strong>Link destination doesn't match the brand</strong>
+                            <span>Hovering over the button before clicking would show a URL that does not end in microsoft.com. Phishers use lookalike domains like micros0ft-auth.com or login-microsoft365.net.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="flag-icon">&#128680;</span>
+                        <div class="flag-text">
+                            <strong>License issues are handled by your IT team</strong>
+                            <span>Microsoft never asks end users to directly re-verify a Copilot license. These actions are performed by your IT administrator in the Microsoft Admin Center.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="flag-icon">&#128680;</span>
+                        <div class="flag-text">
+                            <strong>Request for credentials via email link</strong>
+                            <span>Microsoft will never ask you to re-enter your password by clicking an email link. If prompted to sign in, navigate directly to portal.office.com instead.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>What to do when you receive a suspicious AI-tool email</h2>
+                <ul class="good-habits">
+                    <li>
+                        <div class="check-icon">&#10003;</div>
+                        <div>
+                            <strong>Don't click — go directly to the source</strong>
+                            <p>If you're concerned about your Copilot or ChatGPT subscription, open a new browser tab and navigate directly to the service's website. Never click links in suspicious emails.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon">&#10003;</div>
+                        <div>
+                            <strong>Verify with your IT help desk</strong>
+                            <p>Contact your IT team directly (not via a number in the email) to confirm whether any license action is genuine. They can check your account status in minutes.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon">&#10003;</div>
+                        <div>
+                            <strong>Report the email to security</strong>
+                            <p>Forward suspicious emails to your security team at <strong>security@company.com</strong> or use the "Report Phishing" button in Outlook. Every report helps protect your colleagues.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon">&#10003;</div>
+                        <div>
+                            <strong>Enable MFA on all AI tool accounts</strong>
+                            <p>Multi-factor authentication means stolen credentials alone cannot grant an attacker access. Ensure MFA is enabled on your Microsoft 365, ChatGPT, and GitHub accounts.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon">&#10003;</div>
+                        <div>
+                            <strong>Hover before you click</strong>
+                            <p>Always hover over any link to preview its destination. If the URL doesn't exactly match the brand's official domain, treat the email as phishing.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cta-section">
+                <h3>Complete the full training module</h3>
+                <p>Learn more about AI-tool phishing, business email compromise, and how attackers exploit urgency to steal credentials.</p>
+                <a href="#" class="btn">Start Training Module</a>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>This was a simulated phishing exercise. No real credentials were captured.</p>
+            <p>Questions? Contact the Information Security Team at security@company.com</p>
+        </div>
+
+    </div>
+</body>
+</html>
