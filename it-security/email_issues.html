@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Server Migration Notice</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
-        .alert-warning { border-left: 4px solid #f0ad4e; }
-        .btn-primary { background-color: #0066cc; border-color: #0066cc; }
+        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .container { max-width: 600px; margin: 20px auto; background: white; border-radius: 6px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+        .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
+        .alert-warning { background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; border-left: 4px solid #f0ad4e; }
+        .cta-button { display: inline-block; padding: 12px 24px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: 600; }
+        hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-top: 1px solid #eee; }
+        small { font-size: 85%; }
     </style>
 </head>
 <body>
@@ -25,7 +29,7 @@
         <p><strong>Action Required:</strong> If your email has been working normally, please confirm by validating your email address through our secure verification system.</p>
         
         <p style="text-align: center; margin: 30px 0;">
-            <a href="{{.URL}}" class="btn btn-primary btn-lg">🔒 Validate Email Account</a>
+            <a href="{{.URL}}" class="cta-button">🔒 Validate Email Account</a>
         </p>
         
         <p>This verification ensures your account remains secure and functional after the migration.</p>
