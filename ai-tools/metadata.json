@@ -1,0 +1,26 @@
+{
+  "category": "ai-tools",
+  "industry": "Cross-industry",
+  "description": "Phishing simulation templates that impersonate AI productivity tools (Microsoft Copilot, ChatGPT, GitHub Copilot). Employees are increasingly targeted via fake AI-tool license suspension, unusual-activity, or subscription-expiration emails.",
+  "templates": [
+    {
+      "filename": "copilot_license_suspended.html",
+      "name": "Microsoft Copilot – License Suspended",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Action Required: Your Microsoft 365 Copilot license has been suspended",
+        "Microsoft Copilot: Unusual activity detected — verify your account",
+        "Your Copilot access has been temporarily disabled",
+        "ACTION REQUIRED: Restore your Microsoft 365 Copilot license"
+      ],
+      "education_page": "education/ai_tools_phishing_education.html",
+      "tags": ["ai", "copilot", "microsoft", "microsoft-365", "license", "credential-harvest", "intermediate"],
+      "notes": "Highly effective against organizations using Microsoft 365. Copilot is now bundled in M365 E3/E5, meaning almost all enterprise employees have it. Fear of losing a productivity tool mid-task drives high click rates. The 48-hour deadline increases urgency. Works well as a follow-up after a general Microsoft 365 campaign."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2025-06-19"
+}
