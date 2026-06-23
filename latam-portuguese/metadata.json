@@ -1,5 +1,6 @@
 {
   "category": "latam-portuguese",
+  "industry": "Cross-industry",
   "description": "Portuguese-language phishing simulation templates targeting Brazilian enterprise environments. Scenarios include banking security alerts, IT helpdesk credential resets, HR onboarding document collection, government tax authority impersonation, and Microsoft 365 account security.",
   "language": "pt-BR",
   "region": "Brazil / LATAM",
@@ -9,60 +10,77 @@
       "name": "Alerta de Segurança Bancária",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
       "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "URGENTE: Acesso suspeito detectado em sua conta — ação necessária",
         "Alerta de Segurança — Verifique sua conta agora",
         "Sua conta foi temporariamente bloqueada por suspeita de fraude"
-      ]
+      ],
+      "education_page": "education/latam_portuguese_education.html",
+      "tags": ["banking", "financial", "portuguese", "latam", "credential-theft", "intermediate"]
     },
     {
       "filename": "helpdesk_ti.html",
       "name": "Helpdesk TI — Revalidação de Senha",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
       "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Ticket #TKT-2025 — Sua senha corporativa expira amanhã",
         "AÇÃO NECESSÁRIA: Renove sua senha de rede até 18h",
         "Atualização obrigatória de credenciais — TI Corporativo"
-      ]
+      ],
+      "education_page": "education/latam_portuguese_education.html",
+      "tags": ["helpdesk", "it", "password-reset", "portuguese", "latam", "credential-theft", "beginner"]
     },
     {
       "filename": "onboarding_rh.html",
       "name": "Onboarding RH — Documentação Pendente",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
       "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Documentação de integração pendente — RH aguarda seu envio",
         "Ação necessária: complete seu onboarding até amanhã",
         "Portal de integração: 3 documentos aguardando envio"
-      ]
+      ],
+      "education_page": "education/latam_portuguese_education.html",
+      "tags": ["hr", "onboarding", "portuguese", "latam", "credential-theft", "beginner"]
     },
     {
       "filename": "receita_federal.html",
       "name": "Receita Federal — Notificação de Malha Fina",
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
       "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Receita Federal: sua declaração foi retida em malha fina",
         "Notificação Fiscal NF-2025 — regularize sua pendência",
         "IRPF 2024: divergência detectada — prazo 30 dias"
-      ]
+      ],
+      "education_page": "education/latam_portuguese_education.html",
+      "tags": ["government", "tax", "receita-federal", "portuguese", "latam", "credential-theft", "advanced"]
     },
     {
       "filename": "microsoft365_corporativo.html",
       "name": "Microsoft 365 — Conta Bloqueada",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
       "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
       "suggested_subject_lines": [
         "Sua conta Microsoft 365 foi bloqueada — verifique agora",
         "Alerta de segurança Microsoft: login suspeito detectado",
         "Acesso bloqueado — confirme sua identidade para restaurar"
-      ]
+      ],
+      "education_page": "education/latam_portuguese_education.html",
+      "tags": ["microsoft", "microsoft365", "portuguese", "latam", "credential-theft", "intermediate"]
     }
-  ]
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2026-06-23"
 }
