@@ -11,7 +11,9 @@ A comprehensive collection of professionally designed email templates and landin
 
 ## Deploy These in 5 Minutes with HailBytes SAT
 
-> *[Screenshot: HailBytes SAT dashboard showing this template library loaded alongside campaign analytics and the repeat-offender tracking view — add `docs/sat-ui-preview.png` to display this image]*
+<p align="center">
+  <img src="docs/sat-ui-preview.png" alt="HailBytes SAT dashboard — template library, campaign analytics, and repeat-offender tracking" width="100%" />
+</p>
 
 Running GoPhish yourself means managing infrastructure, maintaining sending profiles, exporting CSVs to track metrics, and stitching together your own reporting. **HailBytes SAT** gives you all of these templates pre-loaded in a fully managed security awareness training environment — deployed inside your own AWS or Azure account (BYOC) so your data never leaves your cloud.
 
