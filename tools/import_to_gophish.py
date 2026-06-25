@@ -4,7 +4,7 @@ GoPhish Template Importer
 Bulk-imports phishing email templates and landing pages into GoPhish via its REST API.
 
 Requirements:
-    pip install requests
+    Python 3.6+ standard library only — no external packages required.
 
 Usage:
     # Import all templates
