@@ -12,8 +12,8 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 72
-- **Categories:** 26
+- **Templates:** 76
+- **Categories:** 27
 - **Most recent update:** 2026-06-26
 
 ### `ai-tools` — ai-tools
@@ -215,6 +215,19 @@ _Portuguese-language phishing simulation templates targeting Brazilian enterpris
 | Onboarding RH — Documentação Pendente | [`onboarding_rh.html`](latam-portuguese/onboarding_rh.html) | credential_harvest | beginner | 45-65% | 3 |
 | Receita Federal — Notificação de Malha Fina | [`receita_federal.html`](latam-portuguese/receita_federal.html) | credential_harvest | advanced | 30-50% | 3 |
 | Microsoft 365 — Conta Bloqueada | [`microsoft365_corporativo.html`](latam-portuguese/microsoft365_corporativo.html) | credential_harvest | intermediate | 40-60% | 3 |
+
+### `latam-spanish` — latam-spanish (es-419)
+
+**Industry:** Cross-industry  ·  **Templates:** 4
+
+_Spanish-language (LATAM) phishing simulation templates for Spanish-speaking enterprise environments. Scenarios include Microsoft 365 account security, banking alerts, IT helpdesk password resets, and tax-authority (SAT) impersonation._
+
+| Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
+|---|---|---|---|---|---|
+| Microsoft 365 – Cuenta Bloqueada | [`microsoft365_corporativo.html`](latam-spanish/microsoft365_corporativo.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Alerta de Seguridad Bancaria | [`notificacion_bancaria.html`](latam-spanish/notificacion_bancaria.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Soporte TI – Restablecer Contraseña | [`helpdesk_ti.html`](latam-spanish/helpdesk_ti.html) | credential_harvest | beginner | 50-70% | 3 |
+| SAT – Notificación Fiscal | [`sat_notificacion.html`](latam-spanish/sat_notificacion.html) | credential_harvest | advanced | 30-50% | 3 |
 
 ### `legal` — legal
 

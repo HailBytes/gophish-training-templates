@@ -367,6 +367,30 @@ The following are **warnings** (non-blocking, but please fix):
 
 ---
 
+## Localization (non-English templates)
+
+Phishing simulations are most effective in the recipient's native language. Localized
+templates live in their own top-level, language-named category directory — for example
+`latam-portuguese/` (Portuguese, Brazil) and `latam-spanish/` (Spanish, LATAM).
+
+To add a new language pack:
+
+1. **Create a language directory** named `<region>-<language>` (e.g. `latam-spanish`) with an
+   `education/` subdirectory, just like any other category.
+2. **Write the templates in the target language**, including subject lines and body copy. Set the
+   correct `lang` on `<html>` (e.g. `lang="es"`, `lang="pt-BR"`).
+3. **Add a localized education page** so the post-click teaching moment is in the same language.
+4. **In `metadata.json`, include two extra top-level fields:**
+   - `language` — a BCP-47 tag (e.g. `es-419`, `pt-BR`)
+   - `region` — a human-readable audience (e.g. `LATAM / Spanish-speaking`)
+5. Prioritize the highest-impact lures first: Microsoft 365 / credential harvest, banking,
+   IT helpdesk, and local government/tax authorities.
+
+Everything else (the metadata schema, validator, and catalog) works exactly the same for
+localized packs — the catalog displays the `language` tag automatically.
+
+---
+
 ## Submission Checklist
 
 Before opening a pull request, verify all items:

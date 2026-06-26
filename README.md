@@ -69,6 +69,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 - **Hospitality**: Hotel reservations, loyalty programs, booking systems
 - **Utilities**: Billing credits, service notifications, account management
 - **LATAM / Portuguese**: Banking alerts, IT helpdesk, HR onboarding, government (Brazil)
+- **LATAM / Spanish**: Microsoft 365, banking alerts, IT helpdesk, tax authority (SAT)
 - Multi-industry coverage for comprehensive training programs
 
 
