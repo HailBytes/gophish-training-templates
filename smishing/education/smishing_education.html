@@ -5,31 +5,239 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Awareness: Smishing (SMS Phishing)</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
-        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .header { text-align: center; margin-bottom: 40px; }
-        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
-        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
-        .technique-box { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
-        .protection-box { background: #d1ecf1; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #17a2b8; }
-        .stat-box { background: #e9ecef; border-radius: 8px; padding: 16px 20px; margin: 12px 0; display: flex; align-items: center; gap: 16px; }
-        .stat-num { font-size: 32px; font-weight: 700; color: #dc3545; min-width: 80px; text-align: center; }
-        h1 { color: #dc3545; }
-        h2 { color: #495057; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+    :root {
+      --bg: #eef1f5;
+      --surface: #ffffff;
+      --ink: #15263b;
+      --body: #3f4b5b;
+      --muted: #6b7787;
+      --border: #e3e8ef;
+      --border-strong: #d3dae4;
+      --fill: #f6f8fb;
+      --brand: #1b3a5b;
+      --brand-700: #16314d;
+      --brand-accent: #2b5d8a;
+      --danger: #b23b32;
+      --danger-bg: #fcf3f2;
+      --danger-border: #e7b7b2;
+      --warning: #9a6411;
+      --warning-bg: #fbf6ea;
+      --warning-border: #e6d3a3;
+      --success: #2f6b48;
+      --success-bg: #eef5f0;
+      --success-border: #bcd7c6;
+      --info: #245a86;
+      --info-bg: #eef4fa;
+      --info-border: #c2d6e8;
+      --radius: 10px;
+      --radius-sm: 7px;
+      --shadow: 0 1px 2px rgba(16,32,56,.04), 0 4px 16px rgba(16,32,56,.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      margin: 0;
+      padding: 32px 20px;
+      background: var(--bg);
+      color: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 44px 48px;
+      box-shadow: var(--shadow);
+    }
+    /* Header */
+    .header {
+      text-align: left;
+      margin: 0 0 8px;
+      padding: 0 0 22px;
+      border-bottom: 2px solid var(--brand);
+    }
+    .header::before {
+      content: 'Security Awareness Training';
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand-accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      color: var(--ink);
+      font-size: 27px;
+      font-weight: 650;
+      line-height: 1.25;
+      letter-spacing: -.01em;
+      margin: 0 0 4px;
+    }
+    .header h1 { margin-bottom: 0; }
+    h2 {
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 640;
+      letter-spacing: -.005em;
+      margin: 36px 0 14px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { color: var(--ink); font-size: 16px; font-weight: 640; margin: 18px 0 8px; }
+    h4 { color: var(--ink); font-size: 14.5px; font-weight: 640; margin: 0 0 8px; }
+    p { margin: 12px 0; }
+    ul, ol { margin: 12px 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    a { color: var(--brand-accent); }
+    strong { color: var(--ink); }
+    section { margin: 0; padding-top: 4px; padding-bottom: 4px; }
+    section:last-of-type { padding-bottom: 40px; }
+
+    /* Alerts / callouts */
+    .alert {
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--muted);
+      border-radius: var(--radius-sm);
+      margin: 18px 0;
+      background: var(--fill);
+      color: var(--body);
+    }
+    .alert strong { color: inherit; }
+    .alert-danger { background: var(--danger-bg); border-color: var(--danger-border); border-left-color: var(--danger); color: #7a2a23; }
+    .alert-warning { background: var(--warning-bg); border-color: var(--warning-border); border-left-color: var(--warning); color: #7a5210; }
+    .alert-info { background: var(--info-bg); border-color: var(--info-border); border-left-color: var(--info); color: #1d4a70; }
+    .alert-success { background: var(--success-bg); border-color: var(--success-border); border-left-color: var(--success); color: #265a3c; }
+
+    /* Generic panels (attack techniques, red flags, scenarios) */
+    .threat-scenario, .threat-tactics, .technique-box, .tactics-box, .scenario-box,
+    .suspicious-card, .advanced-threats, .caught-box, .danger-highlight,
+    .red-flags, .red-flags-list, .red-flags-section, .red-flag-list {
+      background: var(--danger-bg);
+      border: 1px solid var(--danger-border);
+      border-left: 3px solid var(--danger);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+    /* Positive / guidance panels */
+    .protection-tips, .protection-box, .protection-strategies, .best-practices,
+    .good-habits, .verification-steps, .protect, .legitimate-card {
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      border-left: 3px solid var(--success);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+    .why-box, .why-ai-box, .tool-box {
+      background: var(--info-bg);
+      border: 1px solid var(--info-border);
+      border-left: 3px solid var(--info);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+
+    /* Card grids */
+    .threat-types, .services-grid, .platforms-grid, .comparison-grid,
+    .government-types, .platform-examples, .comparison-card + .comparison-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .threat-card, .service-card, .platform-card, .agency-card, .comparison-card {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--brand-accent);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      margin: 0;
+      text-align: left;
+    }
+    .threat-card h4, .service-card h4, .platform-card h4, .agency-card h4 { color: var(--brand); }
+    .legitimate-card { border-left-color: var(--success); }
+    .suspicious-card { border-left-color: var(--danger); }
+
+    /* Stat / highlight blocks */
+    .stat-box, .statistics-highlight, .cost-impact, .danger-highlight {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      margin: 18px 0;
+    }
+    .stat-box *, .statistics-highlight *, .cost-impact * { color: #fff; }
+    .stat-num { font-size: 30px; font-weight: 700; color: #fff; }
+
+    /* Custom-marker lists (red flags / good habits) */
+    .red-flag-list, .good-habits { list-style: none; padding-left: 0; margin: 12px 0; }
+    .red-flag-item, .red-flag-list > li, .good-habits > li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .red-flag-item:last-child, .red-flag-list > li:last-child, .good-habits > li:last-child { border-bottom: none; }
+    .flag-icon { color: var(--danger); font-weight: 700; flex: 0 0 auto; }
+    .flag-icon::before { content: '\0021'; }
+    .check-icon { color: var(--success); font-weight: 700; flex: 0 0 auto; }
+    .check-icon::before { content: '\2713'; }
+    .flag-text { color: var(--body); }
+
+    /* Quiz */
+    .quiz-section, .quiz, .quiz-question {
+      background: var(--fill);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      margin: 24px 0;
+    }
+    .quiz-option { display: block; padding: 4px 0; }
+    .correct { color: var(--success); font-weight: 600; }
+    details summary { cursor: pointer; color: var(--brand-accent); font-weight: 600; }
+    input[type=radio] { margin-right: 8px; }
+    label { color: var(--body); }
+
+    /* Closing / CTA band */
+    .footer, .footer-cta, .cta-section, .hero {
+      text-align: center;
+      margin: 36px 0 0;
+      padding: 34px 28px;
+      background: var(--brand);
+      color: #fff;
+      border-radius: var(--radius-sm);
+    }
+    .footer *, .footer-cta *, .cta-section *, .hero * { color: #fff; }
+    .footer h2, .cta-section h2, .hero h2 { border-bottom: none; color: #fff; }
+    .hero-label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--brand) !important;
+      padding: 11px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    .emoji { font-style: normal; }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📱 Smishing (SMS Phishing) — Training</h1>
+            <h1>Smishing (SMS Phishing) — Training</h1>
             <div class="alert alert-danger">
-                <strong>⚠️ You encountered a simulated smishing attack.</strong><br>
+                <strong>You encountered a simulated smishing attack.</strong><br>
                 Smishing attacks arrive as text messages (SMS) — not just email. They use the same social engineering techniques but are often harder to spot on a small screen.
             </div>
         </div>
 
         <section>
-            <h2>📊 Why Smishing Is Growing Fast</h2>
+            <h2>Why Smishing Is Growing Fast</h2>
             <div class="stat-box">
                 <div class="stat-num">98%</div>
                 <div>SMS open rate — compared to ~20% for email. Attackers know your texts get read.</div>
@@ -45,7 +253,7 @@
         </section>
 
         <section>
-            <h2>🎭 Most Common Smishing Scenarios</h2>
+            <h2>Most Common Smishing Scenarios</h2>
             <div class="technique-box">
                 <ul>
                     <li><strong>Package delivery:</strong> "Your USPS/FedEx/UPS package couldn't be delivered — reschedule here" (especially effective since everyone orders online)</li>
@@ -59,7 +267,7 @@
         </section>
 
         <section>
-            <h2>🚩 How to Spot Smishing</h2>
+            <h2>How to Spot Smishing</h2>
             <div class="alert alert-danger">
                 <ul>
                     <li><strong>Unexpected messages:</strong> Real delivery companies only text if you specifically signed up for alerts</li>
@@ -73,7 +281,7 @@
         </section>
 
         <section>
-            <h2>✅ How to Stay Safe from Smishing</h2>
+            <h2>How to Stay Safe from Smishing</h2>
             <div class="protection-box">
                 <ol>
                     <li><strong>Never click links in unexpected texts</strong> — go directly to the company's website or app to check status</li>
@@ -87,8 +295,8 @@
         </section>
 
         <section>
-            <h2>🧠 Knowledge Check</h2>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h2>Knowledge Check</h2>
+            <div style="background: #f6f8fb; padding: 20px; border-radius: 8px; margin: 20px 0;">
                 <p><strong>You receive a text from an unknown number saying your Chase account has been locked due to suspicious activity and you must click a link to verify. What do you do?</strong></p>
                 <div style="margin: 15px 0;">
                     <input type="radio" id="q1a" name="q1" value="a">
@@ -101,16 +309,16 @@
                     <label for="q1d">Ignore it and wait to see if your card gets declined</label>
                 </div>
                 <details style="margin-top: 20px;">
-                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
-                    <div style="background: #d4edda; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                    <summary style="cursor: pointer; color: #1b3a5b; font-weight: 600;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #eef5f0; padding: 15px; margin-top: 10px; border-radius: 5px;">
                         <p><strong>Correct Answer: B</strong> — Always verify bank alerts by going directly to the official app or calling the number on your card. Never click links in texts about financial accounts. Replying "STOP" to a smishing text may confirm your number is active.</p>
                     </div>
                 </details>
             </div>
         </section>
 
-        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; border-radius: 8px;">
-            <h2>🎓 Training Complete!</h2>
+        <section class="cta-section" style="text-align: center; margin-top: 40px; padding: 20px; background: #1b3a5b; color: white; border-radius: 8px;">
+            <h2>Training Complete!</h2>
             <p>Smishing is one of the fastest-growing attack vectors. Treat unexpected texts with the same skepticism as suspicious emails.</p>
             <p><strong>Questions?</strong> Contact IT Security at security@company.com</p>
         </section>

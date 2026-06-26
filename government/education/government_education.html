@@ -5,102 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Training: Government Impersonation Phishing</title>
     <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            line-height: 1.6; 
-            margin: 0; 
-            padding: 20px; 
-            background: #f8f9fa; 
-        }
-        .container { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            background: white; 
-            border-radius: 12px; 
-            padding: 40px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-        }
-        .header { 
-            text-align: center; 
-            margin-bottom: 40px; 
-        }
-        .alert { 
-            padding: 15px; 
-            border-radius: 8px; 
-            margin: 20px 0; 
-        }
-        .alert-warning { 
-            background: #fff3cd; 
-            border: 1px solid #ffeaa7; 
-            color: #856404; 
-        }
-        .alert-info { 
-            background: #d1ecf1; 
-            border: 1px solid #bee5eb; 
-            color: #0c5460; 
-        }
-        .government-types {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .agency-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #dc3545;
-            text-align: center;
-        }
-        .threat-scenario {
-            background: #fff5f5;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #dc3545;
-        }
-        .protection-tips {
-            background: #e8f5e8;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #28a745;
-        }
-        .quiz-section {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-        .red-flags-list {
-            background: #ffebee;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .verification-steps {
-            background: #e3f2fd;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        h1 { 
-            color: #dc3545; 
-        }
-        h2 { 
-            color: #495057; 
-            border-bottom: 2px solid #dc3545; 
-            padding-bottom: 10px; 
-        }
-        .emoji { 
-            font-size: 1.2em; 
-        }
+    :root {
+      --bg: #eef1f5;
+      --surface: #ffffff;
+      --ink: #15263b;
+      --body: #3f4b5b;
+      --muted: #6b7787;
+      --border: #e3e8ef;
+      --border-strong: #d3dae4;
+      --fill: #f6f8fb;
+      --brand: #1b3a5b;
+      --brand-700: #16314d;
+      --brand-accent: #2b5d8a;
+      --danger: #b23b32;
+      --danger-bg: #fcf3f2;
+      --danger-border: #e7b7b2;
+      --warning: #9a6411;
+      --warning-bg: #fbf6ea;
+      --warning-border: #e6d3a3;
+      --success: #2f6b48;
+      --success-bg: #eef5f0;
+      --success-border: #bcd7c6;
+      --info: #245a86;
+      --info-bg: #eef4fa;
+      --info-border: #c2d6e8;
+      --radius: 10px;
+      --radius-sm: 7px;
+      --shadow: 0 1px 2px rgba(16,32,56,.04), 0 4px 16px rgba(16,32,56,.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      margin: 0;
+      padding: 32px 20px;
+      background: var(--bg);
+      color: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 44px 48px;
+      box-shadow: var(--shadow);
+    }
+    /* Header */
+    .header {
+      text-align: left;
+      margin: 0 0 8px;
+      padding: 0 0 22px;
+      border-bottom: 2px solid var(--brand);
+    }
+    .header::before {
+      content: 'Security Awareness Training';
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand-accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      color: var(--ink);
+      font-size: 27px;
+      font-weight: 650;
+      line-height: 1.25;
+      letter-spacing: -.01em;
+      margin: 0 0 4px;
+    }
+    .header h1 { margin-bottom: 0; }
+    h2 {
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 640;
+      letter-spacing: -.005em;
+      margin: 36px 0 14px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { color: var(--ink); font-size: 16px; font-weight: 640; margin: 18px 0 8px; }
+    h4 { color: var(--ink); font-size: 14.5px; font-weight: 640; margin: 0 0 8px; }
+    p { margin: 12px 0; }
+    ul, ol { margin: 12px 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    a { color: var(--brand-accent); }
+    strong { color: var(--ink); }
+    section { margin: 0; padding-top: 4px; padding-bottom: 4px; }
+    section:last-of-type { padding-bottom: 40px; }
+
+    /* Alerts / callouts */
+    .alert {
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--muted);
+      border-radius: var(--radius-sm);
+      margin: 18px 0;
+      background: var(--fill);
+      color: var(--body);
+    }
+    .alert strong { color: inherit; }
+    .alert-danger { background: var(--danger-bg); border-color: var(--danger-border); border-left-color: var(--danger); color: #7a2a23; }
+    .alert-warning { background: var(--warning-bg); border-color: var(--warning-border); border-left-color: var(--warning); color: #7a5210; }
+    .alert-info { background: var(--info-bg); border-color: var(--info-border); border-left-color: var(--info); color: #1d4a70; }
+    .alert-success { background: var(--success-bg); border-color: var(--success-border); border-left-color: var(--success); color: #265a3c; }
+
+    /* Generic panels (attack techniques, red flags, scenarios) */
+    .threat-scenario, .threat-tactics, .technique-box, .tactics-box, .scenario-box,
+    .suspicious-card, .advanced-threats, .caught-box, .danger-highlight,
+    .red-flags, .red-flags-list, .red-flags-section, .red-flag-list {
+      background: var(--danger-bg);
+      border: 1px solid var(--danger-border);
+      border-left: 3px solid var(--danger);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+    /* Positive / guidance panels */
+    .protection-tips, .protection-box, .protection-strategies, .best-practices,
+    .good-habits, .verification-steps, .protect, .legitimate-card {
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      border-left: 3px solid var(--success);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+    .why-box, .why-ai-box, .tool-box {
+      background: var(--info-bg);
+      border: 1px solid var(--info-border);
+      border-left: 3px solid var(--info);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+
+    /* Card grids */
+    .threat-types, .services-grid, .platforms-grid, .comparison-grid,
+    .government-types, .platform-examples, .comparison-card + .comparison-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .threat-card, .service-card, .platform-card, .agency-card, .comparison-card {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--brand-accent);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      margin: 0;
+      text-align: left;
+    }
+    .threat-card h4, .service-card h4, .platform-card h4, .agency-card h4 { color: var(--brand); }
+    .legitimate-card { border-left-color: var(--success); }
+    .suspicious-card { border-left-color: var(--danger); }
+
+    /* Stat / highlight blocks */
+    .stat-box, .statistics-highlight, .cost-impact, .danger-highlight {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      margin: 18px 0;
+    }
+    .stat-box *, .statistics-highlight *, .cost-impact * { color: #fff; }
+    .stat-num { font-size: 30px; font-weight: 700; color: #fff; }
+
+    /* Custom-marker lists (red flags / good habits) */
+    .red-flag-list, .good-habits { list-style: none; padding-left: 0; margin: 12px 0; }
+    .red-flag-item, .red-flag-list > li, .good-habits > li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .red-flag-item:last-child, .red-flag-list > li:last-child, .good-habits > li:last-child { border-bottom: none; }
+    .flag-icon { color: var(--danger); font-weight: 700; flex: 0 0 auto; }
+    .flag-icon::before { content: '\0021'; }
+    .check-icon { color: var(--success); font-weight: 700; flex: 0 0 auto; }
+    .check-icon::before { content: '\2713'; }
+    .flag-text { color: var(--body); }
+
+    /* Quiz */
+    .quiz-section, .quiz, .quiz-question {
+      background: var(--fill);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      margin: 24px 0;
+    }
+    .quiz-option { display: block; padding: 4px 0; }
+    .correct { color: var(--success); font-weight: 600; }
+    details summary { cursor: pointer; color: var(--brand-accent); font-weight: 600; }
+    input[type=radio] { margin-right: 8px; }
+    label { color: var(--body); }
+
+    /* Closing / CTA band */
+    .footer, .footer-cta, .cta-section, .hero {
+      text-align: center;
+      margin: 36px 0 0;
+      padding: 34px 28px;
+      background: var(--brand);
+      color: #fff;
+      border-radius: var(--radius-sm);
+    }
+    .footer *, .footer-cta *, .cta-section *, .hero * { color: #fff; }
+    .footer h2, .cta-section h2, .hero h2 { border-bottom: none; color: #fff; }
+    .hero-label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--brand) !important;
+      padding: 11px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    .emoji { font-style: normal; }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏛️ Government Impersonation Phishing - Security Training</h1>
+            <h1>Government Impersonation Phishing - Security Training</h1>
             <div class="alert alert-info">
                 <strong>These attacks aimed to steal:</strong>
                 <ul>
@@ -115,7 +244,7 @@
         </section>
 
         <section>
-            <h2>🧠 Government Phishing Quiz</h2>
+            <h2>Government Phishing Quiz</h2>
             <div class="quiz-section">
                 <h3>Test Your Knowledge:</h3>
                 <p><strong>Scenario:</strong> You receive an email claiming to be from the FDIC saying "Mandatory Consumer Protection Survey - Required by Federal Banking Regulation. You have 72 hours to complete or risk losing deposit insurance coverage." What should you do?</p>
@@ -135,8 +264,8 @@
                 </div>
                 
                 <details style="margin-top: 20px;">
-                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer & Explanation</strong></summary>
-                    <div style="background: #e8f5e8; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                    <summary style="cursor: pointer; color: #1b3a5b; font-weight: 600;"><strong>Click for Answer & Explanation</strong></summary>
+                    <div style="background: #eef5f0; padding: 15px; margin-top: 10px; border-radius: 5px;">
                         <p><strong>Best Answer: C (with D as additional verification)</strong> - Visit the official FDIC website directly (fdic.gov) to check for any legitimate surveys or warnings about scams. The FDIC doesn't send unsolicited email surveys requiring immediate action, and deposit insurance isn't contingent on survey participation. Also contact your bank to verify.</p>
                     </div>
                 </details>
@@ -144,11 +273,11 @@
         </section>
 
         <section>
-            <h2>🔍 Agency-Specific Verification Methods</h2>
+            <h2>Agency-Specific Verification Methods</h2>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
                 <div class="protection-tips">
-                    <h4>🏦 FDIC Verification</h4>
+                    <h4>FDIC Verification</h4>
                     <ul>
                         <li>Visit fdic.gov directly</li>
                         <li>Call 1-877-ASK-FDIC</li>
@@ -158,7 +287,7 @@
                 </div>
                 
                 <div class="protection-tips">
-                    <h4>💰 IRS Verification</h4>
+                    <h4>IRS Verification</h4>
                     <ul>
                         <li>Visit irs.gov directly</li>
                         <li>Call 1-800-829-1040</li>
@@ -168,7 +297,7 @@
                 </div>
                 
                 <div class="protection-tips">
-                    <h4>👮 Law Enforcement</h4>
+                    <h4>Law Enforcement</h4>
                     <ul>
                         <li>Call your local police department directly</li>
                         <li>Visit the department's official website</li>
@@ -180,7 +309,7 @@
         </section>
 
         <section>
-            <h2>🔒 Protection Strategies</h2>
+            <h2>Protection Strategies</h2>
             <div class="protection-tips">
                 <h3>Advanced Government Scam Protection:</h3>
                 <ul>
@@ -196,8 +325,8 @@
         </section>
 
         <section>
-            <h2>📞 Official Government Contact Methods</h2>
-            <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h2>Official Government Contact Methods</h2>
+            <div style="background: #eef4fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
                 <h3>How Government Agencies Actually Contact You:</h3>
                 <ul>
                     <li><strong>Primary Method:</strong> Official postal mail to your address on file</li>
@@ -210,7 +339,7 @@
         </section>
 
         <section>
-            <h2>🚨 If You Think You've Been Compromised</h2>
+            <h2>If You Think You've Been Compromised</h2>
             <div class="alert alert-warning">
                 <h3>Immediate Actions if You Provided Information:</h3>
                 <ol>
@@ -227,26 +356,26 @@
         </section>
 
         <section>
-            <h2>📊 Government Scam Statistics</h2>
+            <h2>Government Scam Statistics</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
-                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center;">
-                    <h3 style="color: #dc3545; margin: 0; font-size: 32px;">$1.8B</h3>
-                    <p style="margin: 5px 0 0 0; color: #6c757d;">Lost to government impersonation scams in 2023</p>
+                <div style="background: #f6f8fb; padding: 20px; border-radius: 8px; text-align: center;">
+                    <h3 style="color: #b23b32; margin: 0; font-size: 32px;">$1.8B</h3>
+                    <p style="margin: 5px 0 0 0; color: #6b7787;">Lost to government impersonation scams in 2023</p>
                 </div>
-                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center;">
-                    <h3 style="color: #dc3545; margin: 0; font-size: 32px;">3x</h3>
-                    <p style="margin: 5px 0 0 0; color: #6c757d;">Increase in government scams since 2020</p>
+                <div style="background: #f6f8fb; padding: 20px; border-radius: 8px; text-align: center;">
+                    <h3 style="color: #b23b32; margin: 0; font-size: 32px;">3x</h3>
+                    <p style="margin: 5px 0 0 0; color: #6b7787;">Increase in government scams since 2020</p>
                 </div>
-                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center;">
-                    <h3 style="color: #dc3545; margin: 0; font-size: 32px;">78%</h3>
-                    <p style="margin: 5px 0 0 0; color: #6c757d;">Of victims are over age 50</p>
+                <div style="background: #f6f8fb; padding: 20px; border-radius: 8px; text-align: center;">
+                    <h3 style="color: #b23b32; margin: 0; font-size: 32px;">78%</h3>
+                    <p style="margin: 5px 0 0 0; color: #6b7787;">Of victims are over age 50</p>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>🤝 Help Others Stay Safe</h2>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h2>Help Others Stay Safe</h2>
+            <div style="background: #f6f8fb; padding: 20px; border-radius: 8px; margin: 20px 0;">
                 <h3>Spread Awareness:</h3>
                 <ul>
                     <li><strong>Share knowledge:</strong> Educate family and friends about government scams</li>
@@ -259,7 +388,7 @@
         </section>
 
         <section>
-            <h2>🔍 Advanced Threat Awareness</h2>
+            <h2>Advanced Threat Awareness</h2>
             <div class="threat-scenario">
                 <h3>Sophisticated Government Impersonation Techniques:</h3>
                 <ul>
@@ -272,12 +401,12 @@
             </div>
         </section>
 
-        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #dc3545 0%, #28a745 100%); color: white; border-radius: 8px;">
-            <h2>🎓 Government Phishing Training Complete!</h2>
+        <section class="cta-section" style="text-align: center; margin-top: 40px; padding: 20px; background: #1b3a5b; color: white; border-radius: 8px;">
+            <h2>Government Phishing Training Complete!</h2>
             <p>You're now better equipped to identify government impersonation scams. Remember: when in doubt, verify through official channels!</p>
             
             <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 6px; margin: 20px 0;">
-                <h3>🔑 Key Takeaways:</h3>
+                <h3>Key Takeaways:</h3>
                 <ul style="text-align: left; display: inline-block;">
                     <li>Government agencies don't send unsolicited emails for sensitive matters</li>
                     <li>Always verify through official websites and phone numbers</li>
@@ -292,13 +421,13 @@
     </div>
 </body>
 </html>="alert alert-warning">
-                <strong>🚨 You clicked on a simulated government impersonation phishing email!</strong><br>
+                <strong>You clicked on a simulated government impersonation phishing email!</strong><br>
                 This training will help you recognize and avoid fraudulent government communications.
             </div>
         </div>
 
         <section>
-            <h2>🎯 Understanding Government Impersonation Phishing</h2>
+            <h2>Understanding Government Impersonation Phishing</h2>
             <p>You interacted with a simulated phishing email that impersonated a government agency or official organization. These attacks are extremely dangerous because they:</p>
             <ul>
                 <li><strong>Exploit Authority:</strong> People naturally trust government communications</li>
@@ -310,60 +439,60 @@
         </section>
 
         <section>
-            <h2>🏛️ Commonly Impersonated Government Agencies</h2>
+            <h2>Commonly Impersonated Government Agencies</h2>
             <div class="government-types">
                 <div class="agency-card">
-                    <h4>🏦 FDIC</h4>
+                    <h4>FDIC</h4>
                     <p>Banking surveys, deposit insurance notifications</p>
                 </div>
                 <div class="agency-card">
-                    <h4>👮 Police Departments</h4>
+                    <h4>Police Departments</h4>
                     <p>Fake crime reports, identity theft alerts</p>
                 </div>
                 <div class="agency-card">
-                    <h4>📊 BBB</h4>
+                    <h4>BBB</h4>
                     <p>Business complaints, rating threats</p>
                 </div>
                 <div class="agency-card">
-                    <h4>💰 IRS</h4>
+                    <h4>IRS</h4>
                     <p>Tax audits, refund notifications</p>
                 </div>
                 <div class="agency-card">
-                    <h4>🛡️ Social Security</h4>
+                    <h4>Social Security</h4>
                     <p>Benefit suspensions, account verification</p>
                 </div>
                 <div class="agency-card">
-                    <h4>🚨 FBI/DHS</h4>
+                    <h4>FBI/DHS</h4>
                     <p>Security alerts, investigation notices</p>
                 </div>
                 <div class="agency-card">
-                    <h4>⚖️ Courts</h4>
+                    <h4>Courts</h4>
                     <p>Jury duty, legal summons</p>
                 </div>
                 <div class="agency-card">
-                    <h4>🏥 Health Departments</h4>
+                    <h4>Health Departments</h4>
                     <p>Public health alerts, compliance notices</p>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>🎭 Attack Techniques You Encountered</h2>
+            <h2>Attack Techniques You Encountered</h2>
             <div class="threat-scenario">
                 <h3>Government Phishing Tactics:</h3>
                 <ul>
-                    <li><span style="color: #dc3545;">⚖️</span> <strong>Legal Threats:</strong> "Failure to respond will result in penalties"</li>
-                    <li><span style="color: #dc3545;">🔴</span> <strong>Urgent Deadlines:</strong> "You have 72 hours to comply"</li>
-                    <li><span style="color: #dc3545;">🏛️</span> <strong>Official Appearance:</strong> Government seals, formal language, official letterhead</li>
-                    <li><span style="color: #dc3545;">💰</span> <strong>Financial Consequences:</strong> "Fines up to $500,000"</li>
-                    <li><span style="color: #dc3545;">🎯</span> <strong>Personal Information:</strong> Including your name, email, and reference numbers</li>
-                    <li><span style="color: #dc3545;">📞</span> <strong>Contact Information:</strong> Fake phone numbers and case references</li>
+                    <li><span style="color: #b23b32;"></span> <strong>Legal Threats:</strong> "Failure to respond will result in penalties"</li>
+                    <li><span style="color: #b23b32;"></span> <strong>Urgent Deadlines:</strong> "You have 72 hours to comply"</li>
+                    <li><span style="color: #b23b32;"></span> <strong>Official Appearance:</strong> Government seals, formal language, official letterhead</li>
+                    <li><span style="color: #b23b32;"></span> <strong>Financial Consequences:</strong> "Fines up to $500,000"</li>
+                    <li><span style="color: #b23b32;"></span> <strong>Personal Information:</strong> Including your name, email, and reference numbers</li>
+                    <li><span style="color: #b23b32;"></span> <strong>Contact Information:</strong> Fake phone numbers and case references</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>🚨 Red Flags You Should Have Noticed</h2>
+            <h2>Red Flags You Should Have Noticed</h2>
             <div class="red-flags-list">
                 <h3>Warning Signs in Government Phishing:</h3>
                 <ul>
@@ -380,7 +509,7 @@
         </section>
 
         <section>
-            <h2>✅ How to Verify Government Communications</h2>
+            <h2>How to Verify Government Communications</h2>
             <div class="verification-steps">
                 <h3>Government Communication Verification Process:</h3>
                 <ol>
@@ -396,10 +525,10 @@
         </section>
 
         <section>
-            <h2>💡 Real vs. Fake: Key Differences</h2>
+            <h2>Real vs. Fake: Key Differences</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
-                <div style="background: #e8f5e8; padding: 20px; border-radius: 8px;">
-                    <h4 style="color: #28a745;">✅ Legitimate Government Communications</h4>
+                <div style="background: #eef5f0; padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #2f6b48;">Legitimate Government Communications</h4>
                     <ul>
                         <li>Sent via official postal mail for important matters</li>
                         <li>Include specific, verifiable contact information</li>
@@ -409,8 +538,8 @@
                         <li>Can be verified through multiple official channels</li>
                     </ul>
                 </div>
-                <div style="background: #fff5f5; padding: 20px; border-radius: 8px;">
-                    <h4 style="color: #dc3545;">❌ Government Phishing Emails</h4>
+                <div style="background: #fcf3f2; padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #b23b32;">Government Phishing Emails</h4>
                     <ul>
                         <li>Arrive unexpectedly via email only</li>
                         <li>Use generic or fake contact information</li>
@@ -424,5 +553,5 @@
         </section>
 
         <section>
-            <h2>🎯 What Attackers Were After</h2>
+            <h2>What Attackers Were After</h2>
             <div class

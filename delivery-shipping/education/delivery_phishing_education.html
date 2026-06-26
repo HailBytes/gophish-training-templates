@@ -5,32 +5,239 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Awareness: Delivery & Shipping Phishing</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f8f9fa; }
-        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .header { text-align: center; margin-bottom: 40px; }
-        .alert { padding: 15px; border-radius: 8px; margin: 20px 0; }
-        .alert-warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; }
-        .alert-info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
-        .red-flags { background: #ffe6e6; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .best-practices { background: #e8f5e8; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .quiz-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 30px 0; }
-        h1 { color: #2c3e50; }
-        h2 { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .emoji { font-size: 1.2em; }
+    :root {
+      --bg: #eef1f5;
+      --surface: #ffffff;
+      --ink: #15263b;
+      --body: #3f4b5b;
+      --muted: #6b7787;
+      --border: #e3e8ef;
+      --border-strong: #d3dae4;
+      --fill: #f6f8fb;
+      --brand: #1b3a5b;
+      --brand-700: #16314d;
+      --brand-accent: #2b5d8a;
+      --danger: #b23b32;
+      --danger-bg: #fcf3f2;
+      --danger-border: #e7b7b2;
+      --warning: #9a6411;
+      --warning-bg: #fbf6ea;
+      --warning-border: #e6d3a3;
+      --success: #2f6b48;
+      --success-bg: #eef5f0;
+      --success-border: #bcd7c6;
+      --info: #245a86;
+      --info-bg: #eef4fa;
+      --info-border: #c2d6e8;
+      --radius: 10px;
+      --radius-sm: 7px;
+      --shadow: 0 1px 2px rgba(16,32,56,.04), 0 4px 16px rgba(16,32,56,.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      margin: 0;
+      padding: 32px 20px;
+      background: var(--bg);
+      color: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 44px 48px;
+      box-shadow: var(--shadow);
+    }
+    /* Header */
+    .header {
+      text-align: left;
+      margin: 0 0 8px;
+      padding: 0 0 22px;
+      border-bottom: 2px solid var(--brand);
+    }
+    .header::before {
+      content: 'Security Awareness Training';
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand-accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      color: var(--ink);
+      font-size: 27px;
+      font-weight: 650;
+      line-height: 1.25;
+      letter-spacing: -.01em;
+      margin: 0 0 4px;
+    }
+    .header h1 { margin-bottom: 0; }
+    h2 {
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 640;
+      letter-spacing: -.005em;
+      margin: 36px 0 14px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { color: var(--ink); font-size: 16px; font-weight: 640; margin: 18px 0 8px; }
+    h4 { color: var(--ink); font-size: 14.5px; font-weight: 640; margin: 0 0 8px; }
+    p { margin: 12px 0; }
+    ul, ol { margin: 12px 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    a { color: var(--brand-accent); }
+    strong { color: var(--ink); }
+    section { margin: 0; padding-top: 4px; padding-bottom: 4px; }
+    section:last-of-type { padding-bottom: 40px; }
+
+    /* Alerts / callouts */
+    .alert {
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--muted);
+      border-radius: var(--radius-sm);
+      margin: 18px 0;
+      background: var(--fill);
+      color: var(--body);
+    }
+    .alert strong { color: inherit; }
+    .alert-danger { background: var(--danger-bg); border-color: var(--danger-border); border-left-color: var(--danger); color: #7a2a23; }
+    .alert-warning { background: var(--warning-bg); border-color: var(--warning-border); border-left-color: var(--warning); color: #7a5210; }
+    .alert-info { background: var(--info-bg); border-color: var(--info-border); border-left-color: var(--info); color: #1d4a70; }
+    .alert-success { background: var(--success-bg); border-color: var(--success-border); border-left-color: var(--success); color: #265a3c; }
+
+    /* Generic panels (attack techniques, red flags, scenarios) */
+    .threat-scenario, .threat-tactics, .technique-box, .tactics-box, .scenario-box,
+    .suspicious-card, .advanced-threats, .caught-box, .danger-highlight,
+    .red-flags, .red-flags-list, .red-flags-section, .red-flag-list {
+      background: var(--danger-bg);
+      border: 1px solid var(--danger-border);
+      border-left: 3px solid var(--danger);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+    /* Positive / guidance panels */
+    .protection-tips, .protection-box, .protection-strategies, .best-practices,
+    .good-habits, .verification-steps, .protect, .legitimate-card {
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      border-left: 3px solid var(--success);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+    .why-box, .why-ai-box, .tool-box {
+      background: var(--info-bg);
+      border: 1px solid var(--info-border);
+      border-left: 3px solid var(--info);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+
+    /* Card grids */
+    .threat-types, .services-grid, .platforms-grid, .comparison-grid,
+    .government-types, .platform-examples, .comparison-card + .comparison-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .threat-card, .service-card, .platform-card, .agency-card, .comparison-card {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--brand-accent);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      margin: 0;
+      text-align: left;
+    }
+    .threat-card h4, .service-card h4, .platform-card h4, .agency-card h4 { color: var(--brand); }
+    .legitimate-card { border-left-color: var(--success); }
+    .suspicious-card { border-left-color: var(--danger); }
+
+    /* Stat / highlight blocks */
+    .stat-box, .statistics-highlight, .cost-impact, .danger-highlight {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      margin: 18px 0;
+    }
+    .stat-box *, .statistics-highlight *, .cost-impact * { color: #fff; }
+    .stat-num { font-size: 30px; font-weight: 700; color: #fff; }
+
+    /* Custom-marker lists (red flags / good habits) */
+    .red-flag-list, .good-habits { list-style: none; padding-left: 0; margin: 12px 0; }
+    .red-flag-item, .red-flag-list > li, .good-habits > li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .red-flag-item:last-child, .red-flag-list > li:last-child, .good-habits > li:last-child { border-bottom: none; }
+    .flag-icon { color: var(--danger); font-weight: 700; flex: 0 0 auto; }
+    .flag-icon::before { content: '\0021'; }
+    .check-icon { color: var(--success); font-weight: 700; flex: 0 0 auto; }
+    .check-icon::before { content: '\2713'; }
+    .flag-text { color: var(--body); }
+
+    /* Quiz */
+    .quiz-section, .quiz, .quiz-question {
+      background: var(--fill);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      margin: 24px 0;
+    }
+    .quiz-option { display: block; padding: 4px 0; }
+    .correct { color: var(--success); font-weight: 600; }
+    details summary { cursor: pointer; color: var(--brand-accent); font-weight: 600; }
+    input[type=radio] { margin-right: 8px; }
+    label { color: var(--body); }
+
+    /* Closing / CTA band */
+    .footer, .footer-cta, .cta-section, .hero {
+      text-align: center;
+      margin: 36px 0 0;
+      padding: 34px 28px;
+      background: var(--brand);
+      color: #fff;
+      border-radius: var(--radius-sm);
+    }
+    .footer *, .footer-cta *, .cta-section *, .hero * { color: #fff; }
+    .footer h2, .cta-section h2, .hero h2 { border-bottom: none; color: #fff; }
+    .hero-label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--brand) !important;
+      padding: 11px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    .emoji { font-style: normal; }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🛡️ You've Been Phished! (It's OK - This Was a Test)</h1>
+            <h1>You've Been Phished! (It's OK - This Was a Test)</h1>
             <div class="alert alert-warning">
-                <strong>📧 This was a simulated phishing attack to help you learn!</strong><br>
+                <strong>This was a simulated phishing attack to help you learn!</strong><br>
                 No harm was done, but let's learn how to spot these in the future.
             </div>
         </div>
 
         <section>
-            <h2>📦 About Delivery & Shipping Phishing Attacks</h2>
+            <h2>About Delivery & Shipping Phishing Attacks</h2>
             <p>You received a simulated phishing email that appeared to be from a shipping company (DHL, FedEx, UPS, etc.). These attacks are extremely common because:</p>
             <ul>
                 <li><strong>Universal Appeal:</strong> Everyone receives packages</li>
@@ -41,22 +248,22 @@
         </section>
 
         <section>
-            <h2>🚨 Red Flags to Watch For</h2>
+            <h2>Red Flags to Watch For</h2>
             <div class="red-flags">
                 <h3>In the email you received, these were warning signs:</h3>
                 <ul>
-                    <li><span class="emoji">📧</span> <strong>Unexpected delivery:</strong> You weren't expecting a package</li>
-                    <li><span class="emoji">🔗</span> <strong>Suspicious links:</strong> URL doesn't match the real company</li>
-                    <li><span class="emoji">⚡</span> <strong>Urgency pressure:</strong> "Verify immediately or lose your package"</li>
-                    <li><span class="emoji">📝</span> <strong>Poor grammar/spelling:</strong> Professional companies proofread</li>
-                    <li><span class="emoji">🎯</span> <strong>Generic information:</strong> Real tracking emails have specific details</li>
-                    <li><span class="emoji">📨</span> <strong>Sender mismatch:</strong> Email doesn't come from official domain</li>
+                    <li><span class="emoji"></span> <strong>Unexpected delivery:</strong> You weren't expecting a package</li>
+                    <li><span class="emoji"></span> <strong>Suspicious links:</strong> URL doesn't match the real company</li>
+                    <li><span class="emoji"></span> <strong>Urgency pressure:</strong> "Verify immediately or lose your package"</li>
+                    <li><span class="emoji"></span> <strong>Poor grammar/spelling:</strong> Professional companies proofread</li>
+                    <li><span class="emoji"></span> <strong>Generic information:</strong> Real tracking emails have specific details</li>
+                    <li><span class="emoji"></span> <strong>Sender mismatch:</strong> Email doesn't come from official domain</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>✅ How to Verify Legitimate Shipping Emails</h2>
+            <h2>How to Verify Legitimate Shipping Emails</h2>
             <div class="best-practices">
                 <ol>
                     <li><strong>Check the sender:</strong> Real emails come from @dhl.com, @fedex.com, @ups.com</li>
@@ -70,7 +277,7 @@
         </section>
 
         <section>
-            <h2>🎯 What Attackers Want</h2>
+            <h2>What Attackers Want</h2>
             <div class="alert alert-info">
                 <strong>Delivery phishing attacks typically aim to steal:</strong>
                 <ul>
@@ -83,7 +290,7 @@
         </section>
 
         <section>
-            <h2>🧠 Quick Knowledge Check</h2>
+            <h2>Quick Knowledge Check</h2>
             <div class="quiz-section">
                 <h3>Test Your Knowledge:</h3>
                 <p><strong>Question:</strong> You receive an email saying "Your Amazon package couldn't be delivered." What should you do first?</p>
@@ -103,8 +310,8 @@
                 </div>
                 
                 <details style="margin-top: 20px;">
-                    <summary style="cursor: pointer; color: #007bff;"><strong>Click for Answer</strong></summary>
-                    <div style="background: #e8f5e8; padding: 15px; margin-top: 10px; border-radius: 5px;">
+                    <summary style="cursor: pointer; color: #1b3a5b; font-weight: 600;"><strong>Click for Answer</strong></summary>
+                    <div style="background: #eef5f0; padding: 15px; margin-top: 10px; border-radius: 5px;">
                         <p><strong>Correct Answer: C</strong> - Always verify delivery issues by logging into your account directly through the official website, not through email links.</p>
                     </div>
                 </details>
@@ -112,19 +319,19 @@
         </section>
 
         <section>
-            <h2>🛡️ Protecting Yourself Going Forward</h2>
+            <h2>Protecting Yourself Going Forward</h2>
             <div class="best-practices">
                 <h3>Remember the "STOP, LOOK, THINK" method:</h3>
                 <ul>
-                    <li><span class="emoji">🛑</span> <strong>STOP:</strong> Don't immediately click links or download attachments</li>
-                    <li><span class="emoji">👀</span> <strong>LOOK:</strong> Examine the sender, URL, and content carefully</li>
-                    <li><span class="emoji">🤔</span> <strong>THINK:</strong> Does this make sense? Am I expecting this?</li>
+                    <li><span class="emoji"></span> <strong>STOP:</strong> Don't immediately click links or download attachments</li>
+                    <li><span class="emoji"></span> <strong>LOOK:</strong> Examine the sender, URL, and content carefully</li>
+                    <li><span class="emoji"></span> <strong>THINK:</strong> Does this make sense? Am I expecting this?</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>🆘 What If You Think You've Been Compromised?</h2>
+            <h2>What If You Think You've Been Compromised?</h2>
             <div class="alert alert-warning">
                 <p><strong>If you entered credentials or personal information:</strong></p>
                 <ol>
@@ -137,8 +344,8 @@
             </div>
         </section>
 
-        <section style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px;">
-            <h2>🎓 Great Job Completing This Training!</h2>
+        <section class="cta-section" style="text-align: center; margin-top: 40px; padding: 20px; background: #1b3a5b; color: white; border-radius: 8px;">
+            <h2>Great Job Completing This Training!</h2>
             <p>You're now better equipped to identify delivery and shipping phishing attempts. Remember: when in doubt, always verify independently!</p>
             <p><strong>Questions?</strong> Contact our IT Security team at security@company.com</p>
         </section>
