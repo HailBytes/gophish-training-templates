@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneDrive - Shared Document Notification</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f3f2f1; color: #323130; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e1dfdd; border-radius: 2px; overflow: hidden; box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108); }
+        .header { background: #0078d4; color: white; padding: 18px 24px; display: flex; align-items: center; }
+        .header-logo { font-size: 16px; font-weight: 600; }
+        .content { padding: 32px; }
+        .doc-box { display: flex; align-items: center; border: 1px solid #e1dfdd; border-radius: 4px; padding: 16px; margin: 24px 0; background: #faf9f8; }
+        .doc-icon { font-size: 32px; margin-right: 16px; color: #107c41; }
+        .doc-details { font-size: 14px; }
+        .doc-title { font-weight: 600; color: #0078d4; }
+        .doc-meta { font-size: 12px; color: #605e5c; margin-top: 4px; }
+        .cta-button { 
+            background: #0078d4; 
+            color: white; 
+            padding: 10px 24px; 
+            text-decoration: none; 
+            border-radius: 2px; 
+            display: inline-block; 
+            font-weight: 600;
+            font-size: 14px;
+            margin: 20px 0 0 0;
+        }
+        .cta-button:hover {
+            background: #005a9e;
+        }
+        .footer { background: #faf9f8; border-top: 1px solid #f3f2f1; padding: 20px 32px; font-size: 11px; color: #605e5c; line-height: 1.5; }
+        p { font-size: 14px; line-height: 1.5; margin: 0 0 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">Microsoft OneDrive</div>
+        </div>
+
+        <div class="content">
+            <p>Hi {{.FirstName}},</p>
+            
+            <p>A colleague shared a document with you via Microsoft OneDrive. You have been granted access to view and edit the document.</p>
+
+            <div class="doc-box">
+                <div class="doc-icon">📊</div>
+                <div class="doc-details">
+                    <div class="doc-title">Q3_Budget_and_Compensation_Reviews.xlsx</div>
+                    <div class="doc-meta">Shared by Admin Portal (via OneDrive) &bull; Size: 4.8 MB &bull; Excel Worksheet</div>
+                </div>
+            </div>
+
+            <p>This document contains confidential salary structures, department budgeting projections, and employee review milestones for the next quarter. Please review the details by clicking the button below.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Open Shared Excel File</a>
+            </p>
+        </div>
+
+        <div class="footer">
+            This message was sent to {{.Email}} from Microsoft OneDrive. Microsoft respects your privacy. To learn more, read our <a href="#" style="color: #0078d4; text-decoration: none;">Privacy Statement</a>.<br>
+            Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
