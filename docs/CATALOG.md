@@ -12,7 +12,7 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 76
+- **Templates:** 84
 - **Categories:** 27
 - **Most recent update:** 2026-06-26
 
@@ -29,7 +29,7 @@ _Phishing simulation templates that impersonate AI productivity tools (Microsoft
 
 ### `cloud-services` — cloud-services
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _Phishing templates impersonating cloud storage and file sharing services_
 
@@ -37,6 +37,9 @@ _Phishing templates impersonating cloud storage and file sharing services_
 |---|---|---|---|---|---|
 | Dropbox File Share | [`dropbox_share.html`](cloud-services/dropbox_share.html) | credential_harvest | intermediate | 40-60% | 3 |
 | Google Drive Document Share | [`google_drive.html`](cloud-services/google_drive.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Box – File Shared | [`box_share.html`](cloud-services/box_share.html) | credential_harvest | beginner | 40-60% | 3 |
+| Google Workspace – Storage Full | [`google_workspace_storage.html`](cloud-services/google_workspace_storage.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Adobe Acrobat – Document Shared | [`adobe_document_share.html`](cloud-services/adobe_document_share.html) | credential_harvest | beginner | 40-60% | 3 |
 
 ### `collaboration` — collaboration
 
@@ -107,7 +110,7 @@ _Phishing templates impersonating entertainment and consumer reward services_
 
 ### `financial` — financial
 
-**Industry:** Cross-industry / Financial Services  ·  **Templates:** 2
+**Industry:** Cross-industry / Financial Services  ·  **Templates:** 5
 
 _Phishing templates targeting financial transactions and banking_
 
@@ -115,6 +118,9 @@ _Phishing templates targeting financial transactions and banking_
 |---|---|---|---|---|---|
 | Federal Reserve Wire Transfer Alert | [`wire_transfer.html`](financial/wire_transfer.html) | credential_harvest | advanced | 20-40% | 3 |
 | Skype Credit/Payment Notice | [`skype_payment.html`](financial/skype_payment.html) | credential_harvest | intermediate | 30-50% | 3 |
+| ACH Payment Confirmation | [`ach_payment_confirmation.html`](financial/ach_payment_confirmation.html) | credential_harvest | advanced | 30-50% | 3 |
+| Concur – Expense Approval | [`expense_report_approval.html`](financial/expense_report_approval.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Corporate Card – Declined Charge | [`corporate_card_declined.html`](financial/corporate_card_declined.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `government` — government
 
@@ -255,7 +261,7 @@ _Phishing templates targeting manufacturing and supply chain personnel_
 
 ### `microsoft` — microsoft
 
-**Industry:** Cross-industry  ·  **Templates:** 3
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _Phishing templates impersonating Microsoft products and services_
 
@@ -264,6 +270,8 @@ _Phishing templates impersonating Microsoft products and services_
 | Microsoft Account Suspicious Sign-In | [`microsoft_security.html`](microsoft/microsoft_security.html) | credential_harvest | intermediate | 35-55% | 3 |
 | SharePoint – Document Shared | [`sharepoint_document_share.html`](microsoft/sharepoint_document_share.html) | credential_harvest | beginner | 45-65% | 3 |
 | Microsoft 365 – Password Expiration | [`microsoft365_password_expiry.html`](microsoft/microsoft365_password_expiry.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Microsoft Teams – Missed Messages | [`teams_message.html`](microsoft/teams_message.html) | credential_harvest | beginner | 40-60% | 3 |
+| OneDrive – Storage Almost Full | [`onedrive_storage_full.html`](microsoft/onedrive_storage_full.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `quishing` — quishing
 
