@@ -137,6 +137,10 @@ gophish-training-templates/
 ├── corporate/                  # Corporate communications and news
 ├── government/                 # Government agency impersonations
 ├── microsoft/                  # Microsoft service themed templates
+│   ├── microsoft_security.html
+│   ├── microsoft_teams_invite.html
+│   ├── onedrive_file_share.html
+│   └── microsoft_mfa_update.html
 ├── healthcare/                 # HIPAA, patient portals, insurance
 │   ├── hipaa_compliance_alert.html
 │   ├── patient_portal_security.html
@@ -159,6 +163,19 @@ gophish-training-templates/
 │   └── hotel_reservation_confirm.html
 ├── utilities/                  # Power/utility billing and credits
 │   └── power_outage_credit.html
+├── quishing/                   # QR code phishing (quishing) templates
+│   ├── qr_code_mfa.html
+│   ├── qr_code_wifi.html
+│   ├── microsoft_mfa_qr.html
+│   ├── parking_toll_qr.html
+│   ├── secure_document_qr.html
+│   └── docusign_qr.html
+├── smishing/                   # SMS phishing (smishing) templates
+│   ├── bank_alert_sms.html
+│   ├── package_delivery_sms.html
+│   ├── mfa_verification_sms.html
+│   ├── payroll_hr_sms.html
+│   └── it_helpdesk_sms.html
 ├── latam-portuguese/           # Portuguese-language templates (Brazil / LATAM)
 │   ├── notificacao_bancaria.html       # Banking security alert
 │   ├── helpdesk_ti.html                # IT helpdesk credential reset
