@@ -3,152 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Storage Quota Exceeded</title>
+    <title>Mailbox storage almost full</title>
     <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            background: #f8f9fa; 
-            margin: 0; 
-            padding: 20px; 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f4f5f7;
+            margin: 0;
+            padding: 20px;
+            color: #1d2125;
         }
-        .container { 
-            max-width: 600px; 
-            margin: 0 auto; 
-            background: white; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e3e6ea;
+            border-radius: 6px;
             overflow: hidden;
         }
-        .header { 
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); 
-            color: white; 
-            padding: 25px; 
-            text-align: center; 
+        .header {
+            background: #0c2d57;
+            color: white;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
         }
-        .content { padding: 30px; }
-        .warning-box { 
-            background: #fff3cd; 
-            border: 1px solid #ffeaa7; 
-            color: #856404; 
-            padding: 20px; 
-            border-radius: 6px; 
-            margin: 20px 0; 
-            border-left: 4px solid #ff6b35;
+        .content { padding: 28px 24px; font-size: 14px; line-height: 1.55; }
+        .quota-info {
+            background: #f4f5f7;
+            padding: 18px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border: 1px solid #e3e6ea;
+            font-size: 13px;
         }
-        .quota-info { 
-            background: #f8f9fa; 
-            padding: 20px; 
-            border-radius: 6px; 
-            margin: 20px 0; 
-            border: 1px solid #dee2e6;
-        }
-        .cta-button { 
-            background: #ff6b35; 
-            color: white; 
-            padding: 14px 28px; 
-            text-decoration: none; 
-            border-radius: 6px; 
-            display: inline-block; 
+        .quota-info h4 { margin: 0 0 10px; font-size: 14px; }
+        .cta-button {
+            background: #0c2d57;
+            color: white;
+            padding: 12px 26px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
             margin: 20px 0;
             font-weight: 600;
-            text-transform: uppercase;
-        }
-        .urgent-notice {
-            background: #dc3545;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 0;
-            font-weight: bold;
         }
         .progress-bar {
             background: #e9ecef;
             border-radius: 4px;
-            height: 20px;
-            margin: 10px 0;
+            height: 14px;
+            margin: 12px 0 6px;
             overflow: hidden;
         }
         .progress-fill {
-            background: linear-gradient(90deg, #ff6b35, #dc3545);
+            background: #d97706;
             height: 100%;
-            width: 95%;
-            border-radius: 4px;
+            width: 99%;
         }
+        .footer { font-size: 12px; color: #6b778c; padding: 0 24px 24px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="urgent-notice">
-            ⚠️ URGENT: EMAIL STORAGE QUOTA EXCEEDED
-        </div>
-        
-        <div class="header">
-            <h2>📧 Email Storage Management</h2>
-            <p style="margin: 0; opacity: 0.9;">IT Systems Administration</p>
-        </div>
-        
+        <div class="header">Mailbox storage</div>
+
         <div class="content">
-            <div class="warning-box">
-                <h4>🚨 Account Storage Limit Reached</h4>
-                <p><strong>Your email account ({{.Email}}) has exceeded one or more size limits set by the Network Administrators.</strong></p>
-            </div>
-            
             <p>Dear {{.FirstName}},</p>
-            
-            <p>Our email server monitoring system has detected that your mailbox has reached critical storage capacity. <strong>Immediate action is required</strong> to prevent email delivery failures and potential data loss.</p>
-            
+
+            <p>Your mailbox ({{.Email}}) is almost full. When it reaches its limit you may stop receiving new messages, so we recommend freeing up space soon.</p>
+
             <div class="quota-info">
-                <h4>📊 Current Storage Status</h4>
-                <p><strong>Account:</strong> {{.Email}}</p>
-                <p><strong>Current Usage:</strong> 4.87 GB of 5.00 GB (97.4% full)</p>
-                <p><strong>Status:</strong> <span style="color: #dc3545; font-weight: bold;">CRITICAL - Immediate Action Required</span></p>
-                
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                <small style="color: #6c757d;">Storage utilization: 97.4% (Critical threshold: 95%)</small>
+                <h4>Current storage</h4>
+                <p style="margin:0;"><strong>Usage:</strong> 49.5 GB of 50 GB (99%)</p>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+                <p style="margin:0; color:#6b778c;">Recommended action below 95%</p>
             </div>
-            
-            <p><strong>Issues you may experience:</strong></p>
-            <ul style="background: #f8f9fa; padding: 20px; border-radius: 6px; margin: 15px 0;">
-                <li>Unable to receive new emails</li>
-                <li>Email sending failures</li>
-                <li>Slow email synchronization</li>
-                <li>Risk of automatic email deletion</li>
-                <li>Outlook/mobile app connectivity issues</li>
-            </ul>
-            
-            <p><strong>Required Action:</strong> You must immediately validate your email account and confirm storage optimization settings to prevent service interruption.</p>
-            
+
+            <p>To free up space you can empty Deleted Items, archive older mail, or remove large attachments. You can review and manage your mailbox storage here:</p>
+
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">🔧 Validate Email Account</a>
+                <a href="{{.URL}}" class="cta-button">Manage mailbox storage</a>
             </p>
-            
-            <div class="warning-box">
-                <p><strong>⏰ Time Sensitive:</strong> If your email has been working normally, please validate your account within the next 24 hours to maintain uninterrupted service.</p>
-            </div>
-            
-            <p>Our IT team has implemented emergency storage optimization procedures, but your account verification is required to complete the process and ensure continued email functionality.</p>
-            
-            <p><strong>Alternative:</strong> If you continue to experience issues after validation, please contact the IT Help Desk at extension 2847 or email helpdesk@company.com.</p>
-            
-            <p>Thank you for your immediate cooperation in resolving this critical issue.</p>
-            
-            <p>Best regards,<br>
-            <strong>Network Administration Team</strong><br>
-            Information Technology Department<br>
-            Email Systems Division</p>
-            
-            <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
-            
-            <p style="font-size: 12px; color: #6c757d;">
-                <strong>System Alert ID:</strong> ESM-{{.Date}}-{{.Email}}<br>
-                <strong>Generated:</strong> {{.Date}} by Email Storage Monitoring System<br>
-                This is an automated message. Please do not reply directly to this email.
+
+            <p>If you need help, contact the IT Help Desk at extension 2847.</p>
+
+            <p>Thanks,<br>
+            <strong>Marcus Bell</strong><br>
+            IT Service Desk</p>
+
+            <hr style="margin: 28px 0; border: none; border-top: 1px solid #e3e6ea;">
+
+            <p style="font-size: 12px; color: #6b778c;">
+                Reference: 7783104<br>
+                Generated {{.Date}}. This is an automated message; please do not reply.
             </p>
         </div>
     </div>
-    
+
     {{.Tracker}}
 </body>
 </html>

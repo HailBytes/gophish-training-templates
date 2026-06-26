@@ -19,7 +19,7 @@
             border: 1px solid #3e3e42;
         }
         .header {
-            background-color: #007acc;
+            background-color: #635bff;
             color: #ffffff;
             padding: 24px 40px;
             font-family: Arial, sans-serif;
@@ -81,7 +81,7 @@
             font-size: 13px;
         }
         .cta-button {
-            background-color: #007acc;
+            background-color: #635bff;
             color: #ffffff;
             padding: 14px 32px;
             text-decoration: none;
@@ -92,7 +92,7 @@
             font-size: 14px;
         }
         .cta-button:hover {
-            background-color: #005a9e;
+            background-color: #4b45cc;
             text-decoration: none;
             color: #ffffff;
         }
@@ -126,8 +126,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">Developer Platform API</div>
-            <div class="tagline">API Key Management</div>
+            <div class="logo">Stripe</div>
+            <div class="tagline">API key management</div>
         </div>
 
         <div class="content">
@@ -145,10 +145,10 @@
             <p><strong>API Key Details:</strong></p>
 
             <div class="api-details">
-                <div class="detail-line"><span style="color: #569cd6;">Key ID:</span> <span style="color: #ce9178;">sk_live_{{.Email | slice 0 16}}</span></div>
-                <div class="detail-line"><span style="color: #569cd6;">Created:</span> <span style="color: #b5cea8;">2024-01-15</span></div>
-                <div class="detail-line"><span style="color: #569cd6;">Expires:</span> <span style="color: #f48771;">2025-02-07</span></div>
-                <div class="detail-line"><span style="color: #569cd6;">Status:</span> <span style="color: #ff9800;">Expiring Soon</span></div>
+                <div class="detail-line"><span style="color: #569cd6;">Key:</span> <span style="color: #ce9178;">sk_live_&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;4f9C</span></div>
+                <div class="detail-line"><span style="color: #569cd6;">Last used:</span> <span style="color: #b5cea8;">3 days ago</span></div>
+                <div class="detail-line"><span style="color: #569cd6;">Expires:</span> <span style="color: #f48771;">{{.Date}} + 7 days</span></div>
+                <div class="detail-line"><span style="color: #569cd6;">Status:</span> <span style="color: #ff9800;">Expiring soon</span></div>
             </div>
 
             <p><strong>What happens if your key expires?</strong></p>
@@ -160,8 +160,8 @@
             </ul>
 
             <p><strong>Renewal Process:</strong></p>
-            <p>1. Log in to your developer dashboard<br>
-            2. Navigate to API Keys section<br>
+            <p>1. Sign in to the Stripe Dashboard<br>
+            2. Go to Developers &rarr; API keys<br>
             3. Click "Renew Key" next to the expiring key<br>
             4. Update your applications with the new key</p>
 
@@ -174,20 +174,20 @@
             <div class="code-block">
                 <code># Example: Update your API key in your application<br>
 API_KEY='your_new_api_key_here'<br>
-curl -H "Authorization: Bearer $API_KEY" https://api.platform.com/v1/</code>
+curl https://api.stripe.com/v1/charges -u "$API_KEY:"</code>
             </div>
 
-            <p>Need help? Visit our documentation at docs.platform.com or contact developer support at api-support@platform.com.</p>
+            <p>Need help? See the documentation at stripe.com/docs/keys or contact support at support@stripe.com.</p>
 
             <p>Best regards,<br>
-            <strong>Platform API Team</strong></p>
+            <strong>The Stripe team</strong></p>
         </div>
 
         <div class="footer">
             <p>This notification was sent to {{.Email}}</p>
             <p style="margin-top: 12px;">
-                Developer Platform | API Services<br>
-                © 2024 Platform Inc. All rights reserved.
+                Stripe, Inc., 354 Oyster Point Blvd, South San Francisco, CA 94080<br>
+                © 2026 Stripe, Inc. All rights reserved.
             </p>
         </div>
     </div>

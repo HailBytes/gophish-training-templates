@@ -17,17 +17,17 @@
             margin: 0 auto;
             background-color: #ffffff;
             border: 1px solid #d0d7de;
-            border-top: 4px solid #4a154b;
+            border-top: 4px solid #1f4e79;
         }
         .header {
             padding: 25px 20px;
-            background-color: #fcfaff;
+            background-color: #f4f8fc;
             border-bottom: 1px solid #d0d7de;
         }
         .header-title {
             font-size: 18px;
             font-weight: bold;
-            color: #4a154b;
+            color: #1f4e79;
             margin: 0;
         }
         .header-subtitle {
@@ -40,15 +40,15 @@
             padding: 30px 20px;
         }
         .notice-box {
-            background-color: #f7f0f7;
-            border-left: 4px solid #4a154b;
+            background-color: #eef4fa;
+            border-left: 4px solid #1f4e79;
             padding: 15px;
             margin-bottom: 25px;
         }
         .notice-title {
             font-size: 14px;
             font-weight: bold;
-            color: #4a154b;
+            color: #1f4e79;
             margin: 0 0 5px 0;
         }
         .notice-text {
@@ -81,7 +81,7 @@
             margin: 30px 0;
         }
         .cta-button {
-            background-color: #4a154b;
+            background-color: #1f4e79;
             color: #ffffff;
             padding: 12px 30px;
             text-decoration: none;
@@ -91,7 +91,7 @@
             display: inline-block;
         }
         .cta-button:hover {
-            background-color: #361037;
+            background-color: #16395a;
             color: #ffffff;
         }
         .footer {
@@ -137,7 +137,11 @@
             <table class="review-table">
                 <tr>
                     <td class="label">Employee Name</td>
-                    <td class="value">{{.FirstName}}</td>
+                    <td class="value">{{.FirstName}} {{.LastName}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Review ID</td>
+                    <td class="value">PR-2026-{{.RId}}</td>
                 </tr>
                 <tr>
                     <td class="label">Evaluation Period</td>
@@ -145,11 +149,11 @@
                 </tr>
                 <tr>
                     <td class="label">Due Date</td>
-                    <td class="value">Friday at 5:00 PM EST</td>
+                    <td class="value">By end of business this Friday</td>
                 </tr>
                 <tr>
                     <td class="label">Assessment Status</td>
-                    <td class="value" style="color: #4a154b; font-weight: bold;">Self-Assessment Pending</td>
+                    <td class="value" style="color: #1f4e79; font-weight: bold;">Self-Assessment Pending</td>
                 </tr>
             </table>
 
@@ -162,7 +166,8 @@
             <p>Please note that completing this evaluation is a mandatory component of our compensation and promotion review cycle.</p>
 
             <p>Best regards,<br>
-            <strong>HR Talents &amp; Development Team</strong></p>
+            <strong>Laura Bennett</strong><br>
+            Talent &amp; Development, Human Resources</p>
         </div>
 
         <div class="footer">

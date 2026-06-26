@@ -9,16 +9,39 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#444b54;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Soporte de TI</td></tr>
-<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<tr><td style="background:#253858;padding:16px 24px;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="width:24px;height:24px;background:#2684ff;border-radius:4px;text-align:center;vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;">J</td>
+<td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#ffffff;">Jira Service Management</td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:12px 24px 0;font-size:12px;color:#555555;line-height:1.5;">De: Mesa de Ayuda &lt;soporte@ti-corporativo.com&gt;<br>Para: {{.Email}}</td></tr>
+<tr><td style="background:#e8eaf6;border-bottom:2px solid #253858;padding:10px 24px;font-size:13px;color:#253858;font-weight:bold;">Ticket #TKT-2026-{{.RId}} — Revalidación de contraseña obligatoria</td></tr>
+<tr><td style="padding:24px 24px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Hola {{.FirstName}}:</p>
-<p style="margin:0 0 16px;">Como parte de una actualización de seguridad programada, todos los empleados deben revalidar su contraseña corporativa antes de la fecha límite.</p>
-<p style="margin:0 0 16px;">Las cuentas que no se revaliden perderán el acceso al correo y a las aplicaciones internas. El proceso toma menos de un minuto.</p>
-<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#444b54;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Restablecer mi contraseña</a></p>
+<p style="margin:0 0 16px;">Como parte de una actualización de seguridad programada, todos los empleados deben revalidar su contraseña corporativa antes de la fecha límite. El proceso toma menos de un minuto.</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;border:1px solid #dddddd;border-radius:4px;font-size:13px;margin:0 0 18px;">
+<tr><td style="padding:14px 18px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;width:42%;">Usuario</td><td style="padding:5px 0;">{{.Email}}</td></tr>
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;">Número de ticket</td><td style="padding:5px 0;">TKT-2026-{{.RId}}</td></tr>
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;">Prioridad</td><td style="padding:5px 0;color:#d32f2f;font-weight:bold;">ALTA</td></tr>
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;">Estado</td><td style="padding:5px 0;">En espera de acción del usuario</td></tr>
+</table>
+</td></tr>
+</table>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffebee;border:1px solid #ef9a9a;border-radius:4px;margin:0 0 18px;">
+<tr><td style="padding:13px 16px;font-size:13px;color:#b71c1c;"><strong>Fecha límite:</strong> tiene hasta <strong>mañana a las 18:00 h</strong> para completar la revalidación. Después de ese plazo, el acceso al correo y a las aplicaciones internas se suspenderá automáticamente.</td></tr>
+</table>
+
+<p style="margin:0 0 16px;">Las cuentas que no se revaliden perderán el acceso al correo y a las aplicaciones internas.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#253858;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Restablecer mi contraseña</a></p>
 <p style="margin:18px 0 0;">Mesa de Ayuda — Departamento de TI</p>
 </td></tr>
 <tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
-Mensaje automático generado por el sistema de soporte de su organización.<br>Este mensaje fue enviado a {{.Email}}. Por favor no responda a este correo.
+Mensaje automático generado por el sistema de soporte de su organización. Para dudas, conteste a este ticket o llame a la extensión 4444.<br>Este mensaje fue enviado a {{.Email}}. Por favor no responda a este correo.
 </td></tr>
 </table>
 </td></tr></table>

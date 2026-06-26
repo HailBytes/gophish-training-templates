@@ -9,14 +9,30 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#0a66c2;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">LinkedIn</td></tr>
-<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<tr><td style="padding:16px 24px;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="width:34px;height:34px;background:#0a66c2;border-radius:4px;text-align:center;vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#ffffff;">in</td>
+<td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#000000;">LinkedIn</td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:10px 24px 26px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Hi {{.FirstName}},</p>
 <p style="margin:0 0 16px;">You have a new InMail message waiting in your LinkedIn inbox.</p>
-<p style="margin:0 0 16px;"><em>"Hi &mdash; I came across your profile and have an opportunity that looks like a strong match for your background. Do you have a few minutes to connect?"</em></p>
+<table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin:0 0 16px;border:1px solid #e3e3e3;border-radius:6px;">
+<tr><td style="padding:14px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="width:44px;height:44px;background:#5a8fc7;border-radius:50%;text-align:center;vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:bold;color:#ffffff;">MR</td>
+<td style="padding-left:12px;">
+<div style="font-size:14px;font-weight:bold;color:#000000;">Megan Reyes</div>
+<div style="font-size:12px;color:#666666;">Senior Technical Recruiter, Northpoint Talent Partners</div>
+<div style="margin-top:4px;display:inline-block;background:#eef3f8;color:#0a66c2;font-size:11px;font-weight:bold;padding:2px 8px;border-radius:3px;">InMail</div>
+</td>
+</tr></table>
+<p style="margin:12px 0 0;font-size:14px;line-height:1.5;color:#333333;"><em>"Hi {{.FirstName}} &mdash; I came across your profile and have an opportunity that looks like a strong match for your background. Do you have a few minutes to connect this week?"</em></p>
+</td></tr>
+</table>
 <p style="margin:0 0 16px;">Sign in to read the full message and reply.</p>
 <p style="margin:24px 0;"><a href="{{.URL}}" style="background:#0a66c2;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Read message</a></p>
-<p style="margin:18px 0 0;">The LinkedIn Team</p>
 </td></tr>
 <tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
 LinkedIn Corporation, 1000 West Maude Avenue, Sunnyvale, CA 94085<br>This message was sent to {{.Email}}. Please do not reply to this email.

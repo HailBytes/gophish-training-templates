@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Alert - Account Compromised</title>
+    <title>Security alert - unusual sign-in</title>
     <style>
-        .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
-        .alert-danger { background-color: #f2dede; border-color: #ebccd1; color: #a94442; }
-        .security-warning { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f4f5f7; color: #1d2125; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e3e6ea; border-radius: 6px; overflow: hidden; }
+        .header { background: #0c2d57; color: #ffffff; padding: 16px 24px; font-size: 16px; font-weight: 600; }
+        .content { padding: 28px 24px; font-size: 14px; line-height: 1.55; }
+        .alert-box { background: #fff4ce; border-left: 4px solid #d97706; padding: 14px 16px; margin: 20px 0; border-radius: 2px; }
+        .alert-box p { margin: 0; font-size: 14px; }
+        .signin-info { background: #f4f5f7; border: 1px solid #e3e6ea; padding: 14px 16px; border-radius: 4px; margin: 20px 0; font-size: 13px; line-height: 1.7; }
+        .cta-button { background: #0c2d57; color: white; padding: 12px 26px; text-decoration: none; border-radius: 4px; display: inline-block; margin: 16px 0; font-weight: 600; }
+        .secondary-link { color: #0c2d57; }
+        .footer { font-size: 12px; color: #6b778c; padding: 0 24px 24px; }
     </style>
 </head>
 <body>
-    <div class="container" style="max-width: 600px; margin: 20px auto;">
-        <div class="alert alert-danger">
-            <h3 style="color:#9E9E9E;">🔐 WebMail Security Alert</h3>
-            <h1 style="color:#d9534f;">⚠️ Your mailbox has been compromised</h1>
+    <div class="container">
+        <div class="header">Webmail security</div>
+
+        <div class="content">
+            <p>Dear {{.FirstName}},</p>
+
+            <div class="alert-box">
+                <p>We blocked a sign-in to your webmail account that didn't match your usual activity. Please review it below.</p>
+            </div>
+
+            <p>A sign-in attempt to your account ({{.Email}}) was blocked because it came from an unfamiliar location and device:</p>
+
+            <div class="signin-info">
+                <strong>Location:</strong> Lagos, Nigeria<br>
+                <strong>IP address:</strong> 102.89.34.117<br>
+                <strong>Device:</strong> Unrecognized Windows PC<br>
+                <strong>Time:</strong> {{.Date}} at 2:14 AM<br>
+                <strong>Result:</strong> Blocked
+            </div>
+
+            <p>If this was you, you can ignore this message. If you don't recognize it, secure your account now and change your password.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Review activity</a>
+            </p>
+
+            <p>For more on keeping your account safe, see our <a href="#" class="secondary-link">account security tips</a>. To change where these notifications are sent, update your <a href="#" class="secondary-link">notification settings</a>.</p>
+
+            <p>Thanks,<br>
+            <strong>IT Service Desk</strong><br>
+            Webmail Security</p>
         </div>
-        
-        <div class="security-warning">
-            <h4>Immediate Action Required</h4>
-            <p>We have detected unauthorized access to your webmail account and have temporarily blocked it for your protection.</p>
+
+        <div class="footer">
+            This security notification was sent to {{.Email}}.
         </div>
-        
-        <p>Dear {{.FirstName}},</p>
-        
-        <p>Our security systems have identified suspicious activity on your webmail account. To protect your data, we have temporarily restricted access.</p>
-        
-        <p><strong>Please follow these steps immediately:</strong></p>
-        
-        <ol style="background: #f8f9fa; padding: 20px; border-radius: 5px;">
-            <li><a href="{{.URL}}" style="color: #007bff; font-weight: bold;">🛡️ Secure your account now</a></li>
-            <li><a href="{{.URL}}" style="color: #007bff; font-weight: bold;">📚 Learn how to improve account security</a></li>
-        </ol>
-        
-        <p>To modify where you receive security notifications in the future, <a href="{{.URL}}">click here</a>.</p>
-        
-        <p>Thank you for your immediate attention to this security matter.</p>
-        
-        <p>Sincerely,<br>
-        <strong>Webmail Security Team</strong><br>
-        Cybersecurity Operations</p>
-        
-        <hr>
-        <p><small>⚠️ This is a security-critical message. Do not ignore this alert.</small></p>
-        <p><small>This security notification was sent to {{.Email}}</small></p>
     </div>
-    
+
     {{.Tracker}}
 </body>
 </html>

@@ -9,13 +9,18 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#232f3e;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Amazon Web Services</td></tr>
+<tr><td style="background:#232f3e;padding:16px 24px;font-size:22px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;letter-spacing:-1px;"><span style="color:#ffffff;">aws</span><span style="color:#ff9900;">&nbsp;</span></td></tr>
 <tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Hello {{.FirstName}},</p>
 <p style="margin:0 0 16px;">We were unable to verify the billing information associated with your AWS account. Accounts that remain unverified may be suspended, which would stop your running resources.</p>
-<p style="margin:0 0 16px;">Please sign in to the AWS Management Console to confirm your account details.</p>
-<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#232f3e;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Verify my account</a></p>
-<p style="margin:18px 0 0;">Amazon Web Services</p>
+<table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 16px;border:1px solid #e3e3e3;background:#f8f8f8;width:100%;font-size:14px;color:#333333;"><tr><td style="padding:14px 16px;line-height:1.8;">
+<strong>Account ID:</strong> 4012-&middot;&middot;&middot;&middot;-8847<br>
+<strong>Case ID:</strong> 17428093<br>
+<strong>Action required by:</strong> {{.Date}} + 5 days
+</td></tr></table>
+<p style="margin:0 0 16px;">Please sign in to the AWS Management Console to confirm your account details before the date above.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#ff9900;color:#111111;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;font-weight:bold;">Verify my account</a></p>
+<p style="margin:18px 0 0;">AWS Billing Support<br>Amazon Web Services</p>
 </td></tr>
 <tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
 Amazon Web Services, Inc., 410 Terry Avenue North, Seattle, WA 98109<br>This message was sent to {{.Email}}. Please do not reply to this email.

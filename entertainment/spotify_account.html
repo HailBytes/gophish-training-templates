@@ -19,15 +19,37 @@
             border: 1px solid #e0e0e0;
         }
         .header {
-            background-color: #1db954;
+            background-color: #191414;
             padding: 24px 40px;
         }
         .header-logo {
             color: #ffffff;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             letter-spacing: -0.5px;
+            vertical-align: middle;
         }
+        .spotify-mark {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #1db954;
+            border-radius: 50%;
+            position: relative;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .spotify-mark span {
+            position: absolute;
+            left: 7px;
+            right: 7px;
+            height: 2.5px;
+            background: #191414;
+            border-radius: 2px;
+        }
+        .spotify-mark span:nth-child(1) { top: 10px; }
+        .spotify-mark span:nth-child(2) { top: 15px; left: 8px; right: 8px; }
+        .spotify-mark span:nth-child(3) { top: 20px; left: 9px; right: 9px; }
         .content {
             padding: 40px;
         }
@@ -107,40 +129,36 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-logo">Spotify</div>
+            <span class="spotify-mark"><span></span><span></span><span></span></span><span class="header-logo">Spotify</span>
         </div>
 
         <div class="content">
             <div class="alert-box">
-                <h3>Account Security Alert</h3>
-                <p>We've detected unusual activity on your account</p>
+                <h3>New login to your account</h3>
+                <p>We noticed a sign-in you may not recognize</p>
             </div>
 
-            <h1>Action required for your Spotify account</h1>
+            <h1>Was this you?</h1>
 
             <p>Hi {{.FirstName}},</p>
 
-            <p>We've temporarily restricted your Spotify Premium account due to suspicious activity that may violate our Terms of Service.</p>
-
-            <p><strong>Issues detected on your account:</strong></p>
+            <p>Your Spotify account was just used to sign in on a new device. If this was you, no action is needed.</p>
 
             <div class="issue-list">
                 <ul>
-                    <li>Multiple failed login attempts from unknown locations</li>
-                    <li>Unusual streaming patterns detected</li>
-                    <li>Payment method verification required</li>
+                    <li>Device: Windows PC &middot; Chrome</li>
+                    <li>Location: Denver, CO (approximate)</li>
+                    <li>Time: about 20 minutes ago</li>
                 </ul>
             </div>
 
-            <p>To restore full access to your music library, playlists, and Premium features, please verify your account information within 48 hours.</p>
+            <p>If you don't recognize this sign-in, review your recent activity and secure your account.</p>
 
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">Verify Your Account</a>
+                <a href="{{.URL}}" class="cta-button">Review recent activity</a>
             </p>
 
-            <p><strong>Note:</strong> Your account will remain suspended until verification is complete. Downloaded content and playlists are temporarily unavailable.</p>
-
-            <p>If you did not request this alert or believe your account has been compromised, please verify your account immediately.</p>
+            <p>If this was you, you can safely ignore this message. Spotify will never ask for your password by email.</p>
 
             <p>Thanks,<br>
             <strong>The Spotify Team</strong></p>
@@ -150,7 +168,7 @@
             <p>This email was sent to {{.Email}}</p>
             <p style="margin-top: 12px;">
                 Spotify AB, Regeringsgatan 19, 111 53 Stockholm, Sweden<br>
-                © 2024 Spotify AB
+                © 2026 Spotify AB
             </p>
         </div>
     </div>

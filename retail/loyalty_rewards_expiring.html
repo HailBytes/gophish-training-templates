@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewards Points Expiring Soon</title>
+    <title>Your Stars are expiring soon</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -19,7 +19,7 @@
             border: 1px solid #d0d0d0;
         }
         .header {
-            background-color: #e91e63;
+            background-color: #00704a;
             color: #ffffff;
             padding: 24px 40px;
             text-align: center;
@@ -60,11 +60,11 @@
         .points-amount {
             font-size: 48px;
             font-weight: 700;
-            color: #e91e63;
+            color: #00704a;
             margin: 16px 0;
         }
         .cta-button {
-            background-color: #e91e63;
+            background-color: #00704a;
             color: #ffffff;
             padding: 14px 32px;
             text-decoration: none;
@@ -75,7 +75,7 @@
             font-size: 14px;
         }
         .cta-button:hover {
-            background-color: #c2185b;
+            background-color: #005c3c;
             text-decoration: none;
             color: #ffffff;
         }
@@ -109,59 +109,56 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">Retail Rewards</div>
+            <div class="logo">Starbucks&reg; Rewards</div>
         </div>
 
         <div class="content">
             <div class="expiry-box">
-                <h3>Your Rewards Are Expiring Soon</h3>
-                <p>Take action to keep your points</p>
+                <h3>Some of your Stars are expiring</h3>
+                <p>Use them before they're gone</p>
             </div>
 
-            <h1>Don't Lose Your Rewards Points!</h1>
+            <h1>Your Stars expire at the end of this month</h1>
 
             <p>Hi {{.FirstName}},</p>
 
-            <p>We wanted to let you know that you have rewards points that will expire on February 28, 2025 if not used or if your account remains inactive.</p>
+            <p>This is a friendly reminder that some of the Stars in your Starbucks Rewards account are set to expire at the end of this month. Stars expire six months after the month in which they were earned.</p>
 
             <div class="rewards-summary">
-                <p style="margin: 0; font-weight: 600; color: #666666;">Your Expiring Balance</p>
-                <div class="points-amount">2,450 Points</div>
-                <p style="margin: 0; color: #666666;">Worth approximately $24.50</p>
+                <p style="margin: 0; font-weight: 600; color: #666666;">Stars expiring this month</p>
+                <div class="points-amount">120&#9733;</div>
+                <p style="margin: 0; color: #666666;">Enough for a handcrafted drink or hot breakfast</p>
             </div>
 
-            <p><strong>Your Account Summary:</strong></p>
+            <p><strong>Your account summary:</strong></p>
             <ul>
                 <li>Member since: 2022</li>
-                <li>Lifetime points earned: 18,750</li>
-                <li>Current tier: Gold Member</li>
-                <li>Points expiring: 2,450</li>
+                <li>Current balance: 215&#9733;</li>
+                <li>Expiring this month: 120&#9733;</li>
             </ul>
 
-            <p><strong>How to keep your points:</strong></p>
+            <p><strong>Ways to use your Stars:</strong></p>
             <ul>
-                <li>Make a purchase before February 28</li>
-                <li>Redeem your points for rewards</li>
-                <li>Update your account preferences</li>
+                <li>Redeem for a food or drink reward in the app</li>
+                <li>Make a purchase to earn and keep more Stars active</li>
+                <li>Review your rewards balance and preferences</li>
             </ul>
 
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">View & Use Rewards</a>
+                <a href="{{.URL}}" class="cta-button">View my Stars</a>
             </p>
 
-            <p>Need help? Contact our Rewards Team at rewards@retail.com or call (555) 222-3333.</p>
+            <p>Questions about your Rewards account? Visit the Help Center at starbucks.com/help.</p>
 
-            <p>Thanks for being a loyal customer!</p>
-
-            <p>Best regards,<br>
-            <strong>Retail Rewards Team</strong></p>
+            <p>Thanks for being a member,<br>
+            <strong>The Starbucks Rewards Team</strong></p>
         </div>
 
         <div class="footer">
             <p>This notice was sent to {{.Email}}</p>
             <p style="margin-top: 12px;">
-                Retail Corp | Rewards Program<br>
-                © 2024 Retail Corp. All rights reserved.
+                Starbucks Corporation | 2401 Utah Avenue South, Seattle, WA 98134<br>
+                © 2026 Starbucks Coffee Company. All rights reserved.
             </p>
         </div>
     </div>

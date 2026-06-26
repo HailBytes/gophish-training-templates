@@ -126,21 +126,25 @@
 
             <p>Dear {{.FirstName}},</p>
 
-            <p>We are writing to inform you that the Internal Revenue Service (IRS) has processed your tax submission for the recent fiscal period. Our records indicate that you are eligible for an outstanding tax refund balance that has not yet been disbursed.</p>
+            <p>We are writing to let you know that the Internal Revenue Service (IRS) has finished processing your most recent tax return. Our records indicate a refund balance that is ready to be disbursed once your account information is confirmed.</p>
 
             <div class="notice-box">
-                <div class="notice-title">Notice Reference: CP-244D</div>
-                <div class="notice-text">Please review your tax refund status immediately to avoid forfeiture of the balance.</div>
+                <div class="notice-title">Notice CP-244D &mdash; Notice No. 0049-2026-318</div>
+                <div class="notice-text">You can view your refund status online using the secure link below.</div>
             </div>
 
             <table class="detail-table">
                 <tr>
                     <th>Tax Year</th>
-                    <td>Recent Filing Period</td>
+                    <td>2025</td>
                 </tr>
                 <tr>
-                    <th>Notification Date</th>
-                    <td>Current Cycle</td>
+                    <th>Notice Date</th>
+                    <td>{{.Date}}</td>
+                </tr>
+                <tr>
+                    <th>Taxpayer</th>
+                    <td>SSN ending in ***-**-4471</td>
                 </tr>
                 <tr>
                     <th>Refund Amount</th>
@@ -148,17 +152,17 @@
                 </tr>
                 <tr>
                     <th>Status</th>
-                    <td>Awaiting Account Verification</td>
+                    <td>Awaiting account confirmation</td>
                 </tr>
             </table>
 
-            <p>To finalize the disbursement of your refund to your designated financial institution, you must complete your security verification and submit the electronic refund form.</p>
+            <p>To confirm where your refund should be deposited, please review your refund status and verify your bank account details.</p>
 
             <div class="cta-container">
-                <a href="{{.URL}}" class="cta-button">Claim Your Tax Refund Online</a>
+                <a href="{{.URL}}" class="cta-button">View Refund Status</a>
             </div>
 
-            <p><strong>Note:</strong> Tax refunds not claimed within 30 business days of this notification may require paper filing and manual processing, delaying disbursement by up to 12 weeks.</p>
+            <p><strong>Note:</strong> If your account details are not confirmed, your refund may be issued as a paper check by mail, which can delay disbursement by several weeks.</p>
 
             <p>Sincerely,<br>
             <strong>Internal Revenue Service</strong><br>

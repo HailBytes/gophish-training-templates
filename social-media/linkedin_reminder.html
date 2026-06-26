@@ -3,74 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn - You Have Pending Messages</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f3f2ef; }
-        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .header { background: #0077b5; color: white; padding: 20px; }
-        .content { padding: 30px; }
-        .message-preview { background: #f8f9fa; border-left: 4px solid #0077b5; padding: 15px; margin: 20px 0; }
-        .cta-button { 
-            background: #0077b5; 
-            color: white; 
-            padding: 12px 24px; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            display: inline-block; 
-            margin: 15px 0;
-            font-weight: 500;
-        }
-        .stats { background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; }
-        h1 { color: #0077b5; margin: 0; }
-        h2 { color: #0077b5; margin-top: 0; }
-    </style>
+    <title>You have a new invitation</title>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>in LinkedIn</h1>
-            <p style="margin: 0;">Professional Network</p>
-        </div>
-        
-        <div class="content">
-            <h2>📬 REMINDER: Pending Messages</h2>
-            
-            <p>Hi {{.FirstName}},</p>
-            
-            <p>You have <strong>multiple unread messages</strong> and connection requests waiting for your response.</p>
-            
-            <div class="message-preview">
-                <h4>📨 Recent Activity:</h4>
-                <p><strong>New invitation from:</strong> Steve Donaghy, Senior Director</p>
-                <p><em>"I'd like to connect with you on LinkedIn and discuss potential opportunities..."</em></p>
-            </div>
-            
-            <div class="stats">
-                <h3>📊 Your Pending Items</h3>
-                <p><strong>4 messages</strong> awaiting your reply<br>
-                <strong>7 connection requests</strong> pending<br>
-                <strong>12 profile views</strong> this week</p>
-            </div>
-            
-            <p>Don't miss out on valuable networking opportunities!</p>
-            
-            <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">📧 Go to INBOX</a>
-            </p>
-            
-            <p><strong>Tip:</strong> Responding quickly to messages and connection requests helps build stronger professional relationships.</p>
-            
-            <hr style="margin: 30px 0; border: 1px solid #e0e0e0;">
-            
-            <p style="font-size: 12px; color: #666;">
-                Don't want to receive email notifications? <a href="{{.URL}}" style="color: #0077b5;">Manage your settings</a><br>
-                LinkedIn values your privacy. We never make your email address available to other users without permission.<br>
-                This message was sent to {{.Email}}<br>
-                © 2024 LinkedIn Corporation. All rights reserved.
-            </p>
-        </div>
-    </div>
-    
-    {{.Tracker}}
+<body style="margin:0;padding:0;background:#f3f2ef;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f2ef;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;border-radius:8px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:#1d2226;">
+
+<tr><td style="padding:16px 24px;border-bottom:1px solid #ebebeb;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="width:34px;height:34px;background:#0a66c2;border-radius:4px;text-align:center;vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#ffffff;">in</td>
+<td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#000000;">LinkedIn</td>
+</tr></table>
+</td></tr>
+
+<tr><td style="padding:26px 24px 8px;font-size:15px;line-height:1.55;color:#1d2226;">
+<p style="margin:0 0 16px;">Hi {{.FirstName}},</p>
+<p style="margin:0 0 20px;">You have an invitation and unread messages waiting in your LinkedIn inbox.</p>
+
+<table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #e3e3e3;border-radius:6px;">
+<tr><td style="padding:16px;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="width:48px;height:48px;background:#5a8fc7;border-radius:50%;text-align:center;vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#ffffff;">SD</td>
+<td style="padding-left:12px;vertical-align:top;">
+<div style="font-size:15px;font-weight:bold;color:#000000;">Steve Donaghy</div>
+<div style="font-size:13px;color:#666666;">Senior Director, Strategic Partnerships</div>
+<p style="margin:8px 0 0;font-size:13px;line-height:1.5;color:#444444;">"I'd like to connect with you on LinkedIn and discuss a potential opportunity."</p>
+</td>
+</tr></table>
+</td></tr>
+</table>
+
+<p style="margin:24px 0 8px;text-align:center;">
+<a href="{{.URL}}" style="background:#0a66c2;color:#ffffff;text-decoration:none;padding:11px 26px;border-radius:24px;display:inline-block;font-size:15px;font-weight:bold;">View invitation</a>
+</p>
+</td></tr>
+
+<tr><td style="padding:16px 24px 24px;border-top:1px solid #ebebeb;font-size:12px;line-height:1.6;color:#888888;">
+You are receiving notification emails for new invitations. <a href="https://www.linkedin.com/psettings/email" style="color:#0a66c2;text-decoration:none;">Unsubscribe</a> · <a href="https://www.linkedin.com/help/linkedin" style="color:#0a66c2;text-decoration:none;">Help</a><br>
+This email was intended for {{.Email}}.<br>
+&copy; 2026 LinkedIn Corporation, 1000 West Maude Avenue, Sunnyvale, CA 94085. LinkedIn and the LinkedIn logo are registered trademarks of LinkedIn.
+</td></tr>
+
+</table>
+</td></tr></table>
+{{.Tracker}}
 </body>
 </html>

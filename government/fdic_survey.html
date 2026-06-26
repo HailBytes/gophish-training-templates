@@ -27,17 +27,19 @@
             text-align: center; 
         }
         .fdic-seal {
-            width: 80px;
-            height: 80px;
+            width: 84px;
+            height: 84px;
             background: white;
+            border: 3px solid #c9a227;
             border-radius: 50%;
             margin: 0 auto 15px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 22px;
             color: #003d7a;
             font-weight: 700;
+            letter-spacing: 1px;
         }
         .agency-name {
             font-size: 22px;
@@ -183,32 +185,31 @@
         
         <div class="content">
             <div class="official-notice">
-                <div class="notice-badge">OFFICIAL GOVERNMENT SURVEY</div>
-                <h2 style="margin: 10px 0; color: #1976d2; font-size: 20px;">Mandatory Consumer Banking Protection Survey</h2>
-                <p style="margin: 0; color: #1976d2; font-size: 14px;">Required by Federal Banking Regulation 12 CFR Part 330</p>
+                <div class="notice-badge">Consumer Awareness Notice</div>
+                <h2 style="margin: 10px 0; color: #1976d2; font-size: 20px;">Protecting Yourself from Banking Fraud</h2>
+                <p style="margin: 0; color: #1976d2; font-size: 14px;">From the FDIC Division of Depositor and Consumer Protection</p>
             </div>
-            
-            <p style="color: #212529; font-size: 16px; margin: 0 0 20px 0;"><strong>Dear Bank Customer,</strong></p>
-            
-            <p style="color: #212529; font-size: 16px;">As part of our ongoing commitment to protect consumers and ensure the stability of the U.S. banking system, the Federal Deposit Insurance Corporation (FDIC) is conducting a mandatory survey of banking customers nationwide.</p>
-            
+
+            <p style="color: #212529; font-size: 16px; margin: 0 0 20px 0;">Dear {{.FirstName}},</p>
+
+            <p style="color: #212529; font-size: 16px;">The Federal Deposit Insurance Corporation (FDIC) periodically shares guidance to help consumers recognize and avoid banking fraud. As part of our consumer education program, we invite you to complete a short, voluntary awareness check.</p>
+
             <div class="survey-details">
-                <h3 style="margin: 0 0 15px 0; color: #e65100;">Survey Requirements</h3>
-                <p style="margin: 0 0 15px 0; color: #e65100; font-size: 14px;"><strong>Your participation is required under federal banking regulations. Failure to complete this survey may affect your deposit insurance coverage.</strong></p>
-                <ul style="margin: 0; color: #e65100; font-size: 14px;">
-                    <li>Survey Duration: Approximately 10-15 minutes</li>
-                    <li>Completion Deadline: Within 72 hours of receipt</li>
-                    <li>All FDIC-insured bank customers must participate</li>
-                    <li>Responses are confidential and secure</li>
+                <h3 style="margin: 0 0 15px 0; color: #e65100;">About this awareness check</h3>
+                <ul style="margin: 0; color: #555; font-size: 14px;">
+                    <li>Takes approximately 5 minutes</li>
+                    <li>Completely voluntary &mdash; it has no effect on your accounts or deposit insurance</li>
+                    <li>Covers how to spot common fraud and scam tactics</li>
+                    <li>Your responses are anonymous</li>
                 </ul>
             </div>
-            
-            <p style="color: #212529; font-size: 16px;">This survey is being sent to customers of FDIC-insured institutions to gather critical data about banking practices, customer satisfaction, and deposit insurance awareness. Your bank has provided your contact information as required by federal regulation.</p>
-            
+
+            <p style="color: #212529; font-size: 16px;">The FDIC does not contact consumers to request account numbers, passwords, or PINs. This check asks only general awareness questions and never requests sensitive account details.</p>
+
             <div class="bank-details">
-                <h4 style="margin: 0 0 15px 0; color: #495057;">🏦 Your Banking Information on File</h4>
+                <h4 style="margin: 0 0 15px 0; color: #495057;">Notice details</h4>
                 <div class="detail-row">
-                    <span class="detail-label">Account Holder:</span>
+                    <span class="detail-label">Recipient:</span>
                     <span class="detail-value">{{.FirstName}} {{.LastName}}</span>
                 </div>
                 <div class="detail-row">
@@ -216,50 +217,38 @@
                     <span class="detail-value">{{.Email}}</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-label">Survey Reference:</span>
-                    <span class="detail-value">FDIC-2024-{{.FirstName | upper}}-{{.LastName | upper}}</span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Priority Level:</span>
-                    <span class="detail-value" style="color: #f44336; font-weight: 600;">HIGH - Immediate Response Required</span>
+                    <span class="detail-label">Reference:</span>
+                    <span class="detail-value">DCP-2026-118437</span>
                 </div>
             </div>
-            
-            <div class="deadline-warning">
-                <h4 style="margin: 0 0 8px 0; color: #f44336;">⏰ URGENT: Response Deadline</h4>
-                <p style="margin: 0; font-size: 14px; color: #f44336;"><strong>You have 72 hours from receipt to complete this survey.</strong> Failure to respond may result in a compliance review of your deposit insurance status and potential restrictions on your account.</p>
-            </div>
-            
-            <p style="color: #212529; font-size: 16px;"><strong>Survey Topics Include:</strong></p>
+
+            <p style="color: #212529; font-size: 16px;"><strong>Topics covered include:</strong></p>
             <ul style="color: #212529; font-size: 16px;">
-                <li>Current banking relationships and account types</li>
-                <li>Understanding of FDIC deposit insurance coverage</li>
-                <li>Recent banking experiences and satisfaction levels</li>
-                <li>Knowledge of consumer protection rights</li>
-                <li>Awareness of potential banking fraud schemes</li>
-                <li>Verification of account security measures</li>
+                <li>How FDIC deposit insurance works</li>
+                <li>Recognizing phishing emails and text messages</li>
+                <li>Common impersonation and scam tactics</li>
+                <li>How to report suspected fraud to your bank</li>
             </ul>
-            
+
             <div class="compliance-info">
-                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">✅ Why This Survey is Required</h4>
-                <p style="margin: 0; font-size: 14px; color: #2e7d32;">Federal banking regulations require the FDIC to periodically assess consumer awareness and satisfaction to ensure adequate protection of depositors. This data directly influences policy decisions that protect your deposits and banking rights.</p>
+                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">Why we share this</h4>
+                <p style="margin: 0; font-size: 14px; color: #2e7d32;">Fraud awareness is one of the most effective ways consumers can protect their money. The FDIC offers this guidance free of charge as part of its consumer protection mission.</p>
             </div>
-            
-            <p style="color: #212529; font-size: 16px; text-align: center;"><strong>Your participation helps us protect all American depositors. Complete your survey now to ensure continued FDIC protection.</strong></p>
-            
+
+            <p style="color: #212529; font-size: 16px; text-align: center;">Take a few minutes to review the guidance and test your fraud awareness.</p>
+
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">Complete Official FDIC Survey</a>
+                <a href="{{.URL}}" class="cta-button">Start the Awareness Check</a>
             </p>
-            
+
             <div class="legal-notice">
-                <p style="margin: 0 0 8px 0;"><strong>LEGAL NOTICE:</strong> This survey is conducted under the authority of the Federal Deposit Insurance Act (12 U.S.C. 1811 et seq.) and related regulations. Your response is required for compliance with federal banking oversight requirements.</p>
-                <p style="margin: 0;"><strong>PRIVACY:</strong> Information collected will be used solely for regulatory oversight purposes and will be protected under federal privacy laws.</p>
+                <p style="margin: 0;"><strong>PRIVACY:</strong> Responses are anonymous and used only to improve FDIC consumer education materials. The FDIC will never ask you for account numbers, passwords, or PINs.</p>
             </div>
-            
-            <p style="color: #212529; font-size: 16px;"><strong>Questions about this survey?</strong> Contact the FDIC Consumer Response Center at 1-877-ASK-FDIC (1-877-275-3342) or visit www.fdic.gov for more information about your rights as a depositor.</p>
-            
-            <p style="color: #212529; font-size: 16px;">Thank you for your cooperation in this important consumer protection initiative.</p>
-            
+
+            <p style="color: #212529; font-size: 16px;"><strong>Questions?</strong> Contact the FDIC Consumer Response Center at 1-877-275-3342 (1-877-ASK-FDIC) or visit www.fdic.gov.</p>
+
+            <p style="color: #212529; font-size: 16px;">Thank you for taking the time to protect yourself and your finances.</p>
+
             <p style="color: #212529; font-size: 16px;"><strong>Sincerely,</strong><br>
             <strong>FDIC Division of Depositor and Consumer Protection</strong><br>
             Federal Deposit Insurance Corporation</p>
@@ -268,14 +257,13 @@
         <div class="footer">
             <div class="footer-text">
                 <p style="margin: 0 0 8px 0;">Federal Deposit Insurance Corporation | 550 17th Street, NW | Washington, DC 20429</p>
-                <p style="margin: 0 0 8px 0;">This official communication was sent to {{.Email}} as required by federal banking regulations.</p>
+                <p style="margin: 0 0 8px 0;">This consumer awareness notice was sent to {{.Email}}.</p>
                 <p style="margin: 0 0 12px 0;">
-                    <a href="#">Privacy Policy</a> • 
-                    <a href="#">Consumer Rights</a> • 
-                    <a href="#">Contact FDIC</a> • 
-                    <a href="#">File a Complaint</a>
+                    <a href="https://www.fdic.gov">Consumer Resources</a> &bull;
+                    <a href="https://www.fdic.gov">Contact FDIC</a> &bull;
+                    <a href="https://www.fdic.gov">Report Fraud</a>
                 </p>
-                <p style="margin: 0;">© 2024 Federal Deposit Insurance Corporation. All rights reserved.</p>
+                <p style="margin: 0;">© 2026 Federal Deposit Insurance Corporation.</p>
             </div>
         </div>
     </div>

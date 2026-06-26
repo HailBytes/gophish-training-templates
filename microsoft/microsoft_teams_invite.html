@@ -7,12 +7,11 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f3f2f1; color: #242424; }
         .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .header { background: #464eb8; color: white; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-        .header-logo { font-size: 16px; font-weight: 600; letter-spacing: 0.5px; }
+        .header { background: #464eb8; color: white; padding: 18px 24px; }
+        .header-logo { font-size: 16px; font-weight: 600; letter-spacing: 0.5px; vertical-align: middle; }
         .content { padding: 30px; }
-        .avatar-box { display: flex; align-items: center; gap: 15px; margin-bottom: 24px; }
-        .avatar { width: 48px; height: 48px; background: #616161; color: white; font-size: 20px; font-weight: 600; line-height: 48px; text-align: center; border-radius: 50%; }
-        .avatar-text { font-size: 14px; }
+        .avatar { width: 48px; height: 48px; background: #464eb8; color: white; font-size: 18px; font-weight: 600; line-height: 48px; text-align: center; border-radius: 50%; }
+        .avatar-text { font-size: 14px; padding-left: 15px; }
         .avatar-name { font-weight: 600; color: #242424; }
         .chat-preview { background: #f3f2f1; padding: 16px; border-radius: 4px; font-style: italic; margin-bottom: 24px; font-size: 14px; color: #424242; }
         .cta-button { 
@@ -36,21 +35,27 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-logo">Microsoft Teams</div>
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="padding-right:8px;line-height:0;">
+            <span style="display:inline-block;width:20px;height:20px;background:#ffffff;color:#464eb8;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;font-size:13px;line-height:20px;text-align:center;border-radius:4px;">T</span>
+            </td>
+            <td><span class="header-logo">Microsoft Teams</span></td>
+            </tr></table>
         </div>
 
         <div class="content">
             <p>Hi {{.FirstName}},</p>
-            
-            <div class="avatar-box">
-                <div class="avatar">PM</div>
-                <div class="avatar-text">
-                    <span class="avatar-name">Project Manager (via Teams)</span> sent you a direct message or invite.
-                </div>
-            </div>
+
+            <table role="presentation" cellpadding="0" cellspacing="0" style="margin-bottom:24px;"><tr>
+                <td valign="middle"><div class="avatar">LH</div></td>
+                <td valign="middle" class="avatar-text">
+                    <span class="avatar-name">Laura Hughes</span> sent you a message in Teams.<br>
+                    <span style="font-size:12px;color:#605e5c;">Sent 12 minutes ago</span>
+                </td>
+            </tr></table>
 
             <div class="chat-preview">
-                "Hi {{.FirstName}}, I have uploaded the updated operational timeline to the Teams channel. Can you review the task assignments and confirm your availability for the Q3 kickoff call? The link is attached."
+                "Hi {{.FirstName}}, I've uploaded the updated operational timeline to our channel. Can you review the task assignments and confirm your availability for the Q3 kickoff call? Link's in the thread."
             </div>
 
             <p>You have a pending notification from Microsoft Teams. Click the link below to open Microsoft Teams and respond directly.</p>
@@ -61,7 +66,7 @@
         </div>
 
         <div class="footer">
-            This message was sent to {{.Email}} from Microsoft Teams. Microsoft respects your privacy. To learn more, read our <a href="#" style="color: #464eb8; text-decoration: none;">Privacy Statement</a>.<br>
+            This message was sent to {{.Email}} from Microsoft Teams. Microsoft respects your privacy. To learn more, read our <a href="https://privacy.microsoft.com/privacystatement" style="color: #464eb8; text-decoration: none;">Privacy Statement</a>.<br>
             Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
         </div>
     </div>

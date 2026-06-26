@@ -106,56 +106,55 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="firm-name">Smith & Associates LLP</div>
+            <div class="firm-name">Morgan Reyes LLP</div>
             <div class="tagline">Attorneys at Law</div>
         </div>
 
         <div class="content">
             <div class="confidential-box">
-                <h3>CONFIDENTIAL: Attorney-Client Privileged Communication</h3>
-                <p>Secure document access required</p>
+                <h3>Confidential: Attorney-Client Privileged Communication</h3>
+                <p>Document review and signature requested</p>
             </div>
 
-            <h1>Secure Document Access Request</h1>
+            <h1>Documents Ready for Your Review</h1>
 
-            <p>Dear {{.FirstName}},</p>
+            <p>Dear {{.FirstName}} {{.LastName}},</p>
 
-            <p>We have uploaded confidential documents related to your legal matter to our secure client portal. These documents require your immediate review and digital signature.</p>
+            <p>Our firm has been engaged as outside counsel by your employer in connection with an updated employee confidentiality and intellectual-property agreement. We have posted the documents to our secure client portal for your review and electronic signature.</p>
 
             <div class="matter-details">
-                <p style="margin: 0; font-weight: 600;">Matter: Case #2024-{{.Email | slice 0 6}}</p>
-                <p style="margin: 8px 0 0 0;">Attorney: Michael Smith, Esq.</p>
-                <p style="margin: 8px 0 0 0;">Documents: 3 files pending review</p>
-                <p style="margin: 8px 0 0 0;">Action Required: Signature needed</p>
+                <p style="margin: 0; font-weight: 600;">Matter: Employee Confidentiality Agreement (2026 Update)</p>
+                <p style="margin: 8px 0 0 0;">Matter No.: MOR-2026-{{.RId}}</p>
+                <p style="margin: 8px 0 0 0;">Attorney: Daniel Reyes, Esq.</p>
+                <p style="margin: 8px 0 0 0;">Documents: 2 files pending your signature</p>
             </div>
 
             <p><strong>Documents available for review:</strong></p>
             <ul>
-                <li>Settlement Agreement (Draft v3)</li>
-                <li>Client Consent Form</li>
-                <li>Confidential Disclosure Agreement</li>
+                <li>Confidentiality &amp; Non-Disclosure Agreement</li>
+                <li>Assignment of Inventions Acknowledgement</li>
             </ul>
 
-            <p><strong>Important Deadline:</strong> Please review and sign these documents within 48 hours. Time-sensitive filing deadlines require your prompt attention to avoid complications with your case.</p>
+            <p>Please review and sign these documents by the end of next week. Reviewing them takes only a few minutes.</p>
 
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">Access Secure Documents</a>
+                <a href="{{.URL}}" class="cta-button">Review and sign documents</a>
             </p>
 
-            <p><strong>Security Notice:</strong> This link provides access to confidential attorney-client communications. Do not forward this email or share access credentials. The link will expire in 7 days for security purposes.</p>
+            <p><strong>Security notice:</strong> This link provides access to confidential, privileged communications. Please do not forward this email. The link will expire in 7 days for security purposes.</p>
 
-            <p>If you have questions or difficulty accessing the documents, please contact our office at (555) 987-6543 or legal@smithassociates.com.</p>
+            <p>If you have questions or difficulty accessing the documents, please contact our office at (415) 555-0142 or clientservices@morganreyeslaw.com.</p>
 
             <p>Respectfully,<br>
-            <strong>Michael Smith, Esq.</strong><br>
-            Partner, Smith & Associates LLP</p>
+            <strong>Daniel Reyes, Esq.</strong><br>
+            Partner, Morgan Reyes LLP</p>
         </div>
 
         <div class="footer">
             <p><strong>CONFIDENTIALITY NOTICE:</strong> This email and any attachments are confidential and may contain legally privileged information. If you are not the intended recipient, any disclosure, copying, distribution, or use of this communication is strictly prohibited. Please notify the sender immediately and delete this message.</p>
             <p style="margin-top: 12px;">
-                Smith & Associates LLP | 789 Legal Plaza, Suite 1200<br>
-                © 2024 Smith & Associates LLP. All rights reserved.
+                Morgan Reyes LLP | 555 California Street, Suite 2900, San Francisco, CA 94104<br>
+                © 2026 Morgan Reyes LLP. All rights reserved.
             </p>
             <p style="margin-top: 8px;">This document notification was sent to {{.Email}}</p>
         </div>

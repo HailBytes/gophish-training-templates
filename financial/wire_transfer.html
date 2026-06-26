@@ -3,72 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wire Transfer Alert - Federal Reserve</title>
+    <title>Wire Transfer Security Review - Fraud Prevention</title>
     <style>
-        body { font-family: Georgia, serif; margin: 0; padding: 20px; background: #f5f5f5; }
-        .container { max-width: 600px; margin: 0 auto; background: white; border: 2px solid #003366; border-radius: 8px; overflow: hidden; }
-        .header { background: #003366; color: white; padding: 20px; text-align: center; }
-        .content { padding: 30px; }
-        .alert-box { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0; }
-        .cta-button { 
-            background: #dc3545; 
-            color: white; 
-            padding: 14px 28px; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            display: inline-block; 
-            margin: 20px 0;
+        body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #d9d9d9; border-top: 4px solid #004b87; }
+        .header { padding: 22px 28px; border-bottom: 1px solid #ececec; }
+        .bank-name { font-size: 20px; font-weight: 700; color: #004b87; margin: 0; }
+        .bank-sub { font-size: 12px; color: #777; margin: 2px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
+        .content { padding: 28px; }
+        .alert-box { background: #fff8e1; border: 1px solid #ffe0a3; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }
+        .alert-box h3 { margin: 0; font-size: 15px; color: #8a6d00; }
+        .txn-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; }
+        .txn-table td { padding: 9px 0; border-bottom: 1px solid #eee; }
+        .txn-table td:first-child { color: #777; width: 45%; }
+        .cta-button {
+            background: #004b87;
+            color: #ffffff;
+            padding: 13px 26px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 18px 0;
             font-weight: bold;
-            text-transform: uppercase;
+            font-size: 14px;
         }
-        .footer { background: #f8f9fa; padding: 15px; font-size: 12px; color: #6c757d; }
+        .footer { background: #f8f9fa; padding: 18px 28px; font-size: 11px; color: #888; line-height: 1.6; border-top: 1px solid #ececec; }
+        p { font-size: 14px; line-height: 1.6; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h2>FEDERAL RESERVE WIRE NETWORK</h2>
-            <p>Official Transaction Alert</p>
+            <p class="bank-name">Heritage National Bank</p>
+            <p class="bank-sub">Fraud Prevention &amp; Security</p>
         </div>
-        
+
         <div class="content">
             <div class="alert-box">
-                <h3>URGENT: Wire Transfer Cancellation Notice</h3>
+                <h3>A pending wire transfer needs your review</h3>
             </div>
-            
+
             <p>Dear {{.FirstName}} {{.LastName}},</p>
-            
-            <p>This is an <strong>official alert notice</strong> regarding your bank account activity.</p>
-            
-            <p>A wire transfer recently initiated from your bank account was <strong>cancelled by the Federal Reserve Wire Network</strong> due to security protocols.</p>
-            
-            <p><strong>Transaction Details:</strong></p>
-            <ul style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                <li>Date: {{.Date}}</li>
-                <li>Amount: [CONFIDENTIAL]</li>
-                <li>Status: <span style="color: #dc3545;">CANCELLED</span></li>
-                <li>Reason: Security Review Required</li>
-            </ul>
-            
-            <p><strong>Immediate Action Required:</strong> You must verify your identity and account information to complete this transaction or formally cancel it.</p>
-            
+
+            <p>Our fraud monitoring system flagged a wire transfer on your account that does not match your usual activity. As a precaution, we have placed the transfer on hold pending your confirmation.</p>
+
+            <p><strong>Transaction details:</strong></p>
+            <table class="txn-table">
+                <tr><td>Date initiated</td><td>{{.Date}}</td></tr>
+                <tr><td>Amount</td><td>$4,750.00 USD</td></tr>
+                <tr><td>Beneficiary</td><td>Account ending 8842</td></tr>
+                <tr><td>Reference</td><td>WT-2026-558013</td></tr>
+                <tr><td>Status</td><td style="color: #c0392b; font-weight: bold;">On hold &mdash; review required</td></tr>
+            </table>
+
+            <p>If you authorized this transfer, you can confirm it and the hold will be released. If you do not recognize it, please let us know so we can cancel the transaction and secure your account.</p>
+
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">Verify Transaction Status</a>
+                <a href="{{.URL}}" class="cta-button">Review This Transfer</a>
             </p>
-            
-            <p><strong>Important:</strong> Failure to respond within 48 hours may result in additional security holds on your account.</p>
-            
+
+            <p>For your security, the transfer will remain on hold until it is reviewed. No further action will be taken on the transaction until we hear from you.</p>
+
             <p>Sincerely,<br>
-            <strong>Vincent Crabbe</strong><br>
-            Team Lead, Wire Transfer Division<br>
-            Federal Reserve Financial Services</p>
+            <strong>Daniel Okafor</strong><br>
+            Fraud Prevention Analyst<br>
+            Heritage National Bank</p>
         </div>
-        
+
         <div class="footer">
-            <p>This is an official communication from the Federal Reserve System. Reference ID: {{.Date}}-{{.Email}}</p>
+            <p>This notice was sent to {{.Email}} regarding reference WT-2026-558013. Please do not reply to this email.</p>
+            <p>Heritage National Bank, 1200 Commerce Street, Dallas, TX 75201. Member FDIC.</p>
         </div>
     </div>
-    
+
     {{.Tracker}}
 </body>
 </html>

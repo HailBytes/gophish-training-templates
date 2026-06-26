@@ -7,8 +7,9 @@
     <style>
         body { margin: 0; padding: 20px; background: #f5f5f5; font-family: 'Adobe Clean', Arial, Helvetica, sans-serif; }
         .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); overflow: hidden; }
-        .header { background: #FA0F00; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; }
-        .logo { color: white; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+        .header { background: #FA0F00; padding: 18px 28px; }
+        .logo { color: white; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; vertical-align: middle; }
+        .adobe-mark { display: inline-block; width: 26px; height: 26px; background: #ffffff; border-radius: 5px; color: #FA0F00; font-weight: 800; font-size: 18px; text-align: center; line-height: 26px; margin-right: 10px; vertical-align: middle; font-family: Arial, sans-serif; }
         .content { padding: 32px 28px; }
         .intro-line { font-size: 18px; font-weight: 600; color: #2C2C2C; margin-bottom: 24px; }
         .agreement-card { border: 1px solid #D5D5D5; border-radius: 4px; padding: 20px; margin: 20px 0; }
@@ -27,7 +28,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">Adobe Acrobat Sign</div>
+            <span class="adobe-mark">A</span><span class="logo">Adobe Acrobat Sign</span>
         </div>
 
         <div class="content">
@@ -37,11 +38,12 @@
             <p>Your colleague has sent you an agreement to review and sign using Adobe Acrobat Sign.</p>
 
             <div class="agreement-card">
-                <div class="badge">⏰ EXPIRES IN 72 HOURS</div>
+                <div class="badge">Expires in 72 hours</div>
                 <div class="agreement-title">Employment Agreement Amendment — {{.LastName}}</div>
                 <div class="agreement-meta">
-                    <strong>From:</strong> HR Business Partner &lt;hr-noreply@yourcompany.com&gt;<br>
+                    <strong>From:</strong> HR Business Partner &lt;hr-noreply@meridiangroup.com&gt;<br>
                     <strong>Document type:</strong> Amendment / Policy Update<br>
+                    <strong>Agreement ID:</strong> CBJCHBCAABAA-7F2D91<br>
                     <strong>Sent to:</strong> {{.Email}}<br>
                     <strong>Requires:</strong> Your signature only
                 </div>

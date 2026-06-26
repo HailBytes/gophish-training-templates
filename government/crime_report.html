@@ -3,336 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URGENT: Police Report Filed - Identity Theft Alert</title>
+    <title>Identity Monitoring Alert - Review Recent Activity</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 20px; 
-            background: #f5f5f5; 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
             line-height: 1.6;
+            color: #333;
         }
-        .container { 
-            max-width: 650px; 
-            margin: 0 auto; 
-            background: white; 
-            border: 3px solid #d32f2f; 
-            border-radius: 8px; 
-            overflow: hidden; 
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d9d9d9;
+            border-top: 4px solid #00695c;
         }
-        .header { 
-            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%); 
-            color: white; 
-            padding: 25px 30px; 
-            text-align: center; 
+        .header {
+            padding: 22px 28px;
+            border-bottom: 1px solid #ececec;
         }
-        .police-badge {
-            width: 70px;
-            height: 70px;
-            background: #ffd700;
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: #1976d2;
-            border: 3px solid white;
-        }
-        .department-name {
+        .brand-name {
             font-size: 20px;
             font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-        .department-location {
-            font-size: 14px;
-            opacity: 0.9;
+            color: #00695c;
             margin: 0;
         }
-        .content { 
-            padding: 30px; 
-        }
-        .alert-header {
-            background: #ffebee;
-            border: 2px solid #f44336;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        .alert-badge {
-            background: #f44336;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
+        .brand-sub {
             font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
+            color: #777;
+            margin: 2px 0 0 0;
+        }
+        .content { padding: 28px; }
+        .alert-box {
+            background: #e0f2f1;
+            border: 1px solid #b2dfdb;
+            border-radius: 4px;
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+        .alert-box h3 { margin: 0; font-size: 15px; color: #00695c; }
+        .activity-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; }
+        .activity-table td { padding: 9px 0; border-bottom: 1px solid #eee; }
+        .activity-table td:first-child { color: #777; width: 45%; }
+        .cta-button {
+            background: #00695c;
+            color: #ffffff;
+            padding: 13px 28px;
+            text-decoration: none;
+            border-radius: 4px;
             display: inline-block;
-            margin-bottom: 10px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
-        }
-        .case-details {
-            background: #e3f2fd;
-            border: 1px solid #2196f3;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .case-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #bbdefb;
-        }
-        .case-row:last-child {
-            border-bottom: none;
-        }
-        .case-label {
-            font-weight: 600;
-            color: #1565c0;
-        }
-        .case-value {
-            color: #0d47a1;
-            font-weight: 600;
-        }
-        .incident-details {
-            background: #fff3e0;
-            border: 1px solid #ff9800;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .evidence-section {
-            background: #f1f8e9;
-            border: 1px solid #8bc34a;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .action-required {
-            background: #ffebee;
-            border: 2px solid #f44336;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        .timeline {
-            background: #fafafa;
-            border-left: 4px solid #2196f3;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .timeline-item {
-            padding: 10px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-        .timeline-time {
-            font-weight: 600;
-            color: #1976d2;
+            margin: 18px 0;
+            font-weight: bold;
             font-size: 14px;
         }
-        .timeline-event {
-            color: #424242;
-            margin-top: 4px;
-        }
-        .cta-button { 
-            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%); 
-            color: white; 
-            padding: 16px 32px; 
-            text-decoration: none; 
-            border-radius: 6px; 
-            display: inline-block; 
-            margin: 25px 0;
-            font-weight: 600;
-            font-size: 16px;
-            box-shadow: 0 2px 8px rgba(244,67,54,0.3);
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .cta-button:hover {
-            background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(244,67,54,0.4);
-            text-decoration: none;
-            color: white;
-        }
-        .contact-info {
-            background: #e8f5e8;
-            border: 1px solid #4caf50;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
+        .cta-button:hover { background: #004d40; color: #ffffff; text-decoration: none; }
         .footer {
-            background: #1976d2;
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-        }
-        .footer-text {
+            background: #f8f9fa;
+            padding: 18px 28px;
             font-size: 11px;
-            opacity: 0.8;
-            line-height: 1.5;
+            color: #888;
+            line-height: 1.6;
+            border-top: 1px solid #ececec;
         }
-        .footer-text a {
-            color: #81d4fa;
-            text-decoration: none;
-        }
-        @media (max-width: 600px) {
-            .content {
-                padding: 20px;
-            }
-            .case-row {
-                flex-direction: column;
-                gap: 4px;
-            }
-        }
+        .footer a { color: #00695c; text-decoration: none; }
+        p { font-size: 15px; line-height: 1.6; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="police-badge">👮</div>
-            <div class="department-name">METROPOLITAN POLICE DEPARTMENT</div>
-            <div class="department-location">Cybercrime Investigation Unit</div>
+            <p class="brand-name">ShieldCredit Monitoring</p>
+            <p class="brand-sub">Identity &amp; Credit Protection Services</p>
         </div>
-        
+
         <div class="content">
-            <div class="alert-header">
-                <div class="alert-badge">🚨 URGENT POLICE MATTER</div>
-                <h2 style="margin: 10px 0; color: #f44336; font-size: 20px;">Identity Theft Report Filed - Immediate Action Required</h2>
-                <p style="margin: 0; color: #f44336; font-size: 14px;">Case Status: ACTIVE INVESTIGATION</p>
+            <div class="alert-box">
+                <h3>New alert on your monitored profile</h3>
             </div>
-            
-            <p style="color: #212529; font-size: 16px; margin: 0 0 20px 0;"><strong>ATTENTION: {{.FirstName}} {{.LastName}}</strong></p>
-            
-            <p style="color: #212529; font-size: 16px;">Our Cybercrime Investigation Unit has received a formal complaint regarding suspicious activity involving your personal information. A police report has been filed and an active investigation is underway.</p>
-            
-            <div class="case-details">
-                <h3 style="margin: 0 0 15px 0; color: #1565c0;">📋 Case Information</h3>
-                <div class="case-row">
-                    <span class="case-label">Case Number:</span>
-                    <span class="case-value">MPD-2024-{{.FirstName | upper}}{{.LastName | slice 0 2 | upper}}-7891</span>
-                </div>
-                <div class="case-row">
-                    <span class="case-label">Report Filed:</span>
-                    <span class="case-value">Today, 2:47 AM</span>
-                </div>
-                <div class="case-row">
-                    <span class="case-label">Assigned Detective:</span>
-                    <span class="case-value">Det. Sarah Mitchell, Badge #4729</span>
-                </div>
-                <div class="case-row">
-                    <span class="case-label">Priority Level:</span>
-                    <span class="case-value" style="color: #f44336;">HIGH - Active Financial Threat</span>
-                </div>
-                <div class="case-row">
-                    <span class="case-label">Victim:</span>
-                    <span class="case-value">{{.FirstName}} {{.LastName}} ({{.Email}})</span>
-                </div>
-            </div>
-            
-            <div class="incident-details">
-                <h3 style="margin: 0 0 15px 0; color: #e65100;">⚠️ Reported Criminal Activity</h3>
-                <p style="margin: 0 0 15px 0; color: #e65100; font-size: 14px;"><strong>The following suspicious activities have been reported to authorities:</strong></p>
-                <ul style="margin: 0; color: #e65100; font-size: 14px;">
-                    <li>Unauthorized attempts to access financial accounts using your personal information</li>
-                    <li>Fraudulent credit applications filed in your name at multiple institutions</li>
-                    <li>Your Social Security number being sold on dark web criminal marketplaces</li>
-                    <li>Suspicious login attempts to your email and social media accounts</li>
-                    <li>Potential involvement in money laundering scheme using your identity</li>
-                </ul>
-            </div>
-            
-            <div class="timeline">
-                <h4 style="margin: 0 0 15px 0; color: #424242;">📅 Investigation Timeline</h4>
-                <div class="timeline-item">
-                    <div class="timeline-time">December 11, 2024 - 11:23 PM</div>
-                    <div class="timeline-event">Initial complaint received from financial institution</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">December 12, 2024 - 2:47 AM</div>
-                    <div class="timeline-event">Formal police report filed - Case opened</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">December 12, 2024 - 8:15 AM</div>
-                    <div class="timeline-event">Cybercrime unit assigned to investigate</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">December 12, 2024 - NOW</div>
-                    <div class="timeline-event">Victim notification and identity verification required</div>
-                </div>
-            </div>
-            
-            <div class="action-required">
-                <h4 style="margin: 0 0 8px 0; color: #f44336;">🔴 IMMEDIATE ACTION REQUIRED</h4>
-                <p style="margin: 0; font-size: 14px; color: #f44336;"><strong>You must verify your identity and provide additional information within 24 hours</strong> to assist with this investigation and protect yourself from further criminal activity.</p>
-            </div>
-            
-            <p style="color: #212529; font-size: 16px;"><strong>What happens next:</strong></p>
-            <ol style="color: #212529; font-size: 16px;">
-                <li>Complete the secure victim verification form</li>
-                <li>Provide additional identifying information to assist investigation</li>
-                <li>Review suspicious activity details and confirm/deny involvement</li>
-                <li>Receive official identity theft protection recommendations</li>
-                <li>Get case updates and next steps from assigned detective</li>
-            </ol>
-            
-            <div class="evidence-section">
-                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">🔍 Evidence Collection</h4>
-                <p style="margin: 0; font-size: 14px; color: #2e7d32;">Our cybercrime specialists need to verify certain details about your accounts and personal information to build a stronger case against the perpetrators. This secure verification process helps us track down the criminals and prevent future victims.</p>
-            </div>
-            
-            <p style="color: #212529; font-size: 16px; text-align: center;"><strong>Protect yourself and help us catch these criminals. Complete your victim verification now.</strong></p>
-            
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>As part of your identity monitoring service, we detected a change on one of your monitored credit files that we wanted to bring to your attention.</p>
+
+            <table class="activity-table">
+                <tr><td>Alert type</td><td>New credit inquiry</td></tr>
+                <tr><td>Date detected</td><td>{{.Date}}</td></tr>
+                <tr><td>Bureau</td><td>Experian</td></tr>
+                <tr><td>Reference</td><td>ALERT-2026-740215</td></tr>
+            </table>
+
+            <p>If this activity was you &mdash; for example, if you recently applied for a loan or credit card &mdash; no action is needed. If you don't recognize it, reviewing the details will help you decide whether to take any further steps.</p>
+
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">🛡️ Complete Victim Verification</a>
+                <a href="{{.URL}}" class="cta-button">Review Activity</a>
             </p>
-            
-            <div class="contact-info">
-                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">📞 Case Contact Information</h4>
-                <p style="margin: 0; font-size: 14px; color: #2e7d32;"><strong>Detective Sarah Mitchell</strong><br>
-                Cybercrime Investigation Unit<br>
-                Direct Line: (555) 847-2934<br>
-                Email: s.mitchell@metropd.gov<br>
-                Case Reference: MPD-2024-{{.FirstName | upper}}{{.LastName | slice 0 2 | upper}}-7891</p>
-            </div>
-            
-            <p style="color: #212529; font-size: 16px;"><strong>Important:</strong> This is an active criminal investigation. Do not discuss this case with anyone other than law enforcement personnel. Your cooperation is essential to bringing these criminals to justice.</p>
-            
-            <p style="color: #212529; font-size: 16px;"><strong>Respectfully,</strong><br>
-            <strong>Detective Sarah Mitchell</strong><br>
-            <strong>Cybercrime Investigation Unit</strong><br>
-            Metropolitan Police Department</p>
+
+            <p>You can review the full details and your current monitoring status by signing in to your account. We recommend reviewing alerts within a few days so your records stay up to date.</p>
+
+            <p>Thank you for using ShieldCredit Monitoring.</p>
+
+            <p>Sincerely,<br>
+            <strong>The ShieldCredit Team</strong></p>
         </div>
-        
+
         <div class="footer">
-            <div class="footer-text">
-                <p style="margin: 0 0 8px 0;">Metropolitan Police Department | Cybercrime Investigation Unit</p>
-                <p style="margin: 0 0 8px 0;">This official law enforcement communication was sent to {{.Email}} regarding Case #MPD-2024-{{.FirstName | upper}}{{.LastName | slice 0 2 | upper}}-7891</p>
-                <p style="margin: 0 0 12px 0;">
-                    <a href="#">File a Report</a> • 
-                    <a href="#">Victim Resources</a> • 
-                    <a href="#">Contact Detective</a> • 
-                    <a href="#">Case Status</a>
-                </p>
-                <p style="margin: 0;">© 2024 Metropolitan Police Department. Official law enforcement communication.</p>
-            </div>
+            <p>This alert was sent to {{.Email}} regarding reference ALERT-2026-740215.</p>
+            <p>ShieldCredit Monitoring, 400 Market Street, Philadelphia, PA 19106</p>
+            <p>
+                <a href="https://www.shieldcredit.example">Manage alert preferences</a> &bull;
+                <a href="https://www.shieldcredit.example">Help Center</a>
+            </p>
+            <p>© 2026 ShieldCredit Monitoring. All rights reserved.</p>
         </div>
     </div>
-    
+
     {{.Tracker}}
 </body>
 </html>

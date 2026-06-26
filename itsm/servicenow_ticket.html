@@ -3,96 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServiceNow: Ticket Requires Your Approval</title>
+    <title>ServiceNow: Change Request Requires Your Approval</title>
     <style>
         body { margin: 0; padding: 20px; background: #F0F0F0; font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; }
-        .container { max-width: 600px; margin: 0 auto; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
-        .header { background: #62D84E; padding: 0; }
-        .header-inner { background: #293E40; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
-        .header-logo { color: #62D84E; font-size: 20px; font-weight: 700; letter-spacing: 1px; }
-        .header-sub { color: #aaa; font-size: 13px; }
-        .urgency-bar { background: #C0392B; color: white; text-align: center; padding: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
-        .content { padding: 28px 24px; }
-        .ticket-header { background: #F7F7F7; border: 1px solid #E0E0E0; border-radius: 4px; padding: 16px 20px; margin-bottom: 20px; }
-        .ticket-number { font-size: 13px; color: #777; font-family: monospace; }
-        .ticket-title { font-size: 18px; font-weight: 700; color: #1A1A1A; margin: 6px 0 0; }
-        .ticket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 20px 0; border: 1px solid #E0E0E0; border-radius: 4px; overflow: hidden; }
-        .grid-cell { padding: 12px 16px; border-bottom: 1px solid #E0E0E0; border-right: 1px solid #E0E0E0; }
-        .grid-cell:nth-child(even) { border-right: none; }
-        .grid-cell:nth-last-child(-n+2) { border-bottom: none; }
-        .grid-label { font-size: 11px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .grid-value { font-size: 14px; color: #1A1A1A; font-weight: 600; margin-top: 4px; }
-        .priority-critical { color: #C0392B; }
-        .action-box { background: #FFF8E1; border: 1px solid #FFD54F; border-radius: 4px; padding: 16px 20px; margin: 20px 0; font-size: 14px; color: #5D4037; }
-        .btn-approve { display: inline-block; background: #62D84E; color: #1A1A1A; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 14px; margin-right: 10px; }
-        .btn-reject { display: inline-block; background: #C0392B; color: white; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 14px; }
         p { color: #333; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
-        .footer { background: #F7F7F7; border-top: 1px solid #E0E0E0; padding: 14px 24px; font-size: 12px; color: #888; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-inner">
-                <div class="header-logo">ServiceNow</div>
-                <div class="header-sub">IT Service Management</div>
-            </div>
-        </div>
-        <div class="urgency-bar">⚡ APPROVAL REQUIRED — SLA BREACH IN 2 HOURS</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F0F0F0;">
+    <tr><td align="center">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;box-shadow:0 1px 3px rgba(0,0,0,0.12);">
 
-        <div class="content">
+        <!-- Header -->
+        <tr><td style="background:#293E40;padding:16px 24px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+                <td style="vertical-align:middle;">
+                    <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+                        <td style="padding-right:9px;vertical-align:middle;">
+                            <span style="display:inline-block;width:20px;height:20px;background:#62D84E;border-radius:50%;"></span>
+                        </td>
+                        <td style="vertical-align:middle;color:#62D84E;font-size:20px;font-weight:700;letter-spacing:1px;">ServiceNow</td>
+                    </tr></table>
+                </td>
+                <td style="vertical-align:middle;text-align:right;color:#aaa;font-size:13px;">IT Service Management</td>
+            </tr></table>
+        </td></tr>
+
+        <!-- Content -->
+        <tr><td style="padding:28px 24px;">
             <p>Hi {{.FirstName}},</p>
-            <p>A change request has been escalated to you for approval. The request is marked <strong>Critical Priority</strong> and must be approved or rejected before the SLA deadline.</p>
+            <p>A change request has been routed to you for approval. The request is marked <strong>Critical Priority</strong>. Please review the details and record your decision.</p>
 
-            <div class="ticket-header">
-                <div class="ticket-number">CHG0042891 &nbsp;·&nbsp; Change Request</div>
-                <div class="ticket-title">Emergency Production Access — Database Credential Rotation</div>
-            </div>
+            <!-- Ticket header -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F7F7F7;border:1px solid #E0E0E0;border-radius:4px;margin-bottom:20px;">
+                <tr><td style="padding:16px 20px;">
+                    <div style="font-size:13px;color:#777;font-family:monospace;">CHG0042891 &nbsp;&middot;&nbsp; Change Request</div>
+                    <div style="font-size:18px;font-weight:700;color:#1A1A1A;margin-top:6px;">Emergency Production Access — Database Credential Rotation</div>
+                </td></tr>
+            </table>
 
-            <div class="ticket-grid">
-                <div class="grid-cell">
-                    <div class="grid-label">Priority</div>
-                    <div class="grid-value priority-critical">1 — Critical</div>
-                </div>
-                <div class="grid-cell">
-                    <div class="grid-label">Requested By</div>
-                    <div class="grid-value">Ops Team — J. Martinez</div>
-                </div>
-                <div class="grid-cell">
-                    <div class="grid-label">Assigned To</div>
-                    <div class="grid-value">{{.FirstName}} {{.LastName}}</div>
-                </div>
-                <div class="grid-cell">
-                    <div class="grid-label">SLA Deadline</div>
-                    <div class="grid-value priority-critical">Overdue in 2 hrs</div>
-                </div>
-                <div class="grid-cell">
-                    <div class="grid-label">Risk Level</div>
-                    <div class="grid-value">High</div>
-                </div>
-                <div class="grid-cell">
-                    <div class="grid-label">Affected Systems</div>
-                    <div class="grid-value">Prod DB Cluster</div>
-                </div>
-            </div>
+            <!-- Ticket detail table -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E0E0E0;border-radius:4px;border-collapse:separate;margin:0 0 20px;font-size:14px;">
+                <tr>
+                    <td width="50%" style="padding:12px 16px;border-bottom:1px solid #E0E0E0;border-right:1px solid #E0E0E0;">
+                        <div style="font-size:11px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Priority</div>
+                        <div style="font-size:14px;color:#C0392B;font-weight:600;margin-top:4px;">1 — Critical</div>
+                    </td>
+                    <td width="50%" style="padding:12px 16px;border-bottom:1px solid #E0E0E0;">
+                        <div style="font-size:11px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Requested By</div>
+                        <div style="font-size:14px;color:#1A1A1A;font-weight:600;margin-top:4px;">Ops Team — J. Martinez</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 16px;border-bottom:1px solid #E0E0E0;border-right:1px solid #E0E0E0;">
+                        <div style="font-size:11px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Assigned To</div>
+                        <div style="font-size:14px;color:#1A1A1A;font-weight:600;margin-top:4px;">{{.FirstName}} {{.LastName}}</div>
+                    </td>
+                    <td style="padding:12px 16px;border-bottom:1px solid #E0E0E0;">
+                        <div style="font-size:11px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Submitted</div>
+                        <div style="font-size:14px;color:#1A1A1A;font-weight:600;margin-top:4px;">{{.Date}}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 16px;border-right:1px solid #E0E0E0;">
+                        <div style="font-size:11px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Risk Level</div>
+                        <div style="font-size:14px;color:#1A1A1A;font-weight:600;margin-top:4px;">High</div>
+                    </td>
+                    <td style="padding:12px 16px;">
+                        <div style="font-size:11px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Affected Systems</div>
+                        <div style="font-size:14px;color:#1A1A1A;font-weight:600;margin-top:4px;">Prod DB Cluster</div>
+                    </td>
+                </tr>
+            </table>
 
-            <div class="action-box">
-                ⚠️ <strong>Approval required from you.</strong> Automated system access will be granted if no response is received before the SLA deadline. Please review the full request details before approving.
-            </div>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FFF8E1;border:1px solid #FFD54F;border-radius:4px;margin:0 0 20px;">
+                <tr><td style="padding:16px 20px;font-size:14px;color:#5D4037;line-height:1.6;">
+                    <strong>Your approval is required.</strong> Please review the full request details before recording your decision. If no decision is recorded, the request will remain pending and will be escalated to the change advisory board.
+                </td></tr>
+            </table>
 
             <p style="margin: 24px 0;">
-                <a href="{{.URL}}" class="btn-approve">Review &amp; Approve</a>
-                <a href="{{.URL}}" class="btn-reject">Reject Request</a>
+                <a href="{{.URL}}" style="display:inline-block;background:#62D84E;color:#1A1A1A;padding:12px 28px;border-radius:4px;text-decoration:none;font-weight:700;font-size:14px;">Open request in ServiceNow</a>
             </p>
 
-            <p>If you are not the correct approver, please reassign this ticket immediately.</p>
-        </div>
+            <p>If you are not the correct approver, please reassign this ticket in ServiceNow.</p>
+        </td></tr>
 
-        <div class="footer">
+        <!-- Footer -->
+        <tr><td style="background:#F7F7F7;border-top:1px solid #E0E0E0;padding:14px 24px;font-size:12px;color:#888;line-height:1.6;">
             Sent to {{.Email}} as the designated approver for this change request.<br>
             ServiceNow, Inc. | 2225 Lawson Lane, Santa Clara, CA 95054
-        </div>
-    </div>
+        </td></tr>
+
+    </table>
+    </td></tr>
+    </table>
 
     {{.Tracker}}
 </body>

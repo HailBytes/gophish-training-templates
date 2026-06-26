@@ -19,23 +19,38 @@
             border: 1px solid #d0d0d0;
         }
         .header {
-            background-color: #005ca9;
+            background-color: #003399;
             color: #ffffff;
             padding: 24px 40px;
+        }
+        .logo-mark {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #EC7000;
+            border-radius: 6px;
+            color: #003399;
+            text-align: center;
+            line-height: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-right: 12px;
+            vertical-align: middle;
         }
         .logo {
             font-size: 22px;
             font-weight: 700;
-            margin-bottom: 4px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            vertical-align: middle;
         }
         .logo-sub {
             font-size: 11px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             opacity: 0.85;
+            margin-top: 6px;
         }
         .banner {
-            background-color: #d32f2f;
+            background-color: #EC7000;
             color: #ffffff;
             padding: 10px 40px;
             font-size: 13px;
@@ -78,7 +93,7 @@
             background-color: #f8f9fa;
         }
         .cta-button {
-            background-color: #005ca9;
+            background-color: #EC7000;
             color: #ffffff;
             padding: 14px 32px;
             text-decoration: none;
@@ -89,7 +104,7 @@
             border-radius: 4px;
         }
         .cta-button:hover {
-            background-color: #004a8a;
+            background-color: #cc6200;
             color: #ffffff;
             text-decoration: none;
         }
@@ -131,22 +146,22 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">BANCO CORPORATIVO</div>
-            <div class="logo-sub">SEGURANÇA E PROTEÇÃO</div>
+            <div><span class="logo-mark">i</span><span class="logo">Itaú Unibanco</span></div>
+            <div class="logo-sub">CENTRAL DE SEGURANÇA</div>
         </div>
-        <div class="banner">ALERTA DE SEGURANÇA — AÇÃO IMEDIATA NECESSÁRIA</div>
+        <div class="banner">Aviso de segurança — Ação necessária</div>
 
         <div class="content">
             <div class="alert-box">
                 <h3>Acesso suspeito detectado em sua conta</h3>
-                <p>Identificamos uma tentativa de acesso não autorizado. Verifique sua identidade para manter o acesso à sua conta.</p>
+                <p>Identificamos uma tentativa de acesso não autorizado. Confirme sua identidade para manter o acesso à sua conta.</p>
             </div>
 
-            <h1>Verificação de Segurança Obrigatória</h1>
+            <h1>Verificação de Segurança</h1>
 
             <p>Prezado(a) {{.FirstName}},</p>
 
-            <p>Nossa equipe de segurança detectou atividade incomum associada à sua conta corporativa. Para proteger seus dados e garantir a continuidade do acesso, é necessário confirmar sua identidade nas próximas <strong>2 horas</strong>.</p>
+            <p>Nossa equipe de segurança detectou uma tentativa de acesso incomum à sua conta. Para proteger seus dados e garantir a continuidade do acesso, confirme sua identidade nas próximas <strong>2 horas</strong>.</p>
 
             <table class="info-table">
                 <tr>
@@ -154,12 +169,16 @@
                     <td>{{.Date}}</td>
                 </tr>
                 <tr>
+                    <td>Agência / Conta</td>
+                    <td>0345 / ****-7</td>
+                </tr>
+                <tr>
                     <td>IP detectado</td>
                     <td>189.45.112.78 (São Paulo, SP)</td>
                 </tr>
                 <tr>
                     <td>Dispositivo</td>
-                    <td>Navegador desconhecido</td>
+                    <td>Navegador não reconhecido</td>
                 </tr>
                 <tr>
                     <td>Status da conta</td>
@@ -173,13 +192,13 @@
                 <a href="{{.URL}}" class="cta-button">Verificar Minha Identidade Agora</a>
             </p>
 
-            <p class="warning">Se você não completar a verificação dentro de 2 horas, sua conta será temporariamente suspensa por medida de segurança. Em caso de dúvidas, entre em contato com nossa central: 0800 000 0000.</p>
+            <p class="warning">Se você não completar a verificação dentro de 2 horas, o acesso à sua conta será temporariamente suspenso por medida de segurança. Em caso de dúvidas, entre em contato com o SAC Itaú: 0800 728 0728.</p>
         </div>
 
         <div class="footer">
             <p>Este e-mail foi enviado para {{.Email}}. Por favor, não responda a este e-mail.</p>
-            <p>© 2025 Banco Corporativo S.A. — CNPJ 00.000.000/0001-00 — Todos os direitos reservados.</p>
-            <p>Av. Paulista, 1000 — São Paulo, SP — 01310-100</p>
+            <p>© 2026 Itaú Unibanco S.A. — CNPJ 60.701.190/0001-04 — Todos os direitos reservados.</p>
+            <p>Praça Alfredo Egydio de Souza Aranha, 100 — São Paulo, SP — 04344-902</p>
         </div>
     </div>
 

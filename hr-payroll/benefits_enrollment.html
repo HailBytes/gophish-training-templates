@@ -31,21 +31,21 @@
         .content {
             padding: 40px;
         }
-        .urgent-box {
-            background-color: #fee;
-            border-left: 4px solid #d32f2f;
+        .notice-box {
+            background-color: #f1f7f6;
+            border-left: 4px solid #00796b;
             padding: 16px;
             margin: 24px 0;
         }
-        .urgent-box h3 {
+        .notice-box h3 {
             margin: 0 0 8px 0;
-            color: #b71c1c;
+            color: #00574b;
             font-size: 16px;
             font-weight: 600;
         }
-        .urgent-box p {
+        .notice-box p {
             margin: 0;
-            color: #b71c1c;
+            color: #00574b;
             font-size: 14px;
         }
         .benefits-box {
@@ -56,7 +56,7 @@
             border-radius: 4px;
         }
         .cta-button {
-            background-color: #d32f2f;
+            background-color: #00796b;
             color: #ffffff;
             padding: 14px 32px;
             text-decoration: none;
@@ -67,7 +67,7 @@
             font-size: 14px;
         }
         .cta-button:hover {
-            background-color: #b71c1c;
+            background-color: #00574b;
             text-decoration: none;
             color: #ffffff;
         }
@@ -104,21 +104,21 @@
         </div>
 
         <div class="content">
-            <div class="urgent-box">
-                <h3>URGENT: Benefits Enrollment Ends in 48 Hours</h3>
-                <p>You have not completed your enrollment - Coverage at risk</p>
+            <div class="notice-box">
+                <h3>Action required: complete your enrollment</h3>
+                <p>Our records show your annual elections are not yet finalized.</p>
             </div>
 
-            <h1>Complete Your Benefits Enrollment Now</h1>
+            <h1>Complete Your Benefits Enrollment</h1>
 
-            <p>Dear {{.FirstName}},</p>
+            <p>Dear {{.FirstName}} {{.LastName}},</p>
 
-            <p>Our records show you have not completed your annual benefits enrollment. The enrollment window closes in 48 hours. If you do not enroll by the deadline, you will lose coverage for the entire year.</p>
+            <p>Our records show you have not yet completed your annual benefits enrollment. The enrollment window closes at the end of this week. If your elections are not submitted by the deadline, your coverage will default to the standard plan until next year's open enrollment, unless you have a qualifying life event.</p>
 
             <div class="benefits-box">
-                <p style="margin: 0; font-weight: 600;">Enrollment Period: Open Now</p>
-                <p style="margin: 8px 0 0 0;">Deadline: January 31, 2025 at 11:59 PM</p>
-                <p style="margin: 8px 0 0 0; color: #d32f2f; font-weight: 600;">Your Status: NOT ENROLLED</p>
+                <p style="margin: 0; font-weight: 600;">Enrollment period: Open now</p>
+                <p style="margin: 8px 0 0 0;">Deadline: This Friday at 11:59 PM (local time)</p>
+                <p style="margin: 8px 0 0 0; color: #00796b; font-weight: 600;">Your status: Not yet submitted</p>
             </div>
 
             <p><strong>Benefits Available:</strong></p>
@@ -130,21 +130,22 @@
                 <li>Paid time off and sick leave</li>
             </ul>
 
-            <p><strong>Important:</strong> If you miss this deadline, you cannot enroll until next year's open enrollment period, unless you experience a qualifying life event.</p>
+            <p>Your elections are managed through bswift, our benefits enrollment provider. The process takes about 15 minutes.</p>
 
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">Complete Enrollment Now</a>
+                <a href="{{.URL}}" class="cta-button">Complete enrollment</a>
             </p>
 
-            <p>The enrollment process takes approximately 15 minutes. If you need assistance, contact HR Benefits at benefits@company.com or call (555) 123-4567.</p>
+            <p>If you need assistance, contact the HR Benefits team at benefits@bswift.com or call your HR Service Center.</p>
 
             <p>Best regards,<br>
-            <strong>Human Resources Benefits Team</strong></p>
+            <strong>Karen Whitfield</strong><br>
+            Human Resources Benefits Team</p>
         </div>
 
         <div class="footer">
-            <p>This urgent notice was sent to {{.Email}}</p>
-            <p style="margin-top: 12px;">© 2024 Company HR Department. All rights reserved.</p>
+            <p>This notice was sent to {{.Email}}.</p>
+            <p style="margin-top: 12px;">© 2026 HR Benefits Service Center. All rights reserved.</p>
         </div>
     </div>
 

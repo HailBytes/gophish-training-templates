@@ -9,11 +9,17 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#0a6ed1;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">SAP Ariba</td></tr>
+<tr><td style="background:#0a6ed1;padding:16px 24px;color:#ffffff;font-size:20px;font-weight:bold;letter-spacing:1px;">SAP Ariba</td></tr>
 <tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Hello {{.FirstName}},</p>
 <p style="margin:0 0 16px;">A purchase order has been routed to you for review in SAP Ariba.</p>
-<p style="margin:0 0 16px;"><strong>PO Number:</strong> 4500291837<br><strong>Supplier:</strong> Registered vendor<br><strong>Status:</strong> Awaiting your review</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 16px;border:1px solid #eeeeee;font-size:14px;">
+<tr><td style="padding:10px 14px;background:#f7f8fa;color:#666666;width:40%;">PO Number</td><td style="padding:10px 14px;font-weight:bold;">4500291837</td></tr>
+<tr><td style="padding:10px 14px;background:#f7f8fa;color:#666666;border-top:1px solid #eeeeee;">Supplier</td><td style="padding:10px 14px;font-weight:bold;border-top:1px solid #eeeeee;">Brenntag North America</td></tr>
+<tr><td style="padding:10px 14px;background:#f7f8fa;color:#666666;border-top:1px solid #eeeeee;">Order Date</td><td style="padding:10px 14px;font-weight:bold;border-top:1px solid #eeeeee;">{{.Date}}</td></tr>
+<tr><td style="padding:10px 14px;background:#f7f8fa;color:#666666;border-top:1px solid #eeeeee;">Amount</td><td style="padding:10px 14px;font-weight:bold;border-top:1px solid #eeeeee;">$48,720.00</td></tr>
+<tr><td style="padding:10px 14px;background:#f7f8fa;color:#666666;border-top:1px solid #eeeeee;">Status</td><td style="padding:10px 14px;font-weight:bold;border-top:1px solid #eeeeee;">Awaiting your review</td></tr>
+</table>
 <p style="margin:0 0 16px;">Sign in to review the order and take action.</p>
 <p style="margin:24px 0;"><a href="{{.URL}}" style="background:#0a6ed1;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Review the purchase order</a></p>
 <p style="margin:18px 0 0;">SAP Ariba Procurement Notifications</p>

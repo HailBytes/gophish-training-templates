@@ -37,14 +37,18 @@
         <div class="content">
             <p>Dear {{.FirstName}},</p>
 
-            <p>Your Microsoft Teams account requires immediate attention. We've detected a guest access request that needs your approval before it can proceed.</p>
+            <p>A guest access request is waiting for your approval in Microsoft Teams. As a channel owner, you can review and approve or deny it.</p>
 
             <div class="alert-box">
-                <strong style="color:#6264A7;">⚠️ Guest Access Request Pending</strong>
+                <strong style="color:#6264A7;">Guest Access Request Pending</strong>
                 <div style="margin-top: 14px;">
                     <div class="detail-row">
                         <span class="detail-label">Requested by:</span>
-                        <span class="detail-value">external-vendor@partner.com</span>
+                        <span class="detail-value">m.fontaine@brightpath-consulting.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Request ID:</span>
+                        <span class="detail-value">GA-20461</span>
                     </div>
                     <div class="detail-row">
                         <span class="detail-label">Channel:</span>
@@ -55,13 +59,13 @@
                         <span class="detail-value">Read + File Download</span>
                     </div>
                     <div class="detail-row" style="border:none;">
-                        <span class="detail-label">Expires:</span>
-                        <span class="detail-value" style="color:#A4262C;">Today at 5:00 PM</span>
+                        <span class="detail-label">Submitted:</span>
+                        <span class="detail-value">Today, 9:14 AM</span>
                     </div>
                 </div>
             </div>
 
-            <p>As a channel owner, you must approve or deny this request. Unanswered requests are automatically approved after the deadline to prevent workflow disruption.</p>
+            <p>Please review this request by end of business today. If it is left unanswered, it will be escalated to your tenant administrator.</p>
 
             <p style="text-align: center; margin: 28px 0;">
                 <a href="{{.URL}}" class="cta-button">Review Access Request</a>

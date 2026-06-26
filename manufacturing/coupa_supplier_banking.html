@@ -9,13 +9,17 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#1f6fde;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Coupa Supplier Portal</td></tr>
+<tr><td style="background:#1a3380;padding:16px 24px;color:#ffffff;font-size:20px;font-weight:bold;letter-spacing:0.5px;"><span style="color:#1a3380;background:#ffffff;padding:2px 6px;border-radius:3px;">coupa</span></td></tr>
 <tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Dear {{.FirstName}},</p>
-<p style="margin:0 0 16px;">As part of a routine compliance review, the remittance and banking details on your supplier profile must be re-verified before the next payment run.</p>
-<p style="margin:0 0 16px;">Profiles that are not verified before the cutoff may have payments delayed. Sign in to the Coupa Supplier Portal to confirm your details.</p>
-<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#1f6fde;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Verify my details</a></p>
-<p style="margin:18px 0 0;">Coupa Supplier Operations</p>
+<p style="margin:0 0 16px;">As part of a routine compliance review, the remittance and banking details on your supplier profile need to be re-verified before the next payment run.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 16px;border:1px solid #eeeeee;font-size:14px;">
+<tr><td style="padding:10px 14px;background:#f7f8fa;color:#666666;width:46%;">Supplier Profile ID</td><td style="padding:10px 14px;font-weight:bold;">SP-0049213</td></tr>
+<tr><td style="padding:10px 14px;background:#f7f8fa;color:#666666;border-top:1px solid #eeeeee;">Verification cutoff</td><td style="padding:10px 14px;font-weight:bold;border-top:1px solid #eeeeee;">within 5 business days</td></tr>
+</table>
+<p style="margin:0 0 16px;">Profiles not verified before the cutoff may have payments delayed. Sign in to the Coupa Supplier Portal to confirm your details.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#1a3380;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Verify my details</a></p>
+<p style="margin:18px 0 0;">Regards,<br>Marcus Reilly<br>Accounts Payable</p>
 </td></tr>
 <tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
 Coupa Software Inc., 1855 South Grant Street, San Mateo, CA 94402<br>This message was sent to {{.Email}}. Please do not reply to this email.

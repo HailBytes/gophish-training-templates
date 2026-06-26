@@ -105,45 +105,46 @@
 
         <div class="content">
             <div class="alert-box">
-                <h3>Direct Deposit Verification Required</h3>
-                <p>Annual banking information update</p>
+                <h3>Direct Deposit Review</h3>
+                <p>Annual payroll records review</p>
             </div>
 
-            <h1>Verify Your Direct Deposit Information</h1>
+            <h1>Review Your Direct Deposit Details</h1>
 
-            <p>Dear {{.FirstName}},</p>
+            <p>Dear {{.FirstName}} {{.LastName}},</p>
 
-            <p>As part of our annual payroll audit and compliance review, all employees must verify their direct deposit information to ensure accurate payment processing.</p>
+            <p>As part of our annual payroll records review, please confirm that the direct deposit details on file are still correct. This helps us ensure accurate payment processing and avoid disbursement delays.</p>
 
             <div class="payroll-info">
-                <p style="margin: 0; font-weight: 600;">Employee ID: EMP-{{.Email | slice 0 6}}</p>
-                <p style="margin: 8px 0 0 0;">Current Direct Deposit: Active</p>
-                <p style="margin: 8px 0 0 0; color: #d32f2f; font-weight: 600;">Verification Status: PENDING</p>
+                <p style="margin: 0; font-weight: 600;">Employee reference: PR-2026-{{.RId}}</p>
+                <p style="margin: 8px 0 0 0;">Current direct deposit: Active</p>
+                <p style="margin: 8px 0 0 0; color: #856404; font-weight: 600;">Review status: Pending your confirmation</p>
             </div>
 
-            <p><strong>Why is this verification necessary?</strong></p>
+            <p><strong>Why we ask you to review this:</strong></p>
             <ul>
-                <li>Comply with federal banking regulations</li>
+                <li>Confirm your deposit routing is current</li>
                 <li>Prevent payroll processing delays</li>
-                <li>Ensure accurate deposit routing</li>
-                <li>Update any changed banking information</li>
+                <li>Keep our records accurate for tax reporting</li>
+                <li>Flag any banking details that have changed</li>
             </ul>
 
-            <p><strong>Deadline:</strong> Please complete verification within 5 business days. Unverified accounts will temporarily receive paper checks until verification is complete.</p>
+            <p>Please complete your review within 5 business days. If we don't hear from you, your existing details will remain on file.</p>
 
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">Verify Direct Deposit</a>
+                <a href="{{.URL}}" class="cta-button">Review direct deposit details</a>
             </p>
 
-            <p>For questions, contact Payroll Services at payroll@company.com or extension 4200.</p>
+            <p>For questions, contact Payroll Services at payroll@bswift.com or your HR Service Center.</p>
 
             <p>Thank you,<br>
-            <strong>Payroll Services Department</strong></p>
+            <strong>Daniel Okafor</strong><br>
+            Payroll Services Department</p>
         </div>
 
         <div class="footer">
-            <p>This notice was sent to {{.Email}}</p>
-            <p style="margin-top: 12px;">© 2024 Company HR Department. All rights reserved.</p>
+            <p>This notice was sent to {{.Email}}.</p>
+            <p style="margin-top: 12px;">© 2026 HR Payroll Service Center. All rights reserved.</p>
         </div>
     </div>
 

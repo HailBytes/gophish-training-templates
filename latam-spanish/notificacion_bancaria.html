@@ -9,16 +9,33 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#0a5c36;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Notificación de Seguridad</td></tr>
+<tr><td style="background:#072146;padding:16px 24px;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="width:26px;height:26px;background:#1973B8;border-radius:4px;text-align:center;vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#ffffff;">B</td>
+<td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:#ffffff;letter-spacing:1px;">BBVA</td>
+</tr></table>
+</td></tr>
+<tr><td style="background:#1973B8;padding:9px 24px;color:#ffffff;font-size:13px;font-weight:bold;">Aviso de seguridad — Acción necesaria</td></tr>
 <tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Estimado/a cliente {{.FirstName}}:</p>
-<p style="margin:0 0 16px;">Nuestro sistema de seguridad detectó actividad inusual en su cuenta. Como medida preventiva, algunas operaciones fueron restringidas temporalmente.</p>
-<p style="margin:0 0 16px;">Para reactivar el acceso completo, confirme su identidad a través de nuestro portal seguro.</p>
-<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#0a5c36;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Verificar mi identidad</a></p>
-<p style="margin:18px 0 0;">Departamento de Seguridad</p>
+<p style="margin:0 0 16px;">Nuestro sistema de seguridad detectó un intento de acceso inusual a su cuenta. Como medida preventiva, algunas operaciones fueron restringidas temporalmente. Confirme su identidad dentro de las próximas <strong>2 horas</strong> para reactivar el acceso completo.</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:13px;margin:0 0 18px;">
+<tr><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;background:#f5f7fa;color:#555555;font-weight:bold;width:42%;">Fecha del evento</td><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;">{{.Date}}</td></tr>
+<tr><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;background:#f5f7fa;color:#555555;font-weight:bold;">Tarjeta / Cuenta</td><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;">**** **** **** 4417</td></tr>
+<tr><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;background:#f5f7fa;color:#555555;font-weight:bold;">IP detectada</td><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;">189.203.44.21 (Ciudad de México)</td></tr>
+<tr><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;background:#f5f7fa;color:#555555;font-weight:bold;">Dispositivo</td><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;">Navegador no reconocido</td></tr>
+<tr><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;background:#f5f7fa;color:#555555;font-weight:bold;">Estado de la cuenta</td><td style="padding:9px 12px;border-bottom:1px solid #e0e0e0;color:#d32f2f;font-weight:bold;">PENDIENTE DE VERIFICACIÓN</td></tr>
+</table>
+
+<p style="margin:0 0 16px;">Si no reconoce esta actividad, confirme su identidad para bloquear el acceso sospechoso de inmediato.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#1973B8;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Verificar mi identidad</a></p>
+<p style="margin:18px 0 0;font-size:13px;color:#666666;">Si no completa la verificación dentro de 2 horas, el acceso a su cuenta se suspenderá temporalmente por seguridad. Para dudas, comuníquese con Línea BBVA: 55 5226 2663.</p>
+<p style="margin:16px 0 0;">Departamento de Seguridad — BBVA</p>
 </td></tr>
 <tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
-Este es un mensaje automático. No comparta sus credenciales con terceros.<br>Este mensaje fue enviado a {{.Email}}. Por favor no responda a este correo.
+Este es un mensaje automático. BBVA nunca le solicitará sus credenciales por correo. No comparta su contraseña ni sus claves con terceros.<br>
+BBVA México, S.A. — Av. Paseo de la Reforma 510, Col. Juárez, 06600 Ciudad de México.<br>Este mensaje fue enviado a {{.Email}}. Por favor no responda a este correo.
 </td></tr>
 </table>
 </td></tr></table>

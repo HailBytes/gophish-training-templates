@@ -117,26 +117,26 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-title">HR Benefits Center</div>
+            <div class="header-title">bswift Benefits Center</div>
             <div class="header-subtitle">Annual Open Enrollment &amp; Benefits Portal</div>
         </div>
 
         <div class="content">
             <h2>Final Reminder: Health Benefits Open Enrollment</h2>
 
-            <p>Dear {{.FirstName}},</p>
+            <p>Dear {{.FirstName}} {{.LastName}},</p>
 
             <p>This is a final reminder that the annual Open Enrollment period for your employee health and retirement benefits is ending soon. Our records indicate that you have not finalized your elections for the upcoming coverage period.</p>
 
             <div class="alert-box">
-                <div class="alert-title">⚠️ Action Required: Immediate Response Needed</div>
-                <div class="alert-text">If you fail to submit your elections before the deadline, your current coverage may be terminated or defaulted to basic options.</div>
+                <div class="alert-title">Action required: elections not yet submitted</div>
+                <div class="alert-text">If your elections are not submitted before the deadline, your coverage will default to the standard plan options for the upcoming year.</div>
             </div>
 
             <table class="info-table">
                 <tr>
                     <td class="label">Employee</td>
-                    <td class="value">{{.FirstName}} ({{.Email}})</td>
+                    <td class="value">{{.FirstName}} {{.LastName}} ({{.Email}})</td>
                 </tr>
                 <tr>
                     <td class="label">Enrollment Period</td>
@@ -144,7 +144,7 @@
                 </tr>
                 <tr>
                     <td class="label">Submission Deadline</td>
-                    <td class="value">Friday at 5:00 PM EST</td>
+                    <td class="value">This Friday at 5:00 PM (local time)</td>
                 </tr>
                 <tr>
                     <td class="label">Status</td>
@@ -161,7 +161,8 @@
             <p>If you have already submitted your election forms, please log in to verify that your status has been updated to "Approved." For questions or assistance, contact the HR Benefits Helpdesk.</p>
 
             <p>Regards,<br>
-            <strong>Human Resources Benefits Administration</strong></p>
+            <strong>Karen Whitfield</strong><br>
+            Human Resources Benefits Administration</p>
         </div>
 
         <div class="footer">

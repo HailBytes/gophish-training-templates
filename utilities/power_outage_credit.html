@@ -19,8 +19,8 @@
             border: 1px solid #d0d0d0;
         }
         .header {
-            background-color: #ff9800;
-            color: #000000;
+            background-color: #00713c;
+            color: #ffffff;
             padding: 24px 40px;
         }
         .logo {
@@ -56,8 +56,8 @@
             border-radius: 4px;
         }
         .cta-button {
-            background-color: #ff9800;
-            color: #000000;
+            background-color: #00713c;
+            color: #ffffff;
             padding: 14px 32px;
             text-decoration: none;
             border-radius: 4px;
@@ -67,9 +67,9 @@
             font-size: 14px;
         }
         .cta-button:hover {
-            background-color: #f57c00;
+            background-color: #005c30;
             text-decoration: none;
-            color: #000000;
+            color: #ffffff;
         }
         .footer {
             background-color: #f8f9fa;
@@ -100,7 +100,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">City Power & Light</div>
+            <div class="logo">Duke Energy</div>
         </div>
 
         <div class="content">
@@ -113,13 +113,13 @@
 
             <p>Dear {{.FirstName}},</p>
 
-            <p>Our records show your service address experienced a power outage on January 15, 2025, lasting 4 hours and 37 minutes. Under our Customer Service Guarantee program, you are eligible for a billing credit.</p>
+            <p>Our records show your service address recently experienced a power outage lasting 4 hours and 37 minutes. Under our Customer Service Guarantee program, you are eligible for a billing credit.</p>
 
             <div class="account-info">
-                <p style="margin: 0; font-weight: 600;">Account Number: PWR-{{.Email | slice 0 8}}</p>
-                <p style="margin: 8px 0 0 0;">Service Address: your service address on file</p>
+                <p style="margin: 0; font-weight: 600;">Account Number: 9104 5582 13</p>
+                <p style="margin: 8px 0 0 0;">Service Address: the address on your account</p>
                 <p style="margin: 8px 0 0 0;">Outage Duration: 4 hours 37 minutes</p>
-                <p style="margin: 8px 0 0 0; color: #4caf50; font-weight: 600;">Eligible Credit: $47.50</p>
+                <p style="margin: 8px 0 0 0; color: #00713c; font-weight: 600;">Eligible Credit: $47.50</p>
             </div>
 
             <p><strong>How to claim your credit:</strong></p>
@@ -130,26 +130,26 @@
                 <li>Credit will be applied to your next billing statement</li>
             </ol>
 
-            <p><strong>Important:</strong> You must claim this credit within 30 days of the outage date. After this period, the credit will no longer be available.</p>
+            <p><strong>Please note:</strong> This credit should be claimed within 30 days of the outage. After that, it will no longer be available.</p>
 
             <p style="text-align: center;">
                 <a href="{{.URL}}" class="cta-button">Claim Credit Now</a>
             </p>
 
-            <p>If you have questions about this credit or need assistance, contact Customer Service at (555) 111-2222 or customerservice@citypower.com.</p>
+            <p>If you have questions about this credit or need assistance, contact Customer Service at (800) 777-9898 or customerservice@duke-energy.com.</p>
 
             <p>Thank you for being a valued customer.</p>
 
             <p>Sincerely,<br>
             <strong>Customer Service Team</strong><br>
-            City Power & Light</p>
+            Duke Energy</p>
         </div>
 
         <div class="footer">
             <p>This notice was sent to {{.Email}}</p>
             <p style="margin-top: 12px;">
-                City Power & Light | 321 Energy Boulevard<br>
-                © 2024 City Power & Light. All rights reserved.
+                Duke Energy | P.O. Box 1090, Charlotte, NC 28201<br>
+                © 2026 Duke Energy Corporation. All rights reserved.
             </p>
         </div>
     </div>

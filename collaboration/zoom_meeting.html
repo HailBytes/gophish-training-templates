@@ -30,41 +30,37 @@
         <div class="content">
             <p>Hi {{.FirstName}},</p>
 
-            <p>Your cloud recording from a recent Zoom meeting is now available. The recording will be automatically deleted after <strong>7 days</strong> if not downloaded.</p>
+            <p>A cloud recording from a meeting you attended is now available to view. The recording will be automatically deleted after <strong>30 days</strong>.</p>
 
             <div class="recording-box">
-                <div style="font-weight: 700; color: #1a1a1a; font-size: 16px; margin-bottom: 14px;">📹 Meeting Recording Ready</div>
+                <div style="font-weight: 700; color: #1a1a1a; font-size: 16px; margin-bottom: 14px;">Meeting Recording Ready</div>
                 <div class="rec-row">
                     <span class="rec-label">Meeting Topic</span>
-                    <span class="rec-value">Q4 Planning — Leadership Sync</span>
+                    <span class="rec-value">Q3 Planning — Leadership Sync</span>
                 </div>
                 <div class="rec-row">
                     <span class="rec-label">Host</span>
-                    <span class="rec-value">{{.FirstName}} {{.LastName}}</span>
+                    <span class="rec-value">Karen Doyle</span>
+                </div>
+                <div class="rec-row">
+                    <span class="rec-label">Meeting ID</span>
+                    <span class="rec-value">842 7156 3390</span>
+                </div>
+                <div class="rec-row">
+                    <span class="rec-label">Date</span>
+                    <span class="rec-value">Yesterday</span>
                 </div>
                 <div class="rec-row">
                     <span class="rec-label">Duration</span>
                     <span class="rec-value">52 minutes</span>
                 </div>
-                <div class="rec-row">
-                    <span class="rec-label">Size</span>
-                    <span class="rec-value">487 MB</span>
-                </div>
-                <div class="rec-row">
-                    <span class="rec-label">Expires</span>
-                    <span class="rec-value" style="color: #E53935;">In 7 days</span>
-                </div>
-            </div>
-
-            <div class="warning">
-                ⚠️ <strong>Action required:</strong> Your Zoom account storage is 94% full. You must download this recording before viewing it online.
             </div>
 
             <p style="text-align: center; margin: 28px 0;">
                 <a href="{{.URL}}" class="cta-button">View Recording</a>
             </p>
 
-            <p>If you did not host this meeting or don't recognize this recording, please sign in to your Zoom account to review your activity.</p>
+            <p>If you don't recognize this meeting, you can ignore this email or sign in to your Zoom account to review your recent activity.</p>
 
             <hr style="border: none; border-top: 1px solid #eee; margin: 28px 0;">
 

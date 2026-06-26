@@ -51,6 +51,18 @@
             color: #004d4d;
             margin: 0 0 5px 0;
         }
+        .confidential-tag {
+            display: inline-block;
+            background-color: #008080;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
         .confidential-text {
             font-size: 13px;
             margin: 0;
@@ -118,56 +130,57 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-title">Corporate Payroll Services</div>
+            <div class="header-title">ADP Payroll &amp; Compensation</div>
             <div class="header-subtitle">Confidential Internal Compensation Notice</div>
         </div>
 
         <div class="content">
             <h2>Year-End Bonus Statement &amp; Tax Verification</h2>
 
-            <p>Dear {{.FirstName}},</p>
+            <p>Dear {{.FirstName}} {{.LastName}},</p>
 
-            <p>We are pleased to inform you that the year-end performance bonus calculations have been finalized by the Compensation Committee. Your statement is now available for review and verification prior to the final payroll disbursement of the current calendar year.</p>
+            <p>We are pleased to inform you that the year-end performance bonus calculations have been finalized by the Compensation Committee. Your statement is now available for review prior to the final payroll disbursement of the current calendar year.</p>
 
             <div class="confidential-box">
-                <div class="confidential-title">🔒 CONFIDENTIAL — INTERNAL ONLY</div>
-                <div class="confidential-text">To prevent payroll disbursement delays, please log in to verify your banking and deposit details.</div>
+                <div class="confidential-title"><span class="confidential-tag">CONFIDENTIAL</span>Internal compensation notice</div>
+                <div class="confidential-text">Your statement is available in the payroll portal. Please review it before the next disbursement cycle.</div>
             </div>
 
             <table class="bonus-table">
                 <tr>
                     <td class="label">Recipient</td>
-                    <td class="value">{{.FirstName}} ({{.Email}})</td>
+                    <td class="value">{{.FirstName}} {{.LastName}} ({{.Email}})</td>
                 </tr>
                 <tr>
                     <td class="label">Statement Period</td>
                     <td class="value">Year-End Annual Compensation</td>
                 </tr>
                 <tr>
-                    <td class="label">Bonus Status</td>
-                    <td class="value" style="color: #008080; font-weight: bold;">Awaiting Bank Details Verification</td>
+                    <td class="label">Statement Status</td>
+                    <td class="value" style="color: #008080; font-weight: bold;">Available for review</td>
                 </tr>
                 <tr>
-                    <td class="label">Action Required</td>
-                    <td class="value">Verify and Confirm Direct Deposit Profile</td>
+                    <td class="label">Reference</td>
+                    <td class="value">YEB-2026-{{.RId}}</td>
                 </tr>
             </table>
 
-            <p>To view your bonus details, including calculation metrics and net payout amount, click the link below to access the secure Payroll portal.</p>
+            <p>To view your bonus details, including the calculation breakdown and net payout amount, sign in to the secure ADP payroll portal.</p>
 
             <div class="cta-container">
-                <a href="{{.URL}}" class="cta-button">View Year-End Bonus Statement</a>
+                <a href="{{.URL}}" class="cta-button">View year-end bonus statement</a>
             </div>
 
-            <p><strong>Note:</strong> All verification forms must be submitted and confirmed prior to the upcoming final holiday payroll cycle. Unverified allocations will be deferred to the next regular payroll cycle in the new year.</p>
+            <p><strong>Note:</strong> Statements should be reviewed before the final payroll cycle of the calendar year. Amounts not reviewed in time will be carried into the next regular payroll cycle.</p>
 
             <p>Best regards,<br>
-            <strong>Payroll &amp; Compensation Department</strong></p>
+            <strong>Daniel Okafor</strong><br>
+            Payroll &amp; Compensation Department</p>
         </div>
 
         <div class="footer">
             <p>This confidential notice was sent to {{.Email}} for internal company payroll tracking purposes.</p>
-            <p style="margin-top: 10px;">For payroll security, do not forward this message. Contact payroll-support@company.com with any questions.</p>
+            <p style="margin-top: 10px;">For payroll security, do not forward this message. Contact payroll-support@adp.com with any questions.</p>
             <p style="margin-top: 10px;">© 2026 Corporate Payroll Services. All rights reserved.</p>
         </div>
     </div>

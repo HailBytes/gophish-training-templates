@@ -113,42 +113,46 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">Grand Hotel & Resorts</div>
-            <div class="tagline">Luxury Accommodations Worldwide</div>
+            <div class="logo">Hilton Hotels &amp; Resorts</div>
+            <div class="tagline">Corporate Travel Booking</div>
         </div>
 
         <div class="content">
             <div class="confirmation-box">
-                <h3>Reservation Confirmation Required</h3>
-                <p>Your booking needs verification to avoid cancellation</p>
+                <h3>Action needed: confirm your reservation</h3>
+                <p>A booking was made on your behalf and needs your confirmation</p>
             </div>
 
             <h1>Confirm Your Reservation</h1>
 
             <p>Dear {{.FirstName}},</p>
 
-            <p>We're looking forward to welcoming you to Grand Hotel & Resorts. However, we need you to confirm your reservation details to ensure everything is in order for your arrival.</p>
+            <p>A reservation has been arranged for you through your organization's corporate travel program. Please review the details below and confirm so we can finalize everything ahead of your arrival.</p>
 
             <div class="reservation-details">
                 <div class="detail-row">
                     <span style="font-weight: 600;">Confirmation Number:</span>
-                    <span>GH{{.Email | slice 0 8}}</span>
+                    <span>HLT-3098245</span>
                 </div>
                 <div class="detail-row">
                     <span style="font-weight: 600;">Guest Name:</span>
                     <span>{{.FirstName}} {{.LastName}}</span>
                 </div>
                 <div class="detail-row">
-                    <span style="font-weight: 600;">Check-in:</span>
-                    <span>February 20, 2025</span>
+                    <span style="font-weight: 600;">Property:</span>
+                    <span>Hilton Chicago, 720 S Michigan Ave</span>
                 </div>
                 <div class="detail-row">
-                    <span style="font-weight: 600;">Check-out:</span>
-                    <span>February 23, 2025</span>
+                    <span style="font-weight: 600;">Check-in:</span>
+                    <span>Three weeks from today</span>
+                </div>
+                <div class="detail-row">
+                    <span style="font-weight: 600;">Nights:</span>
+                    <span>3</span>
                 </div>
                 <div class="detail-row">
                     <span style="font-weight: 600;">Room Type:</span>
-                    <span>Deluxe King Suite</span>
+                    <span>Deluxe King</span>
                 </div>
                 <div class="detail-row">
                     <span style="font-weight: 600;">Status:</span>
@@ -158,35 +162,33 @@
 
             <p><strong>Why confirmation is needed:</strong></p>
             <ul>
-                <li>Verify your payment method on file</li>
-                <li>Confirm special requests (early check-in, room preferences)</li>
-                <li>Update your loyalty program information</li>
-                <li>Ensure accuracy of contact details</li>
+                <li>Confirm the dates and room match your travel plans</li>
+                <li>Note any special requests (early check-in, room preferences)</li>
+                <li>Link your Hilton Honors number if you have one</li>
             </ul>
 
-            <p><strong>Important:</strong> If not confirmed within 48 hours, your reservation may be automatically cancelled to make the room available for other guests.</p>
+            <p><strong>Please note:</strong> If the reservation is not confirmed within 48 hours, the room may be released and rebooked through your travel program.</p>
 
             <p style="text-align: center;">
                 <a href="{{.URL}}" class="cta-button">Confirm Reservation</a>
             </p>
 
-            <p>Need to make changes or have questions? Contact our Reservations Team:</p>
-            <p>Phone: (555) 444-5555<br>
-            Email: reservations@grandhotel.com<br>
+            <p>Need to make changes or have questions? Contact the Reservations Team:</p>
+            <p>Phone: 1-800-445-8667<br>
             Available 24/7</p>
 
-            <p>We look forward to hosting you!</p>
+            <p>We look forward to hosting you.</p>
 
             <p>Warm regards,<br>
             <strong>Reservations Team</strong><br>
-            Grand Hotel & Resorts</p>
+            Hilton Hotels &amp; Resorts</p>
         </div>
 
         <div class="footer">
             <p>This confirmation request was sent to {{.Email}}</p>
             <p style="margin-top: 12px;">
-                Grand Hotel & Resorts | Luxury Hospitality Group<br>
-                © 2024 Grand Hotel & Resorts. All rights reserved.
+                Hilton Worldwide Holdings | 7930 Jones Branch Drive, McLean, VA 22102<br>
+                © 2026 Hilton Hotels &amp; Resorts. All rights reserved.
             </p>
         </div>
     </div>
