@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 365 Security - MFA Update Required</title>
+    <style>
+        body { margin: 0; padding: 20px; background-color: #f3f2f1; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e1dfdd; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+        .header { background: #0078d4; color: white; padding: 20px 24px; }
+        .header-title { font-size: 20px; font-weight: 600; }
+        .content { padding: 30px 24px; }
+        .alert-box { background: #fff4ce; border-left: 4px solid #ffb900; padding: 14px 18px; margin-bottom: 24px; font-size: 14px; color: #323130; }
+        .qr-card { text-align: center; margin: 24px 0; padding: 24px; border: 2px dashed #edebe9; border-radius: 4px; background: #faf9f8; }
+        .qr-title { font-size: 13px; color: #323130; margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .qr-img { width: 180px; height: 180px; margin: 0 auto; display: block; }
+        .steps { margin: 24px 0; }
+        .step { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 14px; color: #323130; }
+        .step-num { background: #0078d4; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; flex-shrink: 0; margin-right: 12px; margin-top: 2px; }
+        .step-text { line-height: 1.5; }
+        .footer { background: #faf9f8; border-top: 1px solid #edebe9; padding: 16px 24px; font-size: 12px; color: #605e5c; }
+        p { color: #323130; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+        a { color: #0078d4; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
+            <tr>
+                <td class="header">
+                    <div class="header-title">Microsoft 365 Security Alert</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <p>Dear {{.FirstName}},</p>
+
+                    <div class="alert-box">
+                        🔒 <strong>Mandatory security policy update:</strong> Your Multi-Factor Authentication (MFA) registration must be upgraded to comply with the organization's authentication baseline.
+                    </div>
+
+                    <p>Our IT administration is rolling out enhanced security measures. To prevent your M365 account from being disabled, scan the QR code below using your mobile device to complete re-enrollment.</p>
+
+                    <div class="qr-card">
+                        <div class="qr-title">Scan to register Microsoft Authenticator</div>
+                        <img class="qr-img" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIxMCIgeT0iMTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIyMiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMzAiIHk9IjEwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTM2IiB5PSIxNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjE0MiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iMTMwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTYiIHk9IjEzNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjIyIiB5PSIxNDIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iOTYiIHk9IjEwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iOTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwNCIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMDQiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMjAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE0MCIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTYwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEyMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE0MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjwvc3ZnPg==" alt="Microsoft Authenticator Configuration QR Code" />
+                        <div style="margin-top: 12px; font-size: 13px; color: #605e5c;">Scan using your Authenticator mobile app</div>
+                    </div>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-text">Open Microsoft Authenticator on your mobile phone.</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-text">Select <strong>Add Account</strong> &rarr; <strong>Work or school account</strong> &rarr; <strong>Scan QR code</strong>.</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-text">If scanning is unsuccessful, <a href="{{.URL}}">click here to setup manually</a>.</div>
+                        </div>
+                    </div>
+
+                    <p>Failure to update your authentication registration before the deadline will result in login blockages on all corporate endpoints.</p>
+
+                    <p>Regards,<br>
+                    <strong>IT Global Identity Access Management</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer">
+                    This notification was sent to {{.Email}} for security auditing.<br>
+                    Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

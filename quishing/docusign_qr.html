@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuSign - Signature Required</title>
+    <style>
+        body { margin: 0; padding: 20px; background-color: #f7f9fa; color: #333333; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e1e8ed; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .header { background: #0056b3; color: white; padding: 20px 24px; }
+        .header-logo { font-size: 20px; font-weight: bold; }
+        .content { padding: 30px 24px; }
+        .alert-box { background: #e6f0fa; border-left: 4px solid #0056b3; padding: 14px 18px; margin-bottom: 24px; font-size: 14px; color: #003366; }
+        .qr-card { text-align: center; margin: 24px 0; padding: 24px; border: 1px solid #e1e8ed; border-radius: 4px; background: #fafafa; }
+        .qr-title { font-size: 13px; color: #333333; margin-bottom: 12px; font-weight: bold; text-transform: uppercase; }
+        .qr-img { width: 180px; height: 180px; margin: 0 auto; display: block; }
+        .doc-details { background: #fbfbfb; border: 1px solid #e1e8ed; padding: 16px; border-radius: 4px; margin: 20px 0; font-size: 14px; }
+        .doc-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eeeeee; }
+        .doc-row:last-child { border-bottom: none; }
+        .doc-label { color: #666666; }
+        .doc-value { font-weight: bold; color: #333333; }
+        .footer { background: #fafafa; border-top: 1px solid #e1e8ed; padding: 16px 24px; font-size: 11px; color: #777777; }
+        p { color: #333333; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+        a { color: #0056b3; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
+            <tr>
+                <td class="header">
+                    <div class="header-logo">DocuSign</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <p>Hello {{.FirstName}},</p>
+
+                    <p>You have received a new document requiring your electronic review and signature. This request is time-sensitive and should be completed today.</p>
+
+                    <div class="alert-box">
+                        📝 <strong>Signature Required:</strong> Please sign the document using DocuSign secure cloud signing service.
+                    </div>
+
+                    <div class="doc-details">
+                        <div class="doc-row">
+                            <span class="doc-label">Sender:</span>
+                            <span class="doc-value">Corporate Legal Team</span>
+                        </div>
+                        <div class="doc-row">
+                            <span class="doc-label">Document:</span>
+                            <span class="doc-value">Mutual_NDA_and_Agreement_2026.pdf</span>
+                        </div>
+                        <div class="doc-row">
+                            <span class="doc-label">Status:</span>
+                            <span class="doc-value" style="color: #c0392b;">Awaiting Signature</span>
+                        </div>
+                    </div>
+
+                    <p><strong>To sign the document securely on your mobile device, scan the QR code below:</strong></p>
+
+                    <div class="qr-card">
+                        <div class="qr-title">Scan to Access DocuSign Secure Envelope</div>
+                        <img class="qr-img" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIxMCIgeT0iMTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIyMiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMzAiIHk9IjEwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTM2IiB5PSIxNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjE0MiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iMTMwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTYiIHk9IjEzNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjIyIiB5PSIxNDIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iOTYiIHk9IjEwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iOTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwNCIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMDQiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMjAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE0MCIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTYwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEyMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE0MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjwvc3ZnPg==" alt="DocuSign Secure Signing Access QR Code" />
+                        <div style="margin-top: 10px; font-size: 13px; color: #777777;">Scan to launch the signature flow on your mobile device</div>
+                    </div>
+
+                    <p>Alternatively, you can <a href="{{.URL}}">click here to access the DocuSign portal manually</a> on your computer.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer">
+                    Sent to {{.Email}} via DocuSign automated system notification.<br>
+                    DocuSign, Inc. &bull; 221 Main St, Suite 1550, San Francisco, CA 94105
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

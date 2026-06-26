@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Phishing Simulation: IT Helpdesk Alert</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f4f4f4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .email-wrapper { background: white; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); overflow: hidden; }
+        .email-header { background: #E3F2FD; border-bottom: 1px solid #BBDEFB; padding: 16px 24px; }
+        .email-from { font-size: 12px; color: #666; }
+        .email-subject { font-weight: 700; color: #1a1a1a; font-size: 15px; margin-top: 4px; }
+        .email-body { padding: 20px 24px; color: #444; font-size: 14px; line-height: 1.6; }
+        .phone { width: 280px; margin: 0 auto; background: #1C1C1E; border-radius: 40px; padding: 20px 12px 30px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+        .phone-screen { background: #000; border-radius: 30px; overflow: hidden; padding-bottom: 10px; }
+        .phone-status { background: #1C1C1E; color: white; font-size: 11px; padding: 8px 20px 4px; display: flex; justify-content: space-between; }
+        .phone-header { background: #1C1C1E; color: white; text-align: center; padding: 8px 20px 12px; }
+        .phone-header .sender { font-size: 17px; font-weight: 600; }
+        .phone-header .sender-sub { font-size: 12px; color: #8E8E93; margin-top: 2px; }
+        .sms-body { background: #1C1C1E; padding: 10px 16px 20px; }
+        .sms-bubble { background: #2C2C2E; border-radius: 18px 18px 18px 4px; padding: 12px 16px; margin-bottom: 4px; max-width: 90%; }
+        .sms-text { color: white; font-size: 15px; line-height: 1.5; }
+        .sms-link { color: #0A84FF; text-decoration: underline; word-break: break-all; }
+        .sms-time { color: #8E8E93; font-size: 11px; margin-top: 8px; }
+        .note-box { background: #FFF3CD; border: 1px solid #FFC107; border-radius: 6px; padding: 14px 18px; font-size: 13px; color: #7B5E00; margin-top: 16px; }
+        .note-box strong { display: block; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="email-wrapper">
+            <div class="email-header">
+                <div class="email-from">From: Corporate Help Desk &lt;helpdesk@company-support-tickets.com&gt;</div>
+                <div class="email-from">To: {{.Email}}</div>
+                <div class="email-subject">⚙️ IT Support: Unrecognized login password change request</div>
+            </div>
+            <div class="email-body">
+                <p>Hello {{.FirstName}},</p>
+                <p>We received an automated request to change the account password linked to your employee profile. <strong>If you did not request this update</strong>, please cancel the change using the security link below to prevent account lockout.</p>
+
+                <!-- Phone mockup -->
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-status">
+                            <span>9:41</span>
+                            <span>▌▌▌ ◀ 🔋</span>
+                        </div>
+                        <div class="phone-header">
+                            <div class="sender">IT Helpdesk</div>
+                            <div class="sender-sub">Active Directory</div>
+                        </div>
+                        <div class="sms-body">
+                            <div class="sms-bubble">
+                                <div class="sms-text">
+                                    HELP-DESK: Password change request received for {{.Email}}. If this was NOT you, cancel and secure your account now: <span class="sms-link">{{.URL}}</span>
+                                </div>
+                            </div>
+                            <div class="sms-time">Today 9:41 AM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>⚠️ Security Training Note:</strong>
+                    This is a simulated smishing (SMS phishing) attack. Scammers send fake password-change or password-expired notifications to steal employee credentials. Always verify IT notifications directly via your internal IT portal or team workspace.
+                </div>
+
+                <p style="text-align:center; margin-top: 20px;">
+                    <a href="{{.URL}}" style="display:inline-block; background:#0078d4; color:white; padding:12px 28px; border-radius:4px; text-decoration:none; font-weight:700;">Cancel Password Change (Simulation Link)</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
