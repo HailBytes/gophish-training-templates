@@ -18,7 +18,8 @@
         "Sua conta foi temporariamente bloqueada por suspeita de fraude"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["banking", "financial", "portuguese", "latam", "credential-theft", "intermediate"]
+      "tags": ["banking", "financial", "portuguese", "latam", "credential-theft", "intermediate"],
+      "notes": "Lure bancário em português para públicos LATAM/Brasil. O alerta de acesso suspeito gera urgência imediata. Mais eficaz quando a marca corresponde a um banco local reconhecido pelos alvos."
     },
     {
       "filename": "helpdesk_ti.html",
@@ -33,7 +34,8 @@
         "Atualização obrigatória de credenciais — TI Corporativo"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["helpdesk", "it", "password-reset", "portuguese", "latam", "credential-theft", "beginner"]
+      "tags": ["helpdesk", "it", "password-reset", "portuguese", "latam", "credential-theft", "beginner"],
+      "notes": "Lure de helpdesk em português com alta taxa de clique — a expiração de senha é familiar e cria pressão de tempo. Ideal como baseline inicial em equipes de língua portuguesa; use um número de ticket plausível."
     },
     {
       "filename": "onboarding_rh.html",
@@ -48,7 +50,8 @@
         "Portal de integração: 3 documentos aguardando envio"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["hr", "onboarding", "portuguese", "latam", "credential-theft", "beginner"]
+      "tags": ["hr", "onboarding", "portuguese", "latam", "credential-theft", "beginner"],
+      "notes": "Direcionado a novos contratados; a pendência de documentos de RH parece rotineira e eficaz nas primeiras semanas de integração. Ajuste o nome do portal ao sistema de RH usado pela organização."
     },
     {
       "filename": "receita_federal.html",
@@ -63,7 +66,8 @@
         "IRPF 2024: divergência detectada — prazo 30 dias"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["government", "tax", "receita-federal", "portuguese", "latam", "credential-theft", "advanced"]
+      "tags": ["government", "tax", "receita-federal", "portuguese", "latam", "credential-theft", "advanced"],
+      "notes": "Lure avançado de autoridade fiscal (Receita Federal) para públicos brasileiros. A ameaça de malha fina é altamente persuasiva, mas use com cautela pelo alto fator de medo. Mais credível com um domínio que imite órgãos oficiais."
     },
     {
       "filename": "microsoft365_corporativo.html",
@@ -78,7 +82,8 @@
         "Acesso bloqueado — confirme sua identidade para restaurar"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["microsoft", "microsoft365", "portuguese", "latam", "credential-theft", "intermediate"]
+      "tags": ["microsoft", "microsoft365", "portuguese", "latam", "credential-theft", "intermediate"],
+      "notes": "Lure corporativo da Microsoft 365 em português. A conta bloqueada por login suspeito impulsiona ação rápida em ambientes Microsoft. Combine com a identidade visual da organização para maior credibilidade."
     }
   ],
   "gophish_version_tested": "0.12.1",

@@ -29,7 +29,8 @@
         "supply-chain",
         "credential-theft",
         "intermediate"
-      ]
+      ],
+      "notes": "Aimed at procurement, vendor-management, and supply-chain staff. The portal re-registration pretext fits routine B2B workflows and slips past casual skepticism. Most effective when the portal name mirrors a real procurement system."
     },
     {
       "filename": "sap_ariba_po.html",

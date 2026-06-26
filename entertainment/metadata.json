@@ -16,7 +16,8 @@
         "Spotify: Action required to keep your account"
       ],
       "education_page": "education/entertainment_education.html",
-      "tags": ["entertainment", "spotify", "subscription", "payment", "credential-theft", "beginner"]
+      "tags": ["entertainment", "spotify", "subscription", "payment", "credential-theft", "beginner"],
+      "notes": "Consumer-brand lure that works on personal-device and BYOD users; the failed-payment angle drives quick action. Best for general awareness rather than role-specific testing — many recipients will note it's a personal account in a work inbox."
     },
     {
       "filename": "starbucks_gift.html",
@@ -31,7 +32,8 @@
         "Congratulations! You have a $10 Starbucks reward"
       ],
       "education_page": "education/entertainment_education.html",
-      "tags": ["entertainment", "starbucks", "gift-card", "reward", "credential-theft", "beginner"]
+      "tags": ["entertainment", "starbucks", "gift-card", "reward", "credential-theft", "beginner"],
+      "notes": "Reward-based lure with strong cross-role appeal — the 'free reward' hook draws clicks even from cautious users. Effective as an early-program baseline to demonstrate susceptibility to too-good-to-be-true offers."
     }
   ],
   "gophish_version_tested": "0.12.1",

@@ -16,7 +16,8 @@
         "You have a new file share from a colleague"
       ],
       "education_page": "education/cloud_services_education.html",
-      "tags": ["dropbox", "cloud", "file-share", "credential-theft", "intermediate"]
+      "tags": ["dropbox", "cloud", "file-share", "credential-theft", "intermediate"],
+      "notes": "Works well in organizations that rely on Dropbox for external collaboration — the 'someone shared a file' pretext feels routine. Pair it with a believable sender name. Lower-yielding where SSO has replaced standalone Dropbox logins."
     },
     {
       "filename": "google_drive.html",
@@ -31,7 +32,8 @@
         "Someone shared a file: please review and comment"
       ],
       "education_page": "education/cloud_services_education.html",
-      "tags": ["google-drive", "cloud", "file-share", "credential-theft", "intermediate"]
+      "tags": ["google-drive", "cloud", "file-share", "credential-theft", "intermediate"],
+      "notes": "Highly effective in Google Workspace shops where Drive share notifications are part of the daily workflow. Reference a plausible document name in the subject to boost realism. Less convincing in Microsoft 365-only environments."
     }
   ],
   "gophish_version_tested": "0.12.1",

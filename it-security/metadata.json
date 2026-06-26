@@ -16,7 +16,8 @@
         "IT Department: Your email may be affected by last night's maintenance"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "email", "migration", "credential-theft", "beginner"]
+      "tags": ["it", "email", "migration", "credential-theft", "beginner"],
+      "notes": "High-yield IT lure exploiting trust in the help desk; the post-migration verification pretext is broadly believable. Time it away from any genuine maintenance windows so it doesn't collide with real IT comms."
     },
     {
       "filename": "email_size_limit.html",
@@ -31,7 +32,8 @@
         "Warning: Your email account is at 95% capacity"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "email", "storage", "credential-theft", "beginner"]
+      "tags": ["it", "email", "storage", "credential-theft", "beginner"],
+      "notes": "Classic, high-converting IT lure — the full-mailbox warning is familiar and creates mild urgency to act. Works well as an early baseline. Keep the storage figures plausible for your mail platform."
     },
     {
       "filename": "mailbox_compromised.html",
@@ -46,7 +48,8 @@
         "Urgent: Suspicious sign-in activity on {{.Email}}"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "security-alert", "compromised", "credential-theft", "intermediate"]
+      "tags": ["it", "security-alert", "compromised", "credential-theft", "intermediate"],
+      "notes": "Security-alert lure that weaponizes fear of a breach. The {{.Email}} personalization in the subject sharply increases credibility and clicks. Reserve it for programs with immediate just-in-time training, as it can provoke anxiety."
     },
     {
       "filename": "system_update.html",
@@ -61,7 +64,8 @@
         "Your computer requires an immediate software update"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "system-update", "patch", "credential-theft", "beginner"]
+      "tags": ["it", "system-update", "patch", "credential-theft", "beginner"],
+      "notes": "Routine-IT lure leveraging compliance with mandatory updates; the end-of-day deadline adds light pressure. Broadly effective — tailor the patch/software name to tools your organization deploys."
     },
     {
       "filename": "webmail_upgrade.html",
@@ -76,7 +80,8 @@
         "Action required: Complete your email upgrade by Friday"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "webmail", "upgrade", "credential-theft", "beginner"]
+      "tags": ["it", "webmail", "upgrade", "credential-theft", "beginner"],
+      "notes": "High-yield IT lure — webmail upgrades are common and low-suspicion, and the deadline framing motivates action. Best for organizations using browser-based mail; adjust the wording for desktop-client shops."
     },
     {
       "filename": "dropbox_share.html",
@@ -91,7 +96,8 @@
         "You have a new file share from IT"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "dropbox", "file-share", "credential-theft", "intermediate"]
+      "tags": ["it", "dropbox", "file-share", "credential-theft", "intermediate"],
+      "notes": "IT-branded variant of the Dropbox share lure — the internal-IT sender adds authority and lifts click rates over the generic version. Good for testing trust in internal-IT communications. Match the shared filename to a plausible policy document."
     }
   ],
   "gophish_version_tested": "0.12.1",
