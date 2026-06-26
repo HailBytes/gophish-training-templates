@@ -10,15 +10,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Action Required: Your USPS package could not be delivered",
-        "USPS: Package delivery attempt failed — reschedule required",
+        "USPS: Package delivery attempt failed \u2014 reschedule required",
         "Delivery Notification: Package #9400111206 requires action"
       ],
       "education_page": "education/smishing_education.html",
-      "tags": ["smishing", "sms", "usps", "delivery", "package", "beginner"],
-      "notes": "One of the highest click-rate attack vectors. Nearly universal — almost everyone orders packages. The phone mockup inside the email helps train employees to recognize the SMS format."
+      "tags": [
+        "smishing",
+        "sms",
+        "usps",
+        "delivery",
+        "package",
+        "beginner"
+      ],
+      "notes": "One of the highest click-rate attack vectors. Nearly universal \u2014 almost everyone orders packages. The phone mockup inside the email helps train employees to recognize the SMS format."
     },
     {
       "filename": "bank_alert_sms.html",
@@ -26,17 +38,113 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "URGENT: Suspicious transaction on your account",
         "Chase Alert: $847 Amazon purchase was blocked",
         "ACTION REQUIRED: Verify recent transaction"
       ],
       "education_page": "education/smishing_education.html",
-      "tags": ["smishing", "sms", "banking", "fraud-alert", "financial", "intermediate"],
+      "tags": [
+        "smishing",
+        "sms",
+        "banking",
+        "fraud-alert",
+        "financial",
+        "intermediate"
+      ],
       "notes": "Fear of financial loss is a powerful motivator. Works across all employee levels. Specific dollar amount ($847) and merchant (Amazon) increase realism."
+    },
+    {
+      "filename": "mfa_code_sms.html",
+      "name": "Smishing \u2013 MFA Code Request",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "[Simulation] MFA code request via SMS",
+        "Security alert: verification code requested",
+        "Smishing example: one-time code request"
+      ],
+      "education_page": "education/smishing_education.html",
+      "tags": [
+        "smishing",
+        "sms",
+        "mfa",
+        "otp",
+        "credential-harvest",
+        "advanced"
+      ],
+      "notes": "MFA/OTP request by SMS. Advanced: trains users that legitimate services never ask them to relay codes via a texted link."
+    },
+    {
+      "filename": "payroll_update_sms.html",
+      "name": "Smishing \u2013 Payroll Direct Deposit",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "[Simulation] Payroll update via SMS",
+        "Payroll: action required by text",
+        "Smishing example: direct-deposit update"
+      ],
+      "education_page": "education/smishing_education.html",
+      "tags": [
+        "smishing",
+        "sms",
+        "payroll",
+        "direct-deposit",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Payroll/direct-deposit smishing. Paycheck urgency drives quick taps; pairs with the email payroll templates."
+    },
+    {
+      "filename": "it_helpdesk_sms.html",
+      "name": "Smishing \u2013 IT Help Desk Reset",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "[Simulation] IT help desk via SMS",
+        "Smishing example: password reset text",
+        "IT support: action required by text"
+      ],
+      "education_page": "education/smishing_education.html",
+      "tags": [
+        "smishing",
+        "sms",
+        "it-support",
+        "password",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "IT-helpdesk password-reset smishing. Beginner; high tap rate. Good baseline for an SMS-awareness test."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

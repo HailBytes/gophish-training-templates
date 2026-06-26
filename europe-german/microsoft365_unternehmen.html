@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ihr Microsoft 365-Konto wurde gesperrt</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#0078d4;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Microsoft 365</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Guten Tag {{.FirstName}},</p>
+<p style="margin:0 0 16px;">Wir haben einen ungewöhnlichen Anmeldeversuch bei Ihrem Microsoft 365-Konto von einem nicht erkannten Gerät festgestellt. Aus Sicherheitsgründen wurde Ihr Konto vorübergehend gesperrt.</p>
+<p style="margin:0 0 16px;">Um den Zugriff auf Ihre E-Mails, Teams und OneDrive wiederherzustellen, bestätigen Sie bitte Ihre Identität über die folgende Anmeldung.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#0078d4;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Mein Konto bestätigen</a></p>
+<p style="margin:18px 0 0;">Mit freundlichen Grüßen,<br>Ihr Microsoft 365-Team</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052<br>Diese Nachricht wurde an {{.Email}} gesendet. Bitte antworten Sie nicht auf diese E-Mail.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>

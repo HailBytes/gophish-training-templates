@@ -12,8 +12,8 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 76
-- **Categories:** 27
+- **Templates:** 103
+- **Categories:** 29
 - **Most recent update:** 2026-06-26
 
 ### `ai-tools` — ai-tools
@@ -29,7 +29,7 @@ _Phishing simulation templates that impersonate AI productivity tools (Microsoft
 
 ### `cloud-services` — cloud-services
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _Phishing templates impersonating cloud storage and file sharing services_
 
@@ -37,6 +37,9 @@ _Phishing templates impersonating cloud storage and file sharing services_
 |---|---|---|---|---|---|
 | Dropbox File Share | [`dropbox_share.html`](cloud-services/dropbox_share.html) | credential_harvest | intermediate | 40-60% | 3 |
 | Google Drive Document Share | [`google_drive.html`](cloud-services/google_drive.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Box – File Shared | [`box_share.html`](cloud-services/box_share.html) | credential_harvest | beginner | 40-60% | 3 |
+| Google Workspace – Storage Full | [`google_workspace_storage.html`](cloud-services/google_workspace_storage.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Adobe Acrobat – Document Shared | [`adobe_document_share.html`](cloud-services/adobe_document_share.html) | credential_harvest | beginner | 40-60% | 3 |
 
 ### `collaboration` — collaboration
 
@@ -52,7 +55,7 @@ _Phishing templates impersonating workplace collaboration platforms_
 
 ### `corporate` — corporate
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Generic corporate phishing templates covering news, travel, and internal communications_
 
@@ -60,10 +63,11 @@ _Generic corporate phishing templates covering news, travel, and internal commun
 |---|---|---|---|---|---|
 | Breaking News Alert | [`breaking_news.html`](corporate/breaking_news.html) | credential_harvest | intermediate | 35-55% | 3 |
 | Corporate Travel Agency Notice | [`travel_agency.html`](corporate/travel_agency.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Corporate – Performance Review (Seasonal) | [`performance_review.html`](corporate/performance_review.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `delivery-shipping` — delivery-shipping
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Phishing templates impersonating package delivery and shipping companies_
 
@@ -71,6 +75,7 @@ _Phishing templates impersonating package delivery and shipping companies_
 |---|---|---|---|---|---|
 | DHL Package Delivery | [`dhl_package.html`](delivery-shipping/dhl_package.html) | credential_harvest | beginner | 55-75% | 3 |
 | Package Pickup Notice | [`package_pickup.html`](delivery-shipping/package_pickup.html) | credential_harvest | beginner | 50-70% | 3 |
+| Delivery – Holiday Customs Fee (Seasonal) | [`holiday_customs_fee.html`](delivery-shipping/holiday_customs_fee.html) | credential_harvest | beginner | 35-55% | 3 |
 
 ### `e-signature` — e-signature
 
@@ -105,9 +110,35 @@ _Phishing templates impersonating entertainment and consumer reward services_
 | Spotify Account Issue | [`spotify_account.html`](entertainment/spotify_account.html) | credential_harvest | beginner | 40-60% | 3 |
 | Starbucks Gift Card Offer | [`starbucks_gift.html`](entertainment/starbucks_gift.html) | credential_harvest | beginner | 45-65% | 3 |
 
+### `europe-french` — europe-french (fr-FR)
+
+**Industry:** Cross-industry  ·  **Templates:** 4
+
+_French-language phishing simulation templates for French-speaking enterprise environments. Scenarios include Microsoft 365 account security, bank security alerts, IT helpdesk password resets, and tax-authority (DGFiP) impersonation._
+
+| Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
+|---|---|---|---|---|---|
+| Microsoft 365 – Compte verrouillé | [`microsoft365_entreprise.html`](europe-french/microsoft365_entreprise.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Alerte de sécurité bancaire | [`alerte_bancaire.html`](europe-french/alerte_bancaire.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Support informatique – Mot de passe | [`assistance_informatique.html`](europe-french/assistance_informatique.html) | credential_harvest | beginner | 50-70% | 3 |
+| DGFiP – Avis fiscal | [`dgfip_avis.html`](europe-french/dgfip_avis.html) | credential_harvest | advanced | 30-50% | 3 |
+
+### `europe-german` — europe-german (de-DE)
+
+**Industry:** Cross-industry  ·  **Templates:** 4
+
+_German-language phishing simulation templates for German-speaking enterprise environments. Scenarios include Microsoft 365 account security, bank security alerts, IT helpdesk password resets, and tax-office (Finanzamt/ELSTER) impersonation._
+
+| Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
+|---|---|---|---|---|---|
+| Microsoft 365 – Konto gesperrt | [`microsoft365_unternehmen.html`](europe-german/microsoft365_unternehmen.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Bank-Sicherheitswarnung | [`bank_sicherheitswarnung.html`](europe-german/bank_sicherheitswarnung.html) | credential_harvest | intermediate | 40-60% | 3 |
+| IT-Support – Passwort zurücksetzen | [`it_support.html`](europe-german/it_support.html) | credential_harvest | beginner | 50-70% | 3 |
+| Finanzamt – Steuermitteilung | [`finanzamt_mitteilung.html`](europe-german/finanzamt_mitteilung.html) | credential_harvest | advanced | 30-50% | 3 |
+
 ### `financial` — financial
 
-**Industry:** Cross-industry / Financial Services  ·  **Templates:** 2
+**Industry:** Cross-industry / Financial Services  ·  **Templates:** 5
 
 _Phishing templates targeting financial transactions and banking_
 
@@ -115,10 +146,13 @@ _Phishing templates targeting financial transactions and banking_
 |---|---|---|---|---|---|
 | Federal Reserve Wire Transfer Alert | [`wire_transfer.html`](financial/wire_transfer.html) | credential_harvest | advanced | 20-40% | 3 |
 | Skype Credit/Payment Notice | [`skype_payment.html`](financial/skype_payment.html) | credential_harvest | intermediate | 30-50% | 3 |
+| ACH Payment Confirmation | [`ach_payment_confirmation.html`](financial/ach_payment_confirmation.html) | credential_harvest | advanced | 30-50% | 3 |
+| Concur – Expense Approval | [`expense_report_approval.html`](financial/expense_report_approval.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Corporate Card – Declined Charge | [`corporate_card_declined.html`](financial/corporate_card_declined.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `government` — government
 
-**Industry:** Cross-industry  ·  **Templates:** 3
+**Industry:** Cross-industry  ·  **Templates:** 4
 
 _Phishing templates impersonating government agencies and regulatory bodies_
 
@@ -127,6 +161,7 @@ _Phishing templates impersonating government agencies and regulatory bodies_
 | Better Business Bureau Complaint | [`better_business.html`](government/better_business.html) | credential_harvest | intermediate | 30-50% | 3 |
 | FBI/Law Enforcement Crime Report | [`crime_report.html`](government/crime_report.html) | credential_harvest | intermediate | 30-50% | 3 |
 | FDIC Banking Survey | [`fdic_survey.html`](government/fdic_survey.html) | credential_harvest | intermediate | 25-45% | 3 |
+| IRS – Tax Refund (Seasonal) | [`irs_tax_refund.html`](government/irs_tax_refund.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `healthcare` — healthcare
 
@@ -154,7 +189,7 @@ _Phishing templates impersonating hotel and travel booking services_
 
 ### `hr-payroll` — hr-payroll
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 4
 
 _Phishing templates impersonating HR and payroll systems — high-value targets for payroll diversion_
 
@@ -162,6 +197,8 @@ _Phishing templates impersonating HR and payroll systems — high-value targets 
 |---|---|---|---|---|---|
 | Benefits Open Enrollment | [`benefits_enrollment.html`](hr-payroll/benefits_enrollment.html) | credential_harvest | intermediate | 45-65% | 3 |
 | Payroll Direct Deposit Update | [`payroll_direct_deposit.html`](hr-payroll/payroll_direct_deposit.html) | credential_harvest | intermediate | 40-60% | 3 |
+| HR – Open Enrollment (Seasonal) | [`open_enrollment.html`](hr-payroll/open_enrollment.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Payroll – Year-End Bonus (Seasonal) | [`year_end_bonus.html`](hr-payroll/year_end_bonus.html) | credential_harvest | intermediate | 40-60% | 3 |
 
 ### `identity` — identity
 
@@ -255,7 +292,7 @@ _Phishing templates targeting manufacturing and supply chain personnel_
 
 ### `microsoft` — microsoft
 
-**Industry:** Cross-industry  ·  **Templates:** 3
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _Phishing templates impersonating Microsoft products and services_
 
@@ -264,10 +301,12 @@ _Phishing templates impersonating Microsoft products and services_
 | Microsoft Account Suspicious Sign-In | [`microsoft_security.html`](microsoft/microsoft_security.html) | credential_harvest | intermediate | 35-55% | 3 |
 | SharePoint – Document Shared | [`sharepoint_document_share.html`](microsoft/sharepoint_document_share.html) | credential_harvest | beginner | 45-65% | 3 |
 | Microsoft 365 – Password Expiration | [`microsoft365_password_expiry.html`](microsoft/microsoft365_password_expiry.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Microsoft Teams – Missed Messages | [`teams_message.html`](microsoft/teams_message.html) | credential_harvest | beginner | 40-60% | 3 |
+| OneDrive – Storage Almost Full | [`onedrive_storage_full.html`](microsoft/onedrive_storage_full.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `quishing` — quishing
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _QR code phishing (quishing) templates. These bypass email security filters by encoding malicious URLs in QR code images._
 
@@ -275,6 +314,9 @@ _QR code phishing (quishing) templates. These bypass email security filters by e
 |---|---|---|---|---|---|
 | MFA Re-enrollment QR Code | [`qr_code_mfa.html`](quishing/qr_code_mfa.html) | credential_harvest | intermediate | 30-50% | 3 |
 | New Office WiFi QR Code | [`qr_code_wifi.html`](quishing/qr_code_wifi.html) | credential_harvest | beginner | 40-60% | 3 |
+| Quishing – DocuSign Document | [`qr_docusign.html`](quishing/qr_docusign.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Quishing – Parking Payment | [`qr_parking_payment.html`](quishing/qr_parking_payment.html) | credential_harvest | beginner | 30-50% | 3 |
+| Quishing – Shared Document | [`qr_shared_document.html`](quishing/qr_shared_document.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `retail` — retail
 
@@ -290,7 +332,7 @@ _Phishing templates impersonating retail brands and loyalty programs_
 
 ### `smishing` — smishing
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _SMS phishing (smishing) simulation templates rendered as email. These train employees to recognize text-message-based phishing attacks._
 
@@ -298,6 +340,9 @@ _SMS phishing (smishing) simulation templates rendered as email. These train emp
 |---|---|---|---|---|---|
 | USPS Package Delivery Smishing | [`package_delivery_sms.html`](smishing/package_delivery_sms.html) | credential_harvest | beginner | 50-70% | 3 |
 | Chase Bank Fraud Alert Smishing | [`bank_alert_sms.html`](smishing/bank_alert_sms.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Smishing – MFA Code Request | [`mfa_code_sms.html`](smishing/mfa_code_sms.html) | credential_harvest | advanced | 35-55% | 3 |
+| Smishing – Payroll Direct Deposit | [`payroll_update_sms.html`](smishing/payroll_update_sms.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Smishing – IT Help Desk Reset | [`it_helpdesk_sms.html`](smishing/it_helpdesk_sms.html) | credential_harvest | beginner | 45-65% | 3 |
 
 ### `social-media` — social-media
 

@@ -49,7 +49,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
   <img src="travel_phishing.jpg" alt="Security Policy Templates" width="100%" />
 </div>
 
-### Email Templates (70+ Templates Across 20+ Industries)
+### Email Templates (100+ Templates Across 20+ Industries)
 
 > 📖 **[Browse the full template catalog →](docs/CATALOG.md)** — an auto-generated index of every template with its attack vector, difficulty, and estimated click rate.
 
@@ -70,6 +70,8 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 - **Utilities**: Billing credits, service notifications, account management
 - **LATAM / Portuguese**: Banking alerts, IT helpdesk, HR onboarding, government (Brazil)
 - **LATAM / Spanish**: Microsoft 365, banking alerts, IT helpdesk, tax authority (SAT)
+- **French (fr-FR)**: Microsoft 365, banking alerts, IT helpdesk, tax authority (DGFiP)
+- **German (de-DE)**: Microsoft 365, banking alerts, IT helpdesk, tax office (Finanzamt/ELSTER)
 - Multi-industry coverage for comprehensive training programs
 
 

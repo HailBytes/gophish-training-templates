@@ -86,6 +86,62 @@
         "intermediate"
       ],
       "notes": "Password-expiry for the Microsoft category. Pairs with the suspicious-sign-in template for a multi-touch sequence."
+    },
+    {
+      "filename": "teams_message.html",
+      "name": "Microsoft Teams \u2013 Missed Messages",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "You have 3 missed messages in Microsoft Teams",
+        "{{.FirstName}}, you were mentioned in Teams",
+        "Missed activity: someone messaged you on Teams"
+      ],
+      "education_page": "education/microsoft_education.html",
+      "tags": [
+        "microsoft",
+        "teams",
+        "office365",
+        "collaboration",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Missed-message notifications are routine and low-suspicion. Universal across Microsoft 365 orgs."
+    },
+    {
+      "filename": "onedrive_storage_full.html",
+      "name": "OneDrive \u2013 Storage Almost Full",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Your OneDrive is almost full",
+        "Action needed: free up space or files may stop syncing",
+        "You're running out of OneDrive storage"
+      ],
+      "education_page": "education/microsoft_education.html",
+      "tags": [
+        "microsoft",
+        "onedrive",
+        "office365",
+        "storage",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Storage-limit lure pressures users with loss of sync. Pairs with the SharePoint share template."
     }
   ],
   "gophish_version_tested": "0.12.1",

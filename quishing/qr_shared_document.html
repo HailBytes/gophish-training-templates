@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A secure document has been shared with you</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#0078d4;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Document Portal</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Hi {{.FirstName}},</p>
+<p style="margin:0 0 16px;">A colleague has shared a secure document with you. For added protection, this document can only be opened from a mobile device. Scan the QR code below to view it.</p>
+<p style="margin:20px 0 8px;text-align:center;font-size:13px;color:#555555;text-transform:uppercase;letter-spacing:0.5px;">Scan to view the document</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:18px;border:2px dashed #cccccc;border-radius:8px;background:#fafafa;">
+<!-- DEPLOYMENT NOTE: replace the SVG below with a real QR code that encodes your campaign URL ({{.URL}}). Generate with: qrencode -o qr.png "{{.URL}}" then embed as <img src="data:image/png;base64,..." alt="QR code">. The SVG is a visual placeholder for training. -->
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="180" height="180" role="img" aria-label="QR code" style="display:block;margin:0 auto;">
+<rect width="200" height="200" fill="white"/>
+<rect x="10" y="10" width="60" height="60" fill="black"/><rect x="16" y="16" width="48" height="48" fill="white"/><rect x="22" y="22" width="36" height="36" fill="black"/>
+<rect x="130" y="10" width="60" height="60" fill="black"/><rect x="136" y="16" width="48" height="48" fill="white"/><rect x="142" y="22" width="36" height="36" fill="black"/>
+<rect x="10" y="130" width="60" height="60" fill="black"/><rect x="16" y="136" width="48" height="48" fill="white"/><rect x="22" y="142" width="36" height="36" fill="black"/>
+<rect x="80" y="10" width="8" height="8"/><rect x="96" y="10" width="8" height="8"/><rect x="112" y="10" width="8" height="8"/>
+<rect x="10" y="80" width="8" height="8"/><rect x="10" y="96" width="8" height="8"/><rect x="10" y="112" width="8" height="8"/>
+<rect x="80" y="80" width="8" height="8"/><rect x="96" y="80" width="8" height="8"/><rect x="80" y="96" width="8" height="8"/><rect x="112" y="96" width="8" height="8"/>
+<rect x="96" y="112" width="8" height="8"/><rect x="80" y="130" width="8" height="8"/><rect x="112" y="130" width="8" height="8"/><rect x="96" y="145" width="8" height="8"/>
+<rect x="130" y="80" width="8" height="8"/><rect x="146" y="80" width="8" height="8"/><rect x="162" y="80" width="8" height="8"/><rect x="130" y="96" width="8" height="8"/>
+<rect x="162" y="96" width="8" height="8"/><rect x="146" y="112" width="8" height="8"/><rect x="130" y="130" width="8" height="8"/><rect x="162" y="130" width="8" height="8"/>
+<rect x="146" y="146" width="8" height="8"/><rect x="162" y="162" width="8" height="8"/><rect x="80" y="162" width="8" height="8"/><rect x="112" y="162" width="8" height="8"/>
+</svg>
+<p style="margin:12px 0 0;font-size:13px;color:#777777;">Open your camera and point it at the code</p>
+</td></tr></table>
+<p style="margin:18px 0 0;font-size:13px;color:#555555;">Can't scan the code? <a href="{{.URL}}" style="color:#0078d4;">Open the secure link instead</a>.</p>
+<p style="margin:16px 0 0;">Secure Document Portal</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+This is an automated notification from the document portal.<br>This message was sent to {{.Email}}. Please do not reply to this email.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>

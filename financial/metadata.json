@@ -9,15 +9,28 @@
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
       "estimated_click_rate": "20-40%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.Date}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "URGENT: Wire transfer requires immediate authorization",
         "Federal Reserve: Transaction review required",
         "Action Required: Outbound wire transfer pending approval"
       ],
       "education_page": "education/financial_education.html",
-      "tags": ["financial", "wire-transfer", "federal-reserve", "credential-theft", "advanced"],
-      "notes": "Best for finance, accounting, and executive staff. Advanced difficulty — lower click rate but high-value target for BEC scenarios."
+      "tags": [
+        "financial",
+        "wire-transfer",
+        "federal-reserve",
+        "credential-theft",
+        "advanced"
+      ],
+      "notes": "Best for finance, accounting, and executive staff. Advanced difficulty \u2014 lower click rate but high-value target for BEC scenarios."
     },
     {
       "filename": "skype_payment.html",
@@ -25,16 +38,113 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Skype: Payment required to continue service",
-        "Your Skype subscription is expiring — update payment",
+        "Your Skype subscription is expiring \u2014 update payment",
         "Skype Credit: Auto-recharge payment failed"
       ],
       "education_page": "education/financial_education.html",
-      "tags": ["skype", "financial", "payment", "subscription", "credential-theft", "intermediate"]
+      "tags": [
+        "skype",
+        "financial",
+        "payment",
+        "subscription",
+        "credential-theft",
+        "intermediate"
+      ]
+    },
+    {
+      "filename": "ach_payment_confirmation.html",
+      "name": "ACH Payment Confirmation",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "ACH payment confirmation required",
+        "Action needed: confirm pending ACH transfer",
+        "Payment pending your confirmation"
+      ],
+      "education_page": "education/financial_education.html",
+      "tags": [
+        "financial",
+        "ach",
+        "payment",
+        "finance",
+        "credential-harvest",
+        "advanced"
+      ],
+      "notes": "Finance/AP-targeted payment-confirmation lure (BEC-adjacent). Train on out-of-band verification."
+    },
+    {
+      "filename": "expense_report_approval.html",
+      "name": "Concur \u2013 Expense Approval",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "An expense report is awaiting your approval",
+        "Action required: approve expense report EXP-4821",
+        "Reminder: expense report pending your approval"
+      ],
+      "education_page": "education/financial_education.html",
+      "tags": [
+        "financial",
+        "concur",
+        "expense",
+        "approval",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Approval-workflow lure for managers. Routine click-to-approve behavior lowers suspicion."
+    },
+    {
+      "filename": "corporate_card_declined.html",
+      "name": "Corporate Card \u2013 Declined Charge",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Your corporate card was declined",
+        "Action needed: verify your corporate card",
+        "A charge on your corporate card was declined"
+      ],
+      "education_page": "education/financial_education.html",
+      "tags": [
+        "financial",
+        "corporate-card",
+        "payment",
+        "verification",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Card-decline lure for cardholders/travelers. Familiar everyday scenario; intermediate."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

@@ -9,14 +9,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Someone shared a file with you on Dropbox",
         "Dropbox: New shared folder requires your access",
         "You have a new file share from a colleague"
       ],
       "education_page": "education/cloud_services_education.html",
-      "tags": ["dropbox", "cloud", "file-share", "credential-theft", "intermediate"]
+      "tags": [
+        "dropbox",
+        "cloud",
+        "file-share",
+        "credential-theft",
+        "intermediate"
+      ]
     },
     {
       "filename": "google_drive.html",
@@ -24,16 +35,111 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "A document has been shared with you on Google Drive",
-        "Google Drive: Review requested — Q4 Report.xlsx",
+        "Google Drive: Review requested \u2014 Q4 Report.xlsx",
         "Someone shared a file: please review and comment"
       ],
       "education_page": "education/cloud_services_education.html",
-      "tags": ["google-drive", "cloud", "file-share", "credential-theft", "intermediate"]
+      "tags": [
+        "google-drive",
+        "cloud",
+        "file-share",
+        "credential-theft",
+        "intermediate"
+      ]
+    },
+    {
+      "filename": "box_share.html",
+      "name": "Box \u2013 File Shared",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "A file has been shared with you on Box",
+        "{{.FirstName}}, you've received a file on Box",
+        "Shared with you: a document on Box"
+      ],
+      "education_page": "education/cloud_services_education.html",
+      "tags": [
+        "cloud-services",
+        "box",
+        "file-share",
+        "collaboration",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "File-share lure for Box users. High-clicking everyday scenario."
+    },
+    {
+      "filename": "google_workspace_storage.html",
+      "name": "Google Workspace \u2013 Storage Full",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Your Google Workspace storage is full",
+        "Action needed: you've run out of storage",
+        "You can't send or receive email until you free up space"
+      ],
+      "education_page": "education/cloud_services_education.html",
+      "tags": [
+        "cloud-services",
+        "google",
+        "workspace",
+        "storage",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Storage-full lure threatening loss of email. Effective in Google Workspace orgs."
+    },
+    {
+      "filename": "adobe_document_share.html",
+      "name": "Adobe Acrobat \u2013 Document Shared",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "You have a document to review in Adobe Acrobat",
+        "A document has been shared with you",
+        "{{.FirstName}}, please review this PDF"
+      ],
+      "education_page": "education/cloud_services_education.html",
+      "tags": [
+        "cloud-services",
+        "adobe",
+        "acrobat",
+        "file-share",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "PDF-share lure via Adobe. Complements Dropbox/Google Drive/Box for a cloud-file campaign."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }
