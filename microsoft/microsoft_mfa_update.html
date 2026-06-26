@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 365 - Multi-Factor Authentication Re-enrollment</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f3f2f1; color: #323130; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e1dfdd; border-radius: 2px; overflow: hidden; box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108); }
+        .header { background: #0078d4; color: white; padding: 18px 24px; display: flex; align-items: center; }
+        .header-logo { font-size: 16px; font-weight: 600; }
+        .content { padding: 32px; }
+        .alert-box { background-color: #fff4ce; border-left: 4px solid #ffb900; padding: 16px; margin: 24px 0; border-radius: 2px; }
+        .alert-box h3 { margin: 0 0 8px 0; color: #323130; font-size: 15px; font-weight: 600; }
+        .alert-box p { margin: 0; color: #605e5c; font-size: 13px; }
+        .settings-info { background-color: #faf9f8; border: 1px solid #f3f2f1; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #edebe9; font-size: 14px; }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { color: #605e5c; }
+        .info-value { font-weight: 600; color: #323130; }
+        .cta-button { 
+            background: #0078d4; 
+            color: white; 
+            padding: 10px 28px; 
+            text-decoration: none; 
+            border-radius: 2px; 
+            display: inline-block; 
+            font-weight: 600;
+            font-size: 14px;
+            margin: 20px 0 0 0;
+        }
+        .cta-button:hover {
+            background: #005a9e;
+        }
+        .footer { background: #faf9f8; border-top: 1px solid #edebe9; padding: 20px 32px; font-size: 11px; color: #605e5c; line-height: 1.5; }
+        p { font-size: 14px; line-height: 1.5; margin: 0 0 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">Microsoft 365 Security</div>
+        </div>
+
+        <div class="content">
+            <p>Dear {{.FirstName}},</p>
+            
+            <p>To comply with updated corporate information security policies, our organization is upgrading the Multi-Factor Authentication (MFA) requirements for all Microsoft 365 accounts.</p>
+
+            <div class="alert-box">
+                <h3>Action Required: MFA Re-enrollment Pending</h3>
+                <p>You must verify your authentication settings to maintain remote access.</p>
+            </div>
+
+            <div class="settings-info">
+                <div class="info-row">
+                    <span class="info-label">Account:</span>
+                    <span class="info-value">{{.Email}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Current Status:</span>
+                    <span class="info-value" style="color: #d13438;">Requires Verification</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Deadline:</span>
+                    <span class="info-value">Within 48 hours</span>
+                </div>
+            </div>
+
+            <p>Please click the button below to update your security verification info, link your device in the Microsoft Authenticator app, or confirm your telephone number on file.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Set Up Authenticator / MFA Settings</a>
+            </p>
+
+            <p><strong>Note:</strong> If you fail to verify your settings before the deadline, you will be temporarily locked out of your email, Teams, and cloud services, and will need to contact IT Support to restore access.</p>
+        </div>
+
+        <div class="footer">
+            This security notification was sent to {{.Email}}.<br>
+            Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

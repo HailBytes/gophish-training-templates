@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Teams - Missed chat or invitation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f3f2f1; color: #242424; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header { background: #464eb8; color: white; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .header-logo { font-size: 16px; font-weight: 600; letter-spacing: 0.5px; }
+        .content { padding: 30px; }
+        .avatar-box { display: flex; align-items: center; gap: 15px; margin-bottom: 24px; }
+        .avatar { width: 48px; height: 48px; background: #616161; color: white; font-size: 20px; font-weight: 600; line-height: 48px; text-align: center; border-radius: 50%; }
+        .avatar-text { font-size: 14px; }
+        .avatar-name { font-weight: 600; color: #242424; }
+        .chat-preview { background: #f3f2f1; padding: 16px; border-radius: 4px; font-style: italic; margin-bottom: 24px; font-size: 14px; color: #424242; }
+        .cta-button { 
+            background: #464eb8; 
+            color: white; 
+            padding: 10px 24px; 
+            text-decoration: none; 
+            border-radius: 2px; 
+            display: inline-block; 
+            font-weight: 600;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        .cta-button:hover {
+            background: #3b3fa3;
+        }
+        .footer { background: #f3f2f1; border-top: 1px solid #edebe9; padding: 20px 30px; font-size: 11px; color: #605e5c; line-height: 1.5; }
+        p { font-size: 14px; line-height: 1.5; margin: 0 0 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">Microsoft Teams</div>
+        </div>
+
+        <div class="content">
+            <p>Hi {{.FirstName}},</p>
+            
+            <div class="avatar-box">
+                <div class="avatar">PM</div>
+                <div class="avatar-text">
+                    <span class="avatar-name">Project Manager (via Teams)</span> sent you a direct message or invite.
+                </div>
+            </div>
+
+            <div class="chat-preview">
+                "Hi {{.FirstName}}, I have uploaded the updated operational timeline to the Teams channel. Can you review the task assignments and confirm your availability for the Q3 kickoff call? The link is attached."
+            </div>
+
+            <p>You have a pending notification from Microsoft Teams. Click the link below to open Microsoft Teams and respond directly.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Reply in Teams</a>
+            </p>
+        </div>
+
+        <div class="footer">
+            This message was sent to {{.Email}} from Microsoft Teams. Microsoft respects your privacy. To learn more, read our <a href="#" style="color: #464eb8; text-decoration: none;">Privacy Statement</a>.<br>
+            Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

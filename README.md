@@ -133,6 +133,10 @@ gophish-training-templates/
 ├── corporate/                  # Corporate communications and news
 ├── government/                 # Government agency impersonations
 ├── microsoft/                  # Microsoft service themed templates
+│   ├── microsoft_security.html
+│   ├── microsoft_teams_invite.html
+│   ├── onedrive_file_share.html
+│   └── microsoft_mfa_update.html
 ├── healthcare/                 # HIPAA, patient portals, insurance
 │   ├── hipaa_compliance_alert.html
 │   ├── patient_portal_security.html

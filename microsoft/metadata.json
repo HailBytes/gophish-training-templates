@@ -18,6 +18,54 @@
       "education_page": "education/microsoft_education.html",
       "tags": ["microsoft", "security-alert", "sign-in", "credential-theft", "intermediate"],
       "notes": "Use {{.Date}} for current date realism. The specific location (Bogotá) adds believability. Works across all Microsoft 365 users."
+    },
+    {
+      "filename": "microsoft_teams_invite.html",
+      "name": "Microsoft Teams Direct Message Alert",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-50%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Microsoft Teams: Missed chat or workspace invitation",
+        "You have a pending notification in Teams from Project Manager",
+        "[Teams] Project Manager sent you a direct message"
+      ],
+      "education_page": "education/microsoft_education.html",
+      "tags": ["microsoft", "teams", "chat", "workspace", "credential-theft", "intermediate"],
+      "notes": "Impersonates a missed call or message in Microsoft Teams to drive clicks."
+    },
+    {
+      "filename": "onedrive_file_share.html",
+      "name": "Microsoft OneDrive File Share Notification",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "OneDrive: Admin Portal shared Q3_Budget_and_Compensation_Reviews.xlsx with you",
+        "Document Shared: Q3 Budget and Compensation Reviews",
+        "Microsoft OneDrive: Access shared excel file"
+      ],
+      "education_page": "education/microsoft_education.html",
+      "tags": ["microsoft", "onedrive", "sharepoint", "file-share", "credential-theft", "intermediate"],
+      "notes": "Exploits greed and curiosity by pretending to share a sensitive salary and budget Excel sheet."
+    },
+    {
+      "filename": "microsoft_mfa_update.html",
+      "name": "Microsoft 365 MFA Re-enrollment Notification",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Action Required: Set up Multi-Factor Authentication (MFA) for Microsoft 365",
+        "Microsoft 365 Security: MFA registration and device update pending",
+        "Urgent Notice: Re-enroll in Multi-Factor Authentication"
+      ],
+      "education_page": "education/microsoft_education.html",
+      "tags": ["microsoft", "mfa", "security-update", "credential-theft", "intermediate"],
+      "notes": "Simulates organization policy updates requiring users to update or re-enroll their authentication settings."
     }
   ],
   "gophish_version_tested": "0.12.1",
