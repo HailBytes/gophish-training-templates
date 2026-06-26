@@ -6,6 +6,8 @@ on:
       - "**/*.html"
       - "**/metadata.json"
       - "tools/validate_templates.py"
+      - "tools/generate_catalog.py"
+      - "docs/CATALOG.md"
   push:
     branches:
       - main
@@ -14,6 +16,8 @@ on:
       - "**/*.html"
       - "**/metadata.json"
       - "tools/validate_templates.py"
+      - "tools/generate_catalog.py"
+      - "docs/CATALOG.md"
   workflow_dispatch:  # Allow manual runs
 
 jobs:
@@ -35,6 +39,9 @@ jobs:
         run: |
           python3 tools/validate_templates.py --verbose 2>&1 | tee validation_output.txt
           exit ${PIPESTATUS[0]}
+
+      - name: Check template catalog is up to date
+        run: python3 tools/generate_catalog.py --check
 
       - name: Upload validation report
         if: always()

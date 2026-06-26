@@ -50,6 +50,9 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 </div>
 
 ### Email Templates (50+ Templates Across 20 Industries)
+
+> 📖 **[Browse the full template catalog →](docs/CATALOG.md)** — an auto-generated index of every template with its attack vector, difficulty, and estimated click rate.
+
 - Realistic phishing scenarios mimicking common attack vectors
 - Corporate communication themes (IT updates, HR notifications, security alerts)
 - Social engineering templates (delivery notifications, account suspensions, payment alerts)
