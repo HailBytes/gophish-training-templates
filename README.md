@@ -7,6 +7,8 @@
 
 A comprehensive collection of professionally designed email templates and landing pages for conducting effective employee security awareness phishing simulation campaigns using the GoPhish framework.
 
+> 📖 **Looking for a specific template?** Check out the full **[Template Catalog](CATALOG.md)** for a complete index of all templates, their difficulty levels, estimated click rates, and educational page links.
+
 ---
 
 ## Deploy These in 5 Minutes with HailBytes SAT
