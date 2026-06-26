@@ -9,17 +9,86 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
-        "Your rewards points expire in 48 hours — claim now",
+        "Your rewards points expire in 48 hours \u2014 claim now",
         "Don't lose your rewards! Points expiring soon",
         "Last chance: Redeem your loyalty points before they disappear"
       ],
       "education_page": "education/retail_education.html",
-      "tags": ["retail", "loyalty", "rewards", "points", "fomo", "credential-theft", "beginner"],
+      "tags": [
+        "retail",
+        "loyalty",
+        "rewards",
+        "points",
+        "fomo",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "FOMO (fear of missing out) template. High click rate due to universal appeal of not wanting to lose value."
+    },
+    {
+      "filename": "amazon_order_problem.html",
+      "name": "Amazon \u2013 Order Problem",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "There was a problem processing your order",
+        "Action required: confirm your recent Amazon order",
+        "Your Amazon order is on hold"
+      ],
+      "education_page": "education/retail_education.html",
+      "tags": [
+        "retail",
+        "amazon",
+        "order",
+        "payment",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Order-problem lure works year-round. Beginner difficulty; good for a baseline assessment."
+    },
+    {
+      "filename": "costco_membership_renewal.html",
+      "name": "Costco \u2013 Membership Renewal Failed",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Your Costco membership auto-renewal failed",
+        "Action needed: update your membership payment",
+        "Your Costco membership is about to lapse"
+      ],
+      "education_page": "education/retail_education.html",
+      "tags": [
+        "retail",
+        "costco",
+        "membership",
+        "renewal",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Membership-renewal billing lure. Familiar everyday scenario; strong for general-population campaigns."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

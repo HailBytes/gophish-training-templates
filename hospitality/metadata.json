@@ -9,17 +9,86 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
-        "Your reservation confirmation — action required",
+        "Your reservation confirmation \u2014 action required",
         "Hotel booking: Payment verification needed",
         "Upcoming stay: Credit card on file needs updating"
       ],
       "education_page": "education/hospitality_education.html",
-      "tags": ["hospitality", "hotel", "travel", "reservation", "credential-theft", "intermediate"],
+      "tags": [
+        "hospitality",
+        "hotel",
+        "travel",
+        "reservation",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Best for frequent business travelers. Timed near known travel periods for maximum effectiveness."
+    },
+    {
+      "filename": "marriott_bonvoy_points.html",
+      "name": "Marriott Bonvoy \u2013 Points Expiring",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Your Marriott Bonvoy points expire in 7 days",
+        "Action needed: 12,500 Bonvoy points about to expire",
+        "Don't lose your Marriott Bonvoy rewards"
+      ],
+      "education_page": "education/hospitality_education.html",
+      "tags": [
+        "hospitality",
+        "marriott",
+        "loyalty",
+        "rewards",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Loyalty-expiry lure. Pairs well with the existing hotel reservation template for a hospitality-sector campaign."
+    },
+    {
+      "filename": "booking_reservation_hold.html",
+      "name": "Booking.com \u2013 Reservation Payment Hold",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Action required: your reservation is on hold",
+        "Confirm payment to secure your Booking.com reservation",
+        "Your upcoming stay could be cancelled"
+      ],
+      "education_page": "education/hospitality_education.html",
+      "tags": [
+        "hospitality",
+        "booking",
+        "travel",
+        "payment",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Payment-hold urgency is highly credible for anyone with travel booked. Avoids implausible technical claims."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

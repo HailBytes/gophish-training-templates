@@ -49,7 +49,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
   <img src="travel_phishing.jpg" alt="Security Policy Templates" width="100%" />
 </div>
 
-### Email Templates (50+ Templates Across 20 Industries)
+### Email Templates (70+ Templates Across 20+ Industries)
 
 > 📖 **[Browse the full template catalog →](docs/CATALOG.md)** — an auto-generated index of every template with its attack vector, difficulty, and estimated click rate.
 

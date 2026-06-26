@@ -9,17 +9,85 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
-        "Power outage credit available on your account — claim now",
-        "Your utility credit is waiting — verify your account",
+        "Power outage credit available on your account \u2014 claim now",
+        "Your utility credit is waiting \u2014 verify your account",
         "Account credit notification: $45.20 applied to your balance"
       ],
       "education_page": "education/utilities_education.html",
-      "tags": ["utilities", "energy", "credit", "refund", "credential-theft", "beginner"],
-      "notes": "Credit/refund lure is highly effective — people don't want to miss free money. Works in areas with known utility outages."
+      "tags": [
+        "utilities",
+        "energy",
+        "credit",
+        "refund",
+        "credential-theft",
+        "beginner"
+      ],
+      "notes": "Credit/refund lure is highly effective \u2014 people don't want to miss free money. Works in areas with known utility outages."
+    },
+    {
+      "filename": "autopay_failed.html",
+      "name": "Utility \u2013 Autopay Payment Failed",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Autopay failed - update your billing information",
+        "Action required: your automatic payment was declined",
+        "We couldn't process your utility payment"
+      ],
+      "education_page": "education/utilities_education.html",
+      "tags": [
+        "utilities",
+        "billing",
+        "autopay",
+        "payment",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Autopay-failure billing lure. Universally relatable; good beginner-level test for the general population."
+    },
+    {
+      "filename": "service_disconnection_notice.html",
+      "name": "Utility \u2013 Service Disconnection Notice",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Final notice: scheduled service disconnection",
+        "Action required to avoid service interruption",
+        "Your service is scheduled for disconnection"
+      ],
+      "education_page": "education/utilities_education.html",
+      "tags": [
+        "utilities",
+        "billing",
+        "disconnection",
+        "urgent",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Disconnection-threat lure raises urgency over the autopay template. Use sparingly; high-pressure scenario."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

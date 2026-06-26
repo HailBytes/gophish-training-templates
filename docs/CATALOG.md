@@ -12,7 +12,7 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 52
+- **Templates:** 72
 - **Categories:** 26
 - **Most recent update:** 2026-06-26
 
@@ -142,13 +142,15 @@ _Phishing templates exploiting healthcare anxiety and HIPAA compliance_
 
 ### `hospitality` — hospitality
 
-**Industry:** Cross-industry (business travelers)  ·  **Templates:** 1
+**Industry:** Cross-industry (business travelers)  ·  **Templates:** 3
 
 _Phishing templates impersonating hotel and travel booking services_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | Hotel Reservation Confirmation | [`hotel_reservation_confirm.html`](hospitality/hotel_reservation_confirm.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Marriott Bonvoy – Points Expiring | [`marriott_bonvoy_points.html`](hospitality/marriott_bonvoy_points.html) | credential_harvest | beginner | 30-50% | 3 |
+| Booking.com – Reservation Payment Hold | [`booking_reservation_hold.html`](hospitality/booking_reservation_hold.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `hr-payroll` — hr-payroll
 
@@ -163,13 +165,15 @@ _Phishing templates impersonating HR and payroll systems — high-value targets 
 
 ### `identity` — identity
 
-**Industry:** Cross-industry  ·  **Templates:** 1
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Phishing templates impersonating identity providers and SSO platforms_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | Okta Suspicious Sign-In Alert | [`okta_verification.html`](identity/okta_verification.html) | credential_harvest | advanced | 25-45% | 3 |
+| Duo Security – Device Re-enrollment | [`duo_reenroll.html`](identity/duo_reenroll.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Okta – Password Expiration | [`okta_password_expiry.html`](identity/okta_password_expiry.html) | credential_harvest | beginner | 35-55% | 3 |
 
 ### `it-security` — it-security
 
@@ -188,13 +192,15 @@ _Phishing templates impersonating internal IT department communications_
 
 ### `itsm` — itsm
 
-**Industry:** Cross-industry (IT/Ops staff)  ·  **Templates:** 1
+**Industry:** Cross-industry (IT/Ops staff)  ·  **Templates:** 3
 
 _Phishing templates impersonating IT Service Management platforms_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | ServiceNow Emergency Change Approval | [`servicenow_ticket.html`](itsm/servicenow_ticket.html) | credential_harvest | advanced | 20-40% | 3 |
+| ServiceNow – Access Request Approval | [`servicenow_approval.html`](itsm/servicenow_approval.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Jira Service Management – Ticket Assigned | [`jira_service_desk.html`](itsm/jira_service_desk.html) | credential_harvest | beginner | 30-50% | 3 |
 
 ### `latam-portuguese` — latam-portuguese (pt-BR)
 
@@ -212,33 +218,39 @@ _Portuguese-language phishing simulation templates targeting Brazilian enterpris
 
 ### `legal` — legal
 
-**Industry:** Cross-industry  ·  **Templates:** 1
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Phishing templates exploiting legal authority and fear of litigation_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | Legal Case Document Share | [`case_document_sharing.html`](legal/case_document_sharing.html) | credential_harvest | advanced | 25-45% | 3 |
+| DocuSign – NDA Awaiting Signature | [`docusign_nda.html`](legal/docusign_nda.html) | credential_harvest | intermediate | 45-65% | 3 |
+| Legal Hold – Acknowledgement Required | [`legal_hold_notice.html`](legal/legal_hold_notice.html) | credential_harvest | advanced | 30-50% | 3 |
 
 ### `manufacturing` — manufacturing
 
-**Industry:** Manufacturing / Supply Chain  ·  **Templates:** 1
+**Industry:** Manufacturing / Supply Chain  ·  **Templates:** 3
 
 _Phishing templates targeting manufacturing and supply chain personnel_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | Supplier Portal Update Required | [`supplier_portal_update.html`](manufacturing/supplier_portal_update.html) | credential_harvest | intermediate | 35-55% | 3 |
+| SAP Ariba – Purchase Order Review | [`sap_ariba_po.html`](manufacturing/sap_ariba_po.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Coupa – Supplier Banking Verification | [`coupa_supplier_banking.html`](manufacturing/coupa_supplier_banking.html) | credential_harvest | advanced | 30-50% | 3 |
 
 ### `microsoft` — microsoft
 
-**Industry:** Cross-industry  ·  **Templates:** 1
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Phishing templates impersonating Microsoft products and services_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | Microsoft Account Suspicious Sign-In | [`microsoft_security.html`](microsoft/microsoft_security.html) | credential_harvest | intermediate | 35-55% | 3 |
+| SharePoint – Document Shared | [`sharepoint_document_share.html`](microsoft/sharepoint_document_share.html) | credential_harvest | beginner | 45-65% | 3 |
+| Microsoft 365 – Password Expiration | [`microsoft365_password_expiry.html`](microsoft/microsoft365_password_expiry.html) | credential_harvest | intermediate | 40-60% | 3 |
 
 ### `quishing` — quishing
 
@@ -253,13 +265,15 @@ _QR code phishing (quishing) templates. These bypass email security filters by e
 
 ### `retail` — retail
 
-**Industry:** Cross-industry (consumer-facing)  ·  **Templates:** 1
+**Industry:** Cross-industry (consumer-facing)  ·  **Templates:** 3
 
 _Phishing templates impersonating retail brands and loyalty programs_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | Loyalty Rewards Expiration | [`loyalty_rewards_expiring.html`](retail/loyalty_rewards_expiring.html) | credential_harvest | beginner | 45-65% | 3 |
+| Amazon – Order Problem | [`amazon_order_problem.html`](retail/amazon_order_problem.html) | credential_harvest | beginner | 35-55% | 3 |
+| Costco – Membership Renewal Failed | [`costco_membership_renewal.html`](retail/costco_membership_renewal.html) | credential_harvest | beginner | 30-50% | 3 |
 
 ### `smishing` — smishing
 
@@ -274,30 +288,36 @@ _SMS phishing (smishing) simulation templates rendered as email. These train emp
 
 ### `social-media` — social-media
 
-**Industry:** Cross-industry  ·  **Templates:** 1
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Phishing templates impersonating social media and professional networking platforms_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | LinkedIn Connection/Profile Alert | [`linkedin_reminder.html`](social-media/linkedin_reminder.html) | credential_harvest | intermediate | 35-55% | 3 |
+| LinkedIn – New InMail from Recruiter | [`linkedin_inmail.html`](social-media/linkedin_inmail.html) | credential_harvest | beginner | 40-60% | 3 |
+| Instagram – New Login Alert | [`instagram_login_alert.html`](social-media/instagram_login_alert.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `technology` — technology
 
-**Industry:** Technology / Developer  ·  **Templates:** 1
+**Industry:** Technology / Developer  ·  **Templates:** 3
 
 _Phishing templates targeting developers and technical staff through developer platform impersonation_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | API Key Expiration Notice | [`api_key_expiration.html`](technology/api_key_expiration.html) | credential_harvest | advanced | 30-50% | 3 |
+| GitHub – New Device Sign-In | [`github_new_device.html`](technology/github_new_device.html) | credential_harvest | intermediate | 40-60% | 3 |
+| AWS – Account Verification | [`aws_account_verification.html`](technology/aws_account_verification.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `utilities` — utilities
 
-**Industry:** Cross-industry (residential/commercial)  ·  **Templates:** 1
+**Industry:** Cross-industry (residential/commercial)  ·  **Templates:** 3
 
 _Phishing templates impersonating utility companies using disconnection fear and credit lures_
 
 | Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
 |---|---|---|---|---|---|
 | Power Outage Credit Notice | [`power_outage_credit.html`](utilities/power_outage_credit.html) | credential_harvest | beginner | 40-60% | 3 |
+| Utility – Autopay Payment Failed | [`autopay_failed.html`](utilities/autopay_failed.html) | credential_harvest | beginner | 35-55% | 3 |
+| Utility – Service Disconnection Notice | [`service_disconnection_notice.html`](utilities/service_disconnection_notice.html) | credential_harvest | intermediate | 40-60% | 3 |
