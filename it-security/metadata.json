@@ -9,14 +9,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "55-75%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "IT: Email server migration — account verification required",
         "Action Required: Verify your email account after migration",
         "IT Department: Your email may be affected by last night's maintenance"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "email", "migration", "credential-theft", "beginner"],
+      "tags": [
+        "it",
+        "email",
+        "migration",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "High-yield IT lure exploiting trust in the help desk; the post-migration verification pretext is broadly believable. Time it away from any genuine maintenance windows so it doesn't collide with real IT comms."
     },
     {
@@ -25,14 +37,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "Your mailbox is almost full — action required",
         "IT: Email storage limit reached for your account",
         "Warning: Your email account is at 95% capacity"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "email", "storage", "credential-theft", "beginner"],
+      "tags": [
+        "it",
+        "email",
+        "storage",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "Classic, high-converting IT lure — the full-mailbox warning is familiar and creates mild urgency to act. Works well as an early baseline. Keep the storage figures plausible for your mail platform."
     },
     {
@@ -41,14 +65,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "Security Alert: Unusual activity detected on your email account",
         "IT Security: Your mailbox may have been compromised",
         "Urgent: Suspicious sign-in activity on {{.Email}}"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "security-alert", "compromised", "credential-theft", "intermediate"],
+      "tags": [
+        "it",
+        "security-alert",
+        "compromised",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Security-alert lure that weaponizes fear of a breach. The {{.Email}} personalization in the subject sharply increases credibility and clicks. Reserve it for programs with immediate just-in-time training, as it can provoke anxiety."
     },
     {
@@ -57,14 +93,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "IT: Mandatory system update required by end of business",
         "Action Required: Install critical security patch",
         "Your computer requires an immediate software update"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "system-update", "patch", "credential-theft", "beginner"],
+      "tags": [
+        "it",
+        "system-update",
+        "patch",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "Routine-IT lure leveraging compliance with mandatory updates; the end-of-day deadline adds light pressure. Broadly effective — tailor the patch/software name to tools your organization deploys."
     },
     {
@@ -73,14 +121,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "IT: Webmail upgrade requires your action",
         "Your webmail client is being upgraded — verify your account",
         "Action required: Complete your email upgrade by Friday"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "webmail", "upgrade", "credential-theft", "beginner"],
+      "tags": [
+        "it",
+        "webmail",
+        "upgrade",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "High-yield IT lure — webmail upgrades are common and low-suspicion, and the deadline framing motivates action. Best for organizations using browser-based mail; adjust the wording for desktop-client shops."
     },
     {
@@ -89,14 +148,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "IT has shared a document with you via Dropbox",
         "Shared: IT Security Policy Update 2024.pdf",
         "You have a new file share from IT"
       ],
       "education_page": "education/it_security_education.html",
-      "tags": ["it", "dropbox", "file-share", "credential-theft", "intermediate"],
+      "tags": [
+        "it",
+        "dropbox",
+        "file-share",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "IT-branded variant of the Dropbox share lure — the internal-IT sender adds authority and lifts click rates over the generic version. Good for testing trust in internal-IT communications. Match the shared filename to a plausible policy document."
     }
   ],

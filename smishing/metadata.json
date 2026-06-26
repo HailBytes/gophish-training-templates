@@ -10,14 +10,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Action Required: Your USPS package could not be delivered",
         "USPS: Package delivery attempt failed — reschedule required",
         "Delivery Notification: Package #9400111206 requires action"
       ],
       "education_page": "education/smishing_education.html",
-      "tags": ["smishing", "sms", "usps", "delivery", "package", "beginner"],
+      "tags": [
+        "smishing",
+        "sms",
+        "usps",
+        "delivery",
+        "package",
+        "beginner"
+      ],
       "notes": "One of the highest click-rate attack vectors. Nearly universal — almost everyone orders packages. The phone mockup inside the email helps train employees to recognize the SMS format."
     },
     {
@@ -26,14 +37,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "URGENT: Suspicious transaction on your account",
         "Chase Alert: $847 Amazon purchase was blocked",
         "ACTION REQUIRED: Verify recent transaction"
       ],
       "education_page": "education/smishing_education.html",
-      "tags": ["smishing", "sms", "banking", "fraud-alert", "financial", "intermediate"],
+      "tags": [
+        "smishing",
+        "sms",
+        "banking",
+        "fraud-alert",
+        "financial",
+        "intermediate"
+      ],
       "notes": "Fear of financial loss is a powerful motivator. Works across all employee levels. Specific dollar amount ($847) and merchant (Amazon) increase realism."
     },
     {
@@ -42,14 +64,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Security Alert: Attempted MFA Verification Device Update",
         "MFA Alert: Unrecognized mobile number change request",
         "Action Required: Cancel pending phone number modification"
       ],
       "education_page": "education/smishing_education.html",
-      "tags": ["smishing", "sms", "mfa", "verification", "it-security", "intermediate"],
+      "tags": [
+        "smishing",
+        "sms",
+        "mfa",
+        "verification",
+        "it-security",
+        "intermediate"
+      ],
       "notes": "Exploits anxiety regarding unauthorized changes to security verification devices (MFA) in corporate systems."
     },
     {
@@ -58,14 +91,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Action Required: Review updated payroll direct deposit options",
         "HR Alert: Direct deposit banking verification needed",
         "Notice: Confirm payroll details to prevent processing delays"
       ],
       "education_page": "education/smishing_education.html",
-      "tags": ["smishing", "sms", "payroll", "hr", "benefits", "beginner"],
+      "tags": [
+        "smishing",
+        "sms",
+        "payroll",
+        "hr",
+        "benefits",
+        "beginner"
+      ],
       "notes": "High engagement due to direct relation to employee compensation and banking configurations."
     },
     {
@@ -74,14 +118,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "IT Support: Unrecognized login password change request",
         "Helpdesk Notice: Confirm account password change for employee profile",
         "Alert: Cancel unauthorized password reset attempt"
       ],
       "education_page": "education/smishing_education.html",
-      "tags": ["smishing", "sms", "helpdesk", "it-support", "password-reset", "intermediate"],
+      "tags": [
+        "smishing",
+        "sms",
+        "helpdesk",
+        "it-support",
+        "password-reset",
+        "intermediate"
+      ],
       "notes": "Simulates a helpdesk ticket notification about a password change attempt to steal login credentials."
     }
   ],

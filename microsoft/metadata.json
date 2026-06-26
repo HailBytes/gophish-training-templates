@@ -11,14 +11,14 @@
       "estimated_click_rate": "35-55%",
       "gophish_variables": [
         "{{.FirstName}}",
-        "{{.Date}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Microsoft account: Unusual sign-in activity",
-        "Action required: Review recent sign-in from Bogot\u00e1, Colombia",
+        "Action required: Review recent sign-in from Bogotá, Colombia",
         "Security alert: Unrecognized device accessed your Microsoft account"
       ],
       "education_page": "education/microsoft_education.html",
@@ -29,17 +29,18 @@
         "credential-theft",
         "intermediate"
       ],
-      "notes": "Use {{.Date}} for current date realism. The specific location (Bogot\u00e1) adds believability. Works across all Microsoft 365 users."
+      "notes": "Use {{.Date}} for current date realism. The specific location (Bogotá) adds believability. Works across all Microsoft 365 users."
     },
     {
       "filename": "sharepoint_document_share.html",
-      "name": "SharePoint \u2013 Document Shared",
+      "name": "SharePoint – Document Shared",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
       "gophish_variables": [
         "{{.FirstName}}",
         "{{.Email}}",
+        "{{.From}}",
         "{{.URL}}",
         "{{.Tracker}}"
       ],
@@ -61,15 +62,17 @@
     },
     {
       "filename": "microsoft365_password_expiry.html",
-      "name": "Microsoft 365 \u2013 Password Expiration",
+      "name": "Microsoft 365 – Password Expiration",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
       "gophish_variables": [
         "{{.FirstName}}",
         "{{.Email}}",
+        "{{.From}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Your Microsoft 365 password expires today",
@@ -93,14 +96,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Microsoft Teams: Missed chat or workspace invitation",
         "You have a pending notification in Teams from Project Manager",
         "[Teams] Project Manager sent you a direct message"
       ],
       "education_page": "education/microsoft_education.html",
-      "tags": ["microsoft", "teams", "chat", "workspace", "credential-theft", "intermediate"],
+      "tags": [
+        "microsoft",
+        "teams",
+        "chat",
+        "workspace",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Impersonates a missed call or message in Microsoft Teams to drive clicks."
     },
     {
@@ -109,14 +124,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "OneDrive: Admin Portal shared Q3_Budget_and_Compensation_Reviews.xlsx with you",
         "Document Shared: Q3 Budget and Compensation Reviews",
         "Microsoft OneDrive: Access shared excel file"
       ],
       "education_page": "education/microsoft_education.html",
-      "tags": ["microsoft", "onedrive", "sharepoint", "file-share", "credential-theft", "intermediate"],
+      "tags": [
+        "microsoft",
+        "onedrive",
+        "sharepoint",
+        "file-share",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Exploits greed and curiosity by pretending to share a sensitive salary and budget Excel sheet."
     },
     {
@@ -125,14 +152,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.From}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "Action Required: Set up Multi-Factor Authentication (MFA) for Microsoft 365",
         "Microsoft 365 Security: MFA registration and device update pending",
         "Urgent Notice: Re-enroll in Multi-Factor Authentication"
       ],
       "education_page": "education/microsoft_education.html",
-      "tags": ["microsoft", "mfa", "security-update", "credential-theft", "intermediate"],
+      "tags": [
+        "microsoft",
+        "mfa",
+        "security-update",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Simulates organization policy updates requiring users to update or re-enroll their authentication settings."
     }
   ],

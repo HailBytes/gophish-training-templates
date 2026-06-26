@@ -46,7 +46,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 
 
 <div align="center">
-  <img src="travel_phishing.jpg" alt="Security Policy Templates" width="100%" />
+  <img src="docs/images/email-templates.png" alt="Sample phishing email templates: Microsoft sign-in alert, DocuSign signature request, Amazon order problem, and Okta verification" width="100%" />
 </div>
 
 ### Email Templates (70+ Templates Across 20+ Industries)
@@ -74,7 +74,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 
 
 <div align="center">
-  <img src="corporate_education.jpg" alt="Security Policy Templates" width="100%" />
+  <img src="docs/images/education-modules.png" alt="Post-click security awareness training pages for corporate and financial phishing scenarios" width="100%" />
 </div>
 
 ### Educational Modules
@@ -87,7 +87,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 
 
 <div align="center">
-  <img src="credential_harvest.jpg" alt="Security Policy Templates" width="100%" />
+  <img src="docs/images/landing-pages.png" alt="Credential-capture landing pages: Microsoft 365 sign-in, Okta sign-in, and a generic employee portal" width="100%" />
 </div>
 
 ### Landing Pages
@@ -192,6 +192,8 @@ gophish-training-templates/
     ├── subject-lines-guide.md
     └── best-practices-guide.md
 ```
+
+> 📁 **Every category folder has its own `README.md`** listing the templates it contains, their attack vector and estimated click rate, suggested subject lines, the paired training page, and operator notes. For the complete cross-category index, see the **[template catalog](docs/CATALOG.md)**.
 
 ## Quick Start Guide
 

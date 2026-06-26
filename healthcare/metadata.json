@@ -9,14 +9,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Security Alert: Unusual access to your patient records",
         "Action Required: Verify your patient portal account",
         "MyChart: Suspicious login detected on your account"
       ],
       "education_page": "education/healthcare_education.html",
-      "tags": ["healthcare", "patient-portal", "security-alert", "credential-theft", "intermediate"],
+      "tags": [
+        "healthcare",
+        "patient-portal",
+        "security-alert",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Security-alert lure targeting patients and healthcare staff familiar with portals like MyChart. The suspicious-login pretext drives urgency. Most credible when branded to the EHR/portal system your organization actually uses."
     },
     {
@@ -25,14 +36,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Action Required: Your insurance verification is incomplete",
         "Insurance coverage update needed before your appointment",
         "Your health insurance information needs to be verified"
       ],
       "education_page": "education/healthcare_education.html",
-      "tags": ["healthcare", "insurance", "verification", "credential-theft", "beginner"],
+      "tags": [
+        "healthcare",
+        "insurance",
+        "verification",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "Effective across healthcare and general staff — insurance prompts feel routine and personal. The appointment/coverage angle motivates quick action without alarm. A strong beginner-level baseline for HIPAA-conscious organizations."
     },
     {
@@ -41,14 +64,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.From}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "HIPAA Compliance: Mandatory training due by Friday",
         "Compliance Alert: Your HIPAA certification has expired",
         "Required: Complete HIPAA security awareness update"
       ],
       "education_page": "education/healthcare_education.html",
-      "tags": ["healthcare", "hipaa", "compliance", "credential-theft", "intermediate"],
+      "tags": [
+        "healthcare",
+        "hipaa",
+        "compliance",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Best for healthcare sector employees. The regulatory authority of HIPAA creates strong urgency."
     }
   ],

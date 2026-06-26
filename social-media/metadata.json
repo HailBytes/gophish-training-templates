@@ -32,7 +32,7 @@
     },
     {
       "filename": "linkedin_inmail.html",
-      "name": "LinkedIn \u2013 New InMail from Recruiter",
+      "name": "LinkedIn – New InMail from Recruiter",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "40-60%",
@@ -60,7 +60,7 @@
     },
     {
       "filename": "instagram_login_alert.html",
-      "name": "Instagram \u2013 New Login Alert",
+      "name": "Instagram – New Login Alert",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
@@ -68,7 +68,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "We noticed a new login to your Instagram account",

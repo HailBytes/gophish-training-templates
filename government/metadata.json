@@ -9,14 +9,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "BBB: Complaint filed against your organization",
         "Better Business Bureau: Response required within 14 days",
         "Formal complaint received — your response is needed"
       ],
       "education_page": "education/government_education.html",
-      "tags": ["government", "bbb", "complaint", "credential-theft", "intermediate"],
+      "tags": [
+        "government",
+        "bbb",
+        "complaint",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Best for managers and business owners. Complaint + regulatory authority is a powerful combination."
     },
     {
@@ -25,14 +38,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "Your information is referenced in an active investigation",
         "Law Enforcement: Document request regarding your account",
         "FBI IC3: Cybercrime report filed using your information"
       ],
       "education_page": "education/government_education.html",
-      "tags": ["government", "law-enforcement", "fbi", "credential-theft", "intermediate"],
+      "tags": [
+        "government",
+        "law-enforcement",
+        "fbi",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "High-anxiety authority lure invoking law enforcement. Powerful, but use with care — the fear factor can cause undue stress, so favor it for mature programs with strong follow-up education. Most credible when the sender domain mimics a known agency."
     },
     {
@@ -41,14 +66,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "25-45%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "FDIC: Required banking survey — response mandatory",
         "Federal Deposit Insurance Corporation: Customer verification",
         "FDIC Compliance: Complete your required annual verification"
       ],
       "education_page": "education/government_education.html",
-      "tags": ["government", "fdic", "banking", "survey", "credential-theft", "intermediate"],
+      "tags": [
+        "government",
+        "fdic",
+        "banking",
+        "survey",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Authority-and-compliance lure aimed at banking and finance staff; the 'mandatory survey' framing leverages regulatory pressure. The lower click rate reflects its narrower, more skeptical audience — pair it with finance-specific training."
     },
     {
@@ -57,14 +95,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "IRS: Internal Revenue Service — Electronic Refund Notification",
         "IRS Refund: Tax refund balance update for {{.Email}}",
         "IRS Tax Notice: Review tax refund status on your account"
       ],
       "education_page": "education/government_education.html",
-      "tags": ["government", "tax-season", "irs", "refund", "seasonal", "intermediate"],
+      "tags": [
+        "government",
+        "tax-season",
+        "irs",
+        "refund",
+        "seasonal",
+        "intermediate"
+      ],
       "notes": "Extremely effective during Q1 and Q2 tax season. The promise of an unexpected refund is a high-motivation trigger."
     }
   ],

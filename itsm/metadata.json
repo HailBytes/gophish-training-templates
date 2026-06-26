@@ -14,11 +14,12 @@
         "{{.LastName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "ServiceNow: Change Request CHG0042891 requires your approval",
-        "[ITSM] Critical change request \u2014 SLA breach imminent",
+        "[ITSM] Critical change request — SLA breach imminent",
         "Action Required: Emergency production access approval"
       ],
       "education_page": "education/itsm_education.html",
@@ -31,11 +32,11 @@
         "approval",
         "advanced"
       ],
-      "notes": "Best targeted at IT operations, DevOps, and change advisory board members. Advanced difficulty \u2014 requires target to be familiar with ITSM workflows. Ticket numbers and grid layout add realism."
+      "notes": "Best targeted at IT operations, DevOps, and change advisory board members. Advanced difficulty — requires target to be familiar with ITSM workflows. Ticket numbers and grid layout add realism."
     },
     {
       "filename": "servicenow_approval.html",
-      "name": "ServiceNow \u2013 Access Request Approval",
+      "name": "ServiceNow – Access Request Approval",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
@@ -43,7 +44,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Approval required: access request RITM0148293",
@@ -63,7 +65,7 @@
     },
     {
       "filename": "jira_service_desk.html",
-      "name": "Jira Service Management \u2013 Ticket Assigned",
+      "name": "Jira Service Management – Ticket Assigned",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "30-50%",

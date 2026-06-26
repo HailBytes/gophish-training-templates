@@ -17,7 +17,7 @@
         "{{.Tracker}}"
       ],
       "suggested_subject_lines": [
-        "Your reservation confirmation \u2014 action required",
+        "Your reservation confirmation — action required",
         "Hotel booking: Payment verification needed",
         "Upcoming stay: Credit card on file needs updating"
       ],
@@ -34,15 +34,17 @@
     },
     {
       "filename": "marriott_bonvoy_points.html",
-      "name": "Marriott Bonvoy \u2013 Points Expiring",
+      "name": "Marriott Bonvoy – Points Expiring",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "30-50%",
       "gophish_variables": [
         "{{.FirstName}}",
+        "{{.LastName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Your Marriott Bonvoy points expire in 7 days",
@@ -62,12 +64,13 @@
     },
     {
       "filename": "booking_reservation_hold.html",
-      "name": "Booking.com \u2013 Reservation Payment Hold",
+      "name": "Booking.com – Reservation Payment Hold",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
       "gophish_variables": [
         "{{.FirstName}}",
+        "{{.LastName}}",
         "{{.Email}}",
         "{{.URL}}",
         "{{.Tracker}}"

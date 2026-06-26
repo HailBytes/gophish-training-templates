@@ -11,13 +11,13 @@
       "estimated_click_rate": "35-55%",
       "gophish_variables": [
         "{{.FirstName}}",
-        "{{.Company}}",
         "{{.Email}}",
+        "{{.Company}}",
         "{{.URL}}",
         "{{.Tracker}}"
       ],
       "suggested_subject_lines": [
-        "Supplier portal update required \u2014 re-registration needed",
+        "Supplier portal update required — re-registration needed",
         "Procurement: Your vendor portal access is expiring",
         "Action Required: Update your supplier account credentials"
       ],
@@ -34,7 +34,7 @@
     },
     {
       "filename": "sap_ariba_po.html",
-      "name": "SAP Ariba \u2013 Purchase Order Review",
+      "name": "SAP Ariba – Purchase Order Review",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
@@ -42,7 +42,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "New purchase order awaiting your review",
@@ -62,7 +63,7 @@
     },
     {
       "filename": "coupa_supplier_banking.html",
-      "name": "Coupa \u2013 Supplier Banking Verification",
+      "name": "Coupa – Supplier Banking Verification",
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
       "estimated_click_rate": "30-50%",

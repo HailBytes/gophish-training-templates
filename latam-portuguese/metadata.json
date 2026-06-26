@@ -11,14 +11,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "URGENTE: Acesso suspeito detectado em sua conta — ação necessária",
         "Alerta de Segurança — Verifique sua conta agora",
         "Sua conta foi temporariamente bloqueada por suspeita de fraude"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["banking", "financial", "portuguese", "latam", "credential-theft", "intermediate"],
+      "tags": [
+        "banking",
+        "financial",
+        "portuguese",
+        "latam",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Lure bancário em português para públicos LATAM/Brasil. O alerta de acesso suspeito gera urgência imediata. Mais eficaz quando a marca corresponde a um banco local reconhecido pelos alvos."
     },
     {
@@ -27,14 +40,28 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.RId}}"
+      ],
       "suggested_subject_lines": [
         "Ticket #TKT-2025 — Sua senha corporativa expira amanhã",
         "AÇÃO NECESSÁRIA: Renove sua senha de rede até 18h",
         "Atualização obrigatória de credenciais — TI Corporativo"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["helpdesk", "it", "password-reset", "portuguese", "latam", "credential-theft", "beginner"],
+      "tags": [
+        "helpdesk",
+        "it",
+        "password-reset",
+        "portuguese",
+        "latam",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "Lure de helpdesk em português com alta taxa de clique — a expiração de senha é familiar e cria pressão de tempo. Ideal como baseline inicial em equipes de língua portuguesa; use um número de ticket plausível."
     },
     {
@@ -43,14 +70,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Documentação de integração pendente — RH aguarda seu envio",
         "Ação necessária: complete seu onboarding até amanhã",
         "Portal de integração: 3 documentos aguardando envio"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["hr", "onboarding", "portuguese", "latam", "credential-theft", "beginner"],
+      "tags": [
+        "hr",
+        "onboarding",
+        "portuguese",
+        "latam",
+        "credential-theft",
+        "beginner"
+      ],
       "notes": "Direcionado a novos contratados; a pendência de documentos de RH parece rotineira e eficaz nas primeiras semanas de integração. Ajuste o nome do portal ao sistema de RH usado pela organização."
     },
     {
@@ -59,14 +98,29 @@
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.RId}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "Receita Federal: sua declaração foi retida em malha fina",
         "Notificação Fiscal NF-2025 — regularize sua pendência",
         "IRPF 2024: divergência detectada — prazo 30 dias"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["government", "tax", "receita-federal", "portuguese", "latam", "credential-theft", "advanced"],
+      "tags": [
+        "government",
+        "tax",
+        "receita-federal",
+        "portuguese",
+        "latam",
+        "credential-theft",
+        "advanced"
+      ],
       "notes": "Lure avançado de autoridade fiscal (Receita Federal) para públicos brasileiros. A ameaça de malha fina é altamente persuasiva, mas use com cautela pelo alto fator de medo. Mais credível com um domínio que imite órgãos oficiais."
     },
     {
@@ -75,14 +129,28 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.RId}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.RId}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "Sua conta Microsoft 365 foi bloqueada — verifique agora",
         "Alerta de segurança Microsoft: login suspeito detectado",
         "Acesso bloqueado — confirme sua identidade para restaurar"
       ],
       "education_page": "education/latam_portuguese_education.html",
-      "tags": ["microsoft", "microsoft365", "portuguese", "latam", "credential-theft", "intermediate"],
+      "tags": [
+        "microsoft",
+        "microsoft365",
+        "portuguese",
+        "latam",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Lure corporativo da Microsoft 365 em português. A conta bloqueada por login suspeito impulsiona ação rápida em ambientes Microsoft. Combine com a identidade visual da organização para maior credibilidade."
     }
   ],
