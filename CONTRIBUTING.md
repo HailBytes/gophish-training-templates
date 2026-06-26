@@ -189,6 +189,24 @@ Copy this scaffold for new phishing email templates:
 - **Realistic but not weaponized:** Scenarios should be convincing enough to train employees but not so polished they'd fool a security professional
 - **No actual malware:** The only payload should be `{{.URL}}` pointing to GoPhish's landing page
 
+#### Email-client rendering & accessibility
+
+Real inboxes — especially Outlook desktop — are far stricter than browsers. The validator
+checks these; **warnings** are non-blocking but should be addressed, and **info** notes
+(shown with `--verbose`) are nudges for new templates:
+
+- **Set `lang` on `<html>`** (e.g. `lang="en"`, or `lang="pt-BR"` for Portuguese) — *warning*
+- **Every `<img>` needs `alt` text** (use `alt=""` for purely decorative images) — *warning*
+- **Links need text, an image, or an `aria-label`** — *warning*
+- **Inline all CSS** — external `<link rel="stylesheet">` won't load in many clients — *warning*
+- **Prefer table-based layout for structure.** `display:flex` / `display:grid` are ignored by
+  Outlook desktop, and `position:absolute/fixed` is unreliable — *info*
+- **Give `<img>` an explicit `width`** so clients size it correctly — *info*
+
+Favor a **plain-text-leaning** look with a few well-chosen brand cues (a colored header bar,
+the real sender domain in text) over heavy, over-styled layouts — it both renders more reliably
+and reads as a more believable everyday email.
+
 ---
 
 ## Education Page Scaffold

@@ -232,6 +232,54 @@ def check_external_dependencies(content: str, result: ValidationResult, file_pat
         )
 
 
+def check_accessibility(content: str, result: ValidationResult):
+    """Accessibility checks that also improve real inbox rendering."""
+    # <html> should declare a language for screen readers and translation.
+    html_tag = re.search(r"<html\b[^>]*>", content, re.IGNORECASE)
+    if html_tag and not re.search(r"\blang\s*=", html_tag.group(), re.IGNORECASE):
+        result.warnings.append("<html> tag is missing a lang attribute (e.g. lang=\"en\")")
+
+    # Every <img> needs alt text (decorative images should use alt="").
+    for img in re.finditer(r"<img\b[^>]*>", content, re.IGNORECASE):
+        if not re.search(r"\balt\s*=", img.group(), re.IGNORECASE):
+            result.warnings.append("An <img> tag is missing an alt attribute")
+            break  # one warning is enough; don't spam per image
+
+    # Links with no discernible text/label/image are unusable for screen readers.
+    for a in re.finditer(r"<a\b[^>]*>(.*?)</a>", content, re.IGNORECASE | re.DOTALL):
+        opening = a.group(0)[: a.group(0).index(">") + 1]
+        inner_text = re.sub(r"<[^>]+>", "", a.group(1)).strip()
+        if (not inner_text
+                and "<img" not in a.group(1).lower()
+                and not re.search(r"aria-label\s*=", opening, re.IGNORECASE)):
+            result.warnings.append("A link (<a>) has no text, image, or aria-label")
+            break
+
+
+def check_email_compatibility(content: str, result: ValidationResult):
+    """Nudges toward layout that survives strict email clients (notably Outlook).
+
+    These are INFO (verbose-only) because the existing library uses modern CSS
+    that renders fine in most webmail clients; they guide new contributions
+    toward more robust, table-based structure without spamming the output."""
+    # External stylesheets won't load in many clients and break offline — warn.
+    if re.search(r"<link\b[^>]*rel\s*=\s*[\"']?stylesheet", content, re.IGNORECASE):
+        result.warnings.append(
+            "External <link rel=\"stylesheet\"> — inline your CSS so it renders in email clients"
+        )
+
+    if re.search(r"display\s*:\s*flex", content, re.IGNORECASE):
+        result.info.append("Uses display:flex — ignored by Outlook desktop; prefer table-based layout for structure")
+    if re.search(r"display\s*:\s*grid", content, re.IGNORECASE):
+        result.info.append("Uses display:grid — ignored by Outlook desktop; prefer table-based layout for structure")
+    if re.search(r"position\s*:\s*(absolute|fixed)", content, re.IGNORECASE):
+        result.info.append("Uses position:absolute/fixed — unreliable in email clients")
+    for img in re.finditer(r"<img\b[^>]*>", content, re.IGNORECASE):
+        if not re.search(r"\bwidth\s*=", img.group(), re.IGNORECASE):
+            result.info.append("An <img> has no explicit width attribute — some clients mis-size it")
+            break
+
+
 def check_education_page(template_path: Path, result: ValidationResult):
     """Check that a corresponding education page exists."""
     category_dir = template_path.parent
@@ -491,6 +539,8 @@ def validate_file(file_path: Path) -> ValidationResult:
     check_html_structure(content, result)
     check_gophish_variables(content, result, is_education)
     check_external_dependencies(content, result, file_path)
+    check_accessibility(content, result)
+    check_email_compatibility(content, result)
     check_tracker_placement(content, result, is_education)
     check_file_size(file_path, result)
 

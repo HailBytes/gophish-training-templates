@@ -70,6 +70,49 @@ class HTMLStructureChecks(unittest.TestCase):
         self.assertEqual(r.errors, [])
 
 
+class AccessibilityChecks(unittest.TestCase):
+    def test_missing_lang_warns(self):
+        r = new_result()
+        vt.check_accessibility("<html><body></body></html>", r)
+        self.assertTrue(any("lang" in w for w in r.warnings))
+
+    def test_lang_present_no_warning(self):
+        r = new_result()
+        vt.check_accessibility('<html lang="en"><body></body></html>', r)
+        self.assertFalse(any("lang" in w for w in r.warnings))
+
+    def test_img_without_alt_warns(self):
+        r = new_result()
+        vt.check_accessibility('<html lang="en"><img src="x.png"></html>', r)
+        self.assertTrue(any("alt" in w for w in r.warnings))
+
+    def test_img_with_alt_ok(self):
+        r = new_result()
+        vt.check_accessibility('<html lang="en"><img src="x.png" alt="logo"></html>', r)
+        self.assertFalse(any("alt" in w for w in r.warnings))
+
+    def test_empty_link_warns_but_image_link_ok(self):
+        r = new_result()
+        vt.check_accessibility('<html lang="en"><a href="#"></a></html>', r)
+        self.assertTrue(any("aria-label" in w or "no text" in w for w in r.warnings))
+        r2 = new_result()
+        vt.check_accessibility('<html lang="en"><a href="#"><img src="x" alt="y"></a></html>', r2)
+        self.assertFalse(any("no text" in w for w in r2.warnings))
+
+
+class EmailCompatChecks(unittest.TestCase):
+    def test_flex_is_info_not_warning(self):
+        r = new_result()
+        vt.check_email_compatibility('<div style="display:flex"></div>', r)
+        self.assertEqual(r.warnings, [])
+        self.assertTrue(any("flex" in i for i in r.info))
+
+    def test_external_stylesheet_warns(self):
+        r = new_result()
+        vt.check_email_compatibility('<link rel="stylesheet" href="x.css">', r)
+        self.assertTrue(any("stylesheet" in w for w in r.warnings))
+
+
 class ClickRatePattern(unittest.TestCase):
     def test_valid_ranges(self):
         for ok in ("40-60%", "5-10%", "100-100%"):
