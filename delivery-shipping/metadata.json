@@ -9,15 +9,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "55-75%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "DHL: Your shipment is on its way",
         "Shipment notification: Package awaiting delivery confirmation",
-        "DHL Express: Delivery attempted — reschedule required"
+        "DHL Express: Delivery attempted \u2014 reschedule required"
       ],
       "education_page": "education/delivery_phishing_education.html",
-      "tags": ["delivery", "shipping", "dhl", "package", "credential-theft", "beginner"],
-      "notes": "Highest click-rate category. Nearly universal — works across all employee levels."
+      "tags": [
+        "delivery",
+        "shipping",
+        "dhl",
+        "package",
+        "credential-theft",
+        "beginner"
+      ],
+      "notes": "Highest click-rate category. Nearly universal \u2014 works across all employee levels."
     },
     {
       "filename": "package_pickup.html",
@@ -25,16 +37,56 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "50-70%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
-        "Package ready for pickup — confirm your details",
+        "Package ready for pickup \u2014 confirm your details",
         "Delivery: Your package is waiting at the facility",
         "Final notice: Package will be returned if not claimed"
       ],
       "education_page": "education/delivery_phishing_education.html",
-      "tags": ["delivery", "shipping", "pickup", "credential-theft", "beginner"]
+      "tags": [
+        "delivery",
+        "shipping",
+        "pickup",
+        "credential-theft",
+        "beginner"
+      ]
+    },
+    {
+      "filename": "holiday_customs_fee.html",
+      "name": "Delivery \u2013 Holiday Customs Fee (Seasonal)",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Your package is held - customs fee required",
+        "Action needed to release your holiday delivery",
+        "Delivery on hold: small customs fee outstanding"
+      ],
+      "education_page": "education/delivery_phishing_education.html",
+      "tags": [
+        "delivery-shipping",
+        "shipping",
+        "customs",
+        "holiday",
+        "seasonal",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "SEASONAL (holiday shipping). Volume of legitimate parcels makes this highly credible Nov-Jan."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

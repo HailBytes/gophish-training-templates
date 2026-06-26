@@ -9,14 +9,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Breaking: Major announcement affecting your department",
-        "Urgent internal news — employees must read",
+        "Urgent internal news \u2014 employees must read",
         "CEO announcement: Important company update"
       ],
       "education_page": "education/corporate_education.html",
-      "tags": ["corporate", "news", "internal-comms", "credential-theft", "intermediate"]
+      "tags": [
+        "corporate",
+        "news",
+        "internal-comms",
+        "credential-theft",
+        "intermediate"
+      ]
     },
     {
       "filename": "travel_agency.html",
@@ -24,16 +35,56 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Your upcoming travel booking requires action",
         "Corporate Travel: Update your travel profile before your trip",
         "Travel approval: Your trip itinerary has changed"
       ],
       "education_page": "education/corporate_education.html",
-      "tags": ["corporate", "travel", "booking", "credential-theft", "intermediate"]
+      "tags": [
+        "corporate",
+        "travel",
+        "booking",
+        "credential-theft",
+        "intermediate"
+      ]
+    },
+    {
+      "filename": "performance_review.html",
+      "name": "Corporate \u2013 Performance Review (Seasonal)",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Action required: complete your performance review",
+        "Your self-assessment is due soon",
+        "Reminder: annual review form awaiting your input"
+      ],
+      "education_page": "education/corporate_education.html",
+      "tags": [
+        "corporate",
+        "performance-review",
+        "hr",
+        "seasonal",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "SEASONAL (annual review cycle). Internal-process lure with deadline pressure."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

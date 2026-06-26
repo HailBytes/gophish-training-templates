@@ -12,7 +12,7 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 92
+- **Templates:** 97
 - **Categories:** 29
 - **Most recent update:** 2026-06-26
 
@@ -55,7 +55,7 @@ _Phishing templates impersonating workplace collaboration platforms_
 
 ### `corporate` — corporate
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Generic corporate phishing templates covering news, travel, and internal communications_
 
@@ -63,10 +63,11 @@ _Generic corporate phishing templates covering news, travel, and internal commun
 |---|---|---|---|---|---|
 | Breaking News Alert | [`breaking_news.html`](corporate/breaking_news.html) | credential_harvest | intermediate | 35-55% | 3 |
 | Corporate Travel Agency Notice | [`travel_agency.html`](corporate/travel_agency.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Corporate – Performance Review (Seasonal) | [`performance_review.html`](corporate/performance_review.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `delivery-shipping` — delivery-shipping
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Phishing templates impersonating package delivery and shipping companies_
 
@@ -74,6 +75,7 @@ _Phishing templates impersonating package delivery and shipping companies_
 |---|---|---|---|---|---|
 | DHL Package Delivery | [`dhl_package.html`](delivery-shipping/dhl_package.html) | credential_harvest | beginner | 55-75% | 3 |
 | Package Pickup Notice | [`package_pickup.html`](delivery-shipping/package_pickup.html) | credential_harvest | beginner | 50-70% | 3 |
+| Delivery – Holiday Customs Fee (Seasonal) | [`holiday_customs_fee.html`](delivery-shipping/holiday_customs_fee.html) | credential_harvest | beginner | 35-55% | 3 |
 
 ### `e-signature` — e-signature
 
@@ -150,7 +152,7 @@ _Phishing templates targeting financial transactions and banking_
 
 ### `government` — government
 
-**Industry:** Cross-industry  ·  **Templates:** 3
+**Industry:** Cross-industry  ·  **Templates:** 4
 
 _Phishing templates impersonating government agencies and regulatory bodies_
 
@@ -159,6 +161,7 @@ _Phishing templates impersonating government agencies and regulatory bodies_
 | Better Business Bureau Complaint | [`better_business.html`](government/better_business.html) | credential_harvest | intermediate | 30-50% | 3 |
 | FBI/Law Enforcement Crime Report | [`crime_report.html`](government/crime_report.html) | credential_harvest | intermediate | 30-50% | 3 |
 | FDIC Banking Survey | [`fdic_survey.html`](government/fdic_survey.html) | credential_harvest | intermediate | 25-45% | 3 |
+| IRS – Tax Refund (Seasonal) | [`irs_tax_refund.html`](government/irs_tax_refund.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `healthcare` — healthcare
 
@@ -186,7 +189,7 @@ _Phishing templates impersonating hotel and travel booking services_
 
 ### `hr-payroll` — hr-payroll
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 4
 
 _Phishing templates impersonating HR and payroll systems — high-value targets for payroll diversion_
 
@@ -194,6 +197,8 @@ _Phishing templates impersonating HR and payroll systems — high-value targets 
 |---|---|---|---|---|---|
 | Benefits Open Enrollment | [`benefits_enrollment.html`](hr-payroll/benefits_enrollment.html) | credential_harvest | intermediate | 45-65% | 3 |
 | Payroll Direct Deposit Update | [`payroll_direct_deposit.html`](hr-payroll/payroll_direct_deposit.html) | credential_harvest | intermediate | 40-60% | 3 |
+| HR – Open Enrollment (Seasonal) | [`open_enrollment.html`](hr-payroll/open_enrollment.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Payroll – Year-End Bonus (Seasonal) | [`year_end_bonus.html`](hr-payroll/year_end_bonus.html) | credential_harvest | intermediate | 40-60% | 3 |
 
 ### `identity` — identity
 
