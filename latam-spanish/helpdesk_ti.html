@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restablecimiento de contraseña requerido</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#444b54;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Soporte de TI</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Hola {{.FirstName}}:</p>
+<p style="margin:0 0 16px;">Como parte de una actualización de seguridad programada, todos los empleados deben revalidar su contraseña corporativa antes de la fecha límite.</p>
+<p style="margin:0 0 16px;">Las cuentas que no se revaliden perderán el acceso al correo y a las aplicaciones internas. El proceso toma menos de un minuto.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#444b54;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Restablecer mi contraseña</a></p>
+<p style="margin:18px 0 0;">Mesa de Ayuda — Departamento de TI</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+Mensaje automático generado por el sistema de soporte de su organización.<br>Este mensaje fue enviado a {{.Email}}. Por favor no responda a este correo.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>

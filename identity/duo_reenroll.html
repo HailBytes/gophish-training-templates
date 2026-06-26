@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re-enroll your device in Duo</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#6bbf4e;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Duo Security</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Hi {{.FirstName}},</p>
+<p style="margin:0 0 16px;">As part of a scheduled security update, all employees must re-enroll their device in Duo two-factor authentication. Devices that are not re-enrolled by the deadline will lose access to single sign-on applications.</p>
+<p style="margin:0 0 16px;">Re-enrollment takes about a minute. Sign in below to confirm your identity and re-register your device.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#6bbf4e;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Re-enroll my device</a></p>
+<p style="margin:18px 0 0;">Thank you,<br>IT Identity & Access Management</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+This is an automated message from your organization's Duo Security service.<br>This message was sent to {{.Email}}. Please do not reply to this email.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>

@@ -22,6 +22,15 @@ from typing import List, Optional
 
 ROOT = Path(__file__).parent.parent
 
+
+def rel_to_root(path: Path) -> str:
+    """Path relative to the repo root for display, falling back to the raw path
+    when the file lives outside the repo (e.g. when scanning an external --dir)."""
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
 # ── Constants ────────────────────────────────────────────────────────────────
 
 REQUIRED_VARS = ["{{.URL}}", "{{.Tracker}}"]
@@ -31,6 +40,25 @@ OPTIONAL_VARS = ["{{.LastName}}", "{{.Date}}"]
 REQUIRED_META_TAGS = ["charset", "viewport"]
 
 EDUCATION_DIRS = ["education"]
+
+# ── metadata.json schema ──────────────────────────────────────────────────────
+# Canonical enum values. Keep in sync with CONTRIBUTING.md.
+VALID_DIFFICULTIES = {"beginner", "intermediate", "advanced"}
+VALID_ATTACK_VECTORS = {
+    "credential_harvest",    # lure to a fake login / data-entry page
+    "malware_delivery",      # attachment or download-based payload simulation
+    "information_gathering",  # solicits sensitive info without a login (reply, form)
+    "awareness_only",        # measures clicks only, no data capture
+}
+# metadata entry fields that, if missing/empty, are hard errors
+REQUIRED_META_FIELDS = [
+    "name", "attack_vector", "difficulty", "estimated_click_rate",
+    "gophish_variables", "suggested_subject_lines", "education_page", "tags",
+]
+# metadata entry fields that are recommended but only warned about
+RECOMMENDED_META_FIELDS = ["notes"]
+CLICK_RATE_PATTERN = re.compile(r"^\d{1,3}-\d{1,3}%$")
+ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 SKIP_DIRS = {".git", "tools", "landing-pages", "campaign-guides"}
 SKIP_FILES = {"credential-harvest.html", "education-notification.html"}
@@ -204,6 +232,54 @@ def check_external_dependencies(content: str, result: ValidationResult, file_pat
         )
 
 
+def check_accessibility(content: str, result: ValidationResult):
+    """Accessibility checks that also improve real inbox rendering."""
+    # <html> should declare a language for screen readers and translation.
+    html_tag = re.search(r"<html\b[^>]*>", content, re.IGNORECASE)
+    if html_tag and not re.search(r"\blang\s*=", html_tag.group(), re.IGNORECASE):
+        result.warnings.append("<html> tag is missing a lang attribute (e.g. lang=\"en\")")
+
+    # Every <img> needs alt text (decorative images should use alt="").
+    for img in re.finditer(r"<img\b[^>]*>", content, re.IGNORECASE):
+        if not re.search(r"\balt\s*=", img.group(), re.IGNORECASE):
+            result.warnings.append("An <img> tag is missing an alt attribute")
+            break  # one warning is enough; don't spam per image
+
+    # Links with no discernible text/label/image are unusable for screen readers.
+    for a in re.finditer(r"<a\b[^>]*>(.*?)</a>", content, re.IGNORECASE | re.DOTALL):
+        opening = a.group(0)[: a.group(0).index(">") + 1]
+        inner_text = re.sub(r"<[^>]+>", "", a.group(1)).strip()
+        if (not inner_text
+                and "<img" not in a.group(1).lower()
+                and not re.search(r"aria-label\s*=", opening, re.IGNORECASE)):
+            result.warnings.append("A link (<a>) has no text, image, or aria-label")
+            break
+
+
+def check_email_compatibility(content: str, result: ValidationResult):
+    """Nudges toward layout that survives strict email clients (notably Outlook).
+
+    These are INFO (verbose-only) because the existing library uses modern CSS
+    that renders fine in most webmail clients; they guide new contributions
+    toward more robust, table-based structure without spamming the output."""
+    # External stylesheets won't load in many clients and break offline — warn.
+    if re.search(r"<link\b[^>]*rel\s*=\s*[\"']?stylesheet", content, re.IGNORECASE):
+        result.warnings.append(
+            "External <link rel=\"stylesheet\"> — inline your CSS so it renders in email clients"
+        )
+
+    if re.search(r"display\s*:\s*flex", content, re.IGNORECASE):
+        result.info.append("Uses display:flex — ignored by Outlook desktop; prefer table-based layout for structure")
+    if re.search(r"display\s*:\s*grid", content, re.IGNORECASE):
+        result.info.append("Uses display:grid — ignored by Outlook desktop; prefer table-based layout for structure")
+    if re.search(r"position\s*:\s*(absolute|fixed)", content, re.IGNORECASE):
+        result.info.append("Uses position:absolute/fixed — unreliable in email clients")
+    for img in re.finditer(r"<img\b[^>]*>", content, re.IGNORECASE):
+        if not re.search(r"\bwidth\s*=", img.group(), re.IGNORECASE):
+            result.info.append("An <img> has no explicit width attribute — some clients mis-size it")
+            break
+
+
 def check_education_page(template_path: Path, result: ValidationResult):
     """Check that a corresponding education page exists."""
     category_dir = template_path.parent
@@ -250,18 +326,115 @@ def check_metadata(template_path: Path, result: ValidationResult):
         return
 
     # Validate metadata fields for this template
-    for tmpl in templates:
-        if tmpl.get("filename") == template_path.name:
-            required_fields = ["name", "attack_vector", "difficulty", "gophish_variables", "suggested_subject_lines"]
-            for field_name in required_fields:
-                if not tmpl.get(field_name):
-                    result.warnings.append(f"metadata.json missing '{field_name}' for this template")
+    tmpl = next((t for t in templates if t.get("filename") == template_path.name), None)
+    if tmpl is None:
+        return
 
-            valid_difficulties = {"beginner", "intermediate", "advanced"}
-            if tmpl.get("difficulty") not in valid_difficulties:
-                result.errors.append(
-                    f"Invalid difficulty '{tmpl.get('difficulty')}' — must be one of: {valid_difficulties}"
-                )
+    for field_name in REQUIRED_META_FIELDS:
+        if not tmpl.get(field_name):
+            result.errors.append(f"metadata.json missing required field '{field_name}' for this template")
+
+    for field_name in RECOMMENDED_META_FIELDS:
+        if not tmpl.get(field_name):
+            result.warnings.append(f"metadata.json missing recommended field '{field_name}' for this template")
+
+    difficulty = tmpl.get("difficulty")
+    if difficulty and difficulty not in VALID_DIFFICULTIES:
+        result.errors.append(
+            f"Invalid difficulty '{difficulty}' — must be one of: {sorted(VALID_DIFFICULTIES)}"
+        )
+
+    attack_vector = tmpl.get("attack_vector")
+    if attack_vector and attack_vector not in VALID_ATTACK_VECTORS:
+        result.errors.append(
+            f"Invalid attack_vector '{attack_vector}' — must be one of: {sorted(VALID_ATTACK_VECTORS)}"
+        )
+
+    click_rate = tmpl.get("estimated_click_rate")
+    if click_rate and not CLICK_RATE_PATTERN.match(str(click_rate)):
+        result.errors.append(
+            f"Invalid estimated_click_rate '{click_rate}' — expected a range like '40-60%'"
+        )
+
+    subjects = tmpl.get("suggested_subject_lines")
+    if subjects is not None and (not isinstance(subjects, list) or not subjects):
+        result.errors.append("metadata.json 'suggested_subject_lines' must be a non-empty list")
+
+    gvars = tmpl.get("gophish_variables")
+    if gvars is not None:
+        if not isinstance(gvars, list):
+            result.errors.append("metadata.json 'gophish_variables' must be a list")
+        else:
+            for required_var in REQUIRED_VARS:
+                if required_var not in gvars:
+                    result.errors.append(
+                        f"metadata.json 'gophish_variables' must include {required_var}"
+                    )
+
+    tags = tmpl.get("tags")
+    if tags is not None and (not isinstance(tags, list) or not tags):
+        result.errors.append("metadata.json 'tags' must be a non-empty list")
+
+
+def validate_metadata_file(metadata_path: Path) -> ValidationResult:
+    """Validate the top-level structure of a metadata.json file (run once per file)."""
+    result = ValidationResult(path=rel_to_root(metadata_path))
+
+    try:
+        metadata = json.loads(metadata_path.read_text())
+    except json.JSONDecodeError as e:
+        result.errors.append(f"Invalid JSON: {e}")
+        return result
+
+    category = metadata.get("category")
+    if not category:
+        result.errors.append("Missing top-level 'category' field")
+    elif category != metadata_path.parent.name:
+        result.warnings.append(
+            f"'category' is '{category}' but the directory is '{metadata_path.parent.name}'"
+        )
+
+    if not metadata.get("description"):
+        result.warnings.append("Missing top-level 'description' field")
+
+    if not metadata.get("gophish_version_tested"):
+        result.warnings.append("Missing 'gophish_version_tested' field")
+
+    last_updated = metadata.get("last_updated")
+    if not last_updated:
+        result.warnings.append("Missing 'last_updated' field")
+    elif not ISO_DATE_PATTERN.match(str(last_updated)):
+        result.warnings.append(f"'last_updated' should be an ISO date (YYYY-MM-DD), got '{last_updated}'")
+
+    templates = metadata.get("templates")
+    if not isinstance(templates, list) or not templates:
+        result.errors.append("'templates' must be a non-empty list")
+        return result
+
+    # Cross-entry checks: orphan references and duplicate filenames
+    seen = set()
+    for tmpl in templates:
+        fn = tmpl.get("filename", "")
+        if not fn:
+            result.errors.append("A template entry is missing its 'filename'")
+            continue
+        if fn in seen:
+            result.errors.append(f"Duplicate template entry for '{fn}'")
+        seen.add(fn)
+        if not (metadata_path.parent / fn).exists():
+            result.errors.append(f"metadata.json references '{fn}' but the file does not exist")
+
+    return result
+
+
+def find_metadata_files(base_dir: Path) -> List[Path]:
+    """Find all metadata.json files, skipping excluded directories."""
+    found = []
+    for path in sorted(base_dir.rglob("metadata.json")):
+        if SKIP_DIRS & set(path.parts):
+            continue
+        found.append(path)
+    return found
 
 
 KNOWN_GOPHISH_VARS = {
@@ -353,7 +526,7 @@ def is_education_file(file_path: Path) -> bool:
 
 
 def validate_file(file_path: Path) -> ValidationResult:
-    result = ValidationResult(path=str(file_path.relative_to(ROOT)))
+    result = ValidationResult(path=rel_to_root(file_path))
 
     try:
         content = file_path.read_text(encoding="utf-8")
@@ -366,6 +539,8 @@ def validate_file(file_path: Path) -> ValidationResult:
     check_html_structure(content, result)
     check_gophish_variables(content, result, is_education)
     check_external_dependencies(content, result, file_path)
+    check_accessibility(content, result)
+    check_email_compatibility(content, result)
     check_tracker_placement(content, result, is_education)
     check_file_size(file_path, result)
 
@@ -428,7 +603,7 @@ def print_summary(results: List[ValidationResult], strict: bool = False):
 
     print()
     print(f"{BOLD}{'─' * 60}{RESET}")
-    print(f"{BOLD}Summary:{RESET} {total} templates validated")
+    print(f"{BOLD}Summary:{RESET} {total} files validated")
     print(f"  {GREEN}Passed:{RESET}   {passed}")
     if failed:
         print(f"  {RED}Failed:{RESET}   {failed} ({total_errors} errors)")
@@ -462,19 +637,27 @@ def main():
 
     if args.file:
         files = [args.file.resolve()]
+        metadata_files = []
     else:
         files = find_templates(args.dir.resolve())
+        metadata_files = find_metadata_files(args.dir.resolve())
 
     if not files:
         print(f"{YELLOW}No HTML template files found.{RESET}")
         sys.exit(0)
 
     print(f"{BOLD}GoPhish Template Validator{RESET}")
-    print(f"Scanning {len(files)} template(s)...\n")
+    print(f"Scanning {len(files)} template(s) and {len(metadata_files)} metadata file(s)...\n")
 
     results = []
     for file_path in files:
         result = validate_file(file_path)
+        results.append(result)
+        if not args.json:
+            print_result(result, verbose=args.verbose)
+
+    for metadata_path in metadata_files:
+        result = validate_metadata_file(metadata_path)
         results.append(result)
         if not args.json:
             print_result(result, verbose=args.verbose)

@@ -9,17 +9,84 @@
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
       "estimated_click_rate": "25-45%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Legal notice: Case documents require your review",
-        "You have been named in a legal proceeding — documents attached",
+        "You have been named in a legal proceeding \u2014 documents attached",
         "Urgent: Response required to avoid legal action"
       ],
       "education_page": "education/legal_education.html",
-      "tags": ["legal", "lawsuit", "documents", "credential-theft", "advanced"],
-      "notes": "Best for executives, managers, and legal/compliance staff. Legal threats are high-fear, low-click — but very effective for senior targets."
+      "tags": [
+        "legal",
+        "lawsuit",
+        "documents",
+        "credential-theft",
+        "advanced"
+      ],
+      "notes": "Best for executives, managers, and legal/compliance staff. Legal threats are high-fear, low-click \u2014 but very effective for senior targets."
+    },
+    {
+      "filename": "docusign_nda.html",
+      "name": "DocuSign \u2013 NDA Awaiting Signature",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Please DocuSign: Mutual Non-Disclosure Agreement",
+        "You have a document to sign",
+        "Action required: signature requested on Mutual NDA"
+      ],
+      "education_page": "education/legal_education.html",
+      "tags": [
+        "legal",
+        "docusign",
+        "e-signature",
+        "contract",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "The classic e-signature lure applied to legal. Very high credibility; deploy to legal, finance, and exec teams."
+    },
+    {
+      "filename": "legal_hold_notice.html",
+      "name": "Legal Hold \u2013 Acknowledgement Required",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Legal hold notification - acknowledgement required",
+        "Action required: preservation of documents",
+        "Confidential: legal hold notice"
+      ],
+      "education_page": "education/legal_education.html",
+      "tags": [
+        "legal",
+        "legal-hold",
+        "compliance",
+        "confidential",
+        "credential-harvest",
+        "advanced"
+      ],
+      "notes": "Authority + confidentiality drives compliance. Advanced: targets are reluctant to ignore a legal instruction."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

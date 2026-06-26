@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirm your upcoming reservation</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#003580;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Booking.com</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Hello {{.FirstName}},</p>
+<p style="margin:0 0 16px;">The property was unable to validate the payment method on your upcoming reservation. Until this is resolved, your booking is on hold and may be released to other guests.</p>
+<p style="margin:0 0 16px;">Please review your reservation and confirm your payment details to keep your stay secured.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#003580;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Review my reservation</a></p>
+<p style="margin:18px 0 0;">See you soon,<br>The Booking.com Team</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+Booking.com B.V., Herengracht 597, 1017 CE Amsterdam, Netherlands<br>This message was sent to {{.Email}}. Please do not reply to this email.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>

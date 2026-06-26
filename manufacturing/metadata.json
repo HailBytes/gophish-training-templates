@@ -9,16 +9,85 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Company}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Company}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
-        "Supplier portal update required — re-registration needed",
+        "Supplier portal update required \u2014 re-registration needed",
         "Procurement: Your vendor portal access is expiring",
         "Action Required: Update your supplier account credentials"
       ],
       "education_page": "education/manufacturing_education.html",
-      "tags": ["manufacturing", "supplier", "portal", "supply-chain", "credential-theft", "intermediate"]
+      "tags": [
+        "manufacturing",
+        "supplier",
+        "portal",
+        "supply-chain",
+        "credential-theft",
+        "intermediate"
+      ]
+    },
+    {
+      "filename": "sap_ariba_po.html",
+      "name": "SAP Ariba \u2013 Purchase Order Review",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "New purchase order awaiting your review",
+        "Action required: PO 4500291837 needs approval",
+        "A purchase order has been routed to you in SAP Ariba"
+      ],
+      "education_page": "education/manufacturing_education.html",
+      "tags": [
+        "manufacturing",
+        "sap",
+        "ariba",
+        "procurement",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Procurement workflow lure for manufacturing/supply-chain roles. Routine PO routing lowers suspicion."
+    },
+    {
+      "filename": "coupa_supplier_banking.html",
+      "name": "Coupa \u2013 Supplier Banking Verification",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Action required: verify your supplier banking details",
+        "Coupa: remittance information must be re-verified",
+        "Your supplier payment details are pending verification"
+      ],
+      "education_page": "education/manufacturing_education.html",
+      "tags": [
+        "manufacturing",
+        "coupa",
+        "supplier",
+        "banking",
+        "credential-harvest",
+        "advanced"
+      ],
+      "notes": "Banking-verification (BEC-adjacent) lure for vendor/AP-facing staff. Advanced; train on out-of-band verification."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

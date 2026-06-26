@@ -189,6 +189,24 @@ Copy this scaffold for new phishing email templates:
 - **Realistic but not weaponized:** Scenarios should be convincing enough to train employees but not so polished they'd fool a security professional
 - **No actual malware:** The only payload should be `{{.URL}}` pointing to GoPhish's landing page
 
+#### Email-client rendering & accessibility
+
+Real inboxes — especially Outlook desktop — are far stricter than browsers. The validator
+checks these; **warnings** are non-blocking but should be addressed, and **info** notes
+(shown with `--verbose`) are nudges for new templates:
+
+- **Set `lang` on `<html>`** (e.g. `lang="en"`, or `lang="pt-BR"` for Portuguese) — *warning*
+- **Every `<img>` needs `alt` text** (use `alt=""` for purely decorative images) — *warning*
+- **Links need text, an image, or an `aria-label`** — *warning*
+- **Inline all CSS** — external `<link rel="stylesheet">` won't load in many clients — *warning*
+- **Prefer table-based layout for structure.** `display:flex` / `display:grid` are ignored by
+  Outlook desktop, and `position:absolute/fixed` is unreliable — *info*
+- **Give `<img>` an explicit `width`** so clients size it correctly — *info*
+
+Favor a **plain-text-leaning** look with a few well-chosen brand cues (a colored header bar,
+the real sender domain in text) over heavy, over-styled layouts — it both renders more reliably
+and reads as a more believable everyday email.
+
 ---
 
 ## Education Page Scaffold
@@ -321,9 +339,55 @@ Every category directory must contain a `metadata.json`. Add your template to th
 }
 ```
 
-**Valid `attack_vector` values:** `credential_harvest` · `malware_delivery` · `information_gathering` · `awareness_only`
+### Metadata schema (enforced by the validator)
 
-**Valid `difficulty` values:** `beginner` · `intermediate` · `advanced`
+The validator checks the shape of every `metadata.json`. The following are **errors** (CI-blocking):
+
+| Field | Rule |
+|---|---|
+| `filename` | Required; must match an existing file in the directory |
+| `name` | Required, non-empty |
+| `attack_vector` | Required; one of `credential_harvest` · `malware_delivery` · `information_gathering` · `awareness_only` |
+| `difficulty` | Required; one of `beginner` · `intermediate` · `advanced` |
+| `estimated_click_rate` | Required; a percentage range like `40-60%` (regex `^\d{1,3}-\d{1,3}%$`) |
+| `gophish_variables` | Required list; must include `{{.URL}}` and `{{.Tracker}}` |
+| `suggested_subject_lines` | Required; non-empty list |
+| `education_page` | Required, non-empty |
+| `tags` | Required; non-empty list |
+| `templates` (top level) | Required; non-empty list, no duplicate `filename`s |
+
+The following are **warnings** (non-blocking, but please fix):
+
+- `notes` — recommended deployment guidance for operators
+- top-level `description`, `gophish_version_tested`, `last_updated` (ISO `YYYY-MM-DD`)
+- `category` should match the directory name
+
+> All templates are also compatible with **[HailBytes SAT](https://hailbytes.com/sat)**, the
+> enterprise-ready successor to GoPhish, which imports this metadata directly.
+
+---
+
+## Localization (non-English templates)
+
+Phishing simulations are most effective in the recipient's native language. Localized
+templates live in their own top-level, language-named category directory — for example
+`latam-portuguese/` (Portuguese, Brazil) and `latam-spanish/` (Spanish, LATAM).
+
+To add a new language pack:
+
+1. **Create a language directory** named `<region>-<language>` (e.g. `latam-spanish`) with an
+   `education/` subdirectory, just like any other category.
+2. **Write the templates in the target language**, including subject lines and body copy. Set the
+   correct `lang` on `<html>` (e.g. `lang="es"`, `lang="pt-BR"`).
+3. **Add a localized education page** so the post-click teaching moment is in the same language.
+4. **In `metadata.json`, include two extra top-level fields:**
+   - `language` — a BCP-47 tag (e.g. `es-419`, `pt-BR`)
+   - `region` — a human-readable audience (e.g. `LATAM / Spanish-speaking`)
+5. Prioritize the highest-impact lures first: Microsoft 365 / credential harvest, banking,
+   IT helpdesk, and local government/tax authorities.
+
+Everything else (the metadata schema, validator, and catalog) works exactly the same for
+localized packs — the catalog displays the `language` tag automatically.
 
 ---
 
@@ -355,9 +419,12 @@ Before opening a pull request, verify all items:
 - [ ] `metadata.json` exists in the category directory
 - [ ] Template is listed in the `templates` array
 - [ ] `filename` matches the actual file name
+- [ ] `attack_vector` is one of: `credential_harvest`, `malware_delivery`, `information_gathering`, `awareness_only`
 - [ ] `difficulty` is one of: `beginner`, `intermediate`, `advanced`
+- [ ] `estimated_click_rate` is a range like `40-60%`
 - [ ] At least 2 `suggested_subject_lines` provided
-- [ ] All GoPhish variables used are listed in `gophish_variables`
+- [ ] `gophish_variables` includes `{{.URL}}` and `{{.Tracker}}`
+- [ ] `education_page` and `tags` are populated
 
 ### Validation
 - [ ] `python3 tools/validate_templates.py --file path/to/template.html` passes with no errors
@@ -382,6 +449,12 @@ python3 tools/validate_templates.py --verbose
 
 # Exit with error code on warnings too (strict mode)
 python3 tools/validate_templates.py --strict
+
+# Regenerate the template catalog after adding/editing templates
+python3 tools/generate_catalog.py
+
+# Run the tool unit tests (standard library only — no dependencies)
+python3 -m unittest discover -s tests -t tests
 ```
 
 **Passing validator output looks like:**

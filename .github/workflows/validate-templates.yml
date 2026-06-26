@@ -5,7 +5,9 @@ on:
     paths:
       - "**/*.html"
       - "**/metadata.json"
-      - "tools/validate_templates.py"
+      - "tools/**"
+      - "tests/**"
+      - "docs/CATALOG.md"
   push:
     branches:
       - main
@@ -13,7 +15,9 @@ on:
     paths:
       - "**/*.html"
       - "**/metadata.json"
-      - "tools/validate_templates.py"
+      - "tools/**"
+      - "tests/**"
+      - "docs/CATALOG.md"
   workflow_dispatch:  # Allow manual runs
 
 jobs:
@@ -35,6 +39,9 @@ jobs:
         run: |
           python3 tools/validate_templates.py --verbose 2>&1 | tee validation_output.txt
           exit ${PIPESTATUS[0]}
+
+      - name: Check template catalog is up to date
+        run: python3 tools/generate_catalog.py --check
 
       - name: Upload validation report
         if: always()
@@ -121,6 +128,22 @@ jobs:
               repo: context.repo.repo,
               body: body,
             });
+
+  tools-tests:
+    name: Tools unit tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run tool tests (stdlib only — no dependencies)
+        run: python3 -m unittest discover -s tests -t tests -v
 
   lint-metadata:
     name: Validate metadata.json files

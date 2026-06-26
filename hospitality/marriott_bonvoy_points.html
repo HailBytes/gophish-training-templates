@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Marriott Bonvoy points are expiring</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#1c2b39;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Marriott Bonvoy</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Dear {{.FirstName}},</p>
+<p style="margin:0 0 16px;">Our records show your Marriott Bonvoy account has been inactive for 22 months. Under the Bonvoy program terms, points expire after 24 months of inactivity.</p>
+<p style="margin:0 0 16px;">You currently have <strong>12,500 points</strong> scheduled to expire on the date below. Signing in to review your account counts as account activity and keeps your points active.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#1c2b39;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Sign in to keep my points</a></p>
+<p style="margin:0 0 16px;">Points expiration date: 7 days from today.</p>
+<p style="margin:18px 0 0;">Thank you for being a member,<br>Marriott Bonvoy Member Services</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+Marriott International, 7750 Wisconsin Avenue, Bethesda, MD 20814<br>This message was sent to {{.Email}}. Please do not reply to this email.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>

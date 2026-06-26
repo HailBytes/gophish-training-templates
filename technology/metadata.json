@@ -9,17 +9,84 @@
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
-        "Your API key expires tonight — regenerate now",
+        "Your API key expires tonight \u2014 regenerate now",
         "Critical: Production API key reaching expiration",
         "Developer alert: API authentication credentials expiring"
       ],
       "education_page": "education/technology_education.html",
-      "tags": ["technology", "developer", "api-key", "credential-theft", "advanced"],
+      "tags": [
+        "technology",
+        "developer",
+        "api-key",
+        "credential-theft",
+        "advanced"
+      ],
       "notes": "Best for engineering and DevOps teams. The combination of production urgency and technical language bypasses skepticism in technical staff."
+    },
+    {
+      "filename": "github_new_device.html",
+      "name": "GitHub \u2013 New Device Sign-In",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "[GitHub] A new device signed in to your account",
+        "Please verify a new sign-in to your GitHub account",
+        "Security alert: new sign-in to GitHub"
+      ],
+      "education_page": "education/technology_education.html",
+      "tags": [
+        "technology",
+        "github",
+        "developer",
+        "sign-in",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Developer-focused sign-in alert. High value: a compromised GitHub account can expose source code and secrets."
+    },
+    {
+      "filename": "aws_account_verification.html",
+      "name": "AWS \u2013 Account Verification",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Action required: verify your AWS account",
+        "Your AWS account is scheduled for suspension",
+        "AWS: confirm your billing information to avoid interruption"
+      ],
+      "education_page": "education/technology_education.html",
+      "tags": [
+        "technology",
+        "aws",
+        "cloud",
+        "billing",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Cloud-account suspension lure for engineering/DevOps. Threat of stopped resources drives urgency."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

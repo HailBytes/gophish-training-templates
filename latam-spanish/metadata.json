@@ -1,0 +1,125 @@
+{
+  "category": "latam-spanish",
+  "industry": "Cross-industry",
+  "description": "Spanish-language (LATAM) phishing simulation templates for Spanish-speaking enterprise environments. Scenarios include Microsoft 365 account security, banking alerts, IT helpdesk password resets, and tax-authority (SAT) impersonation.",
+  "language": "es-419",
+  "region": "LATAM / Spanish-speaking",
+  "templates": [
+    {
+      "filename": "microsoft365_corporativo.html",
+      "name": "Microsoft 365 – Cuenta Bloqueada",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Acción requerida: su cuenta de Microsoft 365 fue bloqueada",
+        "Actividad de inicio de sesión inusual en su cuenta",
+        "Verifique su cuenta de Microsoft 365 para evitar la suspensión"
+      ],
+      "education_page": "education/latam_spanish_education.html",
+      "tags": [
+        "microsoft",
+        "office365",
+        "spanish",
+        "latam",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Parallels the Portuguese Microsoft 365 template. Universal Microsoft 365 lure for Spanish-speaking staff."
+    },
+    {
+      "filename": "notificacion_bancaria.html",
+      "name": "Alerta de Seguridad Bancaria",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "URGENTE: acceso sospechoso detectado en su cuenta",
+        "Alerta de seguridad — verifique su cuenta ahora",
+        "Su cuenta fue bloqueada temporalmente por sospecha de fraude"
+      ],
+      "education_page": "education/latam_spanish_education.html",
+      "tags": [
+        "banking",
+        "financial",
+        "spanish",
+        "latam",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Generic bank-security alert (no specific bank named) so it works across LATAM markets."
+    },
+    {
+      "filename": "helpdesk_ti.html",
+      "name": "Soporte TI – Restablecer Contraseña",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Acción requerida: restablezca su contraseña corporativa",
+        "Su contraseña expira hoy — restablézcala ahora",
+        "Soporte de TI: revalidación de contraseña requerida"
+      ],
+      "education_page": "education/latam_spanish_education.html",
+      "tags": [
+        "it-support",
+        "helpdesk",
+        "password",
+        "spanish",
+        "latam",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "IT-helpdesk password reset. Beginner difficulty, very high click rate; good baseline test."
+    },
+    {
+      "filename": "sat_notificacion.html",
+      "name": "SAT – Notificación Fiscal",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Notificación del SAT: requerimiento pendiente",
+        "Acción requerida: revise su situación fiscal",
+        "Aviso oficial: documento fiscal pendiente de revisión"
+      ],
+      "education_page": "education/latam_spanish_education.html",
+      "tags": [
+        "government",
+        "tax",
+        "sat",
+        "spanish",
+        "latam",
+        "credential-harvest",
+        "advanced"
+      ],
+      "notes": "Tax-authority (SAT, Mexico) impersonation; parallels the Portuguese Receita Federal template. Advanced — authority-based pressure."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2026-06-26"
+}

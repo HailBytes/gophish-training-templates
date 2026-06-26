@@ -9,16 +9,83 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "You have 3 new connection requests on LinkedIn",
         "LinkedIn: Your profile appeared in 47 searches this week",
         "Action required: Verify your LinkedIn account"
       ],
       "education_page": "education/social_media_education.html",
-      "tags": ["social-media", "linkedin", "professional", "credential-theft", "intermediate"]
+      "tags": [
+        "social-media",
+        "linkedin",
+        "professional",
+        "credential-theft",
+        "intermediate"
+      ]
+    },
+    {
+      "filename": "linkedin_inmail.html",
+      "name": "LinkedIn \u2013 New InMail from Recruiter",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "You have a new InMail message",
+        "A recruiter sent you a message on LinkedIn",
+        "{{.FirstName}}, you have 1 new message"
+      ],
+      "education_page": "education/social_media_education.html",
+      "tags": [
+        "social-media",
+        "linkedin",
+        "inmail",
+        "recruiter",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Recruiter-outreach lure taps curiosity and career interest. Broadly effective, low suspicion."
+    },
+    {
+      "filename": "instagram_login_alert.html",
+      "name": "Instagram \u2013 New Login Alert",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "We noticed a new login to your Instagram account",
+        "Was this you? New login detected",
+        "Security alert: new login to your account"
+      ],
+      "education_page": "education/social_media_education.html",
+      "tags": [
+        "social-media",
+        "instagram",
+        "login-alert",
+        "security",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "New-login security alert. Relevant where staff use social accounts for marketing/brand work."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }

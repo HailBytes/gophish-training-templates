@@ -9,17 +9,85 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Date}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Date}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Microsoft account: Unusual sign-in activity",
-        "Action required: Review recent sign-in from Bogotá, Colombia",
+        "Action required: Review recent sign-in from Bogot\u00e1, Colombia",
         "Security alert: Unrecognized device accessed your Microsoft account"
       ],
       "education_page": "education/microsoft_education.html",
-      "tags": ["microsoft", "security-alert", "sign-in", "credential-theft", "intermediate"],
-      "notes": "Use {{.Date}} for current date realism. The specific location (Bogotá) adds believability. Works across all Microsoft 365 users."
+      "tags": [
+        "microsoft",
+        "security-alert",
+        "sign-in",
+        "credential-theft",
+        "intermediate"
+      ],
+      "notes": "Use {{.Date}} for current date realism. The specific location (Bogot\u00e1) adds believability. Works across all Microsoft 365 users."
+    },
+    {
+      "filename": "sharepoint_document_share.html",
+      "name": "SharePoint \u2013 Document Shared",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "A document has been shared with you",
+        "{{.FirstName}}, a file was shared with you on SharePoint",
+        "\"Q3 Budget\" has been shared with you"
+      ],
+      "education_page": "education/microsoft_education.html",
+      "tags": [
+        "microsoft",
+        "sharepoint",
+        "office365",
+        "file-share",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Shared-document lure is among the highest-clicking Microsoft scenarios. Universal across Microsoft 365 orgs."
+    },
+    {
+      "filename": "microsoft365_password_expiry.html",
+      "name": "Microsoft 365 \u2013 Password Expiration",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Your Microsoft 365 password expires today",
+        "Action required: your password is about to expire",
+        "Keep your Microsoft 365 password to avoid sign-out"
+      ],
+      "education_page": "education/microsoft_education.html",
+      "tags": [
+        "microsoft",
+        "office365",
+        "password",
+        "expiration",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Password-expiry for the Microsoft category. Pairs with the suspicious-sign-in template for a multi-touch sequence."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }
