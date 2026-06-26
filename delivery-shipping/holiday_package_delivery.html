@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Delivery Exception</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-top: 4px solid #ff6600;
+        }
+        .header {
+            padding: 20px;
+            background-color: #fafafa;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .header-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff6600;
+            margin: 0;
+        }
+        .header-subtitle {
+            font-size: 11px;
+            color: #777777;
+            margin: 2px 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .hold-box {
+            background-color: #fff0e6;
+            border-left: 4px solid #ff6600;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .hold-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #cc5200;
+            margin: 0 0 5px 0;
+        }
+        .hold-text {
+            font-size: 13px;
+            margin: 0;
+            color: #555555;
+        }
+        .tracking-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .tracking-table th, .tracking-table td {
+            padding: 10px;
+            text-align: left;
+            font-size: 13px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .tracking-table th {
+            width: 35%;
+            font-weight: bold;
+            color: #666666;
+        }
+        .tracking-table td {
+            color: #333333;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            background-color: #ff6600;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #e65c00;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #fafafa;
+            padding: 20px;
+            border-top: 1px solid #eeeeee;
+            font-size: 11px;
+            color: #777777;
+            line-height: 1.5;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin: 0 0 15px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">Global Express Courier</div>
+            <div class="header-subtitle">Holiday Shipment &amp; Logistics Service</div>
+        </div>
+
+        <div class="content">
+            <h2>Holiday Shipment Exception Notification</h2>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>We are writing to notify you that we attempted to deliver your holiday parcel. However, the shipment is currently on hold at our local distribution hub due to an incomplete delivery address and an outstanding customs processing fee.</p>
+
+            <div class="hold-box">
+                <div class="hold-title">Status: Delivery Exception (Hold at Facility)</div>
+                <div class="hold-text">Please update your address details and settle the outstanding fee to reschedule your package delivery.</div>
+            </div>
+
+            <table class="tracking-table">
+                <tr>
+                    <th>Tracking ID</th>
+                    <td>GE-8492041-XM</td>
+                </tr>
+                <tr>
+                    <th>Estimated Delivery</th>
+                    <td>Pending Verification</td>
+                </tr>
+                <tr>
+                    <th>Parcel Contents</th>
+                    <td>Holiday Gift Parcel (Decl. Value: $45.00)</td>
+                </tr>
+                <tr>
+                    <th>Hold Reason</th>
+                    <td>Unpaid Customs Duty / Address Verification Required</td>
+                </tr>
+                <tr>
+                    <th>Duty Outstanding</th>
+                    <td style="color: #ff6600; font-weight: bold;">$1.50 USD</td>
+                </tr>
+            </table>
+
+            <p>To ensure your package is delivered in time for the holidays, you must verify your shipping address and process the payment within 24 hours.</p>
+
+            <div class="cta-container">
+                <a href="{{.URL}}" class="cta-button">Resolve Delivery Hold &amp; Pay Duty</a>
+            </div>
+
+            <p>Failure to update details or settle the customs balance will result in the package being returned to the sender after 3 business days.</p>
+
+            <p>Sincerely,<br>
+            <strong>Global Express Logistics Support</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>This automated shipment tracking message was dispatched to {{.Email}}. Please do not reply directly to this message.</p>
+            <p style="margin-top: 10px;">© 2026 Global Express Courier Network. All rights reserved.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

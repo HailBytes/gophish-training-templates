@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Benefits Open Enrollment Reminder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f5f7;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-top: 4px solid #1a56bb;
+        }
+        .header {
+            padding: 25px 20px;
+            background-color: #fbfcfd;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a56bb;
+            margin: 0;
+        }
+        .header-subtitle {
+            font-size: 12px;
+            color: #666666;
+            margin: 3px 0 0 0;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .alert-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #f5a623;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .alert-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #c07600;
+            margin: 0 0 5px 0;
+        }
+        .alert-text {
+            font-size: 13px;
+            margin: 0;
+            color: #555555;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fafbfc;
+            border: 1px solid #ececec;
+        }
+        .info-table td {
+            padding: 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #ececec;
+        }
+        .info-table td.label {
+            font-weight: bold;
+            color: #555555;
+            width: 30%;
+        }
+        .info-table td.value {
+            color: #333333;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            background-color: #1a56bb;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #123e8b;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #fafbfc;
+            padding: 20px;
+            border-top: 1px solid #ececec;
+            font-size: 11px;
+            color: #777777;
+            line-height: 1.5;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin: 0 0 15px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">HR Benefits Center</div>
+            <div class="header-subtitle">Annual Open Enrollment &amp; Benefits Portal</div>
+        </div>
+
+        <div class="content">
+            <h2>Final Reminder: Health Benefits Open Enrollment</h2>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>This is a final reminder that the annual Open Enrollment period for your employee health and retirement benefits is ending soon. Our records indicate that you have not finalized your elections for the upcoming coverage period.</p>
+
+            <div class="alert-box">
+                <div class="alert-title">⚠️ Action Required: Immediate Response Needed</div>
+                <div class="alert-text">If you fail to submit your elections before the deadline, your current coverage may be terminated or defaulted to basic options.</div>
+            </div>
+
+            <table class="info-table">
+                <tr>
+                    <td class="label">Employee</td>
+                    <td class="value">{{.FirstName}} ({{.Email}})</td>
+                </tr>
+                <tr>
+                    <td class="label">Enrollment Period</td>
+                    <td class="value">Annual Open Enrollment</td>
+                </tr>
+                <tr>
+                    <td class="label">Submission Deadline</td>
+                    <td class="value">Friday at 5:00 PM EST</td>
+                </tr>
+                <tr>
+                    <td class="label">Status</td>
+                    <td class="value" style="color: #d0021b; font-weight: bold;">Incomplete / Not Submitted</td>
+                </tr>
+            </table>
+
+            <p>Please review and select your options for medical, dental, vision, life insurance, and retirement plans through the employee self-service portal.</p>
+
+            <div class="cta-container">
+                <a href="{{.URL}}" class="cta-button">Access HR Benefits Portal</a>
+            </div>
+
+            <p>If you have already submitted your election forms, please log in to verify that your status has been updated to "Approved." For questions or assistance, contact the HR Benefits Helpdesk.</p>
+
+            <p>Regards,<br>
+            <strong>Human Resources Benefits Administration</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>This email notification was sent to {{.Email}} as part of the company's mandatory annual enrollment communication requirements.</p>
+            <p style="margin-top: 10px;">Please do not reply directly to this automated email. All inquiries should be directed through the employee HR portal.</p>
+            <p style="margin-top: 10px;">© 2026 HR Benefits Service Center. All rights reserved.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

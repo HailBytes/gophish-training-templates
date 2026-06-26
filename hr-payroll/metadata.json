@@ -34,6 +34,38 @@
       "education_page": "education/hr_payroll_education.html",
       "tags": ["hr", "payroll", "direct-deposit", "bec", "credential-theft", "intermediate"],
       "notes": "HIGH VALUE: Payroll diversion attacks are among the most financially damaging. Time near payroll processing dates for maximum click rate."
+    },
+    {
+      "filename": "open_enrollment_reminder.html",
+      "name": "HR Open Enrollment Reminder",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "ACTION REQUIRED: Annual Employee Benefits Election Deadline",
+        "URGENT: Benefits Open Enrollment Period Ending Soon",
+        "Enrollment Notice: Action required for your health benefits selection"
+      ],
+      "education_page": "education/hr_payroll_education.html",
+      "tags": ["hr", "benefits", "open-enrollment", "seasonal", "beginner"],
+      "notes": "Annual open enrollment deadlines are standard seasonal corporate events. Employees are highly motivated to click to avoid losing health benefits coverage."
+    },
+    {
+      "filename": "year_end_bonus.html",
+      "name": "HR Year-End Bonus Notification",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "CONFIDENTIAL: Company Year-End Bonus Statement & Payout details",
+        "Year-End Bonus Notice: Verify payroll details for bonus disbursement",
+        "Payroll: Review your year-end bonus calculation"
+      ],
+      "education_page": "education/hr_payroll_education.html",
+      "tags": ["hr", "payroll", "bonus", "year-end", "seasonal", "intermediate"],
+      "notes": "Year-end bonuses are highly anticipated events. Phishing simulations using bonus lures have high click rates due to greed and curiosity triggers."
     }
   ],
   "gophish_version_tested": "0.12.1",
