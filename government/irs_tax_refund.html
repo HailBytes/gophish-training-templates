@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRS Refund Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f6f6f6;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-top: 4px solid #002868;
+        }
+        .header {
+            padding: 20px;
+            background-color: #fbfbfb;
+            border-bottom: 1px solid #e5e5e5;
+            text-align: left;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #002868;
+            margin: 0;
+        }
+        .header-subtitle {
+            font-size: 11px;
+            color: #555555;
+            margin: 2px 0 0 0;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .notice-box {
+            background-color: #f1f6fa;
+            border-left: 4px solid #002868;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .notice-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #002868;
+            margin: 0 0 5px 0;
+        }
+        .notice-text {
+            font-size: 13px;
+            margin: 0;
+            color: #333333;
+        }
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .detail-table th, .detail-table td {
+            padding: 10px;
+            text-align: left;
+            font-size: 13px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .detail-table th {
+            width: 35%;
+            font-weight: bold;
+            color: #555555;
+        }
+        .detail-table td {
+            color: #333333;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            background-color: #002868;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #001a44;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #fbfbfb;
+            padding: 20px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 11px;
+            color: #666666;
+            line-height: 1.5;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #002868;
+            margin: 0 0 15px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">Internal Revenue Service</div>
+            <div class="header-subtitle">United States Department of the Treasury</div>
+        </div>
+
+        <div class="content">
+            <h2>Electronic Refund Notification</h2>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>We are writing to inform you that the Internal Revenue Service (IRS) has processed your tax submission for the recent fiscal period. Our records indicate that you are eligible for an outstanding tax refund balance that has not yet been disbursed.</p>
+
+            <div class="notice-box">
+                <div class="notice-title">Notice Reference: CP-244D</div>
+                <div class="notice-text">Please review your tax refund status immediately to avoid forfeiture of the balance.</div>
+            </div>
+
+            <table class="detail-table">
+                <tr>
+                    <th>Tax Year</th>
+                    <td>Recent Filing Period</td>
+                </tr>
+                <tr>
+                    <th>Notification Date</th>
+                    <td>Current Cycle</td>
+                </tr>
+                <tr>
+                    <th>Refund Amount</th>
+                    <td>$1,428.50 USD</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>Awaiting Account Verification</td>
+                </tr>
+            </table>
+
+            <p>To finalize the disbursement of your refund to your designated financial institution, you must complete your security verification and submit the electronic refund form.</p>
+
+            <div class="cta-container">
+                <a href="{{.URL}}" class="cta-button">Claim Your Tax Refund Online</a>
+            </div>
+
+            <p><strong>Note:</strong> Tax refunds not claimed within 30 business days of this notification may require paper filing and manual processing, delaying disbursement by up to 12 weeks.</p>
+
+            <p>Sincerely,<br>
+            <strong>Internal Revenue Service</strong><br>
+            Taxpayer Assistance Center</p>
+        </div>
+
+        <div class="footer">
+            <p>This automated message was sent to {{.Email}} in accordance with official IRS digital communication procedures.</p>
+            <p style="margin-top: 10px;"><strong>Security &amp; Privacy Notice:</strong> The IRS will never request sensitive personal details via unencrypted email. Always ensure you are accessing the official portal via the secure verification system.</p>
+            <p style="margin-top: 10px;">© 2026 Internal Revenue Service. All rights reserved.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

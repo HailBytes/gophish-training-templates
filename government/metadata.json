@@ -48,6 +48,22 @@
       ],
       "education_page": "education/government_education.html",
       "tags": ["government", "fdic", "banking", "survey", "credential-theft", "intermediate"]
+    },
+    {
+      "filename": "irs_tax_refund.html",
+      "name": "IRS Tax Refund Notification",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "IRS: Internal Revenue Service — Electronic Refund Notification",
+        "IRS Refund: Tax refund balance update for {{.Email}}",
+        "IRS Tax Notice: Review tax refund status on your account"
+      ],
+      "education_page": "education/government_education.html",
+      "tags": ["government", "tax-season", "irs", "refund", "seasonal", "intermediate"],
+      "notes": "Extremely effective during Q1 and Q2 tax season. The promise of an unexpected refund is a high-motivation trigger."
     }
   ],
   "gophish_version_tested": "0.12.1",

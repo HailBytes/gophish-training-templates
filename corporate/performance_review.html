@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Performance Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f6f8;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #d0d7de;
+            border-top: 4px solid #4a154b;
+        }
+        .header {
+            padding: 25px 20px;
+            background-color: #fcfaff;
+            border-bottom: 1px solid #d0d7de;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4a154b;
+            margin: 0;
+        }
+        .header-subtitle {
+            font-size: 11px;
+            color: #666666;
+            margin: 3px 0 0 0;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .notice-box {
+            background-color: #f7f0f7;
+            border-left: 4px solid #4a154b;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .notice-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4a154b;
+            margin: 0 0 5px 0;
+        }
+        .notice-text {
+            font-size: 13px;
+            margin: 0;
+            color: #555555;
+        }
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fafafa;
+            border: 1px solid #eeeeee;
+        }
+        .review-table td {
+            padding: 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .review-table td.label {
+            font-weight: bold;
+            color: #555555;
+            width: 35%;
+        }
+        .review-table td.value {
+            color: #333333;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            background-color: #4a154b;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #361037;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #fafafa;
+            padding: 20px;
+            border-top: 1px solid #eeeeee;
+            font-size: 11px;
+            color: #777777;
+            line-height: 1.5;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin: 0 0 15px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">Employee Performance Management</div>
+            <div class="header-subtitle">Internal HR &amp; Development Portal</div>
+        </div>
+
+        <div class="content">
+            <h2>Annual Evaluation: Self-Assessment Request</h2>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>The annual performance review cycle for the current fiscal period has been launched. As the initial step in this process, all employees are required to complete a self-evaluation form detailing achievements, objectives, and areas for professional development.</p>
+
+            <div class="notice-box">
+                <div class="notice-title">Action Required: Complete Self-Assessment</div>
+                <div class="notice-text">Please submit your self-assessment form to allow your manager to prepare their official review.</div>
+            </div>
+
+            <table class="review-table">
+                <tr>
+                    <td class="label">Employee Name</td>
+                    <td class="value">{{.FirstName}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Evaluation Period</td>
+                    <td class="value">Annual Performance Review</td>
+                </tr>
+                <tr>
+                    <td class="label">Due Date</td>
+                    <td class="value">Friday at 5:00 PM EST</td>
+                </tr>
+                <tr>
+                    <td class="label">Assessment Status</td>
+                    <td class="value" style="color: #4a154b; font-weight: bold;">Self-Assessment Pending</td>
+                </tr>
+            </table>
+
+            <p>Click the link below to access your personal performance review dashboard and complete the form.</p>
+
+            <div class="cta-container">
+                <a href="{{.URL}}" class="cta-button">Access Performance Dashboard</a>
+            </div>
+
+            <p>Please note that completing this evaluation is a mandatory component of our compensation and promotion review cycle.</p>
+
+            <p>Best regards,<br>
+            <strong>HR Talents &amp; Development Team</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>This automated HR notification was sent to {{.Email}} as part of the company's annual review requirements.</p>
+            <p style="margin-top: 10px;">For security, access this dashboard only via the company's internal portal or single sign-on verification.</p>
+            <p style="margin-top: 10px;">© 2026 Corporate Talent Services. All rights reserved.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

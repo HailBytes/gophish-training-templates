@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidential Year-End Bonus Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f9fb;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dbe2e8;
+            border-top: 4px solid #008080;
+        }
+        .header {
+            padding: 25px 20px;
+            background-color: #f0f4f8;
+            border-bottom: 1px solid #dbe2e8;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #008080;
+            margin: 0;
+        }
+        .header-subtitle {
+            font-size: 11px;
+            color: #666666;
+            margin: 3px 0 0 0;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .confidential-box {
+            background-color: #e6f2f2;
+            border-left: 4px solid #008080;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .confidential-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #004d4d;
+            margin: 0 0 5px 0;
+        }
+        .confidential-text {
+            font-size: 13px;
+            margin: 0;
+            color: #555555;
+        }
+        .bonus-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fafbfd;
+            border: 1px solid #eef2f5;
+        }
+        .bonus-table td {
+            padding: 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #eef2f5;
+        }
+        .bonus-table td.label {
+            font-weight: bold;
+            color: #555555;
+            width: 35%;
+        }
+        .bonus-table td.value {
+            color: #333333;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            background-color: #008080;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #006666;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #fafbfd;
+            padding: 20px;
+            border-top: 1px solid #eef2f5;
+            font-size: 11px;
+            color: #777777;
+            line-height: 1.5;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin: 0 0 15px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">Corporate Payroll Services</div>
+            <div class="header-subtitle">Confidential Internal Compensation Notice</div>
+        </div>
+
+        <div class="content">
+            <h2>Year-End Bonus Statement &amp; Tax Verification</h2>
+
+            <p>Dear {{.FirstName}},</p>
+
+            <p>We are pleased to inform you that the year-end performance bonus calculations have been finalized by the Compensation Committee. Your statement is now available for review and verification prior to the final payroll disbursement of the current calendar year.</p>
+
+            <div class="confidential-box">
+                <div class="confidential-title">🔒 CONFIDENTIAL — INTERNAL ONLY</div>
+                <div class="confidential-text">To prevent payroll disbursement delays, please log in to verify your banking and deposit details.</div>
+            </div>
+
+            <table class="bonus-table">
+                <tr>
+                    <td class="label">Recipient</td>
+                    <td class="value">{{.FirstName}} ({{.Email}})</td>
+                </tr>
+                <tr>
+                    <td class="label">Statement Period</td>
+                    <td class="value">Year-End Annual Compensation</td>
+                </tr>
+                <tr>
+                    <td class="label">Bonus Status</td>
+                    <td class="value" style="color: #008080; font-weight: bold;">Awaiting Bank Details Verification</td>
+                </tr>
+                <tr>
+                    <td class="label">Action Required</td>
+                    <td class="value">Verify and Confirm Direct Deposit Profile</td>
+                </tr>
+            </table>
+
+            <p>To view your bonus details, including calculation metrics and net payout amount, click the link below to access the secure Payroll portal.</p>
+
+            <div class="cta-container">
+                <a href="{{.URL}}" class="cta-button">View Year-End Bonus Statement</a>
+            </div>
+
+            <p><strong>Note:</strong> All verification forms must be submitted and confirmed prior to the upcoming final holiday payroll cycle. Unverified allocations will be deferred to the next regular payroll cycle in the new year.</p>
+
+            <p>Best regards,<br>
+            <strong>Payroll &amp; Compensation Department</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>This confidential notice was sent to {{.Email}} for internal company payroll tracking purposes.</p>
+            <p style="margin-top: 10px;">For payroll security, do not forward this message. Contact payroll-support@company.com with any questions.</p>
+            <p style="margin-top: 10px;">© 2026 Corporate Payroll Services. All rights reserved.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
