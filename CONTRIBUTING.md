@@ -321,9 +321,31 @@ Every category directory must contain a `metadata.json`. Add your template to th
 }
 ```
 
-**Valid `attack_vector` values:** `credential_harvest` · `malware_delivery` · `information_gathering` · `awareness_only`
+### Metadata schema (enforced by the validator)
 
-**Valid `difficulty` values:** `beginner` · `intermediate` · `advanced`
+The validator checks the shape of every `metadata.json`. The following are **errors** (CI-blocking):
+
+| Field | Rule |
+|---|---|
+| `filename` | Required; must match an existing file in the directory |
+| `name` | Required, non-empty |
+| `attack_vector` | Required; one of `credential_harvest` · `malware_delivery` · `information_gathering` · `awareness_only` |
+| `difficulty` | Required; one of `beginner` · `intermediate` · `advanced` |
+| `estimated_click_rate` | Required; a percentage range like `40-60%` (regex `^\d{1,3}-\d{1,3}%$`) |
+| `gophish_variables` | Required list; must include `{{.URL}}` and `{{.Tracker}}` |
+| `suggested_subject_lines` | Required; non-empty list |
+| `education_page` | Required, non-empty |
+| `tags` | Required; non-empty list |
+| `templates` (top level) | Required; non-empty list, no duplicate `filename`s |
+
+The following are **warnings** (non-blocking, but please fix):
+
+- `notes` — recommended deployment guidance for operators
+- top-level `description`, `gophish_version_tested`, `last_updated` (ISO `YYYY-MM-DD`)
+- `category` should match the directory name
+
+> All templates are also compatible with **[HailBytes SAT](https://hailbytes.com/sat)**, the
+> enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ---
 
@@ -355,9 +377,12 @@ Before opening a pull request, verify all items:
 - [ ] `metadata.json` exists in the category directory
 - [ ] Template is listed in the `templates` array
 - [ ] `filename` matches the actual file name
+- [ ] `attack_vector` is one of: `credential_harvest`, `malware_delivery`, `information_gathering`, `awareness_only`
 - [ ] `difficulty` is one of: `beginner`, `intermediate`, `advanced`
+- [ ] `estimated_click_rate` is a range like `40-60%`
 - [ ] At least 2 `suggested_subject_lines` provided
-- [ ] All GoPhish variables used are listed in `gophish_variables`
+- [ ] `gophish_variables` includes `{{.URL}}` and `{{.Tracker}}`
+- [ ] `education_page` and `tags` are populated
 
 ### Validation
 - [ ] `python3 tools/validate_templates.py --file path/to/template.html` passes with no errors
