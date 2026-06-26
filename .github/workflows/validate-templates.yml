@@ -5,8 +5,8 @@ on:
     paths:
       - "**/*.html"
       - "**/metadata.json"
-      - "tools/validate_templates.py"
-      - "tools/generate_catalog.py"
+      - "tools/**"
+      - "tests/**"
       - "docs/CATALOG.md"
   push:
     branches:
@@ -15,8 +15,8 @@ on:
     paths:
       - "**/*.html"
       - "**/metadata.json"
-      - "tools/validate_templates.py"
-      - "tools/generate_catalog.py"
+      - "tools/**"
+      - "tests/**"
       - "docs/CATALOG.md"
   workflow_dispatch:  # Allow manual runs
 
@@ -128,6 +128,22 @@ jobs:
               repo: context.repo.repo,
               body: body,
             });
+
+  tools-tests:
+    name: Tools unit tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run tool tests (stdlib only — no dependencies)
+        run: python3 -m unittest discover -s tests -t tests -v
 
   lint-metadata:
     name: Validate metadata.json files

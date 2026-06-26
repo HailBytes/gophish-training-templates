@@ -407,6 +407,12 @@ python3 tools/validate_templates.py --verbose
 
 # Exit with error code on warnings too (strict mode)
 python3 tools/validate_templates.py --strict
+
+# Regenerate the template catalog after adding/editing templates
+python3 tools/generate_catalog.py
+
+# Run the tool unit tests (standard library only — no dependencies)
+python3 -m unittest discover -s tests -t tests
 ```
 
 **Passing validator output looks like:**
