@@ -5,7 +5,8 @@ on:
     paths:
       - "**/*.html"
       - "**/metadata.json"
-      - "tools/validate_templates.py"
+      - "tools/**"
+      - "tests/**"
   push:
     branches:
       - main
@@ -13,7 +14,8 @@ on:
     paths:
       - "**/*.html"
       - "**/metadata.json"
-      - "tools/validate_templates.py"
+      - "tools/**"
+      - "tests/**"
   workflow_dispatch:  # Allow manual runs
 
 jobs:
@@ -258,3 +260,31 @@ jobs:
           else:
               print("✓ All new templates have education pages and metadata")
           EOF
+
+  run-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.base_ref }}
+
+      - name: Run tests if tools modified
+        run: |
+          if git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -q "^tools/"; then
+            echo "Modifications under tools/ detected. Running unit tests..."
+            python3 -m unittest discover -s tests/
+          else
+            echo "No modifications under tools/ detected. Skipping tests."
+          fi

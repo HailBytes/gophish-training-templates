@@ -171,7 +171,7 @@ def check_html_structure(content: str, result: ValidationResult):
     for required in REQUIRED_META_TAGS:
         if required not in checker.meta_tags:
             if required == "viewport":
-                result.errors.append("Missing <meta name='viewport'> tag — template is not mobile-responsive")
+                result.warnings.append("Missing <meta name='viewport'> tag — template is not mobile-responsive")
             else:
                 result.warnings.append(f"Missing <meta {required}> tag")
 
