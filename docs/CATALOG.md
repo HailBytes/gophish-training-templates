@@ -12,7 +12,7 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 97
+- **Templates:** 103
 - **Categories:** 29
 - **Most recent update:** 2026-06-26
 
@@ -306,7 +306,7 @@ _Phishing templates impersonating Microsoft products and services_
 
 ### `quishing` — quishing
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _QR code phishing (quishing) templates. These bypass email security filters by encoding malicious URLs in QR code images._
 
@@ -314,6 +314,9 @@ _QR code phishing (quishing) templates. These bypass email security filters by e
 |---|---|---|---|---|---|
 | MFA Re-enrollment QR Code | [`qr_code_mfa.html`](quishing/qr_code_mfa.html) | credential_harvest | intermediate | 30-50% | 3 |
 | New Office WiFi QR Code | [`qr_code_wifi.html`](quishing/qr_code_wifi.html) | credential_harvest | beginner | 40-60% | 3 |
+| Quishing – DocuSign Document | [`qr_docusign.html`](quishing/qr_docusign.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Quishing – Parking Payment | [`qr_parking_payment.html`](quishing/qr_parking_payment.html) | credential_harvest | beginner | 30-50% | 3 |
+| Quishing – Shared Document | [`qr_shared_document.html`](quishing/qr_shared_document.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `retail` — retail
 
@@ -329,7 +332,7 @@ _Phishing templates impersonating retail brands and loyalty programs_
 
 ### `smishing` — smishing
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _SMS phishing (smishing) simulation templates rendered as email. These train employees to recognize text-message-based phishing attacks._
 
@@ -337,6 +340,9 @@ _SMS phishing (smishing) simulation templates rendered as email. These train emp
 |---|---|---|---|---|---|
 | USPS Package Delivery Smishing | [`package_delivery_sms.html`](smishing/package_delivery_sms.html) | credential_harvest | beginner | 50-70% | 3 |
 | Chase Bank Fraud Alert Smishing | [`bank_alert_sms.html`](smishing/bank_alert_sms.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Smishing – MFA Code Request | [`mfa_code_sms.html`](smishing/mfa_code_sms.html) | credential_harvest | advanced | 35-55% | 3 |
+| Smishing – Payroll Direct Deposit | [`payroll_update_sms.html`](smishing/payroll_update_sms.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Smishing – IT Help Desk Reset | [`it_helpdesk_sms.html`](smishing/it_helpdesk_sms.html) | credential_harvest | beginner | 45-65% | 3 |
 
 ### `social-media` — social-media
 

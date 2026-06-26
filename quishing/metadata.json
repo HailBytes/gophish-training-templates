@@ -10,14 +10,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Action Required: Re-enroll in Multi-Factor Authentication",
-        "IT Security: MFA registration expires — action required today",
+        "IT Security: MFA registration expires \u2014 action required today",
         "Mandatory: Update your authenticator app by end of business"
       ],
       "education_page": "education/quishing_education.html",
-      "tags": ["quishing", "qr-code", "mfa", "authenticator", "it-security", "credential-theft", "intermediate"],
+      "tags": [
+        "quishing",
+        "qr-code",
+        "mfa",
+        "authenticator",
+        "it-security",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Extremely effective against non-technical users. MFA re-enrollment is a plausible IT request that employees can't easily verify. Include a manual link fallback for GoPhish tracking."
     },
     {
@@ -26,17 +39,113 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "IT: Connect to new office WiFi using the QR code below",
-        "Facilities & IT: Office network upgrade — connect by Friday",
-        "New secure WiFi network — employee action required"
+        "Facilities & IT: Office network upgrade \u2014 connect by Friday",
+        "New secure WiFi network \u2014 employee action required"
       ],
       "education_page": "education/quishing_education.html",
-      "tags": ["quishing", "qr-code", "wifi", "network", "it-security", "beginner"],
+      "tags": [
+        "quishing",
+        "qr-code",
+        "wifi",
+        "network",
+        "it-security",
+        "beginner"
+      ],
       "notes": "WiFi upgrade is a very believable IT scenario. Works well for office return campaigns or after physical office changes. The manual download link is the primary GoPhish tracking vector."
+    },
+    {
+      "filename": "qr_docusign.html",
+      "name": "Quishing \u2013 DocuSign Document",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Please review and sign: scan the QR code",
+        "You have a document to sign",
+        "Action required: signature requested"
+      ],
+      "education_page": "education/quishing_education.html",
+      "tags": [
+        "quishing",
+        "qr-code",
+        "docusign",
+        "e-signature",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "QR-based e-signature lure. QR scanning moves the click to a personal phone, often outside email security controls."
+    },
+    {
+      "filename": "qr_parking_payment.html",
+      "name": "Quishing \u2013 Parking Payment",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Outstanding parking payment - scan to pay",
+        "Action needed: settle your parking fee",
+        "Parking notice: payment required"
+      ],
+      "education_page": "education/quishing_education.html",
+      "tags": [
+        "quishing",
+        "qr-code",
+        "parking",
+        "payment",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "Real-world quishing vector (fake parking/toll QR notices). Beginner; relatable to anyone who drives."
+    },
+    {
+      "filename": "qr_shared_document.html",
+      "name": "Quishing \u2013 Shared Document",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "A secure document has been shared with you",
+        "Scan to view the document shared with you",
+        "{{.FirstName}}, you have a secure file to view"
+      ],
+      "education_page": "education/quishing_education.html",
+      "tags": [
+        "quishing",
+        "qr-code",
+        "file-share",
+        "document",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "'Mobile-only secure document' pretext justifies the QR and pushes the victim off the monitored desktop."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2024-01-01"
+  "last_updated": "2026-06-26"
 }
