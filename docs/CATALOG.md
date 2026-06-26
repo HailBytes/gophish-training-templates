@@ -12,7 +12,7 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 76
+- **Templates:** 91
 - **Categories:** 27
 - **Most recent update:** 2026-06-26
 
@@ -52,7 +52,7 @@ _Phishing templates impersonating workplace collaboration platforms_
 
 ### `corporate` — corporate
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Generic corporate phishing templates covering news, travel, and internal communications_
 
@@ -60,10 +60,11 @@ _Generic corporate phishing templates covering news, travel, and internal commun
 |---|---|---|---|---|---|
 | Breaking News Alert | [`breaking_news.html`](corporate/breaking_news.html) | credential_harvest | intermediate | 35-55% | 3 |
 | Corporate Travel Agency Notice | [`travel_agency.html`](corporate/travel_agency.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Corporate Performance Review Request | [`performance_review.html`](corporate/performance_review.html) | credential_harvest | intermediate | 40-60% | 3 |
 
 ### `delivery-shipping` — delivery-shipping
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 3
 
 _Phishing templates impersonating package delivery and shipping companies_
 
@@ -71,6 +72,7 @@ _Phishing templates impersonating package delivery and shipping companies_
 |---|---|---|---|---|---|
 | DHL Package Delivery | [`dhl_package.html`](delivery-shipping/dhl_package.html) | credential_harvest | beginner | 55-75% | 3 |
 | Package Pickup Notice | [`package_pickup.html`](delivery-shipping/package_pickup.html) | credential_harvest | beginner | 50-70% | 3 |
+| Holiday Package Delivery Hold | [`holiday_package_delivery.html`](delivery-shipping/holiday_package_delivery.html) | credential_harvest | beginner | 55-75% | 3 |
 
 ### `e-signature` — e-signature
 
@@ -83,7 +85,7 @@ _Phishing templates impersonating electronic signature platforms_
 | DocuSign NDA Signature Request | [`docusign_signature.html`](e-signature/docusign_signature.html) | credential_harvest | intermediate | 40-60% | 3 |
 | Adobe Acrobat Sign Employment Amendment | [`adobe_sign.html`](e-signature/adobe_sign.html) | credential_harvest | intermediate | 35-55% | 3 |
 
-### `education` — education-sector
+### `education` — education
 
 **Industry:** Higher Education  ·  **Templates:** 2
 
@@ -118,7 +120,7 @@ _Phishing templates targeting financial transactions and banking_
 
 ### `government` — government
 
-**Industry:** Cross-industry  ·  **Templates:** 3
+**Industry:** Cross-industry  ·  **Templates:** 4
 
 _Phishing templates impersonating government agencies and regulatory bodies_
 
@@ -127,6 +129,7 @@ _Phishing templates impersonating government agencies and regulatory bodies_
 | Better Business Bureau Complaint | [`better_business.html`](government/better_business.html) | credential_harvest | intermediate | 30-50% | 3 |
 | FBI/Law Enforcement Crime Report | [`crime_report.html`](government/crime_report.html) | credential_harvest | intermediate | 30-50% | 3 |
 | FDIC Banking Survey | [`fdic_survey.html`](government/fdic_survey.html) | credential_harvest | intermediate | 25-45% | 3 |
+| IRS Tax Refund Notification | [`irs_tax_refund.html`](government/irs_tax_refund.html) | credential_harvest | intermediate | 35-55% | 3 |
 
 ### `healthcare` — healthcare
 
@@ -154,7 +157,7 @@ _Phishing templates impersonating hotel and travel booking services_
 
 ### `hr-payroll` — hr-payroll
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 4
 
 _Phishing templates impersonating HR and payroll systems — high-value targets for payroll diversion_
 
@@ -162,6 +165,8 @@ _Phishing templates impersonating HR and payroll systems — high-value targets 
 |---|---|---|---|---|---|
 | Benefits Open Enrollment | [`benefits_enrollment.html`](hr-payroll/benefits_enrollment.html) | credential_harvest | intermediate | 45-65% | 3 |
 | Payroll Direct Deposit Update | [`payroll_direct_deposit.html`](hr-payroll/payroll_direct_deposit.html) | credential_harvest | intermediate | 40-60% | 3 |
+| HR Open Enrollment Reminder | [`open_enrollment_reminder.html`](hr-payroll/open_enrollment_reminder.html) | credential_harvest | beginner | 50-70% | 3 |
+| HR Year-End Bonus Notification | [`year_end_bonus.html`](hr-payroll/year_end_bonus.html) | credential_harvest | intermediate | 45-65% | 3 |
 
 ### `identity` — identity
 
@@ -255,7 +260,7 @@ _Phishing templates targeting manufacturing and supply chain personnel_
 
 ### `microsoft` — microsoft
 
-**Industry:** Cross-industry  ·  **Templates:** 3
+**Industry:** Cross-industry  ·  **Templates:** 6
 
 _Phishing templates impersonating Microsoft products and services_
 
@@ -264,10 +269,13 @@ _Phishing templates impersonating Microsoft products and services_
 | Microsoft Account Suspicious Sign-In | [`microsoft_security.html`](microsoft/microsoft_security.html) | credential_harvest | intermediate | 35-55% | 3 |
 | SharePoint – Document Shared | [`sharepoint_document_share.html`](microsoft/sharepoint_document_share.html) | credential_harvest | beginner | 45-65% | 3 |
 | Microsoft 365 – Password Expiration | [`microsoft365_password_expiry.html`](microsoft/microsoft365_password_expiry.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Microsoft Teams Direct Message Alert | [`microsoft_teams_invite.html`](microsoft/microsoft_teams_invite.html) | credential_harvest | intermediate | 35-50% | 3 |
+| Microsoft OneDrive File Share Notification | [`onedrive_file_share.html`](microsoft/onedrive_file_share.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Microsoft 365 MFA Re-enrollment Notification | [`microsoft_mfa_update.html`](microsoft/microsoft_mfa_update.html) | credential_harvest | intermediate | 40-60% | 3 |
 
 ### `quishing` — quishing
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 6
 
 _QR code phishing (quishing) templates. These bypass email security filters by encoding malicious URLs in QR code images._
 
@@ -275,6 +283,10 @@ _QR code phishing (quishing) templates. These bypass email security filters by e
 |---|---|---|---|---|---|
 | MFA Re-enrollment QR Code | [`qr_code_mfa.html`](quishing/qr_code_mfa.html) | credential_harvest | intermediate | 30-50% | 3 |
 | New Office WiFi QR Code | [`qr_code_wifi.html`](quishing/qr_code_wifi.html) | credential_harvest | beginner | 40-60% | 3 |
+| Microsoft MFA QR Code Update | [`microsoft_mfa_qr.html`](quishing/microsoft_mfa_qr.html) | credential_harvest | intermediate | 35-55% | 3 |
+| Municipal Unpaid Toll QR Citation | [`parking_toll_qr.html`](quishing/parking_toll_qr.html) | credential_harvest | beginner | 45-65% | 3 |
+| Scan to View Encrypted Document QR | [`secure_document_qr.html`](quishing/secure_document_qr.html) | credential_harvest | intermediate | 35-50% | 3 |
+| DocuSign Signature Request QR | [`docusign_qr.html`](quishing/docusign_qr.html) | credential_harvest | intermediate | 40-60% | 3 |
 
 ### `retail` — retail
 
@@ -290,7 +302,7 @@ _Phishing templates impersonating retail brands and loyalty programs_
 
 ### `smishing` — smishing
 
-**Industry:** Cross-industry  ·  **Templates:** 2
+**Industry:** Cross-industry  ·  **Templates:** 5
 
 _SMS phishing (smishing) simulation templates rendered as email. These train employees to recognize text-message-based phishing attacks._
 
@@ -298,6 +310,9 @@ _SMS phishing (smishing) simulation templates rendered as email. These train emp
 |---|---|---|---|---|---|
 | USPS Package Delivery Smishing | [`package_delivery_sms.html`](smishing/package_delivery_sms.html) | credential_harvest | beginner | 50-70% | 3 |
 | Chase Bank Fraud Alert Smishing | [`bank_alert_sms.html`](smishing/bank_alert_sms.html) | credential_harvest | intermediate | 40-60% | 3 |
+| SSO Portal MFA Phone Verification Smishing | [`mfa_verification_sms.html`](smishing/mfa_verification_sms.html) | credential_harvest | intermediate | 35-55% | 3 |
+| HR Benefits Direct Deposit Smishing | [`payroll_hr_sms.html`](smishing/payroll_hr_sms.html) | credential_harvest | beginner | 45-65% | 3 |
+| IT Helpdesk Password Reset Smishing | [`it_helpdesk_sms.html`](smishing/it_helpdesk_sms.html) | credential_harvest | intermediate | 40-60% | 3 |
 
 ### `social-media` — social-media
 

@@ -32,7 +32,8 @@
         "FBI IC3: Cybercrime report filed using your information"
       ],
       "education_page": "education/government_education.html",
-      "tags": ["government", "law-enforcement", "fbi", "credential-theft", "intermediate"]
+      "tags": ["government", "law-enforcement", "fbi", "credential-theft", "intermediate"],
+      "notes": "High-anxiety authority lure invoking law enforcement. Powerful, but use with care — the fear factor can cause undue stress, so favor it for mature programs with strong follow-up education. Most credible when the sender domain mimics a known agency."
     },
     {
       "filename": "fdic_survey.html",
@@ -47,7 +48,8 @@
         "FDIC Compliance: Complete your required annual verification"
       ],
       "education_page": "education/government_education.html",
-      "tags": ["government", "fdic", "banking", "survey", "credential-theft", "intermediate"]
+      "tags": ["government", "fdic", "banking", "survey", "credential-theft", "intermediate"],
+      "notes": "Authority-and-compliance lure aimed at banking and finance staff; the 'mandatory survey' framing leverages regulatory pressure. The lower click rate reflects its narrower, more skeptical audience — pair it with finance-specific training."
     },
     {
       "filename": "irs_tax_refund.html",

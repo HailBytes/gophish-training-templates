@@ -32,7 +32,8 @@
         "Final notice: Package will be returned if not claimed"
       ],
       "education_page": "education/delivery_phishing_education.html",
-      "tags": ["delivery", "shipping", "pickup", "credential-theft", "beginner"]
+      "tags": ["delivery", "shipping", "pickup", "credential-theft", "beginner"],
+      "notes": "A reliable beginner-level lure with broad appeal — nearly everyone is expecting a package. Click rates peak during holiday shopping seasons. Keep the sender generic, since most targets won't scrutinize which carrier it claims to be."
     },
     {
       "filename": "holiday_package_delivery.html",

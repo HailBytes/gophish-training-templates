@@ -16,7 +16,8 @@
         "MyChart: Suspicious login detected on your account"
       ],
       "education_page": "education/healthcare_education.html",
-      "tags": ["healthcare", "patient-portal", "security-alert", "credential-theft", "intermediate"]
+      "tags": ["healthcare", "patient-portal", "security-alert", "credential-theft", "intermediate"],
+      "notes": "Security-alert lure targeting patients and healthcare staff familiar with portals like MyChart. The suspicious-login pretext drives urgency. Most credible when branded to the EHR/portal system your organization actually uses."
     },
     {
       "filename": "insurance_verification.html",
@@ -31,7 +32,8 @@
         "Your health insurance information needs to be verified"
       ],
       "education_page": "education/healthcare_education.html",
-      "tags": ["healthcare", "insurance", "verification", "credential-theft", "beginner"]
+      "tags": ["healthcare", "insurance", "verification", "credential-theft", "beginner"],
+      "notes": "Effective across healthcare and general staff — insurance prompts feel routine and personal. The appointment/coverage angle motivates quick action without alarm. A strong beginner-level baseline for HIPAA-conscious organizations."
     },
     {
       "filename": "hipaa_compliance_alert.html",

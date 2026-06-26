@@ -32,7 +32,8 @@
         "Skype Credit: Auto-recharge payment failed"
       ],
       "education_page": "education/financial_education.html",
-      "tags": ["skype", "financial", "payment", "subscription", "credential-theft", "intermediate"]
+      "tags": ["skype", "financial", "payment", "subscription", "credential-theft", "intermediate"],
+      "notes": "Niche lure best suited to organizations still using Skype or Skype for Business. The expiring-subscription pretext applies moderate pressure. Consider a Teams-based template instead in fully migrated Microsoft 365 environments."
     }
   ],
   "gophish_version_tested": "0.12.1",
