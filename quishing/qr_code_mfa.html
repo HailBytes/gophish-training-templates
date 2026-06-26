@@ -39,23 +39,15 @@
             <p>Dear {{.FirstName}},</p>
 
             <div class="notice-box">
-                ⚠️ <strong>Your MFA enrollment expires soon.</strong> Due to a security policy update, all employees must re-enroll their authenticator app by the deadline below.
+                <strong>Your MFA enrollment needs to be refreshed.</strong> Following a security policy update, all employees are asked to re-enroll their authenticator app by the date below.
             </div>
 
-            <p>Our identity platform has been upgraded. Your existing MFA registration will be invalidated and you will be locked out of company systems unless you complete re-enrollment.</p>
+            <p>Our identity platform has been upgraded. Your existing MFA registration will be retired, so please complete re-enrollment to keep access to company systems.</p>
 
             <p><strong>To re-enroll, scan the QR code below with your Microsoft Authenticator or Google Authenticator app:</strong></p>
 
             <div class="qr-section">
                 <div class="qr-label">Scan with your Authenticator App</div>
-                <!--
-                    DEPLOYMENT NOTE: Replace this SVG placeholder with an actual QR code
-                    image that encodes your GoPhish campaign URL ({{.URL}}).
-                    Generate using: qrencode -o qr.png "{{.URL}}"
-                    Then embed as base64: <img src="data:image/png;base64,..."  alt="QR code"/>
-
-                    This placeholder visually simulates a QR code for training purposes.
-                -->
                 <div class="qr-placeholder">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="display:block;">
                         <rect width="200" height="200" fill="white"/>
@@ -103,7 +95,7 @@
             </div>
 
             <div class="deadline">
-                ⏰ Enrollment deadline: <strong>End of Business Today</strong>
+                Enrollment deadline: <strong>End of Business Today</strong>
             </div>
 
             <div class="steps">
@@ -125,12 +117,14 @@
                 </div>
             </div>
 
-            <p>If you have already re-enrolled or need assistance, contact the IT Help Desk.</p>
+            <p>If you have already re-enrolled or need assistance, contact the IT Service Desk at ext. 4357.</p>
+
+            <p style="margin-top:18px;">Regards,<br><strong>IT Service Desk — Identity &amp; Access</strong></p>
         </div>
 
         <div class="footer">
-            This message was sent to {{.Email}}. This is an automated security notification from IT.<br>
-            Do not reply to this email — contact the Help Desk for support.
+            This message was sent to {{.Email}}. This is an automated notification from the IT Service Desk.<br>
+            Do not reply to this email — contact the Service Desk for support.
         </div>
     </div>
 

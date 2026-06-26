@@ -16,7 +16,7 @@
         "{{.Tracker}}"
       ],
       "suggested_subject_lines": [
-        "Your rewards points expire in 48 hours \u2014 claim now",
+        "Your rewards points expire in 48 hours — claim now",
         "Don't lose your rewards! Points expiring soon",
         "Last chance: Redeem your loyalty points before they disappear"
       ],
@@ -34,7 +34,7 @@
     },
     {
       "filename": "amazon_order_problem.html",
-      "name": "Amazon \u2013 Order Problem",
+      "name": "Amazon – Order Problem",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "35-55%",
@@ -42,7 +42,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "There was a problem processing your order",
@@ -62,7 +63,7 @@
     },
     {
       "filename": "costco_membership_renewal.html",
-      "name": "Costco \u2013 Membership Renewal Failed",
+      "name": "Costco – Membership Renewal Failed",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "30-50%",
@@ -70,7 +71,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Your Costco membership auto-renewal failed",

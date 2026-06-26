@@ -142,8 +142,15 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo-main">MINISTÉRIO DA FAZENDA</div>
-            <div class="logo-title">Receita Federal do Brasil</div>
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="vertical-align:middle;">
+                <div style="width:34px;height:34px;border:2px solid #ffdf00;border-radius:50%;text-align:center;line-height:30px;color:#ffdf00;font-size:15px;font-weight:700;">RF</div>
+            </td>
+            <td style="padding-left:12px;vertical-align:middle;">
+                <div class="logo-main">MINISTÉRIO DA FAZENDA</div>
+                <div class="logo-title">Receita Federal do Brasil</div>
+            </td>
+            </tr></table>
         </div>
         <div class="gov-bar">GOV.BR — PORTAL DE SERVIÇOS DO GOVERNO FEDERAL</div>
 
@@ -155,8 +162,8 @@
             <p>Identificamos uma pendência relacionada à sua Declaração de Imposto de Renda Pessoa Física (DIRPF). Sua declaração foi retida em malha fina e requer regularização para evitar a aplicação de multas e juros.</p>
 
             <div class="notif-box">
-                <h3>Notificação Fiscal n.º NF-2025-{{.RId}}</h3>
-                <p>Data de emissão: 17/05/2025 — Prazo para regularização: 30 dias</p>
+                <h3>Notificação Fiscal n.º NF-2026-{{.RId}}</h3>
+                <p>Data de emissão: {{.Date}} — Prazo para regularização: 30 dias</p>
             </div>
 
             <table class="detail-table">
@@ -164,12 +171,16 @@
                     <th colspan="2">Detalhes da Pendência</th>
                 </tr>
                 <tr>
-                    <td>CPF / E-mail cadastrado</td>
+                    <td>CPF do contribuinte</td>
+                    <td>***.456.789-**</td>
+                </tr>
+                <tr>
+                    <td>E-mail cadastrado</td>
                     <td>{{.Email}}</td>
                 </tr>
                 <tr>
                     <td>Exercício fiscal</td>
-                    <td>2024 (ano-calendário 2024)</td>
+                    <td>2026 (ano-calendário 2025)</td>
                 </tr>
                 <tr>
                     <td>Motivo</td>
@@ -190,6 +201,9 @@
             <p style="text-align: center;">
                 <a href="{{.URL}}" class="cta-button">Acessar Portal e-CAC</a>
             </p>
+
+            <p style="text-align: center; font-size: 12px; color: #666666; word-break: break-all;">Caso o botão não funcione, acesse:<br>
+            <span style="color: #006400;">https://cav.receita.economia-gov.br/ecac/regularizar?nf={{.RId}}</span></p>
 
             <p class="disclaimer">A não regularização no prazo estipulado resultará na lavratura de auto de infração com aplicação de multa de 75% sobre o valor do imposto devido, acrescida de juros SELIC. Esta notificação tem validade legal e dispensa comunicação prévia por carta.</p>
         </div>

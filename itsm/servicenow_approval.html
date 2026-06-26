@@ -9,11 +9,18 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#032d42;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">ServiceNow</td></tr>
+<tr><td style="background:#032d42;padding:16px 24px;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="padding-right:9px;vertical-align:middle;">
+<span style="display:inline-block;width:22px;height:22px;background:#62D84E;border-radius:50%;"></span>
+</td>
+<td style="vertical-align:middle;color:#ffffff;font-size:18px;font-weight:bold;">ServiceNow</td>
+</tr></table>
+</td></tr>
 <tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Hi {{.FirstName}},</p>
 <p style="margin:0 0 16px;">A request has been submitted that requires your approval in ServiceNow.</p>
-<p style="margin:0 0 16px;"><strong>Request:</strong> RITM0148293 &mdash; Application access<br><strong>Requested for:</strong> a member of your team<br><strong>State:</strong> Pending your approval</p>
+<p style="margin:0 0 16px;"><strong>Request:</strong> RITM0148293 &mdash; Salesforce access (Sales Cloud, standard user)<br><strong>Requested for:</strong> Marcus Bell<br><strong>Submitted:</strong> {{.Date}}<br><strong>State:</strong> Pending your approval</p>
 <p style="margin:0 0 16px;">Please review the request and record your decision.</p>
 <p style="margin:24px 0;"><a href="{{.URL}}" style="background:#032d42;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Review and approve</a></p>
 <p style="margin:18px 0 0;">ServiceNow Workflow Notifications</p>

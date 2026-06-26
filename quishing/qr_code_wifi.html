@@ -39,7 +39,7 @@
             <p>Hi {{.FirstName}},</p>
 
             <div class="info-box">
-                📶 <strong>Our office WiFi has been upgraded.</strong> The previous network (CorpWifi-2G) will be decommissioned this Friday. All employees must connect to the new secure network before then.
+                <strong>Our office WiFi has been upgraded.</strong> The previous network (CorpWifi-2G) will be decommissioned this Friday. Please connect to the new secure network before then.
             </div>
 
             <p>To connect to the new network, scan the QR code below with your phone or laptop camera. This will automatically configure the secure WPA3 credentials on your device.</p>
@@ -47,12 +47,6 @@
             <div class="qr-section">
                 <h3>Scan to Connect to CorpWifi-Secure</h3>
                 <p>Point your device camera at the code below</p>
-                <!--
-                    DEPLOYMENT NOTE: Replace the SVG with an actual QR code image that encodes
-                    your GoPhish campaign URL ({{.URL}}). Generate with:
-                    qrencode -o wifi-qr.png "{{.URL}}"
-                    Embed as: <img src="data:image/png;base64,..." alt="WiFi QR Code" />
-                -->
                 <div class="qr-placeholder">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <rect width="200" height="200" fill="white"/>
@@ -105,7 +99,7 @@
 
             <p>The old CorpWifi-2G network will go offline this Friday at 5 PM. Please connect before then to avoid disruption.</p>
 
-            <p>Questions? Contact IT at helpdesk@company.com or ext. 4357.</p>
+            <p>Questions? Contact the IT Service Desk at ext. 4357.</p>
         </div>
 
         <div class="footer">

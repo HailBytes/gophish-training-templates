@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #f9f9f9;
+            color: #5e5e5e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 56px 16px;
+            min-height: 100%;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+        .brand .ring {
+            width: 26px;
+            height: 26px;
+            border: 7px solid #00297a;
+            border-radius: 50%;
+            box-sizing: border-box;
+            margin-right: 8px;
+        }
+        .brand .word {
+            font-size: 26px;
+            font-weight: 700;
+            color: #00297a;
+            letter-spacing: -0.5px;
+        }
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #e1e1e1;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+            padding: 40px 36px;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 400;
+            color: #1d1d21;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .field { margin-bottom: 18px; }
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #5e5e5e;
+            margin-bottom: 6px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            border: 1px solid #a7a7a7;
+            border-radius: 3px;
+            padding: 10px 12px;
+            font-size: 14px;
+            color: #1d1d21;
+            outline: none;
+        }
+        input:focus { border-color: #1662dd; box-shadow: 0 0 0 1px #1662dd; }
+        .remember {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+        .remember input { margin-right: 8px; }
+        button {
+            width: 100%;
+            background: #1662dd;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover { background: #0d52c4; }
+        .help {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 13px;
+        }
+        .help a { color: #1662dd; text-decoration: none; }
+        .help a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 26px;
+            font-size: 12px;
+            color: #8e8e8e;
+            text-align: center;
+        }
+        .footer a { color: #8e8e8e; text-decoration: none; margin: 0 6px; }
+        .footer a:hover { text-decoration: underline; }
+        @media (max-width: 440px) {
+            .card { padding: 32px 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="brand">
+        <span class="ring" aria-hidden="true"></span>
+        <span class="word">okta</span>
+    </div>
+
+    <div class="card">
+        <h1>Sign In</h1>
+
+        <form method="POST" action="">
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="{{.Email}}" autocomplete="username" required>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+            </div>
+
+            <div class="remember">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember" style="font-weight:400;margin-bottom:0;">Remember me</label>
+            </div>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <div class="help">
+            <a href="/help/forgot-password">Need help signing in?</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>Powered by Okta</div>
+        <div style="margin-top:6px;">
+            <a href="/privacy">Privacy Policy</a>
+        </div>
+    </div>
+</body>
+</html>

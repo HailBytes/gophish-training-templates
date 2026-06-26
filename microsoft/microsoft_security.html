@@ -7,7 +7,7 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
         .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .header { background: #0078d4; color: white; padding: 20px; text-align: center; }
+        .header { background: #ffffff; border-bottom: 1px solid #e1dfdd; padding: 18px 24px; }
         .content { padding: 30px; }
         .security-alert { background: #fff4ce; border: 1px solid #ffb900; padding: 20px; border-radius: 6px; margin: 20px 0; }
         .location-info { background: #f3f2f1; padding: 15px; border-radius: 6px; margin: 15px 0; }
@@ -21,14 +21,19 @@
             margin: 20px 0;
             font-weight: 600;
         }
-        h1 { color: #0078d4; margin: 0; }
+        h1 { color: #5e5e5e; margin: 0; font-size: 18px; vertical-align: middle; }
+        .secondary-link { color: #0078d4; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Microsoft Account</h1>
-            <p style="margin: 0;">Security & Privacy</p>
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="padding-right:8px;line-height:0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td width="9" height="9" style="background:#f25022;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#7fba00;font-size:0;line-height:0;">&nbsp;</td></tr><tr><td height="2" colspan="3" style="font-size:0;line-height:0;">&nbsp;</td></tr><tr><td width="9" height="9" style="background:#00a4ef;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#ffb900;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+            </td>
+            <td><h1>Microsoft account</h1></td>
+            </tr></table>
         </div>
         
         <div class="content">
@@ -41,7 +46,7 @@
             <p>We detected multiple sign-in attempts to your Microsoft account from an unrecognized location.</p>
             
             <div class="location-info">
-                <h4>📍 Sign-in Details:</h4>
+                <h4 style="margin:0 0 8px;">Sign-in details</h4>
                 <strong>Location:</strong> Bogotá, Colombia<br>
                 <strong>Device:</strong> Unknown Windows PC<br>
                 <strong>Time:</strong> {{.Date}} at 3:47 AM<br>
@@ -53,8 +58,10 @@
             <p>If this was you traveling or using a new device, you can ignore this message. However, if you don't recognize this activity, please take immediate action to secure your account.</p>
             
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">🛡️ Review Account Activity</a>
+                <a href="{{.URL}}" class="cta-button">Review account activity</a>
             </p>
+
+            <p style="text-align: center; font-size: 13px;">If this wasn't you, <a href="#" class="secondary-link">secure your account</a>.</p>
             
             <p><strong>To better protect your account:</strong></p>
             <ul>
@@ -73,7 +80,7 @@
             <hr style="margin: 30px 0; border: 1px solid #e1dfdd;">
             
             <p style="font-size: 12px; color: #605e5c;">
-                This email was sent to {{.Email}}. Microsoft respects your privacy. To learn more, please read our <a href="#" style="color: #0078d4;">Privacy Statement</a>.<br>
+                This email was sent to {{.Email}}. Microsoft respects your privacy. To learn more, please read our <a href="https://privacy.microsoft.com/privacystatement" style="color: #0078d4;">Privacy Statement</a>.<br>
                 Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
             </p>
         </div>

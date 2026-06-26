@@ -11,10 +11,10 @@
       "estimated_click_rate": "25-45%",
       "gophish_variables": [
         "{{.FirstName}}",
-        "{{.Date}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Okta: New sign-in from Kyiv, Ukraine",
@@ -30,11 +30,11 @@
         "security-alert",
         "advanced"
       ],
-      "notes": "Advanced difficulty \u2014 lower click rate expected but highest-value target. Listing specific apps (Salesforce, GitHub) accessed increases panic. Use {{.Date}} for realism."
+      "notes": "Advanced difficulty — lower click rate expected but highest-value target. Listing specific apps (Salesforce, GitHub) accessed increases panic. Use {{.Date}} for realism."
     },
     {
       "filename": "duo_reenroll.html",
-      "name": "Duo Security \u2013 Device Re-enrollment",
+      "name": "Duo Security – Device Re-enrollment",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
@@ -62,7 +62,7 @@
     },
     {
       "filename": "okta_password_expiry.html",
-      "name": "Okta \u2013 Password Expiration",
+      "name": "Okta – Password Expiration",
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "35-55%",

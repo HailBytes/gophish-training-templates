@@ -9,14 +9,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Breaking: Major announcement affecting your department",
         "Urgent internal news — employees must read",
         "CEO announcement: Important company update"
       ],
       "education_page": "education/corporate_education.html",
-      "tags": ["corporate", "news", "internal-comms", "credential-theft", "intermediate"],
+      "tags": [
+        "corporate",
+        "news",
+        "internal-comms",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Leans on curiosity and fear of missing out around company news. Most effective during periods of real organizational change (reorgs, M&A) when employees expect announcements. Avoid running it alongside genuine all-hands comms to prevent confusion."
     },
     {
@@ -25,14 +36,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Your upcoming travel booking requires action",
         "Corporate Travel: Update your travel profile before your trip",
         "Travel approval: Your trip itinerary has changed"
       ],
       "education_page": "education/corporate_education.html",
-      "tags": ["corporate", "travel", "booking", "credential-theft", "intermediate"],
+      "tags": [
+        "corporate",
+        "travel",
+        "booking",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Best aimed at frequent travelers and sales teams. The booking-change pretext creates time pressure without alarming the recipient. Customize the agency name to match a travel tool your organization actually uses."
     },
     {
@@ -41,14 +64,28 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.RId}}"
+      ],
       "suggested_subject_lines": [
         "Annual Performance Evaluation: Complete your self-assessment",
         "Manager Request: Finalize your performance review by Friday",
         "HR Performance: Review your feedback for the annual appraisal cycle"
       ],
       "education_page": "education/corporate_education.html",
-      "tags": ["corporate", "evaluation", "performance-review", "hr", "seasonal", "intermediate"],
+      "tags": [
+        "corporate",
+        "evaluation",
+        "performance-review",
+        "hr",
+        "seasonal",
+        "intermediate"
+      ],
       "notes": "Performance review cycles are high-anxiety events. Employees are highly motivated to respond quickly to HR requests regarding appraisals and salary reviews."
     }
   ],

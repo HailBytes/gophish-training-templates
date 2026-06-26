@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urgent Notice: Unpaid Toll Violation</title>
+    <title>E-ZPass: Unpaid Toll Notice</title>
     <style>
         body { margin: 0; padding: 20px; background-color: #f6f6f6; font-family: Arial, Helvetica, sans-serif; }
         .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #dcdcdc; }
-        .header { background: #333333; color: #ffeb3b; padding: 20px 24px; text-align: center; }
-        .header-title { font-size: 22px; font-weight: bold; letter-spacing: 1px; }
+        .header { background: #5c2d91; color: #ffffff; padding: 20px 24px; }
+        .header-title { font-size: 22px; font-weight: bold; }
         .content { padding: 30px 24px; }
         .alert-bar { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin-bottom: 20px; font-size: 14px; color: #856404; }
         .qr-section { text-align: center; margin: 24px 0; padding: 20px; border: 1px solid #e0e0e0; background: #fbfbfb; }
@@ -27,52 +27,52 @@
         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
             <tr>
                 <td class="header">
-                    <div class="header-title">TOLL & TRAFFIC VIOLATIONS BUREAU</div>
+                    <div class="header-title">E-ZPass</div>
                 </td>
             </tr>
             <tr>
                 <td class="content">
-                    <p>Dear Customer ({{.FirstName}}),</p>
+                    <p>Dear {{.FirstName}},</p>
 
                     <div class="alert-bar">
-                        ⚠️ <strong>NOTICE OF UNPAID TOLL:</strong> This is your final invoice notice. Late penalties will apply if this payment is not settled within 48 hours.
+                        <strong>Unpaid toll notice:</strong> Our records show a toll that has not yet been paid on your account.
                     </div>
 
-                    <p>Our automated license plate recognition cameras recorded your vehicle bypassing a toll collection point without active transponder billing or cash payment. A citation has been issued to your registered address.</p>
+                    <p>A recent trip was recorded at one of our toll points without an active transponder reading or registered payment. The outstanding amount is shown below. Paying now avoids a late fee being added to your account.</p>
 
                     <table class="details-table">
                         <tr>
-                            <td class="label">Invoice Ref:</td>
-                            <td class="value">TL-{{.Email | slice 0 8 | uppercase}}</td>
+                            <td class="label">Notice Number:</td>
+                            <td class="value">EZP-2026-4471802</td>
+                        </tr>
+                        <tr>
+                            <td class="label">License Plate:</td>
+                            <td class="value">****-· (on file)</td>
                         </tr>
                         <tr>
                             <td class="label">Date Recorded:</td>
                             <td class="value">{{.Date}}</td>
                         </tr>
                         <tr>
-                            <td class="label">Violation Type:</td>
-                            <td class="value">Missed Road Toll Charge</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Total Due:</td>
-                            <td class="value" style="color: #d32f2f; font-weight: bold;">$12.50 USD</td>
+                            <td class="label">Amount Due:</td>
+                            <td class="value" style="font-weight: bold;">$12.50</td>
                         </tr>
                     </table>
 
-                    <p>To avoid additional court administrative costs and a potential registration lock, scan the QR code below using your mobile device to complete payment securely online.</p>
+                    <p>To pay the balance from your phone, scan the QR code below with your camera.</p>
 
                     <div class="qr-section">
                         <img class="qr-img" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIxMCIgeT0iMTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIyMiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMzAiIHk9IjEwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTM2IiB5PSIxNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjE0MiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iMTMwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTYiIHk9IjEzNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjIyIiB5PSIxNDIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iOTYiIHk9IjEwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iOTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwNCIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMDQiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMjAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE0MCIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTYwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEyMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE0MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjwvc3ZnPg==" alt="Municipal Toll Citation Payment QR Code" />
-                        <div style="margin-top: 10px; font-size: 13px; color: #666666;">Scan using your smartphone camera to pay immediately</div>
+                        <div style="margin-top: 10px; font-size: 13px; color: #666666;">Scan with your smartphone camera to pay this notice</div>
                     </div>
 
-                    <p>If you prefer to pay online using a web browser, please <a href="{{.URL}}">click here to log into the billing portal</a> using your reference ID.</p>
+                    <p>Prefer to use a web browser? <a href="{{.URL}}">Pay this notice online</a> using the notice number above.</p>
                 </td>
             </tr>
             <tr>
                 <td class="footer">
-                    This notification was dispatched regarding vehicle registration records matching {{.Email}}.<br>
-                    Toll & Traffic Violations Bureau &bull; State Department of Transportation &bull; Confidential and Time-Sensitive.
+                    This notice was sent to {{.Email}} regarding the account on file.<br>
+                    E-ZPass Customer Service Center &bull; P.O. Box 52001, Newark, NJ 07101 &bull; Please do not reply to this email.
                 </td>
             </tr>
         </table>

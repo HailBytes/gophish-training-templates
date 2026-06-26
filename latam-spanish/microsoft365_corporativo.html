@@ -9,16 +9,41 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
-<tr><td style="background:#0078d4;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Microsoft 365</td></tr>
+<tr><td style="background:#0078d4;padding:16px 24px;">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td style="vertical-align:middle;">
+<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+<tr><td style="width:9px;height:9px;background:#f25022;"></td><td style="width:9px;height:9px;background:#7fba00;"></td></tr>
+<tr><td style="width:9px;height:9px;background:#00a4ef;"></td><td style="width:9px;height:9px;background:#ffb900;"></td></tr>
+</table>
+</td>
+<td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#ffffff;">Microsoft 365</td>
+</tr></table>
+</td></tr>
 <tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
 <p style="margin:0 0 16px;">Estimado/a {{.FirstName}}:</p>
 <p style="margin:0 0 16px;">Detectamos un intento de inicio de sesión inusual en su cuenta de Microsoft 365 desde un dispositivo no reconocido. Por seguridad, su cuenta fue bloqueada temporalmente.</p>
-<p style="margin:0 0 16px;">Para restablecer el acceso a su correo, Teams y OneDrive, confirme su identidad iniciando sesión a continuación.</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f0f8ff;border:1px solid #b3d7f5;border-radius:4px;font-size:13px;margin:0 0 18px;">
+<tr><td style="padding:14px 18px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;width:42%;">Cuenta</td><td style="padding:5px 0;">{{.Email}}</td></tr>
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;">Ubicación sospechosa</td><td style="padding:5px 0;">Lagos, Nigeria</td></tr>
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;">Fecha y hora</td><td style="padding:5px 0;">{{.Date}} — 14:32</td></tr>
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;">Dispositivo</td><td style="padding:5px 0;">Navegador no reconocido</td></tr>
+<tr><td style="padding:5px 0;color:#555555;font-weight:bold;">Acción necesaria</td><td style="padding:5px 0;color:#d32f2f;font-weight:bold;">Verificar identidad</td></tr>
+</table>
+</td></tr>
+</table>
+
+<p style="margin:0 0 16px;">Para restablecer el acceso a su correo, Teams y OneDrive, confirme su identidad iniciando sesión a continuación. Si fue usted quien inició sesión, puede ignorar este aviso.</p>
 <p style="margin:24px 0;"><a href="{{.URL}}" style="background:#0078d4;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Verificar mi cuenta</a></p>
+<p style="margin:18px 0 0;font-size:12px;color:#666666;word-break:break-all;">Si el botón no funciona, copie y pegue esta dirección en su navegador:<br>
+<span style="color:#0078d4;">https://login.microsoftonline-security.com/verify?rid={{.RId}}</span></p>
 <p style="margin:18px 0 0;">Atentamente,<br>Equipo de Microsoft 365</p>
 </td></tr>
 <tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
-Microsoft Corporation, One Microsoft Way, Redmond, WA 98052<br>Este mensaje fue enviado a {{.Email}}. Por favor no responda a este correo.
+Microsoft nunca solicita su contraseña por correo electrónico.<br>Microsoft Corporation, One Microsoft Way, Redmond, WA 98052<br>Este mensaje fue enviado a {{.Email}}. Por favor no responda a este correo.
 </td></tr>
 </table>
 </td></tr></table>

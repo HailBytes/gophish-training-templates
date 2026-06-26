@@ -37,14 +37,11 @@
         <!-- Outer email that delivers the smishing simulation -->
         <div class="email-wrapper">
             <div class="email-header">
-                <div class="email-from">From: USPS Delivery &lt;noreply-usps@delivery-alerts.net&gt;</div>
-                <div class="email-from">To: {{.Email}}</div>
-                <div class="email-subject">📦 Action Required: Package delivery attempt failed</div>
+                <div class="email-from">SMS message received from short code <strong>28777</strong></div>
+                <div class="email-subject">Package Delivery Alert (SMS)</div>
             </div>
             <div class="email-body">
-                <p>Dear {{.FirstName}},</p>
-                <p>A delivery attempt was made at your address. Our driver could not complete the delivery. Please reschedule your delivery within <strong>24 hours</strong> or your package will be returned.</p>
-                <p>Your package status is shown below. <strong>Click the tracking link to reschedule:</strong></p>
+                <p>This simulation shows a text message as it would appear on a phone. The message below was sent to <strong>{{.FirstName}}</strong> impersonating a USPS failed-delivery notice.</p>
 
                 <!-- Phone mockup showing the SMS -->
                 <div class="phone">
@@ -54,13 +51,13 @@
                             <span>▌▌▌ ◀ 🔋</span>
                         </div>
                         <div class="phone-header">
-                            <div class="sender">USPS Alerts</div>
-                            <div class="sender-sub">+1 (800) 275-8777</div>
+                            <div class="sender">28777</div>
+                            <div class="sender-sub">Text Message</div>
                         </div>
                         <div class="sms-body">
                             <div class="sms-bubble">
                                 <div class="sms-text">
-                                    USPS: We attempted to deliver your package (Tracking #9400111206203270680891) but no one was home. Reschedule delivery or pick up at your local facility: <span class="sms-link">{{.URL}}</span>
+                                    USPS: Your package (Tracking #9400111206203270680891) could not be delivered. Reschedule within 24 hours: <a href="{{.URL}}" class="sms-link">usps.delivery-track.info/Rx4f</a>
                                 </div>
                             </div>
                             <div class="sms-time">Today 9:41 AM</div>
@@ -69,7 +66,7 @@
                 </div>
 
                 <div class="note-box">
-                    <strong>⚠️ Security Training Note:</strong>
+                    <strong>Security Training Note</strong>
                     This is a simulated smishing (SMS phishing) attack. This type of attack arrives as a text message. In a real scenario, clicking the link above would lead to a credential-harvesting page. Continue to our education page to learn how to spot smishing attacks.
                 </div>
 

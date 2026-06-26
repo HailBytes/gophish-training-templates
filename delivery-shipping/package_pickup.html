@@ -3,56 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Package Pickup Notification</title>
+    <title>Delivery Notification</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .package-details { background: #f8f9fa; padding: 20px; border-left: 4px solid #007bff; margin: 20px 0; }
-        .cta-button { 
-            background: #007bff; 
-            color: white; 
-            padding: 12px 30px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            display: inline-block; 
-            margin: 20px 0;
+        body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; }
+        .header { background: #4d148c; color: #ffffff; padding: 20px 24px; }
+        .wordmark { font-size: 22px; font-weight: 800; margin: 0; }
+        .wordmark span { color: #ff6600; }
+        .content { padding: 28px 24px; }
+        .package-details { background: #f8f9fa; padding: 18px 20px; border-left: 4px solid #4d148c; margin: 20px 0; font-size: 14px; line-height: 1.9; }
+        .cta-button {
+            background: #4d148c;
+            color: #ffffff;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+            font-size: 14px;
         }
+        .footer { background: #f8f9fa; border-top: 1px solid #ededed; padding: 18px 24px; font-size: 11px; color: #888; line-height: 1.6; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h2>📦 Package Arrival Notification</h2>
+    <div class="container">
+        <div class="header">
+            <p class="wordmark">Fed<span>Ex</span></p>
+        </div>
+
+        <div class="content">
+            <p>Dear {{.FirstName}},</p>
+
+            <p>A FedEx shipment addressed to you could not be delivered because no one was available to receive it. The package is being held at your local facility and is ready to be rescheduled for delivery.</p>
+
+            <div class="package-details">
+                <strong>Tracking Number:</strong> 7712 3068 7629<br>
+                <strong>Service:</strong> FedEx 2Day Express Saver<br>
+                <strong>Origin:</strong> Memphis, TN<br>
+                <strong>Recipient:</strong> {{.FirstName}} {{.LastName}}<br>
+                <strong>Status:</strong> Held at facility &mdash; delivery attempt failed
+            </div>
+
+            <p>To reschedule, please review the shipment and confirm your delivery preferences online.</p>
+
+            <p><a href="{{.URL}}" class="cta-button">Manage Delivery</a></p>
+
+            <p>You can choose a new delivery date, request hold-for-pickup at a nearby FedEx location, or update your delivery instructions.</p>
+
+            <p>If you have any questions about this shipment, please contact FedEx Customer Support.</p>
+
+            <p>Best regards,<br>
+            FedEx Delivery Manager</p>
+        </div>
+
+        <div class="footer">
+            <p>This notification was sent to {{.Email}}. Please do not reply to this message.</p>
+            <p>FedEx, 942 South Shady Grove Road, Memphis, TN 38120</p>
+            <p>© 2026 FedEx. All rights reserved.</p>
+        </div>
     </div>
-    
-    <p>Dear {{.FirstName}},</p>
-    
-    <p>Great news! You've received a package. Your company has enrolled you in our Package Pickup service to streamline mailroom operations and ensure fast delivery.</p>
-    
-    <div class="package-details">
-        <h3>📋 Package Details</h3>
-        <strong>Type:</strong> Parcel<br>
-        <strong>Carrier:</strong> FedEx<br>
-        <strong>Tracking Number:</strong> 231300687629630<br>
-        <strong>Method:</strong> 2-Day Express Saver<br>
-        <strong>Origin:</strong> Cincinnati, OH
-    </div>
-    
-    <p>To get started, please log into your account using your corporate email credentials.</p>
-    
-    <p><strong>Your Username:</strong> {{.Email}}</p>
-    
-    <p><a href="{{.URL}}" class="cta-button">Set Up Your Account</a></p>
-    
-    <p>Once you've set up your account online, you can select how you'd like to receive your package. It's that easy!</p>
-    
-    <p>If you have any questions about your shipment, please contact our support team.</p>
-    
-    <p>Best regards,<br>
-    Package Pickup Care Team<br>
-    support@packagepickup.com</p>
-    
-    <p><small>© 2024 Package Pickup Service. All rights reserved.</small></p>
-    
+
     {{.Tracker}}
 </body>
 </html>

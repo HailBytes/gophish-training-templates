@@ -26,11 +26,11 @@
             text-align: center; 
         }
         .dropbox-logo {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 26px;
+            font-weight: 700;
             letter-spacing: -0.5px;
         }
+        .dropbox-logo span { margin-left: 10px; }
         .content { padding: 35px 30px; }
         .notification-badge {
             background: linear-gradient(135deg, #ff6900 0%, #ff5722 100%);
@@ -66,7 +66,8 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
+            font-size: 13px;
+            font-weight: 700;
         }
         .file-info {
             min-width: 0;
@@ -130,12 +131,11 @@
             font-size: 13px;
         }
         .urgency-note {
-            background: #fff3e0;
-            border: 1px solid #ffb74d;
+            background: #f8f9fb;
+            border: 1px solid #e7ebf0;
             border-radius: 8px;
             padding: 16px;
             margin: 20px 0;
-            border-left: 4px solid #ff9800;
         }
         .cta-button { 
             background: linear-gradient(135deg, #0061ff 0%, #0053d6 100%); 
@@ -204,76 +204,64 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="dropbox-logo">📁 Dropbox</div>
-            <p style="margin: 0; opacity: 0.9; font-size: 16px;">Secure file sharing and collaboration</p>
+            <div class="dropbox-logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" style="vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill="#ffffff" d="M6 2L0 6l6 4 6-4-6-4zm12 0l-6 4 6 4 6-4-6-4zM0 14l6 4 6-4-6-4-6 4zm18-4l-6 4 6 4 6-4-6-4zM6 19.25l6 3.95 6-3.95-6-3.95-6 3.95z"/>
+                </svg>
+                <span style="vertical-align:middle;">Dropbox</span>
+            </div>
         </div>
-        
+
         <div class="content">
-            <div class="notification-badge">🔔 New Shared Files</div>
-            
-            <h2 style="color: #1e1919; margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">Files shared with you</h2>
-            
+            <h2 style="color: #1e1919; margin: 0 0 16px 0; font-size: 22px; font-weight: 600;">A file was shared with you</h2>
+
             <p style="color: #1e1919; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">Hi {{.FirstName}},</p>
-            
-            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">Your colleague has shared important documents with you via Dropbox. These files require your immediate review and input for an upcoming project deadline.</p>
-            
+
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">A colleague has shared a folder with you on Dropbox ahead of an upcoming review.</p>
+
             <div class="shared-info">
-                <h4 style="margin: 0 0 16px 0; color: #1e1919;">👥 Shared by team member</h4>
                 <div class="collaborator">
-                    <div class="avatar">{{.FirstName | slice 0 1 | upper}}</div>
+                    <div class="avatar">D</div>
                     <div class="collaborator-info">
-                        <div class="collaborator-name">Sarah Martinez</div>
-                        <div class="collaborator-email">sarah.martinez@company.com</div>
+                        <div class="collaborator-name">Daniel Whitfield</div>
+                        <div class="collaborator-email">daniel.whitfield@northbridge-partners.com</div>
                     </div>
                 </div>
-                <p style="margin: 8px 0 0 0; font-size: 14px; color: #637282;">Shared 3 hours ago • Project Team Member</p>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #637282;">Shared 3 hours ago</p>
             </div>
-            
+
             <div class="file-container">
-                <h4 style="margin: 0 0 20px 0; color: #1e1919;">📂 Shared Content</h4>
-                
                 <div class="file-grid">
-                    <div class="file-icon">📊</div>
+                    <div class="file-icon">XLS</div>
                     <div class="file-info">
-                        <div class="file-name">Project_Timeline_Q4_2024.xlsx</div>
+                        <div class="file-name">Project_Timeline_Q3.xlsx</div>
                         <div class="file-details">Excel Spreadsheet • 1.2 MB • Modified 2 hours ago</div>
                     </div>
                     <div class="file-count desktop-only">+5 more</div>
                 </div>
-                
+
                 <div class="mobile-responsive">
                     <div class="file-count">+5 more files</div>
                 </div>
-                
+
                 <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e7ebf0;">
                     <p style="margin: 0; font-size: 14px; color: #637282;">
-                        <strong>Folder contents:</strong> Project timelines, budget reports, team assignments, client presentations, and meeting notes
+                        <strong>Folder contents:</strong> Project timeline, budget summary, team assignments, client deck, and meeting notes
                     </p>
                 </div>
             </div>
-            
+
             <div class="urgency-note">
-                <h4 style="margin: 0 0 8px 0; color: #e65100;">⏰ Time-Sensitive Review Required</h4>
-                <p style="margin: 0; font-size: 14px; color: #e65100;">These documents are needed for tomorrow's client presentation. Please review and provide feedback by end of day today.</p>
+                <p style="margin: 0; font-size: 14px; color: #637282;">Daniel left a note: "Please take a look before tomorrow's client review — happy to walk through it."</p>
             </div>
-            
-            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">To access these files and collaborate with your team, please click the button below. You'll need to sign in with your work account to maintain security compliance.</p>
-            
+
+            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">To open the folder, sign in to Dropbox with your work account.</p>
+
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">📂 View Shared Files</a>
+                <a href="{{.URL}}" class="cta-button">View files</a>
             </p>
-            
-            <div class="security-notice">
-                <h4 style="margin: 0 0 8px 0; color: #2e7d32;">🔒 Secure Access</h4>
-                <p style="margin: 0; font-size: 14px; color: #2e7d32;">These files are protected by enterprise-grade security. Access is limited to authorized team members only.</p>
-            </div>
-            
-            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;"><strong>Need help?</strong> If you're new to Dropbox or have trouble accessing the files, contact IT support or reply to this email for assistance.</p>
-            
-            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">Thanks for being part of the team!</p>
-            
-            <p style="color: #1e1919; font-size: 16px; line-height: 1.6;">Best regards,<br>
-            <strong>The Dropbox Team</strong></p>
+
+            <p style="color: #1e1919; font-size: 14px; line-height: 1.6; color:#637282;">If you weren't expecting this folder, you can ignore this email or contact the sender directly.</p>
         </div>
         
         <div class="footer">
@@ -285,7 +273,7 @@
                     <a href="#">Help Center</a> • 
                     <a href="#">Unsubscribe</a>
                 </p>
-                <p style="margin: 0;">© 2024 Dropbox, Inc. All rights reserved.</p>
+                <p style="margin: 0;">© 2026 Dropbox, Inc. All rights reserved.</p>
             </div>
         </div>
     </div>

@@ -13,10 +13,11 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
-        "Your API key expires tonight \u2014 regenerate now",
+        "Your API key expires tonight — regenerate now",
         "Critical: Production API key reaching expiration",
         "Developer alert: API authentication credentials expiring"
       ],
@@ -32,7 +33,7 @@
     },
     {
       "filename": "github_new_device.html",
-      "name": "GitHub \u2013 New Device Sign-In",
+      "name": "GitHub – New Device Sign-In",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "40-60%",
@@ -60,7 +61,7 @@
     },
     {
       "filename": "aws_account_verification.html",
-      "name": "AWS \u2013 Account Verification",
+      "name": "AWS – Account Verification",
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
@@ -68,7 +69,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Action required: verify your AWS account",

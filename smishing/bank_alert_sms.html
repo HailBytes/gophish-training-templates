@@ -31,13 +31,11 @@
     <div class="container">
         <div class="email-wrapper">
             <div class="email-header">
-                <div class="email-from">From: Chase Bank Security &lt;alerts@chase-secure-notifications.com&gt;</div>
-                <div class="email-from">To: {{.Email}}</div>
-                <div class="email-subject">🚨 URGENT: Suspicious transaction on your account</div>
+                <div class="email-from">SMS message received from short code <strong>72932</strong></div>
+                <div class="email-subject">Bank Security Alert (SMS)</div>
             </div>
             <div class="email-body">
-                <p>Dear {{.FirstName}},</p>
-                <p>We have detected a suspicious transaction on your account and have temporarily limited your access. <strong>Verify your identity immediately</strong> to restore full access and prevent further unauthorized activity.</p>
+                <p>This simulation shows a text message as it would appear on a phone. The message below was sent to <strong>{{.FirstName}}</strong> from a short code spoofed to look like a bank fraud alert.</p>
 
                 <!-- Phone mockup -->
                 <div class="phone">
@@ -47,13 +45,13 @@
                             <span>▌▌▌ ◀ 🔋</span>
                         </div>
                         <div class="phone-header">
-                            <div class="sender">Chase Bank</div>
-                            <div class="sender-sub">+1 (800) 935-9935</div>
+                            <div class="sender">72932</div>
+                            <div class="sender-sub">Text Message</div>
                         </div>
                         <div class="sms-body">
                             <div class="sms-bubble">
                                 <div class="sms-text">
-                                    Chase: ALERT - A $847.00 purchase from AMAZON.COM was BLOCKED due to suspicious activity. If this was NOT you, verify immediately: <span class="sms-link">{{.URL}}</span> - Reply STOP to opt out
+                                    Chase: A $847.00 purchase at AMAZON.COM was blocked. If this was not you, verify now: <a href="{{.URL}}" class="sms-link">chase.alerts-verify.com/Rb7k2</a> Reply STOP to opt out
                                 </div>
                             </div>
                             <div class="sms-time">Today 9:41 AM</div>
@@ -62,8 +60,8 @@
                 </div>
 
                 <div class="note-box">
-                    <strong>⚠️ Security Training Note:</strong>
-                    This is a simulated smishing (SMS phishing) attack. Real bank smishing attacks use urgency (blocked transaction, fraud alert) to make you act fast without thinking. Banks will <em>never</em> ask you to verify credentials via a link in a text. Continue to our education page to learn more.
+                    <strong>Security Training Note</strong>
+                    This is a simulated smishing (SMS phishing) attack. Real bank smishing uses urgency (blocked transaction, fraud alert) to make you act fast without thinking. Banks will <em>never</em> ask you to verify credentials via a link in a text. Continue to our education page to learn more.
                 </div>
 
                 <p style="text-align:center; margin-top: 20px;">

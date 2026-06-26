@@ -31,13 +31,11 @@
     <div class="container">
         <div class="email-wrapper">
             <div class="email-header">
-                <div class="email-from">From: HR Benefits Desk &lt;payroll-operations@company-hr-portal.com&gt;</div>
-                <div class="email-from">To: {{.Email}}</div>
-                <div class="email-subject">📊 Action Required: Review updated payroll direct deposit options</div>
+                <div class="email-from">SMS message received from short code <strong>30457</strong></div>
+                <div class="email-subject">Payroll / HR Alert (SMS)</div>
             </div>
             <div class="email-body">
-                <p>Hello {{.FirstName}},</p>
-                <p>Your direct deposit allocation setup for the upcoming pay cycle requires validation in the payroll portal. Please verify your banking details immediately to avoid processing delays.</p>
+                <p>This simulation shows a text message as it would appear on a phone. The message below was sent to <strong>{{.FirstName}}</strong> impersonating a payroll direct-deposit change alert from a Workday portal.</p>
 
                 <!-- Phone mockup -->
                 <div class="phone">
@@ -47,13 +45,13 @@
                             <span>▌▌▌ ◀ 🔋</span>
                         </div>
                         <div class="phone-header">
-                            <div class="sender">HR Benefits</div>
-                            <div class="sender-sub">Payroll Office</div>
+                            <div class="sender">30457</div>
+                            <div class="sender-sub">Text Message</div>
                         </div>
                         <div class="sms-body">
                             <div class="sms-bubble">
                                 <div class="sms-text">
-                                    HR: Your direct deposit details for the next payroll cycle have been modified. Review changes or confirm setup: <span class="sms-link">{{.URL}}</span>
+                                    Workday: Your direct deposit details were changed. If you did not request this, review and cancel here: <a href="{{.URL}}" class="sms-link">workday.payroll-review.net/m2Qd</a>
                                 </div>
                             </div>
                             <div class="sms-time">Today 9:41 AM</div>
@@ -62,7 +60,7 @@
                 </div>
 
                 <div class="note-box">
-                    <strong>⚠️ Security Training Note:</strong>
+                    <strong>Security Training Note</strong>
                     This is a simulated smishing (SMS phishing) attack. Scammers leverage payroll and HR themes to steal employee banking credentials and direct deposit configurations. Verify all payroll changes through direct, trusted contact methods.
                 </div>
 

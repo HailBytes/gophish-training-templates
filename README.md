@@ -46,7 +46,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 
 
 <div align="center">
-  <img src="travel_phishing.jpg" alt="Security Policy Templates" width="100%" />
+  <img src="docs/images/email-templates.png" alt="Sample phishing email templates: Microsoft sign-in alert, DocuSign signature request, Amazon order problem, and Okta verification" width="100%" />
 </div>
 
 ### Email Templates (70+ Templates Across 20+ Industries)
@@ -74,7 +74,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 
 
 <div align="center">
-  <img src="corporate_education.jpg" alt="Security Policy Templates" width="100%" />
+  <img src="docs/images/education-modules.png" alt="Post-click security awareness training pages for corporate and financial phishing scenarios" width="100%" />
 </div>
 
 ### Educational Modules
@@ -87,7 +87,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 
 
 <div align="center">
-  <img src="credential_harvest.jpg" alt="Security Policy Templates" width="100%" />
+  <img src="docs/images/landing-pages.png" alt="Credential-capture landing pages: Microsoft 365 sign-in, Okta sign-in, and a generic employee portal" width="100%" />
 </div>
 
 ### Landing Pages
@@ -128,70 +128,45 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 
 ```
 gophish-training-templates/
-├── delivery-shipping/          # Package delivery and shipping notifications
-├── it-security/                # IT security alerts and system updates
-├── cloud-services/             # Cloud platform phishing (Dropbox, Drive)
-├── social-media/               # Social media platform impersonations
-├── financial/                  # Banking and wire transfer scams
-├── entertainment/              # Entertainment service phishing
-├── corporate/                  # Corporate communications and news
-├── government/                 # Government agency impersonations
-├── microsoft/                  # Microsoft service themed templates
-│   ├── microsoft_security.html
-│   ├── microsoft_teams_invite.html
-│   ├── onedrive_file_share.html
-│   └── microsoft_mfa_update.html
-├── healthcare/                 # HIPAA, patient portals, insurance
-│   ├── hipaa_compliance_alert.html
-│   ├── patient_portal_security.html
-│   └── insurance_verification.html
-├── education/                  # Student portals, financial aid
-│   ├── student_portal_lockout.html
-│   └── financial_aid_urgent.html
-├── manufacturing/              # Supply chain and vendor portals
-│   └── supplier_portal_update.html
-├── legal/                      # Case management, document sharing
-│   └── case_document_sharing.html
-├── hr-payroll/                 # Benefits, payroll, HR systems
-│   ├── payroll_direct_deposit.html
-│   └── benefits_enrollment.html
-├── technology/                 # API keys, developer portals
-│   └── api_key_expiration.html
-├── retail/                     # Loyalty programs, customer accounts
-│   └── loyalty_rewards_expiring.html
-├── hospitality/                # Hotel reservations, booking systems
-│   └── hotel_reservation_confirm.html
-├── utilities/                  # Power/utility billing and credits
-│   └── power_outage_credit.html
-├── quishing/                   # QR code phishing (quishing) templates
-│   ├── qr_code_mfa.html
-│   ├── qr_code_wifi.html
-│   ├── microsoft_mfa_qr.html
-│   ├── parking_toll_qr.html
-│   ├── secure_document_qr.html
-│   └── docusign_qr.html
-├── smishing/                   # SMS phishing (smishing) templates
-│   ├── bank_alert_sms.html
-│   ├── package_delivery_sms.html
-│   ├── mfa_verification_sms.html
-│   ├── payroll_hr_sms.html
-│   └── it_helpdesk_sms.html
-├── latam-portuguese/           # Portuguese-language templates (Brazil / LATAM)
-│   ├── notificacao_bancaria.html       # Banking security alert
-│   ├── helpdesk_ti.html                # IT helpdesk credential reset
-│   ├── onboarding_rh.html              # HR onboarding document collection
-│   ├── receita_federal.html            # Tax authority (Receita Federal) impersonation
-│   └── microsoft365_corporativo.html   # Microsoft 365 account blocked
-├── landing-pages/              # Credential harvest & education pages
-│   ├── credential-harvest.html
-│   └── education-notification.html
-├── docs/                       # Guides and program measurement resources
-│   └── measuring-effectiveness.md
-└── campaign-guides/            # Implementation guides & best practices
-    ├── implementation-guide.md
-    ├── subject-lines-guide.md
-    └── best-practices-guide.md
+│   # Each category folder holds its email templates plus a metadata.json,
+│   # a generated README.md, and (where applicable) an education/ training page.
+│
+├── ai-tools/            # (2)  AI tool impersonations (Copilot, ChatGPT)
+├── cloud-services/      # (2)  Cloud storage & file sharing (Dropbox, Drive)
+├── collaboration/       # (3)  Collaboration apps (Slack, Teams, Zoom)
+├── corporate/           # (3)  Corporate news, travel, internal comms
+├── delivery-shipping/   # (3)  Package delivery & shipping notices
+├── e-signature/         # (2)  E-signature platforms (DocuSign, Adobe Sign)
+├── education/           # (2)  Student portals, financial aid
+├── entertainment/       # (2)  Entertainment & rewards (Spotify, Starbucks)
+├── financial/           # (2)  Banking, wire transfers, payments
+├── government/          # (4)  Government & regulatory agency lures
+├── healthcare/          # (3)  HIPAA, patient portals, insurance
+├── hospitality/         # (3)  Hotel & travel booking services
+├── hr-payroll/          # (4)  HR & payroll (benefits, direct deposit)
+├── identity/            # (3)  Identity providers & SSO (Okta, Duo)
+├── it-security/         # (6)  Internal IT department communications
+├── itsm/                # (3)  IT Service Management (ServiceNow, Jira)
+├── latam-portuguese/    # (5)  Portuguese-language templates (Brazil)
+├── latam-spanish/       # (4)  Spanish-language templates (LATAM)
+├── legal/               # (3)  Legal authority & litigation pretexts
+├── manufacturing/       # (3)  Supply-chain & vendor portals
+├── microsoft/           # (6)  Microsoft products & services
+├── quishing/            # (6)  QR-code phishing (quishing)
+├── retail/              # (3)  Retail brands & loyalty programs
+├── smishing/            # (5)  SMS phishing (smishing)
+├── social-media/        # (3)  Social & professional networks (LinkedIn, Instagram)
+├── technology/          # (3)  Developer & technical staff (API keys, cloud consoles)
+├── utilities/           # (3)  Utility billing & disconnection notices
+│
+├── landing-pages/       # Credential-capture & post-click training pages
+├── campaign-guides/     # Implementation, subject-line, best-practice & benchmarking guides
+├── docs/                # Catalog, metrics guide, lure audit, showcase images
+├── tools/               # Catalog/README generators, validator, preview & import scripts
+└── tests/               # Tests for the tooling
 ```
+
+> 📁 **Every category folder has its own `README.md`** listing the templates it contains, their attack vector and estimated click rate, suggested subject lines, the paired training page, and operator notes. For the complete cross-category index, see the **[template catalog](docs/CATALOG.md)**.
 
 ## Quick Start Guide
 

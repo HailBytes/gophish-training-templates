@@ -132,10 +132,8 @@
             <p><strong>Your Current Status:</strong></p>
 
             <div class="compliance-info">
-                <p style="margin: 0; font-weight: 600; color: #d00000;">COMPLIANCE STATUS: EXPIRED</p>
-                <p style="margin: 8px 0 0 0; font-size: 14px;">Last certification: January 2024<br>
-                Expiration date: January 2025<br>
-                Days overdue: 15</p>
+                <p style="margin: 0; font-weight: 600; color: #d00000;">Compliance status: Recertification due</p>
+                <p style="margin: 8px 0 0 0; font-size: 14px;">Your annual HIPAA certification is approaching its expiration date and must be renewed to keep your access active. Please complete recertification within the next 72 hours.</p>
             </div>
 
             <p><strong>Required Actions:</strong></p>
@@ -165,7 +163,7 @@
 
             <p>This training typically takes 25-30 minutes to complete. Your progress will be saved if you need to complete it in multiple sessions.</p>
 
-            <p>If you have questions about this requirement, please contact the Compliance Office at compliance@healthcare.org or extension 4500.</p>
+            <p>If you have questions about this requirement, please reply to {{.From}} or contact the Compliance Office at extension 4500.</p>
 
             <p>Thank you for your commitment to patient privacy and data security.</p>
 
@@ -175,10 +173,10 @@
         </div>
 
         <div class="footer">
-            <p>This email was sent to {{.Email}} as part of our mandatory HIPAA compliance program.</p>
+            <p>This email was sent to {{.Email}} as part of our mandatory HIPAA compliance program. Sent {{.Date}} by {{.From}}.</p>
             <p style="margin-top: 12px;">
-                Healthcare Organization | 123 Medical Center Drive<br>
-                © 2024 Healthcare Compliance Office. All rights reserved.
+                Office of Compliance &amp; Privacy | Information Security Division<br>
+                © 2026 HIPAA Compliance Office. All rights reserved.
             </p>
         </div>
     </div>

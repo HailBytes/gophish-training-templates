@@ -7,8 +7,8 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f3f2f1; color: #323130; }
         .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e1dfdd; border-radius: 2px; overflow: hidden; box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108); }
-        .header { background: #0078d4; color: white; padding: 18px 24px; display: flex; align-items: center; }
-        .header-logo { font-size: 16px; font-weight: 600; }
+        .header { background: #ffffff; border-bottom: 1px solid #e1dfdd; padding: 16px 24px; }
+        .header-logo { font-size: 16px; font-weight: 600; color: #5e5e5e; vertical-align: middle; }
         .content { padding: 32px; }
         .alert-box { background-color: #fff4ce; border-left: 4px solid #ffb900; padding: 16px; margin: 24px 0; border-radius: 2px; }
         .alert-box h3 { margin: 0 0 8px 0; color: #323130; font-size: 15px; font-weight: 600; }
@@ -39,7 +39,12 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-logo">Microsoft 365 Security</div>
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="padding-right:8px;line-height:0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td width="9" height="9" style="background:#f25022;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#7fba00;font-size:0;line-height:0;">&nbsp;</td></tr><tr><td height="2" colspan="3" style="font-size:0;line-height:0;">&nbsp;</td></tr><tr><td width="9" height="9" style="background:#00a4ef;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#ffb900;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+            </td>
+            <td><span class="header-logo">Microsoft 365 Security</span></td>
+            </tr></table>
         </div>
 
         <div class="content">
@@ -63,7 +68,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Deadline:</span>
-                    <span class="info-value">Within 48 hours</span>
+                    <span class="info-value">{{.Date}}</span>
                 </div>
             </div>
 
@@ -77,7 +82,8 @@
         </div>
 
         <div class="footer">
-            This security notification was sent to {{.Email}}.<br>
+            Sent by {{.From}} on behalf of IT Administration.<br>
+            This security notification was sent to {{.Email}}. Microsoft respects your privacy. Read our <a href="https://privacy.microsoft.com/privacystatement" style="color:#0078d4;text-decoration:none;">Privacy Statement</a>.<br>
             Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
         </div>
     </div>

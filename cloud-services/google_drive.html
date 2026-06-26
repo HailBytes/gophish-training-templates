@@ -64,6 +64,7 @@
             margin-right: 16px;
             color: white;
             font-weight: bold;
+            font-size: 13px;
         }
         .file-details {
             flex: 1;
@@ -148,52 +149,40 @@
                 </div>
                 <div class="logo-text">Drive</div>
             </div>
-            <h2 style="margin: 0; color: #3c4043; font-size: 24px; font-weight: 400;">📁 Document shared with you</h2>
+            <h2 style="margin: 0; color: #3c4043; font-size: 22px; font-weight: 400;">Document shared with you</h2>
         </div>
-        
+
         <div class="content">
             <p style="color: #3c4043; font-size: 16px; line-height: 1.5;">Hi {{.FirstName}},</p>
-            
-            <p style="color: #3c4043; font-size: 16px; line-height: 1.5;">A colleague has shared an important document with you via Google Drive. You now have access to view and collaborate on this file.</p>
-            
+
+            <p style="color: #3c4043; font-size: 16px; line-height: 1.5;">Priya Nair shared a document with you on Google Drive. You have access to view and comment.</p>
+
             <div class="shared-by">
-                <div class="avatar">{{.FirstName | slice 0 1 | upper}}</div>
+                <div class="avatar">P</div>
                 <div>
-                    <div style="font-weight: 500; color: #3c4043;">Shared by: <strong>{{.Email}}</strong></div>
+                    <div style="font-weight: 500; color: #3c4043;">Shared by <strong>Priya Nair</strong> (priya.nair@meridianfinance.com)</div>
                     <div style="font-size: 14px; color: #5f6368;">2 hours ago</div>
                 </div>
             </div>
-            
+
             <div class="file-preview">
-                <div class="file-icon">📄</div>
+                <div class="file-icon">PDF</div>
                 <div class="file-details">
-                    <div class="file-title">Q4_Budget_Review_CONFIDENTIAL.pdf</div>
+                    <div class="file-title">Q3_Budget_Review.pdf</div>
                     <div class="file-meta">PDF • 2.3 MB • Modified 2 hours ago</div>
                 </div>
             </div>
-            
+
             <div class="access-info">
-                <h4 style="margin: 0 0 8px 0; color: #b06000;">🔒 Access Level: View and Comment</h4>
-                <p style="margin: 0; font-size: 14px; color: #b06000;">You have been granted viewing and commenting permissions for this document. Sign in to your Google account to access the file securely.</p>
+                <h4 style="margin: 0 0 8px 0; color: #b06000;">Access level: View and comment</h4>
+                <p style="margin: 0; font-size: 14px; color: #b06000;">Sign in to your Google account to open the file.</p>
             </div>
-            
-            <p style="color: #3c4043; font-size: 16px; line-height: 1.5;">This document contains sensitive financial information and requires immediate review. Please access the file using the secure link below:</p>
-            
+
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">📂 Open in Google Drive</a>
+                <a href="{{.URL}}" class="cta-button">Open in Drive</a>
             </p>
-            
-            <p style="color: #3c4043; font-size: 16px; line-height: 1.5;"><strong>Important:</strong> This is a confidential document. Please ensure you're signed into your corporate Google account before accessing to maintain security protocols.</p>
-            
-            <div style="background: #f1f3f4; border-radius: 8px; padding: 16px; margin: 20px 0;">
-                <h4 style="margin: 0 0 8px 0; color: #3c4043;">💡 New to Google Drive?</h4>
-                <p style="margin: 0; font-size: 14px; color: #5f6368;">Google Drive is our secure cloud storage solution. If you haven't used it before, simply sign in with your work email to get started.</p>
-            </div>
-            
-            <p style="color: #3c4043; font-size: 16px; line-height: 1.5;">If you have any questions about accessing this document, please contact the sender directly or reach out to IT support.</p>
-            
-            <p style="color: #3c4043; font-size: 16px; line-height: 1.5;">Best regards,<br>
-            <strong>The Google Drive Team</strong></p>
+
+            <p style="color: #3c4043; font-size: 16px; line-height: 1.5;">If you have any questions about this document, contact the sender directly.</p>
         </div>
         
         <div class="footer">
@@ -204,7 +193,7 @@
                     <a href="#">Terms of Service</a> • 
                     <a href="#">Help Center</a>
                 </p>
-                <p style="margin: 10px 0 0 0;">© 2024 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043</p>
+                <p style="margin: 10px 0 0 0;">© 2026 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043</p>
             </div>
         </div>
     </div>

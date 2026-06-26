@@ -15,7 +15,9 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.RId}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Acción requerida: su cuenta de Microsoft 365 fue bloqueada",
@@ -43,7 +45,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "URGENTE: acceso sospechoso detectado en su cuenta",
@@ -71,7 +74,8 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.RId}}"
       ],
       "suggested_subject_lines": [
         "Acción requerida: restablezca su contraseña corporativa",
@@ -100,7 +104,9 @@
         "{{.FirstName}}",
         "{{.Email}}",
         "{{.URL}}",
-        "{{.Tracker}}"
+        "{{.Tracker}}",
+        "{{.RId}}",
+        "{{.Date}}"
       ],
       "suggested_subject_lines": [
         "Notificación del SAT: requerimiento pendiente",

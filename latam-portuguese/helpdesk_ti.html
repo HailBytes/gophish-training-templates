@@ -19,19 +19,38 @@
             border: 1px solid #cccccc;
         }
         .header {
-            background-color: #1a237e;
+            background-color: #253858;
             color: #ffffff;
             padding: 20px 40px;
-            display: flex;
-            align-items: center;
         }
         .logo {
             font-size: 18px;
             font-weight: 700;
+            vertical-align: middle;
+        }
+        .logo-mark {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background-color: #2684ff;
+            border-radius: 4px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 22px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .sender-line {
+            font-size: 12px;
+            color: #555555;
+            padding: 12px 40px 0;
+            line-height: 1.5;
         }
         .logo-badge {
             font-size: 10px;
-            background-color: #e53935;
+            background-color: #2684ff;
             color: #ffffff;
             padding: 2px 8px;
             border-radius: 10px;
@@ -132,18 +151,20 @@
     <div class="container">
         <div class="header">
             <div>
-                <span class="logo">TI ServiceDesk</span>
-                <span class="logo-badge">CORPORATIVO</span>
+                <span class="logo-mark">J</span>
+                <span class="logo">Jira Service Management</span>
+                <span class="logo-badge">TI</span>
             </div>
         </div>
-        <div class="ticket-bar">Ticket #TKT-2025-{{.RId}} — Atualização de Credenciais Obrigatória</div>
+        <div class="sender-line">De: Service Desk &lt;servicedesk@suporte-corporativo.com&gt;<br>Para: {{.Email}}</div>
+        <div class="ticket-bar">Ticket #TKT-2026-{{.RId}} — Atualização de Credenciais Obrigatória</div>
 
         <div class="content">
             <h1>Ação Necessária: Revalidação de Senha da Rede Corporativa</h1>
 
             <p>Olá {{.FirstName}},</p>
 
-            <p>O departamento de TI está realizando a renovação semestral obrigatória de credenciais corporativas conforme a política de segurança da informação (PSI-2025). Sua senha de rede expirou ou está próxima do vencimento e precisa ser atualizada.</p>
+            <p>O departamento de TI está realizando a renovação semestral obrigatória de credenciais corporativas conforme a política de segurança da informação (PSI-2026). Sua senha de rede expirou ou está próxima do vencimento e precisa ser atualizada.</p>
 
             <div class="ticket-info">
                 <table>
@@ -153,7 +174,7 @@
                     </tr>
                     <tr>
                         <td>Número do ticket</td>
-                        <td>TKT-2025-{{.RId}}</td>
+                        <td>TKT-2026-{{.RId}}</td>
                     </tr>
                     <tr>
                         <td>Prioridade</td>

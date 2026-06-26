@@ -9,14 +9,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "35-55%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Action Required: Slack Account Audit",
         "Your Slack workspace access needs verification",
         "[Slack] Admin message requires your response"
       ],
       "education_page": "education/collaboration_education.html",
-      "tags": ["slack", "collaboration", "credential-theft", "workspace-admin", "urgency"],
+      "tags": [
+        "slack",
+        "collaboration",
+        "credential-theft",
+        "workspace-admin",
+        "urgency"
+      ],
       "notes": "Effective against daily Slack users. Admin impersonation + deadline is a high-click combo."
     },
     {
@@ -25,14 +36,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Microsoft Teams: Guest access request requires your approval",
         "[Teams] Action required before 5:00 PM today",
         "Pending approval: External user requesting channel access"
       ],
       "education_page": "education/collaboration_education.html",
-      "tags": ["microsoft-teams", "collaboration", "credential-theft", "guest-access", "auto-approve"],
+      "tags": [
+        "microsoft-teams",
+        "collaboration",
+        "credential-theft",
+        "guest-access",
+        "auto-approve"
+      ],
       "notes": "Auto-approve deadline is highly effective pressure tactic. Works well for mid-level managers."
     },
     {
@@ -41,14 +63,25 @@
       "attack_vector": "credential_harvest",
       "difficulty": "beginner",
       "estimated_click_rate": "45-65%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Your cloud recording is now available",
         "[Zoom] Meeting recording ready - expires in 7 days",
         "Recording: Q4 Planning — Leadership Sync"
       ],
       "education_page": "education/collaboration_education.html",
-      "tags": ["zoom", "collaboration", "credential-theft", "recording", "storage-warning"],
+      "tags": [
+        "zoom",
+        "collaboration",
+        "credential-theft",
+        "recording",
+        "storage-warning"
+      ],
       "notes": "Storage-full warning adds urgency. Meeting name personalization increases effectiveness."
     }
   ],

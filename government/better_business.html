@@ -245,17 +245,16 @@
         
         <div class="content">
             <div class="complaint-alert">
-                <div class="alert-badge">ALERT: CUSTOMER COMPLAINT FILED</div>
-                <h2 style="margin: 10px 0; color: #f44336; font-size: 22px;">Formal Complaint Requires Your Response</h2>
-                <p style="margin: 0; color: #f44336; font-size: 14px;">Case Status: UNDER REVIEW - Business Response Required</p>
+                <h2 style="margin: 10px 0; color: #1565c0; font-size: 20px;">A complaint has been filed and is awaiting your response</h2>
+                <p style="margin: 0; color: #555; font-size: 14px;">Case status: Open &mdash; business response requested</p>
             </div>
-            
-            <p style="color: #212529; font-size: 16px; margin: 0 0 20px 0;"><strong>Dear Business Owner,</strong></p>
-            
-            <p style="color: #212529; font-size: 16px;">The Better Business Bureau has received a formal complaint against your business. This complaint has been assigned to our resolution team and requires your immediate attention to maintain your BBB accreditation and business rating.</p>
-            
+
+            <p style="color: #212529; font-size: 16px; margin: 0 0 20px 0;">Dear {{.FirstName}} {{.LastName}},</p>
+
+            <p style="color: #212529; font-size: 16px;">The Better Business Bureau has received a consumer complaint regarding your business. The complaint has been assigned to our resolution team, and businesses are given the opportunity to respond before the case is closed.</p>
+
             <div class="business-info">
-                <h3 style="margin: 0 0 20px 0; color: #1565c0;">🏢 Business Information on File</h3>
+                <h3 style="margin: 0 0 20px 0; color: #1565c0;">Business information on file</h3>
                 <div class="detail-grid">
                     <span class="detail-label">Business Contact:</span>
                     <span class="detail-value">{{.FirstName}} {{.LastName}}</span>
@@ -266,11 +265,7 @@
                 </div>
                 <div class="detail-grid">
                     <span class="detail-label">BBB File #:</span>
-                    <span class="detail-value">BBB-2024-{{.FirstName | upper}}-{{.LastName | slice 0 3 | upper}}</span>
-                </div>
-                <div class="detail-grid">
-                    <span class="detail-label">Current BBB Rating:</span>
-                    <span class="detail-value" style="color: #f44336;">A+ (At Risk Due to Complaint)</span>
+                    <span class="detail-value">90-4471826</span>
                 </div>
             </div>
             
@@ -278,11 +273,11 @@
                 <h3 style="margin: 0 0 20px 0; color: #1565c0;">Complaint Details</h3>
                 <div class="detail-grid">
                     <span class="detail-label">Complaint ID:</span>
-                    <span class="detail-value">BBB-COMP-2024-789456</span>
+                    <span class="detail-value">17284506</span>
                 </div>
                 <div class="detail-grid">
                     <span class="detail-label">Date Filed:</span>
-                    <span class="detail-value">December 11, 2024</span>
+                    <span class="detail-value">{{.Date}}</span>
                 </div>
                 <div class="detail-grid">
                     <span class="detail-label">Complaint Type:</span>
@@ -303,48 +298,16 @@
             </div>
             
             <div class="customer-complaint">
-                <h3 style="margin: 0 0 15px 0; color: #e65100;">💬 Customer's Complaint Statement</h3>
+                <h3 style="margin: 0 0 15px 0; color: #e65100;">Customer's complaint statement</h3>
                 <div class="complaint-text">
-                    "I am extremely disappointed with the service provided. Despite paying full price, the work was completed poorly and does not meet industry standards. The company has been unresponsive to my attempts to resolve this matter. I am seeking a full refund plus compensation for additional costs incurred due to their negligence. This business should be held accountable for their unprofessional conduct."
+                    "I am disappointed with the service provided. Despite paying in full, the work was not completed to the standard I expected, and the company has not responded to my attempts to resolve the matter. I am asking for a refund. I would appreciate the business's help in resolving this."
                 </div>
-                <p style="margin: 10px 0 0 0; color: #e65100; font-size: 14px;"><strong>Customer:</strong> Margaret K. Thompson | <strong>Purchase Date:</strong> November 15, 2024</p>
+                <p style="margin: 10px 0 0 0; color: #e65100; font-size: 14px;"><strong>Customer:</strong> Margaret K. Thompson</p>
             </div>
-            
-            <div class="rating-impact">
-                <h3 style="margin: 0 0 15px 0; color: #f44336;">📊 Impact on Your BBB Rating</h3>
-                <p style="margin: 0 0 15px 0; color: #f44336; font-size: 14px;">This complaint will negatively affect your business rating if not resolved within the required timeframe.</p>
-                <div class="current-rating">C-</div>
-                <p style="margin: 0; color: #f44336; font-size: 14px;"><strong>Projected rating if complaint unresolved</strong></p>
-                
-                <div class="rating-breakdown">
-                    <div class="rating-item">
-                        <div class="rating-score">23</div>
-                        <div class="rating-label">Complaints</div>
-                    </div>
-                    <div class="rating-item">
-                        <div class="rating-score">67%</div>
-                        <div class="rating-label">Response Rate</div>
-                    </div>
-                    <div class="rating-item">
-                        <div class="rating-score">4.2</div>
-                        <div class="rating-label">Avg Resolution</div>
-                    </div>
-                    <div class="rating-item">
-                        <div class="rating-score">C-</div>
-                        <div class="rating-label">New Rating</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="deadline-warning">
-                <h4 style="margin: 0 0 8px 0; color: #ff9800;">⏰ Response Deadline</h4>
-                <div class="timer-display">3 Days 14 Hours</div>
-                <p style="margin: 0; font-size: 14px; color: #ff9800;">Failure to respond within the required timeframe will result in an automatic rating downgrade and potential loss of BBB accreditation.</p>
-            </div>
-            
+
             <div class="resolution-process">
-                <h3 style="margin: 0 0 15px 0; color: #2e7d32;">✅ Resolution Process</h3>
-                <p style="margin: 0 0 15px 0; color: #2e7d32; font-size: 14px;">To maintain your BBB rating and resolve this complaint:</p>
+                <h3 style="margin: 0 0 15px 0; color: #2e7d32;">How to respond</h3>
+                <p style="margin: 0 0 15px 0; color: #2e7d32; font-size: 14px;">BBB asks that businesses respond to complaints within 14 calendar days. To respond:</p>
                 <ol style="margin: 0; color: #2e7d32; font-size: 14px;">
                     <li>Access the secure BBB business portal</li>
                     <li>Review the complete complaint details and evidence</li>
@@ -354,24 +317,13 @@
                 </ol>
             </div>
             
-            <p style="color: #212529; font-size: 16px; text-align: center;"><strong>Protect your business reputation and BBB accreditation. Respond to this complaint immediately.</strong></p>
-            
+            <p style="color: #212529; font-size: 16px; text-align: center;">Responding promptly helps resolve the matter and keeps your BBB record accurate.</p>
+
             <p style="text-align: center;">
-                <a href="{{.URL}}" class="cta-button">🔐 Access BBB Business Portal</a>
+                <a href="{{.URL}}" class="cta-button">Review &amp; Respond to Complaint</a>
             </p>
-            
-            <div style="background: #e3f2fd; border: 1px solid #2196f3; border-radius: 8px; padding: 20px; margin: 25px 0;">
-                <h4 style="margin: 0 0 8px 0; color: #1565c0;">🛡️ Why Respond Quickly Matters</h4>
-                <ul style="margin: 0; font-size: 14px; color: #1565c0;">
-                    <li>Maintains your BBB accreditation and A+ rating</li>
-                    <li>Demonstrates commitment to customer service</li>
-                    <li>Prevents negative online reviews and publicity</li>
-                    <li>Shows professionalism to potential customers</li>
-                    <li>Protects your business's online reputation</li>
-                </ul>
-            </div>
-            
-            <p style="color: #212529; font-size: 16px;"><strong>Need assistance?</strong> Contact our Business Relations team at 1-888-BBB-HELP or email businesssupport@bbb.org for guidance on responding to this complaint.</p>
+
+            <p style="color: #212529; font-size: 16px;"><strong>Need assistance?</strong> Contact your local BBB Business Relations team or email info@bbb.org for guidance on responding to this complaint.</p>
             
             <p style="color: #212529; font-size: 16px;">Thank you for your prompt attention to this matter.</p>
             
@@ -383,14 +335,14 @@
         <div class="footer">
             <div class="footer-text">
                 <p style="margin: 0 0 8px 0;">Better Business Bureau | Advancing Marketplace Trust Since 1912</p>
-                <p style="margin: 0 0 8px 0;">This business notification was sent to {{.Email}} regarding BBB Case #BBB-COMP-2024-789456</p>
+                <p style="margin: 0 0 8px 0;">International Association of Better Business Bureaus, 3033 Wilson Blvd, Suite 600, Arlington, VA 22201</p>
+                <p style="margin: 0 0 8px 0;">This business notification was sent to {{.Email}} regarding BBB Complaint ID 17284506</p>
                 <p style="margin: 0 0 12px 0;">
-                    <a href="#">BBB Standards</a> • 
-                    <a href="#">File a Complaint</a> • 
-                    <a href="#">Business Directory</a> • 
-                    <a href="#">Contact BBB</a>
+                    <a href="https://www.bbb.org">BBB Standards</a> &bull;
+                    <a href="https://www.bbb.org">Business Directory</a> &bull;
+                    <a href="https://www.bbb.org">Contact BBB</a>
                 </p>
-                <p style="margin: 0;">© 2024 Better Business Bureau. All rights reserved.</p>
+                <p style="margin: 0;">© 2026 Better Business Bureau. All rights reserved.</p>
             </div>
         </div>
     </div>

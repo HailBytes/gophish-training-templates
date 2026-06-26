@@ -9,14 +9,27 @@
       "attack_vector": "credential_harvest",
       "difficulty": "advanced",
       "estimated_click_rate": "20-40%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.Date}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
       "suggested_subject_lines": [
         "URGENT: Wire transfer requires immediate authorization",
         "Federal Reserve: Transaction review required",
         "Action Required: Outbound wire transfer pending approval"
       ],
       "education_page": "education/financial_education.html",
-      "tags": ["financial", "wire-transfer", "federal-reserve", "credential-theft", "advanced"],
+      "tags": [
+        "financial",
+        "wire-transfer",
+        "federal-reserve",
+        "credential-theft",
+        "advanced"
+      ],
       "notes": "Best for finance, accounting, and executive staff. Advanced difficulty — lower click rate but high-value target for BEC scenarios."
     },
     {
@@ -25,14 +38,26 @@
       "attack_vector": "credential_harvest",
       "difficulty": "intermediate",
       "estimated_click_rate": "30-50%",
-      "gophish_variables": ["{{.FirstName}}", "{{.LastName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
       "suggested_subject_lines": [
         "Skype: Payment required to continue service",
         "Your Skype subscription is expiring — update payment",
         "Skype Credit: Auto-recharge payment failed"
       ],
       "education_page": "education/financial_education.html",
-      "tags": ["skype", "financial", "payment", "subscription", "credential-theft", "intermediate"],
+      "tags": [
+        "skype",
+        "financial",
+        "payment",
+        "subscription",
+        "credential-theft",
+        "intermediate"
+      ],
       "notes": "Niche lure best suited to organizations still using Skype or Skype for Business. The expiring-subscription pretext applies moderate pressure. Consider a Teams-based template instead in fully migrated Microsoft 365 environments."
     }
   ],

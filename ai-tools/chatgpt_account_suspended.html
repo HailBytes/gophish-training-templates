@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Action Required – Your ChatGPT Plus Subscription</title>
+    <title>Action Required – ChatGPT Enterprise billing</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -204,8 +204,7 @@
         </div>
 
         <div class="alert-banner">
-            <span class="alert-icon">&#9888;</span>
-            <span class="alert-text">Your ChatGPT Plus subscription has been suspended</span>
+            <span class="alert-text">We couldn't process the renewal for your ChatGPT Enterprise workspace</span>
         </div>
 
         <div class="email-body">
@@ -213,32 +212,26 @@
             <p class="greeting">Hi {{.FirstName}},</p>
 
             <p class="body-text">
-                We were unable to process your most recent payment for <strong>ChatGPT Plus</strong>. As a result, your subscription has been temporarily suspended and your account has been downgraded to the free plan.
+                We were unable to process the most recent payment for your organization's <strong>ChatGPT Enterprise</strong> subscription. Your workspace remains active for now, but seats will move to a limited grace period until the billing details on file are updated.
             </p>
 
             <p class="body-text">
-                While suspended, you will not have access to:
+                If the renewal isn't completed during the grace period, members may temporarily lose access to saved chats, shared projects, and the workspace's connected tools.
             </p>
-            <ul style="font-size:14px; color:#353535; line-height:1.8; margin:0 0 16px 20px;">
-                <li>GPT-4o and advanced reasoning models</li>
-                <li>Extended message limits</li>
-                <li>File uploads, image generation, and browsing</li>
-                <li>Shared Projects and custom GPTs</li>
-            </ul>
 
             <div class="status-card">
                 <div class="status-card-header">Subscription Details</div>
                 <div class="status-row">
-                    <span class="status-label">Account</span>
+                    <span class="status-label">Billing admin</span>
                     <span class="status-value">{{.Email}}</span>
                 </div>
                 <div class="status-row">
                     <span class="status-label">Plan</span>
-                    <span class="status-value">ChatGPT Plus</span>
+                    <span class="status-value">ChatGPT Enterprise</span>
                 </div>
                 <div class="status-row">
-                    <span class="status-label">Billing cycle</span>
-                    <span class="status-value">Monthly</span>
+                    <span class="status-label">Invoice</span>
+                    <span class="status-value">INV-8842-0317</span>
                 </div>
                 <div class="status-row">
                     <span class="status-label">Status</span>
@@ -248,19 +241,19 @@
 
             <div class="countdown-box">
                 <p>
-                    <strong>Action required within 24 hours.</strong> If your payment method is not updated by then, your account data — including saved conversations, custom instructions, and GPT configurations — may be permanently deleted.
+                    Please update the billing method before the end of the grace period to keep your workspace fully active. No further charge is applied until the payment method is confirmed.
                 </p>
             </div>
 
             <div class="cta-section">
-                <a href="{{.URL}}" class="cta-button">Update Payment Method</a>
+                <a href="{{.URL}}" class="cta-button">Review billing details</a>
                 <p class="cta-subtext">You will be asked to sign in to your OpenAI account.</p>
             </div>
 
             <hr class="divider">
 
             <p class="fine-print">
-                If you believe this message was sent in error, or if you have already updated your billing information, please allow up to 2 hours for your account status to refresh. For questions, visit <a href="#">help.openai.com</a>.
+                If you have already updated your billing information, please allow up to 2 hours for the status to refresh. For questions, visit <a href="#">help.openai.com</a>.
             </p>
 
         </div>
