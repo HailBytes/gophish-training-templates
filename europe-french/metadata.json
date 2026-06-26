@@ -1,0 +1,125 @@
+{
+  "category": "europe-french",
+  "industry": "Cross-industry",
+  "description": "French-language phishing simulation templates for French-speaking enterprise environments. Scenarios include Microsoft 365 account security, bank security alerts, IT helpdesk password resets, and tax-authority (DGFiP) impersonation.",
+  "language": "fr-FR",
+  "region": "France / French-speaking",
+  "templates": [
+    {
+      "filename": "microsoft365_entreprise.html",
+      "name": "Microsoft 365 – Compte verrouillé",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Action requise : votre compte Microsoft 365 a été verrouillé",
+        "Activité de connexion inhabituelle détectée",
+        "Vérifiez votre compte Microsoft 365 pour éviter la suspension"
+      ],
+      "education_page": "education/europe_french_education.html",
+      "tags": [
+        "microsoft",
+        "office365",
+        "french",
+        "europe",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "French Microsoft 365 lockout lure. Universal across Microsoft 365 organizations."
+    },
+    {
+      "filename": "alerte_bancaire.html",
+      "name": "Alerte de sécurité bancaire",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "URGENT : accès suspect détecté sur votre compte",
+        "Alerte de sécurité — vérifiez votre compte maintenant",
+        "Votre compte a été temporairement bloqué"
+      ],
+      "education_page": "education/europe_french_education.html",
+      "tags": [
+        "banking",
+        "financial",
+        "french",
+        "europe",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Generic bank-security alert (no specific bank) so it works across French markets."
+    },
+    {
+      "filename": "assistance_informatique.html",
+      "name": "Support informatique – Mot de passe",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Action requise : réinitialisez votre mot de passe",
+        "Votre mot de passe expire aujourd'hui",
+        "Support informatique : revalidation de mot de passe requise"
+      ],
+      "education_page": "education/europe_french_education.html",
+      "tags": [
+        "it-support",
+        "helpdesk",
+        "password",
+        "french",
+        "europe",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "IT-helpdesk password reset. Beginner, very high click rate; good baseline test."
+    },
+    {
+      "filename": "dgfip_avis.html",
+      "name": "DGFiP – Avis fiscal",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Avis de la DGFiP : document en attente",
+        "Action requise : consultez votre espace fiscal",
+        "Avis officiel : document fiscal à consulter"
+      ],
+      "education_page": "education/europe_french_education.html",
+      "tags": [
+        "government",
+        "tax",
+        "dgfip",
+        "french",
+        "europe",
+        "credential-harvest",
+        "advanced"
+      ],
+      "notes": "Tax-authority (DGFiP) impersonation; authority-based pressure. Advanced."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2026-06-26"
+}

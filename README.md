@@ -70,6 +70,8 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
 - **Utilities**: Billing credits, service notifications, account management
 - **LATAM / Portuguese**: Banking alerts, IT helpdesk, HR onboarding, government (Brazil)
 - **LATAM / Spanish**: Microsoft 365, banking alerts, IT helpdesk, tax authority (SAT)
+- **French (fr-FR)**: Microsoft 365, banking alerts, IT helpdesk, tax authority (DGFiP)
+- **German (de-DE)**: Microsoft 365, banking alerts, IT helpdesk, tax office (Finanzamt/ELSTER)
 - Multi-industry coverage for comprehensive training programs
 
 

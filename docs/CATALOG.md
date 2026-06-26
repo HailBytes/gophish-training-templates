@@ -12,8 +12,8 @@ the enterprise-ready successor to GoPhish, which imports this metadata directly.
 
 ## Summary
 
-- **Templates:** 84
-- **Categories:** 27
+- **Templates:** 92
+- **Categories:** 29
 - **Most recent update:** 2026-06-26
 
 ### `ai-tools` — ai-tools
@@ -107,6 +107,32 @@ _Phishing templates impersonating entertainment and consumer reward services_
 |---|---|---|---|---|---|
 | Spotify Account Issue | [`spotify_account.html`](entertainment/spotify_account.html) | credential_harvest | beginner | 40-60% | 3 |
 | Starbucks Gift Card Offer | [`starbucks_gift.html`](entertainment/starbucks_gift.html) | credential_harvest | beginner | 45-65% | 3 |
+
+### `europe-french` — europe-french (fr-FR)
+
+**Industry:** Cross-industry  ·  **Templates:** 4
+
+_French-language phishing simulation templates for French-speaking enterprise environments. Scenarios include Microsoft 365 account security, bank security alerts, IT helpdesk password resets, and tax-authority (DGFiP) impersonation._
+
+| Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
+|---|---|---|---|---|---|
+| Microsoft 365 – Compte verrouillé | [`microsoft365_entreprise.html`](europe-french/microsoft365_entreprise.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Alerte de sécurité bancaire | [`alerte_bancaire.html`](europe-french/alerte_bancaire.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Support informatique – Mot de passe | [`assistance_informatique.html`](europe-french/assistance_informatique.html) | credential_harvest | beginner | 50-70% | 3 |
+| DGFiP – Avis fiscal | [`dgfip_avis.html`](europe-french/dgfip_avis.html) | credential_harvest | advanced | 30-50% | 3 |
+
+### `europe-german` — europe-german (de-DE)
+
+**Industry:** Cross-industry  ·  **Templates:** 4
+
+_German-language phishing simulation templates for German-speaking enterprise environments. Scenarios include Microsoft 365 account security, bank security alerts, IT helpdesk password resets, and tax-office (Finanzamt/ELSTER) impersonation._
+
+| Template | File | Vector | Difficulty | Est. Click Rate | Subject Lines |
+|---|---|---|---|---|---|
+| Microsoft 365 – Konto gesperrt | [`microsoft365_unternehmen.html`](europe-german/microsoft365_unternehmen.html) | credential_harvest | intermediate | 40-60% | 3 |
+| Bank-Sicherheitswarnung | [`bank_sicherheitswarnung.html`](europe-german/bank_sicherheitswarnung.html) | credential_harvest | intermediate | 40-60% | 3 |
+| IT-Support – Passwort zurücksetzen | [`it_support.html`](europe-german/it_support.html) | credential_harvest | beginner | 50-70% | 3 |
+| Finanzamt – Steuermitteilung | [`finanzamt_mitteilung.html`](europe-german/finanzamt_mitteilung.html) | credential_harvest | advanced | 30-50% | 3 |
 
 ### `financial` — financial
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réinitialisation de mot de passe requise</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#444b54;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Assistance informatique</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Bonjour {{.FirstName}},</p>
+<p style="margin:0 0 16px;">Dans le cadre d'une mise à jour de sécurité programmée, tous les employés doivent revalider leur mot de passe professionnel avant la date limite.</p>
+<p style="margin:0 0 16px;">Les comptes non revalidés perdront l'accès à la messagerie et aux applications internes. L'opération prend moins d'une minute.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#444b54;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Réinitialiser mon mot de passe</a></p>
+<p style="margin:18px 0 0;">Service d'assistance informatique</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+Message automatique généré par le système d'assistance de votre organisation.<br>Ce message a &eacute;t&eacute; envoy&eacute; &agrave; {{.Email}}. Merci de ne pas r&eacute;pondre &agrave; cet e-mail.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>

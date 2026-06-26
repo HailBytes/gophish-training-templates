@@ -1,0 +1,126 @@
+{
+  "category": "europe-german",
+  "industry": "Cross-industry",
+  "description": "German-language phishing simulation templates for German-speaking enterprise environments. Scenarios include Microsoft 365 account security, bank security alerts, IT helpdesk password resets, and tax-office (Finanzamt/ELSTER) impersonation.",
+  "language": "de-DE",
+  "region": "Germany / German-speaking",
+  "templates": [
+    {
+      "filename": "microsoft365_unternehmen.html",
+      "name": "Microsoft 365 – Konto gesperrt",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Aktion erforderlich: Ihr Microsoft 365-Konto wurde gesperrt",
+        "Ungewöhnliche Anmeldeaktivität erkannt",
+        "Überprüfen Sie Ihr Microsoft 365-Konto, um eine Sperrung zu vermeiden"
+      ],
+      "education_page": "education/europe_german_education.html",
+      "tags": [
+        "microsoft",
+        "office365",
+        "german",
+        "europe",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "German Microsoft 365 lockout lure. Universal across Microsoft 365 organizations."
+    },
+    {
+      "filename": "bank_sicherheitswarnung.html",
+      "name": "Bank-Sicherheitswarnung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "DRINGEND: Verdächtiger Zugriff auf Ihr Konto erkannt",
+        "Sicherheitswarnung — überprüfen Sie jetzt Ihr Konto",
+        "Ihr Konto wurde vorübergehend gesperrt"
+      ],
+      "education_page": "education/europe_german_education.html",
+      "tags": [
+        "banking",
+        "financial",
+        "german",
+        "europe",
+        "credential-harvest",
+        "intermediate"
+      ],
+      "notes": "Generic bank-security alert (no specific bank) so it works across German markets."
+    },
+    {
+      "filename": "it_support.html",
+      "name": "IT-Support – Passwort zurücksetzen",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Aktion erforderlich: Setzen Sie Ihr Passwort zurück",
+        "Ihr Passwort läuft heute ab",
+        "IT-Support: erneute Bestätigung des Passworts erforderlich"
+      ],
+      "education_page": "education/europe_german_education.html",
+      "tags": [
+        "it-support",
+        "helpdesk",
+        "password",
+        "german",
+        "europe",
+        "credential-harvest",
+        "beginner"
+      ],
+      "notes": "IT-helpdesk password reset. Beginner, very high click rate; good baseline test."
+    },
+    {
+      "filename": "finanzamt_mitteilung.html",
+      "name": "Finanzamt – Steuermitteilung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Mitteilung des Finanzamts: Dokument verfügbar",
+        "Aktion erforderlich: prüfen Sie Ihr ELSTER-Postfach",
+        "Amtliche Mitteilung: Steuerdokument zur Einsicht"
+      ],
+      "education_page": "education/europe_german_education.html",
+      "tags": [
+        "government",
+        "tax",
+        "finanzamt",
+        "elster",
+        "german",
+        "europe",
+        "credential-harvest",
+        "advanced"
+      ],
+      "notes": "Tax-office (Finanzamt/ELSTER) impersonation; authority-based pressure. Advanced."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2026-06-26"
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avis : document fiscal en attente</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e3e3e3;font-family:Arial,Helvetica,sans-serif;color:#222222;">
+<tr><td style="background:#000091;padding:16px 24px;color:#ffffff;font-size:18px;font-weight:bold;">Direction générale des Finances publiques</td></tr>
+<tr><td style="padding:26px 24px;font-size:15px;line-height:1.55;color:#222222;">
+<p style="margin:0 0 16px;">Madame, Monsieur {{.FirstName}},</p>
+<p style="margin:0 0 16px;">Un document vous concernant est disponible dans votre espace personnel sur impots.gouv.fr. Il nécessite votre consultation afin d'éviter toute pénalité.</p>
+<p style="margin:0 0 16px;">Connectez-vous à votre espace pour consulter le document et régulariser votre situation.</p>
+<p style="margin:24px 0;"><a href="{{.URL}}" style="background:#000091;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:3px;display:inline-block;font-size:15px;">Consulter mon espace</a></p>
+<p style="margin:18px 0 0;">Direction générale des Finances publiques</p>
+</td></tr>
+<tr><td style="padding:16px 24px;border-top:1px solid #eeeeee;font-size:12px;line-height:1.5;color:#888888;">
+Message officiel. Ne communiquez jamais votre mot de passe par e-mail.<br>Ce message a &eacute;t&eacute; envoy&eacute; &agrave; {{.Email}}. Merci de ne pas r&eacute;pondre &agrave; cet e-mail.
+</td></tr>
+</table>
+</td></tr></table>
+{{.Tracker}}
+</body>
+</html>
