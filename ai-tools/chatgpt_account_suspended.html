@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Required – Your ChatGPT Plus Subscription</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Söhne', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f7f7f8;
+            padding: 24px 16px;
+            color: #0d0d0d;
+        }
+        .email-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background: #000000;
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        /* OpenAI logo approximation: stylized "O" ring */
+        .openai-logo {
+            width: 28px;
+            height: 28px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .openai-logo::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+        }
+        .header-wordmark {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+        .alert-banner {
+            background: #fff3cd;
+            border-bottom: 1px solid #ffc107;
+            padding: 12px 32px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .alert-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .alert-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #856404;
+        }
+        .email-body {
+            padding: 36px 32px 28px;
+        }
+        .greeting {
+            font-size: 16px;
+            font-weight: 500;
+            color: #0d0d0d;
+            margin-bottom: 18px;
+        }
+        .body-text {
+            font-size: 14px;
+            color: #353535;
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+        .status-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 22px 0;
+        }
+        .status-card-header {
+            background: #fafafa;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b6b6b;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            font-size: 13px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .status-row:last-child { border-bottom: none; }
+        .status-label { color: #6b6b6b; }
+        .status-value { color: #0d0d0d; font-weight: 500; }
+        .status-suspended {
+            background: #fef2f2;
+            color: #b91c1c;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 4px;
+            border: 1px solid #fecaca;
+        }
+        .countdown-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+        .countdown-box p {
+            font-size: 13px;
+            color: #b91c1c;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .countdown-box strong {
+            color: #991b1b;
+        }
+        .cta-section {
+            text-align: center;
+            margin: 28px 0 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 13px 30px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.1px;
+        }
+        .cta-subtext {
+            font-size: 12px;
+            color: #9b9b9b;
+            margin-top: 10px;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #e5e5e5;
+            margin: 22px 0;
+        }
+        .fine-print {
+            font-size: 12px;
+            color: #9b9b9b;
+            line-height: 1.6;
+        }
+        .fine-print a {
+            color: #0d0d0d;
+            text-decoration: underline;
+        }
+        .footer {
+            background: #000000;
+            padding: 20px 32px;
+        }
+        .footer p {
+            font-size: 12px;
+            color: #9b9b9b;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+        .footer a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+        .footer a:hover { text-decoration: underline; }
+        @media (max-width: 500px) {
+            .email-body { padding: 28px 20px 22px; }
+            .alert-banner { padding: 12px 20px; }
+            .status-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <img src="{{.Tracker}}" width="1" height="1" style="display:none;" alt="">
+
+    <div class="email-wrapper">
+
+        <div class="header">
+            <div class="openai-logo"></div>
+            <span class="header-wordmark">OpenAI</span>
+        </div>
+
+        <div class="alert-banner">
+            <span class="alert-icon">&#9888;</span>
+            <span class="alert-text">Your ChatGPT Plus subscription has been suspended</span>
+        </div>
+
+        <div class="email-body">
+
+            <p class="greeting">Hi {{.FirstName}},</p>
+
+            <p class="body-text">
+                We were unable to process your most recent payment for <strong>ChatGPT Plus</strong>. As a result, your subscription has been temporarily suspended and your account has been downgraded to the free plan.
+            </p>
+
+            <p class="body-text">
+                While suspended, you will not have access to:
+            </p>
+            <ul style="font-size:14px; color:#353535; line-height:1.8; margin:0 0 16px 20px;">
+                <li>GPT-4o and advanced reasoning models</li>
+                <li>Extended message limits</li>
+                <li>File uploads, image generation, and browsing</li>
+                <li>Shared Projects and custom GPTs</li>
+            </ul>
+
+            <div class="status-card">
+                <div class="status-card-header">Subscription Details</div>
+                <div class="status-row">
+                    <span class="status-label">Account</span>
+                    <span class="status-value">{{.Email}}</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Plan</span>
+                    <span class="status-value">ChatGPT Plus</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Billing cycle</span>
+                    <span class="status-value">Monthly</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Status</span>
+                    <span class="status-value"><span class="status-suspended">Payment failed</span></span>
+                </div>
+            </div>
+
+            <div class="countdown-box">
+                <p>
+                    <strong>Action required within 24 hours.</strong> If your payment method is not updated by then, your account data — including saved conversations, custom instructions, and GPT configurations — may be permanently deleted.
+                </p>
+            </div>
+
+            <div class="cta-section">
+                <a href="{{.URL}}" class="cta-button">Update Payment Method</a>
+                <p class="cta-subtext">You will be asked to sign in to your OpenAI account.</p>
+            </div>
+
+            <hr class="divider">
+
+            <p class="fine-print">
+                If you believe this message was sent in error, or if you have already updated your billing information, please allow up to 2 hours for your account status to refresh. For questions, visit <a href="#">help.openai.com</a>.
+            </p>
+
+        </div>
+
+        <div class="footer">
+            <p>This message was sent to {{.Email}}.</p>
+            <p>OpenAI, 3180 18th St, San Francisco, CA 94110</p>
+            <p style="margin-top:8px;"><a href="#">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Terms of Use</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Unsubscribe</a></p>
+        </div>
+
+    </div>
+</body>
+</html>

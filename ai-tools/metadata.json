@@ -19,8 +19,25 @@
       "education_page": "education/ai_tools_phishing_education.html",
       "tags": ["ai", "copilot", "microsoft", "microsoft-365", "license", "credential-harvest", "intermediate"],
       "notes": "Highly effective against organizations using Microsoft 365. Copilot is now bundled in M365 E3/E5, meaning almost all enterprise employees have it. Fear of losing a productivity tool mid-task drives high click rates. The 48-hour deadline increases urgency. Works well as a follow-up after a general Microsoft 365 campaign."
+    },
+    {
+      "filename": "chatgpt_account_suspended.html",
+      "name": "ChatGPT Plus – Payment Failed / Account Suspended",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Action required: Update your ChatGPT Plus payment method",
+        "Your ChatGPT Plus subscription has been suspended",
+        "Payment failed — your ChatGPT Plus account has been downgraded",
+        "ChatGPT Plus: Billing issue requires your attention"
+      ],
+      "education_page": "education/ai_tools_phishing_education.html",
+      "tags": ["ai", "chatgpt", "openai", "subscription", "billing", "credential-harvest", "intermediate"],
+      "notes": "Effective against any team where employees use ChatGPT Plus for productivity. The threat of losing access to GPT-4o and saved conversations creates urgency. Billing-failure lures are highly credible because subscription payment hiccups are a familiar everyday occurrence. Deploy to tech, marketing, legal, or any department with high ChatGPT usage."
     }
   ],
   "gophish_version_tested": "0.12.1",
-  "last_updated": "2025-06-19"
+  "last_updated": "2026-06-24"
 }
