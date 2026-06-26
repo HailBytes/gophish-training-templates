@@ -194,6 +194,15 @@ def check_external_dependencies(content: str, result: ValidationResult, file_pat
             f"Found {len(cdns)} external CDN reference(s) — templates may fail without internet access"
         )
 
+    # External hotlinked images leak target IP to third-party servers and break in airgapped environments
+    external_img_pattern = re.compile(r'<img\s[^>]*src="https?://(?!data:)', re.IGNORECASE)
+    hotlinked_imgs = external_img_pattern.findall(content)
+    if hotlinked_imgs:
+        result.errors.append(
+            f"Found {len(hotlinked_imgs)} hotlinked external image(s) — use inline SVG, emoji, or base64 data URIs instead; "
+            f"external images leak target IP addresses and fail in airgapped deployments"
+        )
+
 
 def check_education_page(template_path: Path, result: ValidationResult):
     """Check that a corresponding education page exists."""
