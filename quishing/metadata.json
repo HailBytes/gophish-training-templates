@@ -35,6 +35,70 @@
       "education_page": "education/quishing_education.html",
       "tags": ["quishing", "qr-code", "wifi", "network", "it-security", "beginner"],
       "notes": "WiFi upgrade is a very believable IT scenario. Works well for office return campaigns or after physical office changes. The manual download link is the primary GoPhish tracking vector."
+    },
+    {
+      "filename": "microsoft_mfa_qr.html",
+      "name": "Microsoft MFA QR Code Update",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-55%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Action Required: Set up Microsoft Authenticator App (MFA)",
+        "Microsoft 365 Security: Mandatory MFA Device Registration Update",
+        "IT Notice: QR verification required to prevent account lockout"
+      ],
+      "education_page": "education/quishing_education.html",
+      "tags": ["quishing", "qr-code", "microsoft", "mfa", "authenticator", "credential-theft", "intermediate"],
+      "notes": "Simulates Microsoft 365 security updates prompting users to scan a QR code to configure the Microsoft Authenticator app."
+    },
+    {
+      "filename": "parking_toll_qr.html",
+      "name": "Municipal Unpaid Toll QR Citation",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "45-65%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}", "{{.Date}}"],
+      "suggested_subject_lines": [
+        "Notice of Violation: Unpaid road toll invoice",
+        "Tolls Bureau: Final warning before court penalty fees",
+        "Action Required: Scan QR to settle outstanding vehicle citation"
+      ],
+      "education_page": "education/quishing_education.html",
+      "tags": ["quishing", "qr-code", "toll", "invoice", "citation", "credential-theft", "beginner"],
+      "notes": "Uses anxiety around outstanding legal/traffic citations and low monetary amounts to bypass standard user skepticism."
+    },
+    {
+      "filename": "secure_document_qr.html",
+      "name": "Scan to View Encrypted Document QR",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "35-50%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "Secure Document Shared: Scan QR code to view performance review",
+        "Confidential: Encrypted PDF shared in secure workspace",
+        "Verification needed: View shared organizational adjustments file"
+      ],
+      "education_page": "education/quishing_education.html",
+      "tags": ["quishing", "qr-code", "file-sharing", "secure-document", "credential-theft", "intermediate"],
+      "notes": "Exploits professional curiosity by claiming an encrypted salary or performance PDF is waiting, but requires scanning a verification QR code."
+    },
+    {
+      "filename": "docusign_qr.html",
+      "name": "DocuSign Signature Request QR",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": ["{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"],
+      "suggested_subject_lines": [
+        "DocuSign: Signature required for Mutual NDA and Agreement",
+        "Review Document: Please sign pending envelope in DocuSign",
+        "Action Required: Scan DocuSign secure access code to execute"
+      ],
+      "education_page": "education/quishing_education.html",
+      "tags": ["quishing", "qr-code", "docusign", "signature", "nda", "credential-theft", "intermediate"],
+      "notes": "Impersonates standard corporate e-signature notification, redirecting the mobile signing workflow via QR."
     }
   ],
   "gophish_version_tested": "0.12.1",

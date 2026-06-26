@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urgent Notice: Unpaid Toll Violation</title>
+    <style>
+        body { margin: 0; padding: 20px; background-color: #f6f6f6; font-family: Arial, Helvetica, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #dcdcdc; }
+        .header { background: #333333; color: #ffeb3b; padding: 20px 24px; text-align: center; }
+        .header-title { font-size: 22px; font-weight: bold; letter-spacing: 1px; }
+        .content { padding: 30px 24px; }
+        .alert-bar { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin-bottom: 20px; font-size: 14px; color: #856404; }
+        .qr-section { text-align: center; margin: 24px 0; padding: 20px; border: 1px solid #e0e0e0; background: #fbfbfb; }
+        .qr-img { width: 180px; height: 180px; margin: 0 auto; display: block; }
+        .details-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .details-table td { padding: 8px 12px; border-bottom: 1px solid #eeeeee; }
+        .details-table td.label { font-weight: bold; color: #555555; width: 150px; }
+        .details-table td.value { color: #111111; }
+        .footer { background: #f5f5f5; border-top: 1px solid #e0e0e0; padding: 16px 24px; font-size: 11px; color: #777777; line-height: 1.5; }
+        p { color: #333333; font-size: 14px; line-height: 1.5; margin: 0 0 14px; }
+        a { color: #1976d2; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
+            <tr>
+                <td class="header">
+                    <div class="header-title">TOLL & TRAFFIC VIOLATIONS BUREAU</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <p>Dear Customer ({{.FirstName}}),</p>
+
+                    <div class="alert-bar">
+                        ⚠️ <strong>NOTICE OF UNPAID TOLL:</strong> This is your final invoice notice. Late penalties will apply if this payment is not settled within 48 hours.
+                    </div>
+
+                    <p>Our automated license plate recognition cameras recorded your vehicle bypassing a toll collection point without active transponder billing or cash payment. A citation has been issued to your registered address.</p>
+
+                    <table class="details-table">
+                        <tr>
+                            <td class="label">Invoice Ref:</td>
+                            <td class="value">TL-{{.Email | slice 0 8 | uppercase}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Date Recorded:</td>
+                            <td class="value">{{.Date}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Violation Type:</td>
+                            <td class="value">Missed Road Toll Charge</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Total Due:</td>
+                            <td class="value" style="color: #d32f2f; font-weight: bold;">$12.50 USD</td>
+                        </tr>
+                    </table>
+
+                    <p>To avoid additional court administrative costs and a potential registration lock, scan the QR code below using your mobile device to complete payment securely online.</p>
+
+                    <div class="qr-section">
+                        <img class="qr-img" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIxMCIgeT0iMTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIyMiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMzAiIHk9IjEwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTM2IiB5PSIxNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjE0MiIgeT0iMjIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iMTMwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iMTYiIHk9IjEzNiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjIyIiB5PSIxNDIiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iOTYiIHk9IjEwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMCIgeT0iOTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwNCIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9ImJsYWNrIi8+PHJlY3QgeD0iODAiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMDQiIHk9IjEwNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxMjAiIHk9IjgwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIv>PHJlY3QgeD0iMTQwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIxNjAwIiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSI4MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEwMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjEyMCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE0MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTQwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjE2MCIgeT0iMTYwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJibGFjayIvPjwvc3ZnPg==" alt="Municipal Toll Citation Payment QR Code" />
+                        <div style="margin-top: 10px; font-size: 13px; color: #666666;">Scan using your smartphone camera to pay immediately</div>
+                    </div>
+
+                    <p>If you prefer to pay online using a web browser, please <a href="{{.URL}}">click here to log into the billing portal</a> using your reference ID.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer">
+                    This notification was dispatched regarding vehicle registration records matching {{.Email}}.<br>
+                    Toll & Traffic Violations Bureau &bull; State Department of Transportation &bull; Confidential and Time-Sensitive.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
