@@ -229,32 +229,25 @@
             <p><strong>Remember:</strong> The best defense against phishing is awareness and vigilance.</p>
             <p>Always verify unexpected requests for credentials, payments, or sensitive information.</p>
             <p style="margin-top: 16px;">Questions about this training? Contact the Information Security Team at security@company.com</p>
-            <p style="margin-top: 16px;">© 2024 Company Information Security Program</p>
+            <p style="margin-top: 16px;">© 2025 Company Information Security Program</p>
         </div>
     </div>
 
     <script>
         function startTraining() {
-            // Redirect to the appropriate educational module based on campaign type
-            var campaignType = '{{.CampaignType}}' || 'general';
-            window.location.href = '/education/' + campaignType + '_education.html';
+            // Update this URL to the education page for this specific campaign.
+            // {{.CampaignType}} is not a GoPhish variable; set the path explicitly
+            // per campaign (e.g. /education/microsoft_education.html).
+            window.location.href = '/education/general_education.html';
         }
 
         function closeWindow() {
-            // Attempt to close the window or redirect to company homepage
             if (window.opener) {
                 window.close();
             } else {
                 window.location.href = 'https://company.com';
             }
         }
-
-        // Optional: Auto-prompt for training after 15 seconds
-        setTimeout(function() {
-            if (confirm('Would you like to start the security awareness training now?')) {
-                startTraining();
-            }
-        }, 15000);
     </script>
 </body>
 </html>
