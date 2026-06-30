@@ -138,8 +138,16 @@ class HTMLStructureChecker(HTMLParser):
 
 # ── Individual checks ────────────────────────────────────────────────────────
 
-def check_gophish_variables(content: str, result: ValidationResult, is_education: bool):
-    """Verify required and recommended GoPhish template variables."""
+def check_gophish_variables(content: str, result: ValidationResult, is_education: bool,
+                            declared_vars: set = None):
+    """Verify required and recommended GoPhish template variables.
+
+    declared_vars: the set of variables listed in metadata.json's gophish_variables for this
+    template.  When provided, recommended-variable warnings are suppressed for vars that the
+    template author intentionally excluded (i.e. not present in declared_vars).  This prevents
+    false-positive warnings on templates like smishing simulations that legitimately omit
+    {{.Email}} because the underlying attack vector is SMS, not email.
+    """
     if is_education:
         # Education pages don't need GoPhish variables
         return
@@ -150,6 +158,11 @@ def check_gophish_variables(content: str, result: ValidationResult, is_education
 
     for var in RECOMMENDED_VARS:
         if var not in content:
+            # Suppress the warning when metadata explicitly declares which variables this
+            # template uses and {{.Email}} (or another recommended var) is not among them —
+            # that signals an intentional omission, not an oversight.
+            if declared_vars is not None and var not in declared_vars:
+                continue
             result.warnings.append(f"Missing recommended GoPhish variable: {var}")
 
     # Check for common typos
@@ -525,6 +538,23 @@ def is_education_file(file_path: Path) -> bool:
     return "education" in [p.name for p in file_path.parents]
 
 
+def _load_declared_vars(file_path: Path):
+    """Return the set of gophish_variables declared in metadata.json for this template,
+    or None if metadata is absent or the entry cannot be found."""
+    metadata_path = file_path.parent / "metadata.json"
+    if not metadata_path.exists():
+        return None
+    try:
+        metadata = json.loads(metadata_path.read_text())
+        for tmpl in metadata.get("templates", []):
+            if tmpl.get("filename") == file_path.name:
+                declared = tmpl.get("gophish_variables")
+                return set(declared) if isinstance(declared, list) else None
+    except Exception:
+        pass
+    return None
+
+
 def validate_file(file_path: Path) -> ValidationResult:
     result = ValidationResult(path=rel_to_root(file_path))
 
@@ -536,8 +566,11 @@ def validate_file(file_path: Path) -> ValidationResult:
 
     is_education = is_education_file(file_path)
 
+    # Load declared variables once; passed to checks that need metadata context.
+    declared_vars = None if is_education else _load_declared_vars(file_path)
+
     check_html_structure(content, result)
-    check_gophish_variables(content, result, is_education)
+    check_gophish_variables(content, result, is_education, declared_vars=declared_vars)
     check_external_dependencies(content, result, file_path)
     check_accessibility(content, result)
     check_email_compatibility(content, result)

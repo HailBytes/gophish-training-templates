@@ -56,6 +56,29 @@ class GoPhishVariableChecks(unittest.TestCase):
         vt.check_gophish_variables("<p>no vars</p>", r, is_education=True)
         self.assertEqual(r.errors, [])
 
+    def test_recommended_var_warned_without_declared_vars(self):
+        # Without metadata context, missing {{.Email}} produces a warning.
+        r = new_result()
+        vt.check_gophish_variables("{{.URL}} {{.Tracker}}", r, is_education=False)
+        self.assertTrue(any("{{.Email}}" in w for w in r.warnings))
+
+    def test_recommended_var_suppressed_when_not_in_declared_vars(self):
+        # Smishing / SMS templates intentionally omit {{.Email}}; if metadata
+        # declares gophish_variables without {{.Email}}, no warning should fire.
+        r = new_result()
+        declared = {"{{.FirstName}}", "{{.URL}}", "{{.Tracker}}"}
+        vt.check_gophish_variables("{{.URL}} {{.Tracker}}", r,
+                                   is_education=False, declared_vars=declared)
+        self.assertFalse(any("{{.Email}}" in w for w in r.warnings))
+
+    def test_recommended_var_still_warned_when_in_declared_vars_but_missing(self):
+        # If metadata says {{.Email}} should be used but the template omits it, warn.
+        r = new_result()
+        declared = {"{{.FirstName}}", "{{.Email}}", "{{.URL}}", "{{.Tracker}}"}
+        vt.check_gophish_variables("{{.URL}} {{.Tracker}}", r,
+                                   is_education=False, declared_vars=declared)
+        self.assertTrue(any("{{.Email}}" in w for w in r.warnings))
+
 
 class HTMLStructureChecks(unittest.TestCase):
     def test_missing_viewport_is_error(self):
