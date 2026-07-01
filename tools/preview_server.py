@@ -23,6 +23,7 @@ import json
 import argparse
 import urllib.parse
 from pathlib import Path
+from typing import Optional
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime
 
@@ -43,6 +44,20 @@ DEFAULT_VARS = {
     "From": "IT Support <it-support@yourcompany.com>",
     "Company": "Acme Corp",
 }
+
+
+def safe_join(root: Path, rel_path: str) -> Optional[Path]:
+    """Resolve rel_path under root, rejecting any path that escapes root
+    (e.g. via `..` segments or an absolute path) to prevent directory
+    traversal. Returns None if the resolved path is outside root."""
+    try:
+        resolved_root = root.resolve()
+        candidate = (resolved_root / rel_path).resolve()
+    except (OSError, ValueError):
+        return None
+    if candidate != resolved_root and resolved_root not in candidate.parents:
+        return None
+    return candidate
 
 
 def substitute_gophish_vars(html: str, vars_dict: dict) -> str:
@@ -280,8 +295,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/preview/"):
             rel_path = path[len("/preview/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists() or not file_path.is_file():
+            file_path = safe_join(ROOT, rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Template not found</h1>", 404)
                 return
             raw_html = file_path.read_text(encoding="utf-8")
@@ -297,8 +312,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/source/"):
             rel_path = path[len("/source/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists():
+            file_path = safe_join(ROOT, rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Not found</h1>", 404)
                 return
             source = file_path.read_text(encoding="utf-8")
