@@ -8,6 +8,32 @@ from _loader import load_tool
 ps = load_tool("preview_server")
 
 
+class SafeJoin(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        (self.root / "it-security").mkdir(parents=True)
+        (self.root / "it-security" / "phish.html").write_text("<html></html>")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_allows_path_inside_root(self):
+        result = ps.safe_join(self.root, "it-security/phish.html")
+        self.assertEqual(result, (self.root / "it-security" / "phish.html").resolve())
+
+    def test_rejects_dotdot_traversal(self):
+        self.assertIsNone(ps.safe_join(self.root, "../../../../etc/passwd"))
+
+    def test_rejects_encoded_dotdot_traversal_after_unquote(self):
+        # do_GET runs urllib.parse.unquote() before calling safe_join, so the
+        # path arrives here already decoded — simulate that.
+        self.assertIsNone(ps.safe_join(self.root, "it-security/../../../../etc/passwd"))
+
+    def test_rejects_absolute_path_escaping_root(self):
+        self.assertIsNone(ps.safe_join(self.root, "/etc/passwd"))
+
+
 class SubstituteVars(unittest.TestCase):
     def test_replaces_known_vars(self):
         out = ps.substitute_gophish_vars("Hi {{.FirstName}}", {"FirstName": "Dana"})
