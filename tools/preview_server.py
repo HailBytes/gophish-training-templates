@@ -23,6 +23,7 @@ import json
 import argparse
 import urllib.parse
 from pathlib import Path
+from typing import Optional
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime
 
@@ -253,6 +254,16 @@ function applyVars() {{
 </html>'''
 
 
+def resolve_safe_path(root: Path, rel_path: str) -> Optional[Path]:
+    """Resolve a request path under root, rejecting any traversal outside it."""
+    candidate = (root / rel_path).resolve()
+    try:
+        candidate.relative_to(root.resolve())
+    except ValueError:
+        return None
+    return candidate
+
+
 class PreviewHandler(BaseHTTPRequestHandler):
     preview_vars = DEFAULT_VARS.copy()
 
@@ -280,8 +291,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/preview/"):
             rel_path = path[len("/preview/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists() or not file_path.is_file():
+            file_path = resolve_safe_path(ROOT, rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Template not found</h1>", 404)
                 return
             raw_html = file_path.read_text(encoding="utf-8")
@@ -297,8 +308,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/source/"):
             rel_path = path[len("/source/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists():
+            file_path = resolve_safe_path(ROOT, rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Not found</h1>", 404)
                 return
             source = file_path.read_text(encoding="utf-8")
