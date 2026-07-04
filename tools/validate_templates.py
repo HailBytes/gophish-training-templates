@@ -232,6 +232,33 @@ def check_external_dependencies(content: str, result: ValidationResult, file_pat
         )
 
 
+def check_form_action_safety(content: str, result: ValidationResult):
+    """Landing pages must post credentials back to the GoPhish tracking endpoint,
+    not to a third-party host. `action=""` (or a same-page `#`) makes the browser
+    submit to the current URL, which GoPhish is serving; a form.action pointing
+    at an external absolute/protocol-relative URL would ship real credentials
+    entered during a simulation off to that third party instead."""
+    external_action_pattern = re.compile(r'\bhttps?://|^//', re.IGNORECASE)
+    for form in re.finditer(r"<form\b[^>]*>", content, re.IGNORECASE):
+        action_match = re.search(r'\baction\s*=\s*["\']([^"\']*)["\']', form.group(), re.IGNORECASE)
+        if not action_match:
+            continue
+        action = action_match.group(1).strip()
+        if not action or action == "#":
+            continue
+        if external_action_pattern.search(action):
+            result.errors.append(
+                f"<form> action=\"{action}\" posts to an external host — credentials entered "
+                f"during a simulation would leak to that third party. Use action=\"\" so the "
+                f"submission posts back to the GoPhish-served page and tracking URL."
+            )
+        else:
+            result.warnings.append(
+                f"<form> action=\"{action}\" is non-empty — landing pages should use "
+                f"action=\"\" to submit back to the GoPhish-tracked URL"
+            )
+
+
 def check_accessibility(content: str, result: ValidationResult):
     """Accessibility checks that also improve real inbox rendering."""
     # <html> should declare a language for screen readers and translation.
@@ -566,6 +593,35 @@ def find_templates(base_dir: Path) -> List[Path]:
     return templates
 
 
+def find_landing_pages(base_dir: Path) -> List[Path]:
+    """Find GoPhish landing pages (credential-capture forms live here).
+
+    These are excluded from find_templates()/validate_file() because they don't
+    follow the email-template conventions (no {{.Tracker}}, no metadata.json,
+    no education page) — but their <form> actions still need a safety check."""
+    landing_dir = base_dir / "landing-pages"
+    if not landing_dir.exists():
+        return []
+    return sorted(landing_dir.glob("*.html"))
+
+
+def validate_landing_page(file_path: Path) -> ValidationResult:
+    result = ValidationResult(path=rel_to_root(file_path))
+
+    try:
+        content = file_path.read_text(encoding="utf-8")
+    except Exception as e:
+        result.errors.append(f"Cannot read file: {e}")
+        return result
+
+    check_html_structure(content, result)
+    check_form_action_safety(content, result)
+    check_accessibility(content, result)
+    check_external_dependencies(content, result, file_path)
+
+    return result
+
+
 # ── Output ───────────────────────────────────────────────────────────────────
 
 RESET = "\033[0m"
@@ -638,16 +694,19 @@ def main():
     if args.file:
         files = [args.file.resolve()]
         metadata_files = []
+        landing_pages = []
     else:
         files = find_templates(args.dir.resolve())
         metadata_files = find_metadata_files(args.dir.resolve())
+        landing_pages = find_landing_pages(args.dir.resolve())
 
     if not files:
         print(f"{YELLOW}No HTML template files found.{RESET}")
         sys.exit(0)
 
     print(f"{BOLD}GoPhish Template Validator{RESET}")
-    print(f"Scanning {len(files)} template(s) and {len(metadata_files)} metadata file(s)...\n")
+    print(f"Scanning {len(files)} template(s), {len(metadata_files)} metadata file(s), "
+          f"and {len(landing_pages)} landing page(s)...\n")
 
     results = []
     for file_path in files:
@@ -658,6 +717,12 @@ def main():
 
     for metadata_path in metadata_files:
         result = validate_metadata_file(metadata_path)
+        results.append(result)
+        if not args.json:
+            print_result(result, verbose=args.verbose)
+
+    for landing_page in landing_pages:
+        result = validate_landing_page(landing_page)
         results.append(result)
         if not args.json:
             print_result(result, verbose=args.verbose)

