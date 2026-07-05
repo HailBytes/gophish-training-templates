@@ -4,6 +4,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from _loader import load_tool, TOOLS
 
@@ -62,6 +63,34 @@ class DiscoveryAndMetadata(unittest.TestCase):
 
     def test_load_metadata_subject_missing(self):
         self.assertIsNone(imp.load_metadata_subject(self.root / "it-security" / "education" / "edu.html"))
+
+
+class ApiKeyTransport(unittest.TestCase):
+    """The API key must travel via the Authorization header, never in the URL
+    query string — query params get written into webserver/proxy access logs
+    and echoed back via Referer headers, unlike headers."""
+
+    def test_api_key_not_in_url_and_sent_as_bearer_header(self):
+        client = imp.GoPhishClient("https://gophish.example.com:3333", "SECRET-KEY")
+
+        captured = {}
+
+        def fake_urlopen(req, *args, **kwargs):
+            captured["url"] = req.full_url
+            captured["auth_header"] = req.get_header("Authorization")
+            resp = mock.Mock()
+            resp.status = 200
+            resp.read.return_value = b"[]"
+            resp.__enter__ = lambda self=resp: resp
+            resp.__exit__ = lambda self=resp, *a: False
+            return resp
+
+        with mock.patch.object(imp.urllib.request, "urlopen", side_effect=fake_urlopen):
+            client.get_templates()
+
+        self.assertNotIn("SECRET-KEY", captured["url"])
+        self.assertNotIn("api_key", captured["url"])
+        self.assertEqual(captured["auth_header"], "Bearer SECRET-KEY")
 
 
 class NoExternalDependencies(unittest.TestCase):
