@@ -50,6 +50,31 @@ class GetAllTemplates(unittest.TestCase):
         self.assertIn("Phish Me", html)
 
 
+class ResolveTemplatePath(unittest.TestCase):
+    """Guards against path traversal in the /preview/ and /source/ handlers."""
+
+    def _resolve(self, rel_path):
+        # resolve_template_path doesn't touch `self`, so it can be called unbound.
+        return ps.PreviewHandler.resolve_template_path(None, rel_path)
+
+    def test_rejects_dotdot_traversal(self):
+        self.assertIsNone(self._resolve("../../../../../../etc/passwd"))
+
+    def test_rejects_absolute_path(self):
+        self.assertIsNone(self._resolve("/etc/passwd"))
+
+    def test_rejects_non_html_file(self):
+        self.assertIsNone(self._resolve("../README.md"))
+
+    def test_accepts_real_template(self):
+        real = next(ps.ROOT.rglob("*.html"))
+        rel = str(real.relative_to(ps.ROOT))
+        self.assertEqual(self._resolve(rel), real.resolve())
+
+    def test_rejects_missing_file(self):
+        self.assertIsNone(self._resolve("nonexistent/does-not-exist.html"))
+
+
 class ServerCanBind(unittest.TestCase):
     def test_handler_class_and_bind(self):
         from http.server import HTTPServer

@@ -23,6 +23,7 @@ import json
 import argparse
 import urllib.parse
 from pathlib import Path
+from typing import Optional
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime
 
@@ -269,6 +270,19 @@ class PreviewHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def resolve_template_path(self, rel_path: str) -> Optional[Path]:
+        """Resolve a request path to an on-disk .html file, rejecting
+        anything that escapes ROOT (e.g. via `../` or an absolute path)."""
+        try:
+            candidate = (ROOT / rel_path).resolve()
+        except (OSError, ValueError):
+            return None
+        if ROOT.resolve() not in candidate.parents and candidate != ROOT.resolve():
+            return None
+        if candidate.suffix != ".html" or not candidate.is_file():
+            return None
+        return candidate
+
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
         path = urllib.parse.unquote(parsed.path)
@@ -280,8 +294,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/preview/"):
             rel_path = path[len("/preview/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists() or not file_path.is_file():
+            file_path = self.resolve_template_path(rel_path)
+            if file_path is None:
                 self.send_html("<h1>Template not found</h1>", 404)
                 return
             raw_html = file_path.read_text(encoding="utf-8")
@@ -297,8 +311,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/source/"):
             rel_path = path[len("/source/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists():
+            file_path = self.resolve_template_path(rel_path)
+            if file_path is None:
                 self.send_html("<h1>Not found</h1>", 404)
                 return
             source = file_path.read_text(encoding="utf-8")
