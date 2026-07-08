@@ -59,6 +59,24 @@ def substitute_gophish_vars(html: str, vars_dict: dict) -> str:
     return result
 
 
+def safe_resolve(root: Path, rel_path: str):
+    # type: (Path, str) -> Path | None
+    """Resolve rel_path under root, rejecting any path that escapes it.
+
+    Guards the /preview/ and /source/ handlers against path traversal
+    (e.g. `/source/../../../../etc/passwd`) since rel_path comes straight
+    from the request URL.
+    """
+    try:
+        candidate = (root / rel_path).resolve()
+        resolved_root = root.resolve()
+    except (OSError, ValueError):
+        return None
+    if resolved_root != candidate and resolved_root not in candidate.parents:
+        return None
+    return candidate
+
+
 def get_all_templates(root: Path) -> list:
     """Discover all HTML templates and return sorted list of metadata."""
     templates = []
@@ -280,8 +298,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/preview/"):
             rel_path = path[len("/preview/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists() or not file_path.is_file():
+            file_path = safe_resolve(ROOT, rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Template not found</h1>", 404)
                 return
             raw_html = file_path.read_text(encoding="utf-8")
@@ -297,8 +315,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/source/"):
             rel_path = path[len("/source/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists():
+            file_path = safe_resolve(ROOT, rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Not found</h1>", 404)
                 return
             source = file_path.read_text(encoding="utf-8")

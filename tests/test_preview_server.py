@@ -50,6 +50,34 @@ class GetAllTemplates(unittest.TestCase):
         self.assertIn("Phish Me", html)
 
 
+class SafeResolve(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        outer = Path(self.tmp.name)
+        self.root = outer / "safe_root"
+        (self.root / "it-security").mkdir(parents=True)
+        (self.root / "it-security" / "phish.html").write_text("<html></html>")
+        (outer / "outside.txt").write_text("secret")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_allows_path_inside_root(self):
+        resolved = ps.safe_resolve(self.root, "it-security/phish.html")
+        self.assertEqual(resolved, (self.root / "it-security" / "phish.html").resolve())
+
+    def test_rejects_traversal_outside_root(self):
+        rel_path = "../" * 10 + "etc/passwd"
+        resolved = ps.safe_resolve(self.root, rel_path)
+        self.assertIsNone(resolved)
+
+    def test_rejects_traversal_to_sibling_file(self):
+        # a file that lives next to root, reached by walking up one level,
+        # must not be treated as safe even though the path "resolves"
+        resolved = ps.safe_resolve(self.root, "../outside.txt")
+        self.assertIsNone(resolved)
+
+
 class ServerCanBind(unittest.TestCase):
     def test_handler_class_and_bind(self):
         from http.server import HTTPServer
