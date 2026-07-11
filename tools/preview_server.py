@@ -269,6 +269,17 @@ class PreviewHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def resolve_safe_path(self, rel_path: str):
+        """Resolve rel_path under ROOT, rejecting any path that escapes it
+        (e.g. via ../ or absolute-path segments) to prevent arbitrary file
+        disclosure — this server is documented to run with --host 0.0.0.0."""
+        candidate = (ROOT / rel_path).resolve()
+        try:
+            candidate.relative_to(ROOT.resolve())
+        except ValueError:
+            return None
+        return candidate
+
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
         path = urllib.parse.unquote(parsed.path)
@@ -280,8 +291,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/preview/"):
             rel_path = path[len("/preview/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists() or not file_path.is_file():
+            file_path = self.resolve_safe_path(rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Template not found</h1>", 404)
                 return
             raw_html = file_path.read_text(encoding="utf-8")
@@ -297,8 +308,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/source/"):
             rel_path = path[len("/source/"):]
-            file_path = ROOT / rel_path
-            if not file_path.exists():
+            file_path = self.resolve_safe_path(rel_path)
+            if file_path is None or not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Not found</h1>", 404)
                 return
             source = file_path.read_text(encoding="utf-8")

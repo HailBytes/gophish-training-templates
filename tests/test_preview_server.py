@@ -50,6 +50,38 @@ class GetAllTemplates(unittest.TestCase):
         self.assertIn("Phish Me", html)
 
 
+class ResolveSafePath(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        (self.root / "it-security").mkdir(parents=True)
+        (self.root / "it-security" / "phish.html").write_text("<html></html>")
+        (self.root.parent / "outside.txt").write_text("secret")
+        self._orig_root = ps.ROOT
+        ps.ROOT = self.root
+
+    def tearDown(self):
+        ps.ROOT = self._orig_root
+        Path(self.root.parent / "outside.txt").unlink(missing_ok=True)
+        self.tmp.cleanup()
+
+    def _handler(self):
+        return ps.PreviewHandler.__new__(ps.PreviewHandler)
+
+    def test_rejects_parent_traversal(self):
+        handler = self._handler()
+        self.assertIsNone(handler.resolve_safe_path("../outside.txt"))
+
+    def test_rejects_encoded_traversal(self):
+        handler = self._handler()
+        self.assertIsNone(handler.resolve_safe_path("../../../../../../etc/passwd"))
+
+    def test_allows_file_within_root(self):
+        handler = self._handler()
+        resolved = handler.resolve_safe_path("it-security/phish.html")
+        self.assertEqual(resolved, (self.root / "it-security" / "phish.html").resolve())
+
+
 class ServerCanBind(unittest.TestCase):
     def test_handler_class_and_bind(self):
         from http.server import HTTPServer
