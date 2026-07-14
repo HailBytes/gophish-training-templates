@@ -2,7 +2,9 @@ import json
 import sys
 import subprocess
 import tempfile
+import threading
 import unittest
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
 from _loader import load_tool, TOOLS
@@ -62,6 +64,42 @@ class DiscoveryAndMetadata(unittest.TestCase):
 
     def test_load_metadata_subject_missing(self):
         self.assertIsNone(imp.load_metadata_subject(self.root / "it-security" / "education" / "edu.html"))
+
+
+class ApiKeyTransport(unittest.TestCase):
+    """The API key must travel as an Authorization header, never in the URL —
+    query strings get written verbatim into server/proxy access logs."""
+
+    def _serve_one_request(self):
+        captured = {}
+
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                captured["path"] = self.path
+                captured["authorization"] = self.headers.get("Authorization")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(b"[]")
+
+            def log_message(self, *args):
+                pass
+
+        server = HTTPServer(("127.0.0.1", 0), Handler)
+        thread = threading.Thread(target=server.handle_request)
+        thread.start()
+        port = server.server_address[1]
+
+        client = imp.GoPhishClient(base_url=f"http://127.0.0.1:{port}", api_key="s3cr3t-key")
+        client.get_templates()
+        thread.join(timeout=5)
+        server.server_close()
+        return captured
+
+    def test_api_key_sent_as_bearer_header_not_query_string(self):
+        captured = self._serve_one_request()
+        self.assertNotIn("s3cr3t-key", captured["path"])
+        self.assertEqual(captured["authorization"], "Bearer s3cr3t-key")
 
 
 class NoExternalDependencies(unittest.TestCase):
