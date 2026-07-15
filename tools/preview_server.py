@@ -261,6 +261,19 @@ class PreviewHandler(BaseHTTPRequestHandler):
         path = args[0].split('"')[1] if '"' in args[0] else args[0]
         print(f"  {args[1]}  {path}")
 
+    def resolve_safe_path(self, rel_path: str):
+        """Resolve a client-supplied relative path and confirm it stays inside ROOT.
+
+        Rejects any path (e.g. containing `../`) that would escape ROOT after
+        resolution, preventing path traversal to arbitrary filesystem files.
+        """
+        candidate = (ROOT / rel_path).resolve()
+        try:
+            candidate.relative_to(ROOT.resolve())
+        except ValueError:
+            return None
+        return candidate
+
     def send_html(self, html: str, status: int = 200):
         body = html.encode("utf-8")
         self.send_response(status)
@@ -280,7 +293,10 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/preview/"):
             rel_path = path[len("/preview/"):]
-            file_path = ROOT / rel_path
+            file_path = self.resolve_safe_path(rel_path)
+            if file_path is None:
+                self.send_html("<h1>Forbidden</h1>", 403)
+                return
             if not file_path.exists() or not file_path.is_file():
                 self.send_html("<h1>Template not found</h1>", 404)
                 return
@@ -297,7 +313,10 @@ class PreviewHandler(BaseHTTPRequestHandler):
 
         elif path.startswith("/source/"):
             rel_path = path[len("/source/"):]
-            file_path = ROOT / rel_path
+            file_path = self.resolve_safe_path(rel_path)
+            if file_path is None:
+                self.send_html("<h1>Forbidden</h1>", 403)
+                return
             if not file_path.exists():
                 self.send_html("<h1>Not found</h1>", 404)
                 return
