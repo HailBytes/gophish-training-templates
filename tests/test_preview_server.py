@@ -50,6 +50,35 @@ class GetAllTemplates(unittest.TestCase):
         self.assertIn("Phish Me", html)
 
 
+class ResolveSafePath(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        (self.root / "it-security").mkdir(parents=True)
+        (self.root / "it-security" / "phish.html").write_text("<html></html>")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_allows_path_inside_root(self):
+        result = ps.resolve_safe_path(self.root, "it-security/phish.html")
+        self.assertEqual(result, (self.root / "it-security" / "phish.html").resolve())
+
+    def test_rejects_dotdot_traversal(self):
+        result = ps.resolve_safe_path(self.root, "../../../../etc/passwd")
+        self.assertIsNone(result)
+
+    def test_rejects_encoded_traversal_after_unquote(self):
+        # do_GET unquotes the path before calling us, so verify a literal
+        # '..' sequence embedded past a valid-looking prefix is still caught.
+        result = ps.resolve_safe_path(self.root, "it-security/../../../etc/passwd")
+        self.assertIsNone(result)
+
+    def test_rejects_absolute_path(self):
+        result = ps.resolve_safe_path(self.root, "/etc/passwd")
+        self.assertIsNone(result)
+
+
 class ServerCanBind(unittest.TestCase):
     def test_handler_class_and_bind(self):
         from http.server import HTTPServer
