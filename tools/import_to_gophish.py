@@ -63,9 +63,12 @@ class GoPhishClient:
             self._ssl_ctx = None
 
     def _request(self, method: str, endpoint: str, data: Optional[Dict] = None) -> Tuple[int, Any]:
-        url = f"{self.base_url}/api/{endpoint}/?api_key={self.api_key}"
+        url = f"{self.base_url}/api/{endpoint}/"
         body = json.dumps(data).encode("utf-8") if data else None
-        headers = {"Content-Type": "application/json"}
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}",
+        }
 
         req = urllib.request.Request(url, data=body, headers=headers, method=method)
 
