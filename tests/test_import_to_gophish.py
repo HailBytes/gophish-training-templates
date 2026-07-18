@@ -4,6 +4,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch, MagicMock
 
 from _loader import load_tool, TOOLS
 
@@ -62,6 +63,27 @@ class DiscoveryAndMetadata(unittest.TestCase):
 
     def test_load_metadata_subject_missing(self):
         self.assertIsNone(imp.load_metadata_subject(self.root / "it-security" / "education" / "edu.html"))
+
+
+class ApiKeyTransport(unittest.TestCase):
+    """The API key must travel via the Authorization header, not the URL, so
+    it never lands in web server / proxy access logs or browser history."""
+
+    def test_api_key_sent_as_bearer_header_not_query_param(self):
+        client = imp.GoPhishClient("https://gophish.example.com", "secret-key-123")
+
+        mock_resp = MagicMock()
+        mock_resp.status = 200
+        mock_resp.read.return_value = b"[]"
+        mock_resp.__enter__.return_value = mock_resp
+        mock_resp.__exit__.return_value = False
+
+        with patch("urllib.request.urlopen", return_value=mock_resp) as mock_urlopen:
+            client.get_templates()
+
+        request = mock_urlopen.call_args[0][0]
+        self.assertNotIn("secret-key-123", request.full_url)
+        self.assertEqual(request.get_header("Authorization"), "Bearer secret-key-123")
 
 
 class NoExternalDependencies(unittest.TestCase):

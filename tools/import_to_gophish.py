@@ -63,9 +63,16 @@ class GoPhishClient:
             self._ssl_ctx = None
 
     def _request(self, method: str, endpoint: str, data: Optional[Dict] = None) -> Tuple[int, Any]:
-        url = f"{self.base_url}/api/{endpoint}/?api_key={self.api_key}"
+        # The API key is sent via the Authorization header rather than as a
+        # `?api_key=` query parameter so it doesn't get written to web server
+        # / proxy access logs, shell history, or browser history. GoPhish's
+        # API supports both; see https://docs.getgophish.com/api-documentation.
+        url = f"{self.base_url}/api/{endpoint}/"
         body = json.dumps(data).encode("utf-8") if data else None
-        headers = {"Content-Type": "application/json"}
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}",
+        }
 
         req = urllib.request.Request(url, data=body, headers=headers, method=method)
 
