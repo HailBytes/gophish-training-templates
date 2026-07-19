@@ -207,6 +207,16 @@ Favor a **plain-text-leaning** look with a few well-chosen brand cues (a colored
 the real sender domain in text) over heavy, over-styled layouts — it both renders more reliably
 and reads as a more believable everyday email.
 
+#### Landing pages: form action safety
+
+Landing pages (`landing-pages/*.html`) contain the `<form>` that captures whatever a trainee
+types in. Any `<form>` **must use `action=""`** (or omit `action` entirely) so the submission
+posts back to the page GoPhish is already serving and gets tracked/reported through GoPhish —
+never to a hardcoded external URL. The validator's landing-page pass treats a form `action`
+pointing at an absolute or protocol-relative URL (`https://...`, `//...`) as an **error**: it
+would ship real credentials entered during a simulation to that third-party host instead of
+staying inside your GoPhish instance.
+
 ---
 
 ## Education Page Scaffold
@@ -460,15 +470,17 @@ python3 -m unittest discover -s tests -t tests
 **Passing validator output looks like:**
 ```
 GoPhish Template Validator
-Scanning 52 template(s)...
+Scanning 52 template(s), 27 metadata file(s), and 4 landing page(s)...
 
   ✓ PASS  collaboration/slack_notification.html
   ✓ PASS  collaboration/teams_alert.html
   ...
+  ✓ PASS  landing-pages/credential-harvest.html
+  ...
 
 ──────────────────────────────────────────────────────
-Summary: 52 templates validated
-  Passed:   52
+Summary: 83 files validated
+  Passed:   83
 ──────────────────────────────────────────────────────
 ✓ All checks passed!
 ```
