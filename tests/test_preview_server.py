@@ -50,6 +50,35 @@ class GetAllTemplates(unittest.TestCase):
         self.assertIn("Phish Me", html)
 
 
+class ResolveSafePath(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        (self.root / "it-security").mkdir()
+        (self.root / "it-security" / "phish.html").write_text("<html></html>")
+        (self.root / "secret.txt").write_text("outside the served tree")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_allows_path_within_root(self):
+        resolved = ps.resolve_safe_path(self.root, "it-security/phish.html")
+        self.assertEqual(resolved, (self.root / "it-security" / "phish.html").resolve())
+
+    def test_rejects_traversal_outside_root(self):
+        outside = self.root.parent / "outside.txt"
+        outside.write_text("should not be reachable")
+        try:
+            resolved = ps.resolve_safe_path(self.root, "../outside.txt")
+            self.assertIsNone(resolved)
+        finally:
+            outside.unlink()
+
+    def test_rejects_deep_traversal_to_absolute_paths(self):
+        resolved = ps.resolve_safe_path(self.root, "../../../../../../etc/passwd")
+        self.assertIsNone(resolved)
+
+
 class ServerCanBind(unittest.TestCase):
     def test_handler_class_and_bind(self):
         from http.server import HTTPServer
