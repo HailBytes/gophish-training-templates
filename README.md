@@ -49,7 +49,7 @@ HailBytes SAT is built for teams that need results without the ops overhead: a h
   <img src="docs/images/email-templates.png" alt="Sample phishing email templates: Microsoft sign-in alert, DocuSign signature request, Amazon order problem, and Okta verification" width="100%" />
 </div>
 
-### Email Templates (70+ Templates Across 20+ Industries)
+### Email Templates (91 Templates Across 27 Industries)
 
 > 📖 **[Browse the full template catalog →](docs/CATALOG.md)** — an auto-generated index of every template with its attack vector, difficulty, and estimated click rate.
 
