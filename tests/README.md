@@ -18,4 +18,5 @@ python3 -m pytest tests/        # or: python3 -m unittest discover tests
 | [`test_import_to_gophish.py`](test_import_to_gophish.py) | The GoPhish import tool. |
 | [`test_preview_server.py`](test_preview_server.py) | The local preview server. |
 | [`test_generate_catalog.py`](test_generate_catalog.py) | The catalog generator (`docs/CATALOG.md`). |
+| [`test_generate_folder_readmes.py`](test_generate_folder_readmes.py) | The per-category README generator (`tools/generate_folder_readmes.py`). |
 | `_loader.py` | Shared test helpers / fixtures. |
