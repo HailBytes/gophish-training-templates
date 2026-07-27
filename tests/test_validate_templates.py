@@ -1,9 +1,11 @@
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 
-from _loader import load_tool
+from _loader import load_tool, TOOLS
 
 vt = load_tool("validate_templates")
 
@@ -91,6 +93,29 @@ class HTMLStructureChecks(unittest.TestCase):
         r = new_result()
         vt.check_html_structure(GOOD_HTML, r)
         self.assertEqual(r.errors, [])
+
+    def test_missing_doctype_warns(self):
+        r = new_result()
+        vt.check_html_structure(
+            "<html><head><title>t</title></head><body>x</body></html>", r)
+        self.assertTrue(any("DOCTYPE" in w for w in r.warnings))
+
+    def test_missing_title_warns(self):
+        r = new_result()
+        vt.check_html_structure(
+            "<!DOCTYPE html><html><head></head><body>x</body></html>", r)
+        self.assertTrue(any("Missing <title>" in w for w in r.warnings))
+
+    def test_empty_title_warns(self):
+        r = new_result()
+        vt.check_html_structure(
+            "<!DOCTYPE html><html><head><title></title></head><body>x</body></html>", r)
+        self.assertTrue(any("empty" in w for w in r.warnings))
+
+    def test_missing_body_is_error(self):
+        r = new_result()
+        vt.check_html_structure("<!DOCTYPE html><html><head><title>t</title></head></html>", r)
+        self.assertTrue(any("<body>" in e for e in r.errors))
 
 
 class FormActionSafetyChecks(unittest.TestCase):
@@ -220,6 +245,237 @@ class RelToRoot(unittest.TestCase):
     def test_inside_repo_is_relative(self):
         p = vt.ROOT / "tools" / "validate_templates.py"
         self.assertEqual(vt.rel_to_root(p), "tools/validate_templates.py")
+
+
+class TrackerPlacementChecks(unittest.TestCase):
+    def test_no_tracker_is_noop(self):
+        r = new_result()
+        vt.check_tracker_placement("<body>no tracker here</body>", r, is_education=False)
+        self.assertEqual(r.warnings, [])
+        self.assertEqual(r.info, [])
+
+    def test_education_page_skips_check(self):
+        r = new_result()
+        vt.check_tracker_placement(
+            "<body>{{.Tracker}}</body></html>garbage after", r, is_education=True)
+        self.assertEqual(r.warnings, [])
+
+    def test_tracker_after_body_close_warns(self):
+        r = new_result()
+        vt.check_tracker_placement(
+            "<html><body>hi</body></html>{{.Tracker}}", r, is_education=False)
+        self.assertTrue(any("after </body>" in w for w in r.warnings))
+
+    def test_tracker_inside_body_no_placement_warning(self):
+        r = new_result()
+        vt.check_tracker_placement(
+            '<html><body>hi<div style="display:none">{{.Tracker}}</div></body></html>',
+            r, is_education=False)
+        self.assertFalse(any("after </body>" in w for w in r.warnings))
+
+    def test_hidden_tracker_no_info_note(self):
+        r = new_result()
+        vt.check_tracker_placement(
+            '<div style="display:none">{{.Tracker}}</div>', r, is_education=False)
+        self.assertEqual(r.info, [])
+
+    def test_visible_tracker_adds_info_note(self):
+        r = new_result()
+        vt.check_tracker_placement("<div>{{.Tracker}}</div>", r, is_education=False)
+        self.assertTrue(any("not wrapped in a hidden element" in i for i in r.info))
+
+
+class FileSizeChecks(unittest.TestCase):
+    def test_small_file_no_warning(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            f = Path(tmp) / "small.html"
+            f.write_text("<html></html>")
+            r = new_result()
+            vt.check_file_size(f, r)
+            self.assertEqual(r.warnings, [])
+            self.assertTrue(any("File size" in i for i in r.info))
+
+    def test_large_file_warns(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            f = Path(tmp) / "big.html"
+            f.write_text("x" * (501 * 1024))
+            r = new_result()
+            vt.check_file_size(f, r)
+            self.assertTrue(any("KB" in w for w in r.warnings))
+
+
+class EducationPageChecks(unittest.TestCase):
+    def test_missing_education_dir_warns(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            category = Path(tmp) / "it-security"
+            category.mkdir()
+            template = category / "phish.html"
+            template.write_text(GOOD_HTML)
+            r = new_result()
+            vt.check_education_page(template, r)
+            self.assertTrue(any("No education/ directory" in w for w in r.warnings))
+
+    def test_empty_education_dir_warns(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            category = Path(tmp) / "it-security"
+            (category / "education").mkdir(parents=True)
+            template = category / "phish.html"
+            template.write_text(GOOD_HTML)
+            r = new_result()
+            vt.check_education_page(template, r)
+            self.assertTrue(any("no HTML files" in w for w in r.warnings))
+
+    def test_populated_education_dir_no_warning(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            category = Path(tmp) / "it-security"
+            (category / "education").mkdir(parents=True)
+            (category / "education" / "edu.html").write_text(GOOD_HTML)
+            template = category / "phish.html"
+            template.write_text(GOOD_HTML)
+            r = new_result()
+            vt.check_education_page(template, r)
+            self.assertEqual(r.warnings, [])
+
+
+class MetadataVariableChecks(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+        self.template = self.dir / "phish.html"
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def _write_meta(self, gophish_variables):
+        (self.dir / "metadata.json").write_text(json.dumps({
+            "templates": [{"filename": "phish.html", "gophish_variables": gophish_variables}]
+        }))
+
+    def test_no_metadata_file_is_noop(self):
+        r = new_result()
+        vt.check_metadata_variables("{{.URL}} {{.Tracker}}", self.template, r)
+        self.assertEqual(r.warnings, [])
+
+    def test_used_but_undeclared_known_var_warns(self):
+        self._write_meta(["{{.URL}}", "{{.Tracker}}"])
+        r = new_result()
+        vt.check_metadata_variables("{{.URL}} {{.Tracker}} {{.FirstName}}", self.template, r)
+        self.assertTrue(any("{{.FirstName}}" in w and "not listed" in w for w in r.warnings))
+
+    def test_used_unknown_var_warns_differently(self):
+        self._write_meta(["{{.URL}}", "{{.Tracker}}"])
+        r = new_result()
+        vt.check_metadata_variables("{{.URL}} {{.Tracker}} {{.Bogus}}", self.template, r)
+        self.assertTrue(any("not a standard GoPhish variable" in w for w in r.warnings))
+
+    def test_declared_but_unused_var_warns(self):
+        self._write_meta(["{{.URL}}", "{{.Tracker}}", "{{.Email}}"])
+        r = new_result()
+        vt.check_metadata_variables("{{.URL}} {{.Tracker}}", self.template, r)
+        self.assertTrue(any("not used in the template" in w for w in r.warnings))
+
+    def test_exact_match_no_warnings(self):
+        self._write_meta(["{{.URL}}", "{{.Tracker}}", "{{.FirstName}}"])
+        r = new_result()
+        vt.check_metadata_variables("{{.URL}} {{.Tracker}} {{.FirstName}}", self.template, r)
+        self.assertEqual(r.warnings, [])
+
+
+class DiscoveryHelperChecks(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        (self.root / "it-security").mkdir()
+        (self.root / "it-security" / "phish.html").write_text(GOOD_HTML)
+        (self.root / "it-security" / "metadata.json").write_text(json.dumps({
+            "category": "it-security", "templates": [{"filename": "phish.html"}]}))
+        (self.root / "tools").mkdir()
+        (self.root / "tools" / "helper.html").write_text(GOOD_HTML)
+        (self.root / "landing-pages").mkdir()
+        (self.root / "landing-pages" / "lp.html").write_text(GOOD_HTML)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_find_templates_skips_excluded_dirs(self):
+        found = [p.name for p in vt.find_templates(self.root)]
+        self.assertIn("phish.html", found)
+        self.assertNotIn("helper.html", found)
+        self.assertNotIn("lp.html", found)
+
+    def test_find_metadata_files_skips_excluded_dirs(self):
+        found = vt.find_metadata_files(self.root)
+        self.assertEqual([p.parent.name for p in found], ["it-security"])
+
+
+class ValidateFileIntegration(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self.category = self.root / "it-security"
+        (self.category / "education").mkdir(parents=True)
+        (self.category / "education" / "edu.html").write_text(GOOD_HTML)
+        self.template = self.category / "phish.html"
+        self.template.write_text(GOOD_HTML)
+        (self.category / "metadata.json").write_text(json.dumps({
+            "category": "it-security",
+            "templates": [{
+                "filename": "phish.html", "name": "Phish", "attack_vector": "credential_harvest",
+                "difficulty": "intermediate", "estimated_click_rate": "40-60%",
+                "gophish_variables": ["{{.URL}}", "{{.Tracker}}", "{{.FirstName}}", "{{.Email}}"],
+                "suggested_subject_lines": ["a"], "education_page": "education/edu.html",
+                "tags": ["t"], "notes": "n",
+            }],
+        }))
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_well_formed_template_passes_full_pipeline(self):
+        result = vt.validate_file(self.template)
+        self.assertEqual(result.errors, [])
+
+    def test_education_page_skips_companion_checks(self):
+        edu_path = self.category / "education" / "edu.html"
+        result = vt.validate_file(edu_path)
+        self.assertEqual(result.errors, [])
+        self.assertFalse(any("education" in w.lower() for w in result.warnings))
+
+
+class CLIChecks(unittest.TestCase):
+    """End-to-end checks of the command-line entry point."""
+
+    def _run(self, *args):
+        return subprocess.run(
+            [sys.executable, str(TOOLS / "validate_templates.py"), *args],
+            capture_output=True, text=True)
+
+    def test_json_output_is_parseable(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            f = root / "phish.html"
+            f.write_text(GOOD_HTML)
+            proc = self._run("--dir", str(root), "--json")
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            data = json.loads(proc.stdout)
+            self.assertEqual(len(data), 1)
+            self.assertTrue(data[0]["passed"])
+
+    def test_strict_mode_fails_on_warnings_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            f = root / "phish.html"
+            # Valid enough to avoid errors, but missing recommended {{.Email}} → warning.
+            f.write_text(GOOD_HTML.replace("{{.Email}}", ""))
+            lenient = self._run("--dir", str(root), "--json")
+            self.assertEqual(lenient.returncode, 0, lenient.stdout + lenient.stderr)
+            strict = self._run("--dir", str(root), "--json", "--strict")
+            self.assertEqual(strict.returncode, 1, strict.stdout + strict.stderr)
+
+    def test_no_templates_found_exits_zero(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            proc = self._run("--dir", tmp)
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
 
 
 class MetadataSchemaChecks(unittest.TestCase):
