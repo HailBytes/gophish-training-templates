@@ -463,6 +463,9 @@ python3 tools/validate_templates.py --strict
 # Regenerate the template catalog after adding/editing templates
 python3 tools/generate_catalog.py
 
+# Regenerate per-category READMEs after adding/editing templates or metadata
+python3 tools/generate_folder_readmes.py
+
 # Run the tool unit tests (standard library only — no dependencies)
 python3 -m unittest discover -s tests -t tests
 ```
