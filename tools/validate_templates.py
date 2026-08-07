@@ -734,12 +734,16 @@ def main():
         landing_pages = find_landing_pages(args.dir.resolve())
 
     if not files:
-        print(f"{YELLOW}No HTML template files found.{RESET}")
+        if args.json:
+            print("[]")
+        else:
+            print(f"{YELLOW}No HTML template files found.{RESET}")
         sys.exit(0)
 
-    print(f"{BOLD}GoPhish Template Validator{RESET}")
-    print(f"Scanning {len(files)} template(s), {len(metadata_files)} metadata file(s), "
-          f"and {len(landing_pages)} landing page(s)...\n")
+    if not args.json:
+        print(f"{BOLD}GoPhish Template Validator{RESET}")
+        print(f"Scanning {len(files)} template(s), {len(metadata_files)} metadata file(s), "
+              f"and {len(landing_pages)} landing page(s)...\n")
 
     results = []
     for file_path in files:
