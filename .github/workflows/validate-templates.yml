@@ -49,6 +49,9 @@ jobs:
       - name: Check template catalog is up to date
         run: python3 tools/generate_catalog.py --check
 
+      - name: Check category READMEs are up to date
+        run: python3 tools/generate_folder_readmes.py --check
+
       - name: Upload validation report
         if: always()
         uses: actions/upload-artifact@v4
