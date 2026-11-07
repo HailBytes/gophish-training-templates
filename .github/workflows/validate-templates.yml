@@ -8,6 +8,7 @@ on:
       - "tools/**"
       - "tests/**"
       - "docs/CATALOG.md"
+      - ".github/workflows/validate-templates.yml"
   push:
     branches:
       - main
@@ -18,7 +19,12 @@ on:
       - "tools/**"
       - "tests/**"
       - "docs/CATALOG.md"
+      - ".github/workflows/validate-templates.yml"
   workflow_dispatch:  # Allow manual runs
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
