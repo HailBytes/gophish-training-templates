@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinweis zur Migration des E-Mail-Servers</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f4f5f7; color: #1d2125; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e3e6ea; border-radius: 6px; overflow: hidden; }
+        .header { background: #0c2d57; color: #ffffff; padding: 16px 24px; font-size: 16px; font-weight: 600; }
+        .content { padding: 28px 24px; font-size: 14px; line-height: 1.55; }
+        .info-box { background: #f4f5f7; border: 1px solid #e3e6ea; border-radius: 4px; padding: 14px 16px; margin: 20px 0; font-size: 13px; color: #44546f; }
+        .btn-primary { display: inline-block; padding: 11px 22px; font-size: 14px; font-weight: 600; color: #fff; background-color: #0c2d57; border-radius: 4px; text-decoration: none; }
+        .footer { font-size: 12px; color: #6b778c; padding: 0 24px 24px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">IT Service Desk</div>
+
+        <div class="content">
+            <p>Hallo {{.FirstName}},</p>
+
+            <p>Das IT-Team hat die Migration des E-Mail-Servers über Nacht abgeschlossen. Bei einer kleinen Zahl von Postfächern, darunter Ihrem ({{.Email}}), traten während der Umstellung Synchronisierungsfehler auf.</p>
+
+            <p>Wir gehen davon aus, dass das Problem behoben ist. Um zu bestätigen, dass Ihr Postfach korrekt wieder verbunden wurde, öffnen Sie es bitte und prüfen Sie, ob aktuelle Nachrichten wie erwartet eintreffen.</p>
+
+            <div class="info-box">
+                Ticket-Referenz: INC-48217<br>
+                Erfasst: {{.Date}} &bull; Zugewiesen an IT Service Desk
+            </div>
+
+            <p style="text-align: center; margin: 28px 0;">
+                <a href="{{.URL}}" class="btn-primary">Postfach öffnen</a>
+            </p>
+
+            <p>Wenn Ihre E-Mails bereits normal funktionieren, ist nichts weiter zu tun. Antworten Sie auf das Ticket INC-48217, falls weiterhin Fehler auftreten.</p>
+
+            <p>Mit freundlichen Grüßen,<br>
+            <strong>Marcus Bell</strong><br>
+            IT Service Desk</p>
+        </div>
+
+        <div class="footer">
+            Dies ist eine automatische Nachricht vom IT Service Desk. Gesendet an {{.Email}}.
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

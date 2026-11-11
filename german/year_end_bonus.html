@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertrauliche Jahresbonus-Abrechnung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f9fb;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dbe2e8;
+            border-top: 4px solid #008080;
+        }
+        .header {
+            padding: 25px 20px;
+            background-color: #f0f4f8;
+            border-bottom: 1px solid #dbe2e8;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #008080;
+            margin: 0;
+        }
+        .header-subtitle {
+            font-size: 11px;
+            color: #666666;
+            margin: 3px 0 0 0;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .confidential-box {
+            background-color: #e6f2f2;
+            border-left: 4px solid #008080;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .confidential-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #004d4d;
+            margin: 0 0 5px 0;
+        }
+        .confidential-tag {
+            display: inline-block;
+            background-color: #008080;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .confidential-text {
+            font-size: 13px;
+            margin: 0;
+            color: #555555;
+        }
+        .bonus-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fafbfd;
+            border: 1px solid #eef2f5;
+        }
+        .bonus-table td {
+            padding: 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #eef2f5;
+        }
+        .bonus-table td.label {
+            font-weight: bold;
+            color: #555555;
+            width: 35%;
+        }
+        .bonus-table td.value {
+            color: #333333;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            background-color: #008080;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #006666;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #fafbfd;
+            padding: 20px;
+            border-top: 1px solid #eef2f5;
+            font-size: 11px;
+            color: #777777;
+            line-height: 1.5;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin: 0 0 15px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">ADP Lohn &amp; Vergütung</div>
+            <div class="header-subtitle">Vertraulicher interner Vergütungshinweis</div>
+        </div>
+
+        <div class="content">
+            <h2>Jahresbonus-Abrechnung &amp; Steuerprüfung</h2>
+
+            <p>Guten Tag {{.FirstName}} {{.LastName}},</p>
+
+            <p>Wir freuen uns, Ihnen mitteilen zu können, dass die Berechnungen für den leistungsabhängigen Jahresbonus vom Vergütungsausschuss abgeschlossen wurden. Ihre Abrechnung steht nun zur Ansicht bereit, bevor die letzte Lohnauszahlung des laufenden Kalenderjahres erfolgt.</p>
+
+            <div class="confidential-box">
+                <div class="confidential-title"><span class="confidential-tag">VERTRAULICH</span>Interner Vergütungshinweis</div>
+                <div class="confidential-text">Ihre Abrechnung steht im Lohnportal zur Verfügung. Bitte prüfen Sie sie vor dem nächsten Auszahlungszyklus.</div>
+            </div>
+
+            <table class="bonus-table">
+                <tr>
+                    <td class="label">Empfänger</td>
+                    <td class="value">{{.FirstName}} {{.LastName}} ({{.Email}})</td>
+                </tr>
+                <tr>
+                    <td class="label">Abrechnungszeitraum</td>
+                    <td class="value">Jahresend-Gesamtvergütung</td>
+                </tr>
+                <tr>
+                    <td class="label">Status der Abrechnung</td>
+                    <td class="value" style="color: #008080; font-weight: bold;">Zur Ansicht verfügbar</td>
+                </tr>
+                <tr>
+                    <td class="label">Referenz</td>
+                    <td class="value">YEB-2026-{{.RId}}</td>
+                </tr>
+            </table>
+
+            <p>Um Ihre Bonusdetails einschließlich der Berechnungsaufschlüsselung und des Nettoauszahlungsbetrags einzusehen, melden Sie sich im sicheren ADP-Lohnportal an.</p>
+
+            <div class="cta-container">
+                <a href="{{.URL}}" class="cta-button">Jahresbonus-Abrechnung ansehen</a>
+            </div>
+
+            <p><strong>Hinweis:</strong> Abrechnungen sollten vor dem letzten Lohnzyklus des Kalenderjahres geprüft werden. Nicht rechtzeitig geprüfte Beträge werden in den nächsten regulären Lohnzyklus übertragen.</p>
+
+            <p>Mit freundlichen Grüßen,<br>
+            <strong>Daniel Okafor</strong><br>
+            Abteilung Lohn &amp; Vergütung</p>
+        </div>
+
+        <div class="footer">
+            <p>Dieser vertrauliche Hinweis wurde zu Zwecken der internen Lohnverfolgung an {{.Email}} gesendet.</p>
+            <p style="margin-top: 10px;">Leiten Sie diese Nachricht aus Gründen der Lohnsicherheit nicht weiter. Bei Fragen wenden Sie sich an payroll-support@adp.com.</p>
+            <p style="margin-top: 10px;">© 2026 Corporate Payroll Services. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

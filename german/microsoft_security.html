@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicherheitshinweis zu Ihrem Microsoft-Konto</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header { background: #ffffff; border-bottom: 1px solid #e1dfdd; padding: 18px 24px; }
+        .content { padding: 30px; }
+        .security-alert { background: #fff4ce; border: 1px solid #ffb900; padding: 20px; border-radius: 6px; margin: 20px 0; }
+        .location-info { background: #f3f2f1; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        .cta-button {
+            background: #0078d4;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        h1 { color: #5e5e5e; margin: 0; font-size: 18px; vertical-align: middle; }
+        .secondary-link { color: #0078d4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="padding-right:8px;line-height:0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td width="9" height="9" style="background:#f25022;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#7fba00;font-size:0;line-height:0;">&nbsp;</td></tr><tr><td height="2" colspan="3" style="font-size:0;line-height:0;">&nbsp;</td></tr><tr><td width="9" height="9" style="background:#00a4ef;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#ffb900;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+            </td>
+            <td><h1>Microsoft-Konto</h1></td>
+            </tr></table>
+        </div>
+
+        <div class="content">
+            <div class="security-alert">
+                <h3>Ungewöhnliche Anmeldeaktivität festgestellt</h3>
+            </div>
+
+            <p>Guten Tag {{.FirstName}} {{.LastName}},</p>
+
+            <p>wir haben mehrere Anmeldeversuche bei Ihrem Microsoft-Konto von einem nicht erkannten Standort aus festgestellt.</p>
+
+            <div class="location-info">
+                <h4 style="margin:0 0 8px;">Anmeldedetails</h4>
+                <strong>Standort:</strong> Bogotá, Kolumbien<br>
+                <strong>Gerät:</strong> Unbekannter Windows-PC<br>
+                <strong>Zeitpunkt:</strong> Heute um 03:47 Uhr<br>
+                <strong>Status:</strong> <span style="color: #d13438;">Aus Sicherheitsgründen blockiert</span>
+            </div>
+
+            <p><strong>Was ist passiert?</strong> Jemand hat mehrfach versucht, von einem Standort aus auf Ihr Konto zuzugreifen, der nicht Ihrem üblichen Anmeldemuster entspricht.</p>
+
+            <p>Falls Sie dies selbst waren, etwa auf Reisen oder mit einem neuen Gerät, können Sie diese Nachricht ignorieren. Sollten Sie diese Aktivität jedoch nicht kennen, sichern Sie Ihr Konto bitte umgehend.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Kontoaktivität überprüfen</a>
+            </p>
+
+            <p style="text-align: center; font-size: 13px;">Wenn Sie das nicht waren, <a href="{{.URL}}" class="secondary-link">sichern Sie Ihr Konto</a>.</p>
+
+            <p><strong>So schützen Sie Ihr Konto besser:</strong></p>
+            <ul>
+                <li>Aktivieren Sie die Zwei-Faktor-Authentifizierung</li>
+                <li>Verwenden Sie ein starkes, einzigartiges Kennwort</li>
+                <li>Überprüfen Sie Ihr Konto regelmäßig</li>
+                <li>Halten Sie Ihre Wiederherstellungsinformationen aktuell</li>
+            </ul>
+
+            <p>Wenn Sie vermuten, dass es sich um betrügerische Aktivität handelt, melden Sie dies bitte umgehend über den Link oben.</p>
+
+            <p>Mit freundlichen Grüßen<br>
+            <strong>Microsoft-Kontoteam</strong><br>
+            Abteilung Sicherheit und Datenschutz</p>
+
+            <hr style="margin: 30px 0; border: 1px solid #e1dfdd;">
+
+            <p style="font-size: 12px; color: #605e5c;">
+                Diese E-Mail wurde an {{.Email}} gesendet. Microsoft respektiert Ihre Privatsphäre. Weitere Informationen finden Sie in unserer <a href="https://privacy.microsoft.com/de-de/privacystatement" style="color: #0078d4;">Datenschutzerklärung</a>.<br>
+                Microsoft Ireland Operations Ltd., One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Irland
+            </p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
