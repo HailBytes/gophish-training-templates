@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausstehende Sicherheitsupdates auf Ihrem Computer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f4f5f7;
+            margin: 0;
+            padding: 20px;
+            color: #1d2125;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e3e6ea;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .header {
+            background: #0c2d57;
+            color: white;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .content { padding: 28px 24px; font-size: 14px; line-height: 1.55; }
+        .update-info {
+            background: #f4f5f7;
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border: 1px solid #e3e6ea;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+        .steps-container { margin: 20px 0; }
+        .step { margin: 12px 0; padding-left: 28px; position: relative; }
+        .step-number {
+            position: absolute;
+            left: 0; top: 0;
+            background: #0c2d57;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .cta-button {
+            background: #0c2d57;
+            color: white;
+            padding: 12px 26px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        .footer { font-size: 12px; color: #6b778c; padding: 0 24px 24px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">IT Service Desk</div>
+
+        <div class="content">
+            <p>Guten Tag {{.FirstName}},</p>
+
+            <p>Unser Endpoint-Management-System zeigt, dass auf Ihrem Arbeitscomputer ausstehende Sicherheitsupdates noch nicht installiert wurden. Damit Ihr Gerät den Unternehmensrichtlinien entspricht, installieren Sie diese bitte im Laufe dieser Woche, wann es Ihnen passt.</p>
+
+            <div class="update-info">
+                <strong>Gerätenutzer:</strong> {{.Email}}<br>
+                <strong>Ausstehende Updates:</strong> Sicherheits- und Qualitätsupdates<br>
+                <strong>Letztes erfolgreiches Update:</strong> Vor über 45 Tagen<br>
+                <strong>Empfohlen bis:</strong> {{.Date}}
+            </div>
+
+            <div class="steps-container">
+                <p style="margin:0 0 8px;"><strong>So installieren Sie die Updates:</strong></p>
+                <div class="step"><span class="step-number">1</span>Speichern und schließen Sie alle offenen Arbeiten, damit während der Installation nichts verloren geht.</div>
+                <div class="step"><span class="step-number">2</span>Öffnen Sie das Software Center auf Ihrem Computer und wählen Sie die ausstehenden Updates aus.</div>
+                <div class="step"><span class="step-number">3</span>Lassen Sie die Updates installieren. Das dauert in der Regel 5-10 Minuten.</div>
+                <div class="step"><span class="step-number">4</span>Starten Sie Ihren Computer neu, wenn Sie dazu aufgefordert werden.</div>
+            </div>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Software Center öffnen</a>
+            </p>
+
+            <p>Falls es gerade ungünstig ist, können Sie die Updates im Software Center für außerhalb der Arbeitszeit einplanen. Wenden Sie sich an den IT-Helpdesk unter der Durchwahl 2847, falls Probleme auftreten.</p>
+
+            <p>Mit freundlichen Grüßen,<br>
+            <strong>Marcus Bell</strong><br>
+            IT Service Desk</p>
+
+            <hr style="margin: 28px 0; border: none; border-top: 1px solid #e3e6ea;">
+        </div>
+
+        <div class="footer">
+            Dies ist eine automatische Nachricht; bitte antworten Sie nicht darauf.<br>
+            Die IT wird Sie niemals per E-Mail nach Ihrem Passwort fragen.<br>
+            Referenz: 5520934
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

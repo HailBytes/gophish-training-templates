@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Teams - Verpasster Chat oder Einladung</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f3f2f1; color: #242424; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header { background: #464eb8; color: white; padding: 18px 24px; }
+        .header-logo { font-size: 16px; font-weight: 600; letter-spacing: 0.5px; vertical-align: middle; }
+        .content { padding: 30px; }
+        .avatar { width: 48px; height: 48px; background: #464eb8; color: white; font-size: 18px; font-weight: 600; line-height: 48px; text-align: center; border-radius: 50%; }
+        .avatar-text { font-size: 14px; padding-left: 15px; }
+        .avatar-name { font-weight: 600; color: #242424; }
+        .chat-preview { background: #f3f2f1; padding: 16px; border-radius: 4px; font-style: italic; margin-bottom: 24px; font-size: 14px; color: #424242; }
+        .cta-button {
+            background: #464eb8;
+            color: white;
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 2px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        .cta-button:hover {
+            background: #3b3fa3;
+        }
+        .footer { background: #f3f2f1; border-top: 1px solid #edebe9; padding: 20px 30px; font-size: 11px; color: #605e5c; line-height: 1.5; }
+        p { font-size: 14px; line-height: 1.5; margin: 0 0 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="padding-right:8px;line-height:0;">
+            <span style="display:inline-block;width:20px;height:20px;background:#ffffff;color:#464eb8;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;font-size:13px;line-height:20px;text-align:center;border-radius:4px;">T</span>
+            </td>
+            <td><span class="header-logo">Microsoft Teams</span></td>
+            </tr></table>
+        </div>
+
+        <div class="content">
+            <p>Guten Tag {{.FirstName}} {{.LastName}},</p>
+
+            <table role="presentation" cellpadding="0" cellspacing="0" style="margin-bottom:24px;"><tr>
+                <td valign="middle"><div class="avatar">LH</div></td>
+                <td valign="middle" class="avatar-text">
+                    <span class="avatar-name">Laura Hughes</span> hat Ihnen eine Nachricht in Teams gesendet.<br>
+                    <span style="font-size:12px;color:#605e5c;">Vor 12 Minuten gesendet</span>
+                </td>
+            </tr></table>
+
+            <div class="chat-preview">
+                "Hallo {{.FirstName}}, ich habe den aktualisierten Projektzeitplan in unseren Kanal hochgeladen. Kannst du die Aufgabenverteilung prüfen und deine Verfügbarkeit für den Q3-Kickoff-Call bestätigen? Der Link ist im Thread."
+            </div>
+
+            <p>Sie haben eine ausstehende Benachrichtigung von Microsoft Teams. Klicken Sie auf den Link unten, um Microsoft Teams zu öffnen und direkt zu antworten.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">In Teams antworten</a>
+            </p>
+        </div>
+
+        <div class="footer">
+            Diese Nachricht wurde von Microsoft Teams an {{.Email}} gesendet. Microsoft respektiert Ihre Privatsphäre. Weitere Informationen finden Sie in unserer <a href="https://privacy.microsoft.com/de-de/privacystatement" style="color: #464eb8; text-decoration: none;">Datenschutzerklärung</a>.<br>
+            Microsoft Ireland Operations Ltd., One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Irland
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

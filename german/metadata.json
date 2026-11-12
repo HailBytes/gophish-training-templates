@@ -1,0 +1,694 @@
+{
+  "category": "german",
+  "industry": "Cross-industry",
+  "description": "German-language phishing simulation templates for German-speaking enterprise and public-sector environments. Scenarios include Microsoft 365 account security, IT helpdesk and mailbox lures, HR and payroll, Adobe Acrobat Sign, AI tools (Copilot, ChatGPT), social media (LinkedIn, Instagram), parcel delivery (DHL), QR-code (quishing), SMS (smishing), and German tax-authority (ELSTER) impersonation.",
+  "language": "de",
+  "region": "Germany / German-speaking",
+  "templates": [
+    {
+      "filename": "microsoft_security.html",
+      "name": "Microsoft 365 – Verdächtige Anmeldung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Ungewöhnliche Anmeldeaktivität bei Ihrem Microsoft-Konto",
+        "Sicherheitswarnung: neue Anmeldung erkannt",
+        "Aktion erforderlich: Anmeldeversuch blockiert"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "m365",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "Microsoft-365-Sicherheitswarnung (verdächtige Anmeldung). Universeller Lure für Microsoft-365-Umgebungen."
+    },
+    {
+      "filename": "microsoft365_password_expiry.html",
+      "name": "Microsoft 365 – Kennwort läuft ab",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.From}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Ihr Kennwort läuft in Kürze ab",
+        "Aktion erforderlich: Kennwort jetzt verlängern",
+        "Microsoft 365: Kennwortablauf in 3 Tagen"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "m365",
+        "password",
+        "credential-harvest",
+        "german",
+        "de",
+        "beginner"
+      ],
+      "notes": "Kennwortablauf-Lure. Niedrige Schwierigkeit, hohe Klickrate; guter Basistest."
+    },
+    {
+      "filename": "microsoft_mfa_update.html",
+      "name": "Microsoft 365 – MFA-Neuregistrierung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.From}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Mehrstufige Authentifizierung: erneute Registrierung erforderlich",
+        "Aktion erforderlich: MFA erneut einrichten",
+        "Ihre MFA-Registrierung läuft ab"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "m365",
+        "mfa",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "MFA-Neuregistrierung. Zielt auf MFA-Ermüdung und Setup-Umleitung."
+    },
+    {
+      "filename": "sharepoint_document_share.html",
+      "name": "Microsoft SharePoint – Dokument freigegeben",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.From}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Ein Dokument wurde für Sie freigegeben",
+        "Neue SharePoint-Freigabe",
+        "Dokument wartet auf Ihre Ansicht"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "sharepoint",
+        "m365",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "SharePoint-Freigabe-Benachrichtigung."
+    },
+    {
+      "filename": "onedrive_file_share.html",
+      "name": "Microsoft OneDrive – Dateifreigabe",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Neue Dateifreigabe in OneDrive",
+        "Eine Datei wurde für Sie freigegeben",
+        "OneDrive: Dokument freigegeben"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "onedrive",
+        "m365",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "OneDrive-Dateifreigabe-Benachrichtigung."
+    },
+    {
+      "filename": "microsoft_teams_invite.html",
+      "name": "Microsoft Teams – Neue Nachricht",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Sie haben eine neue Microsoft-Teams-Nachricht",
+        "Neue Teams-Nachricht wartet auf Sie",
+        "Verpasste Teams-Nachricht"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "teams",
+        "m365",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "Teams-Benachrichtigung (verpasste Nachricht)."
+    },
+    {
+      "filename": "copilot_license_suspended.html",
+      "name": "Microsoft Copilot – Lizenz ausgesetzt",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Microsoft Copilot: Ihre Lizenz wurde ausgesetzt",
+        "Aktion erforderlich: Copilot-Lizenz reaktivieren",
+        "Ihr Copilot-Zugang wurde deaktiviert"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "copilot",
+        "ai-tools",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "KI-Tool-Lure (Microsoft Copilot)."
+    },
+    {
+      "filename": "chatgpt_account_suspended.html",
+      "name": "ChatGPT Plus – Zahlung fehlgeschlagen",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "ChatGPT Plus: Zahlung fehlgeschlagen – Konto gesperrt",
+        "Aktion erforderlich: Zahlungsmethode aktualisieren",
+        "Ihr ChatGPT-Plus-Abo wurde pausiert"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "openai",
+        "chatgpt",
+        "ai-tools",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "KI-Tool-Lure (OpenAI/ChatGPT), Zahlungs-/Kontosperrung."
+    },
+    {
+      "filename": "linkedin_reminder.html",
+      "name": "LinkedIn – Profilhinweis",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Neue Aktivitäten rund um Ihr LinkedIn-Profil",
+        "Sie haben neue Profilaufrufe",
+        "LinkedIn: jemand hat nach Ihnen gesucht"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "linkedin",
+        "social-media",
+        "credential-harvest",
+        "german",
+        "de",
+        "beginner"
+      ],
+      "notes": "LinkedIn-Profilaktivität."
+    },
+    {
+      "filename": "linkedin_inmail.html",
+      "name": "LinkedIn – InMail von Recruiter",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Sie haben eine neue InMail von einem Recruiter",
+        "Neue Jobmöglichkeit über LinkedIn",
+        "Ein Recruiter hat Ihnen geschrieben"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "linkedin",
+        "social-media",
+        "recruiting",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "LinkedIn-InMail/Recruiter-Lure."
+    },
+    {
+      "filename": "instagram_login_alert.html",
+      "name": "Instagram – Login-Warnung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Neue Anmeldung bei Ihrem Instagram-Konto",
+        "Sicherheitswarnung: unbekannte Anmeldung",
+        "Waren Sie das? Neue Instagram-Anmeldung"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "instagram",
+        "meta",
+        "social-media",
+        "credential-harvest",
+        "german",
+        "de",
+        "beginner"
+      ],
+      "notes": "Instagram/Meta-Login-Warnung."
+    },
+    {
+      "filename": "dhl_package.html",
+      "name": "DHL – Paketzustellung fehlgeschlagen",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Ihr DHL-Paket konnte nicht zugestellt werden",
+        "Zustellversuch fehlgeschlagen – Aktion erforderlich",
+        "DHL: Paket wartet auf Zustellanweisung"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "dhl",
+        "delivery",
+        "shipping",
+        "credential-harvest",
+        "german",
+        "de",
+        "beginner"
+      ],
+      "notes": "Paketzustellungs-Lure (DHL), im DACH-Raum sehr verbreitet."
+    },
+    {
+      "filename": "qr_code_mfa.html",
+      "name": "Microsoft 365 – MFA QR-Code (Quishing)",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "MFA-Neuregistrierung per QR-Code erforderlich",
+        "Aktion erforderlich: MFA per QR-Code aktualisieren",
+        "Scannen Sie den QR-Code zur MFA-Einrichtung"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "microsoft",
+        "mfa",
+        "quishing",
+        "qr-code",
+        "credential-harvest",
+        "german",
+        "de",
+        "advanced"
+      ],
+      "notes": "QR-Code-Phishing (Quishing). Leitet die Erfassung auf das private Gerät um."
+    },
+    {
+      "filename": "elster_bescheid.html",
+      "name": "Finanzamt – ELSTER-Bescheid",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Mein ELSTER: Neuer Bescheid verfügbar",
+        "ELSTER: Dokument wartet auf Abruf",
+        "Finanzamt: neuer Steuerbescheid verfügbar"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "government",
+        "tax",
+        "elster",
+        "finanzamt",
+        "credential-harvest",
+        "german",
+        "de",
+        "advanced"
+      ],
+      "notes": "Deutsche Steuer-/Behördenlokalisierung (ELSTER), analog zu SAT (latam-spanish) und Receita Federal (latam-portuguese). Autoritätsbasierter Druck."
+    },
+    {
+      "filename": "mailbox_compromised.html",
+      "name": "IT-Sicherheit – Postfach kompromittiert",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
+      "suggested_subject_lines": [
+        "Sicherheitswarnung: ungewöhnliche Aktivität in Ihrem Postfach",
+        "Ihr Postfach wurde möglicherweise kompromittiert",
+        "Aktion erforderlich: Postfach absichern"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "it-security",
+        "email",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "Internes IT-Security-Szenario (kompromittiertes Postfach), generischer Absender."
+    },
+    {
+      "filename": "email_issues.html",
+      "name": "IT – E-Mail-Postfach-Migration",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
+      "suggested_subject_lines": [
+        "Wartungsarbeiten: Migration Ihres E-Mail-Postfachs",
+        "Ihr Postfach wird migriert – Aktion erforderlich",
+        "E-Mail-Migration: Bestätigung erforderlich"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "it-security",
+        "email",
+        "migration",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "IT-Postfach-Migration, generischer IT-Service-Desk."
+    },
+    {
+      "filename": "webmail_upgrade.html",
+      "name": "IT – Webmail-Aktualisierung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Aktualisierung Ihres Webmail-Zugangs erforderlich",
+        "Webmail-Upgrade: jetzt bestätigen",
+        "Ihr Webmail-Konto muss aktualisiert werden"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "it-security",
+        "webmail",
+        "credential-harvest",
+        "german",
+        "de",
+        "beginner"
+      ],
+      "notes": "Webmail-Upgrade-Lure."
+    },
+    {
+      "filename": "system_update.html",
+      "name": "IT – Verbindliches Systemupdate",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.Date}}"
+      ],
+      "suggested_subject_lines": [
+        "Verbindliches Sicherheitsupdate",
+        "Aktion erforderlich: Systemupdate installieren",
+        "Pflicht-Update für Ihr Konto"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "it-security",
+        "update",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "Verpflichtendes Systemupdate, generischer IT-Service-Desk."
+    },
+    {
+      "filename": "benefits_enrollment.html",
+      "name": "Personal – Anmeldung Zusatzleistungen",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Jährliche Anmeldung zu Zusatzleistungen",
+        "Open Enrollment: Frist beachten",
+        "Ihre Sozialleistungen: Anmeldung erforderlich"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "hr",
+        "benefits",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "HR-Open-Enrollment, generisches HR-Branding."
+    },
+    {
+      "filename": "payroll_direct_deposit.html",
+      "name": "Lohnbuchhaltung – Bankverbindung aktualisieren",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.RId}}"
+      ],
+      "suggested_subject_lines": [
+        "Aktualisierung Ihrer Bankverbindung für die Gehaltsabrechnung",
+        "Lohnbuchhaltung: Bankdaten bestätigen",
+        "Änderung Ihrer Gehaltsüberweisung"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "hr",
+        "payroll",
+        "finance",
+        "credential-harvest",
+        "german",
+        "de",
+        "advanced"
+      ],
+      "notes": "Payroll-Diversion-Szenario (Bankverbindung ändern). Fortgeschritten."
+    },
+    {
+      "filename": "year_end_bonus.html",
+      "name": "Personal – Jahressonderzahlung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "intermediate",
+      "estimated_click_rate": "40-60%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}",
+        "{{.RId}}"
+      ],
+      "suggested_subject_lines": [
+        "Information zur Jahressonderzahlung",
+        "Ihre Jahresprämie: Details einsehen",
+        "Jahressonderzahlung: Bestätigung erforderlich"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "hr",
+        "bonus",
+        "credential-harvest",
+        "german",
+        "de",
+        "intermediate"
+      ],
+      "notes": "HR-Jahressonderzahlung, Neugier-/Vorfreude-Lure."
+    },
+    {
+      "filename": "adobe_sign.html",
+      "name": "Adobe Acrobat Sign – Vertragsänderung",
+      "attack_vector": "credential_harvest",
+      "difficulty": "advanced",
+      "estimated_click_rate": "30-50%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.LastName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Dokument zur Unterschrift: Änderung des Arbeitsvertrags",
+        "Adobe Acrobat Sign: Ihre Unterschrift wird benötigt",
+        "Vertragsdokument wartet auf Ihre Signatur"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "adobe",
+        "e-signature",
+        "credential-harvest",
+        "german",
+        "de",
+        "advanced"
+      ],
+      "notes": "E-Signatur-Lure (Adobe Acrobat Sign), generische Arbeitsvertrags-Änderung."
+    },
+    {
+      "filename": "it_helpdesk_sms.html",
+      "name": "IT-Helpdesk – Passwort-Reset (SMS/Smishing)",
+      "attack_vector": "credential_harvest",
+      "difficulty": "beginner",
+      "estimated_click_rate": "50-70%",
+      "gophish_variables": [
+        "{{.FirstName}}",
+        "{{.Email}}",
+        "{{.URL}}",
+        "{{.Tracker}}"
+      ],
+      "suggested_subject_lines": [
+        "Passwort-Zurücksetzung erforderlich",
+        "IT-Helpdesk: Ihr Passwort läuft heute ab",
+        "Aktion erforderlich: Passwort bestätigen"
+      ],
+      "education_page": "education/german_education.html",
+      "tags": [
+        "it-support",
+        "helpdesk",
+        "smishing",
+        "sms",
+        "credential-harvest",
+        "german",
+        "de",
+        "beginner"
+      ],
+      "notes": "Smishing/SMS-Format (Telefon-Mockup), kein klassisches E-Mail-Layout."
+    }
+  ],
+  "gophish_version_tested": "0.12.1",
+  "last_updated": "2026-11-11"
+}
