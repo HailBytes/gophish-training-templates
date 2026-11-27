@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHL Paket – Benachrichtigung zur Zustellung</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 20px; background: #f2f2f2; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; }
+        .logo-bar { background: #ffcc00; padding: 16px 24px; }
+        .wordmark { font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; color: #d40511; font-style: italic; margin: 0; }
+        .content { padding: 28px 24px; }
+        .details { background: #f7f7f7; border: 1px solid #ededed; padding: 16px 18px; margin: 18px 0; font-size: 14px; line-height: 1.9; }
+        .cta-button {
+            background: #d40511;
+            color: #ffffff;
+            padding: 12px 26px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        p { font-size: 14px; line-height: 1.6; }
+        .footer { background: #f7f7f7; border-top: 1px solid #ededed; padding: 18px 24px; font-size: 11px; color: #888; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-bar">
+            <p class="wordmark">DHL</p>
+        </div>
+
+        <div class="content">
+            <p>Guten Tag {{.FirstName}},</p>
+
+            <p>Ihr Paket konnte heute nicht zugestellt werden. Es wird derzeit in unserem Paketzentrum aufbewahrt. Bevor wir eine erneute Zustellung einplanen können, muss die hinterlegte Empfängeradresse bestätigt werden.</p>
+
+            <div class="details">
+                <strong>Sendungsnummer:</strong> 4582 7361 9904<br>
+                <strong>Service:</strong> DHL Paket<br>
+                <strong>Absendeort:</strong> Leipzig, Deutschland<br>
+                <strong>Status:</strong> Im Paketzentrum, Zustellung ausstehend<br>
+                <strong>Empfänger:</strong> {{.FirstName}} {{.LastName}}
+            </div>
+
+            <p>Bitte prüfen Sie Ihre Sendung und bestätigen Sie die Lieferadresse, damit wir Ihr Paket erneut zur Zustellung bringen können.</p>
+
+            <p><a href="{{.URL}}" class="cta-button">Sendung verfolgen &amp; Zustellung bestätigen</a></p>
+
+            <p>Nach der Bestätigung erfolgt die Zustellung Ihres Pakets voraussichtlich innerhalb von 2 bis 5 Werktagen.</p>
+
+            <p>Vielen Dank, dass Sie sich für DHL entschieden haben.</p>
+        </div>
+
+        <div class="footer">
+            <p>DHL. Einfach. Verlässlich. Zugestellt.</p>
+            <p>Diese Sendungsbenachrichtigung wurde an {{.Email}} gesendet. Bitte antworten Sie nicht auf diese Nachricht.</p>
+            <p>DHL Paket GmbH, Sträßchensweg 10, 53113 Bonn</p>
+            <p>&copy; 2026 Deutsche Post DHL Group. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

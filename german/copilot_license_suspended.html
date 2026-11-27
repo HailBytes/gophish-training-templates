@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 365 – Handlung erforderlich: Copilot-Lizenz ausgesetzt</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+            background-color: #f3f2f1;
+            padding: 24px 16px;
+        }
+        .email-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-radius: 2px;
+        }
+        .ms-banner {
+            background: #0078d4;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ms-logo {
+            display: flex;
+            gap: 2px;
+        }
+        .ms-logo span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+        }
+        .ms-logo .r1 { background: #f25022; }
+        .ms-logo .r2 { background: #7fba00; }
+        .ms-logo .r3 { background: #00a4ef; }
+        .ms-logo .r4 { background: #ffb900; }
+        .ms-logo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            width: 22px;
+            height: 22px;
+        }
+        .ms-banner-text {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .copilot-hero {
+            background: linear-gradient(135deg, #0f1e5e 0%, #1b4fa8 50%, #0078d4 100%);
+            padding: 28px 32px;
+            text-align: center;
+        }
+        .copilot-hero h1 {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .copilot-hero p {
+            color: #c8d6f5;
+            font-size: 13px;
+        }
+        .email-body {
+            padding: 32px;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fef0f0;
+            border: 1px solid #f1c0c0;
+            border-radius: 12px;
+            padding: 6px 14px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #c50f1f;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #c50f1f;
+            border-radius: 50%;
+        }
+        .greeting {
+            font-size: 15px;
+            color: #323130;
+            margin-bottom: 16px;
+        }
+        .body-text {
+            font-size: 14px;
+            color: #323130;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .alert-box {
+            background: #fff4ce;
+            border-left: 4px solid #f8d22a;
+            border-radius: 2px;
+            padding: 16px 18px;
+            margin: 20px 0;
+        }
+        .alert-box p {
+            font-size: 13px;
+            color: #3b3a39;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .alert-box strong {
+            color: #201f1e;
+        }
+        .cta-section {
+            text-align: center;
+            margin: 28px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #0078d4;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 2px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        .cta-button:hover {
+            background: #106ebe;
+        }
+        .cta-note {
+            font-size: 12px;
+            color: #a19f9d;
+            margin-top: 10px;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #edebe9;
+            margin: 24px 0;
+        }
+        .details-section {
+            background: #faf9f8;
+            border: 1px solid #edebe9;
+            border-radius: 2px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
+        }
+        .details-section h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #323130;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            padding: 4px 0;
+            border-bottom: 1px solid #edebe9;
+        }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-label { color: #605e5c; }
+        .detail-value { color: #323130; font-weight: 500; }
+        .footer {
+            background: #f3f2f1;
+            padding: 18px 32px;
+            border-top: 1px solid #edebe9;
+        }
+        .footer p {
+            font-size: 12px;
+            color: #a19f9d;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        .footer a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+        @media (max-width: 500px) {
+            .email-body { padding: 24px 20px; }
+            .detail-row { flex-direction: column; gap: 2px; }
+        }
+    </style>
+</head>
+<body>
+    <img src="{{.Tracker}}" width="1" height="1" style="display:none;" alt="">
+
+    <div class="email-wrapper">
+
+        <div class="ms-banner">
+            <div class="ms-logo-grid">
+                <span style="background:#f25022;"></span>
+                <span style="background:#7fba00;"></span>
+                <span style="background:#00a4ef;"></span>
+                <span style="background:#ffb900;"></span>
+            </div>
+            <span class="ms-banner-text">Microsoft 365</span>
+        </div>
+
+        <div class="copilot-hero">
+            <h1>Microsoft Copilot</h1>
+            <p>Microsoft 365 KI-Produktivitätspaket</p>
+        </div>
+
+        <div class="email-body">
+
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Lizenz ausgesetzt
+            </div>
+
+            <p class="greeting">Guten Tag {{.FirstName}},</p>
+
+            <p class="body-text">
+                Ihre Lizenz für <strong>Microsoft 365 Copilot</strong> wurde vorübergehend ausgesetzt. Ausgelöst wurde die Aussetzung durch ein ungewöhnliches Anmeldemuster, das in den letzten 24 Stunden auf Ihrem Konto festgestellt wurde.
+            </p>
+
+            <p class="body-text">
+                Zur Einhaltung der Sicherheitsrichtlinie Ihrer Organisation wurde Ihr Copilot-Zugriff in Word, Excel, Outlook, Teams und weiteren Microsoft 365-Apps bis zur erneuten Identitätsprüfung gesperrt.
+            </p>
+
+            <div class="alert-box">
+                <p>
+                    <strong>Handlung innerhalb von 48 Stunden erforderlich.</strong><br>
+                    Wird der Zugriff nicht erneut bestätigt, wird Ihre Copilot-Lizenz wieder in den Pool zurückgeführt und muss von Ihrer IT-Administration neu zugewiesen werden.
+                </p>
+            </div>
+
+            <div class="details-section">
+                <h3>Details zur Aussetzung</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Konto</span>
+                    <span class="detail-value">{{.Email}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Produkt</span>
+                    <span class="detail-value">Microsoft 365 Copilot</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Vorgangsnummer</span>
+                    <span class="detail-value">INC-4471092</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Grund</span>
+                    <span class="detail-value">Ungewöhnliche Anmeldeaktivität</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Status</span>
+                    <span class="detail-value" style="color:#c50f1f;">Ausgesetzt</span>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="{{.URL}}" class="cta-button">Identität prüfen &amp; Zugriff wiederherstellen</a>
+                <p class="cta-note">Sie werden gebeten, sich bei Ihrem Microsoft-Konto anzumelden.</p>
+            </div>
+
+            <hr class="divider">
+
+            <p class="body-text" style="font-size:13px; color:#605e5c;">
+                Falls Sie diese Aussetzung nicht ausgelöst haben oder dies für einen Fehler halten, wenden Sie sich bitte umgehend an Ihren IT-Helpdesk. Geben Sie Ihre Zugangsdaten niemals an Dritte weiter, auch nicht an den Microsoft-Support.
+            </p>
+
+        </div>
+
+        <div class="footer">
+            <p>Diese Nachricht wurde an {{.Email}} gesendet, weil Ihre Organisation Microsoft 365 Copilot nutzt.</p>
+            <p>Microsoft Corporation, One Microsoft Way, Redmond, WA 98052 &nbsp;|&nbsp; <a href="#">Datenschutzerklärung</a> &nbsp;|&nbsp; <a href="#">Abmelden</a></p>
+            <p style="margin-top:8px;">&#169; 2026 Microsoft Corporation. Alle Rechte vorbehalten.</p>
+        </div>
+
+    </div>
+</body>
+</html>

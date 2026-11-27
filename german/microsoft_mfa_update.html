@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 365 - Erneute Registrierung der mehrstufigen Authentifizierung</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f3f2f1; color: #323130; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e1dfdd; border-radius: 2px; overflow: hidden; box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108); }
+        .header { background: #ffffff; border-bottom: 1px solid #e1dfdd; padding: 16px 24px; }
+        .header-logo { font-size: 16px; font-weight: 600; color: #5e5e5e; vertical-align: middle; }
+        .content { padding: 32px; }
+        .alert-box { background-color: #fff4ce; border-left: 4px solid #ffb900; padding: 16px; margin: 24px 0; border-radius: 2px; }
+        .alert-box h3 { margin: 0 0 8px 0; color: #323130; font-size: 15px; font-weight: 600; }
+        .alert-box p { margin: 0; color: #605e5c; font-size: 13px; }
+        .settings-info { background-color: #faf9f8; border: 1px solid #f3f2f1; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #edebe9; font-size: 14px; }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { color: #605e5c; }
+        .info-value { font-weight: 600; color: #323130; }
+        .cta-button {
+            background: #0078d4;
+            color: white;
+            padding: 10px 28px;
+            text-decoration: none;
+            border-radius: 2px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 20px 0 0 0;
+        }
+        .cta-button:hover {
+            background: #005a9e;
+        }
+        .footer { background: #faf9f8; border-top: 1px solid #edebe9; padding: 20px 32px; font-size: 11px; color: #605e5c; line-height: 1.5; }
+        p { font-size: 14px; line-height: 1.5; margin: 0 0 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="padding-right:8px;line-height:0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td width="9" height="9" style="background:#f25022;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#7fba00;font-size:0;line-height:0;">&nbsp;</td></tr><tr><td height="2" colspan="3" style="font-size:0;line-height:0;">&nbsp;</td></tr><tr><td width="9" height="9" style="background:#00a4ef;font-size:0;line-height:0;">&nbsp;</td><td width="2" style="font-size:0;line-height:0;">&nbsp;</td><td width="9" height="9" style="background:#ffb900;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+            </td>
+            <td><span class="header-logo">Microsoft 365 Sicherheit</span></td>
+            </tr></table>
+        </div>
+
+        <div class="content">
+            <p>Guten Tag {{.FirstName}} {{.LastName}},</p>
+
+            <p>zur Einhaltung der aktualisierten Richtlinien für die Informationssicherheit aktualisiert unsere Organisation die Anforderungen an die mehrstufige Authentifizierung (MFA) für alle Microsoft-365-Konten.</p>
+
+            <div class="alert-box">
+                <h3>Aktion erforderlich: Erneute MFA-Registrierung ausstehend</h3>
+                <p>Sie müssen Ihre Authentifizierungseinstellungen überprüfen, um den Remote-Zugriff zu behalten.</p>
+            </div>
+
+            <div class="settings-info">
+                <div class="info-row">
+                    <span class="info-label">Konto:</span>
+                    <span class="info-value">{{.Email}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Aktueller Status:</span>
+                    <span class="info-value" style="color: #d13438;">Überprüfung erforderlich</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Frist:</span>
+                    <span class="info-value">in 3 Tagen</span>
+                </div>
+            </div>
+
+            <p>Bitte klicken Sie auf die Schaltfläche unten, um Ihre Sicherheitsüberprüfungsinformationen zu aktualisieren, Ihr Gerät in der Microsoft Authenticator App zu verknüpfen oder Ihre hinterlegte Telefonnummer zu bestätigen.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Authenticator / MFA-Einstellungen einrichten</a>
+            </p>
+
+            <p><strong>Hinweis:</strong> Wenn Sie Ihre Einstellungen nicht vor Ablauf der Frist bestätigen, werden Sie vorübergehend von Ihren E-Mails, Teams und Clouddiensten ausgesperrt und müssen den IT-Support kontaktieren, um den Zugriff wiederherzustellen.</p>
+        </div>
+
+        <div class="footer">
+            Gesendet von {{.From}} im Auftrag der IT-Administration.<br>
+            Diese Sicherheitsbenachrichtigung wurde an {{.Email}} gesendet. Microsoft respektiert Ihre Privatsphäre. Lesen Sie unsere <a href="https://privacy.microsoft.com/de-de/privacystatement" style="color:#0078d4;text-decoration:none;">Datenschutzerklärung</a>.<br>
+            Microsoft Ireland Operations Ltd., One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Irland
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frist zur Anmeldung für Zusatzleistungen</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+        }
+        .header {
+            background-color: #00796b;
+            color: #ffffff;
+            padding: 24px 40px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .notice-box {
+            background-color: #f1f7f6;
+            border-left: 4px solid #00796b;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .notice-box h3 {
+            margin: 0 0 8px 0;
+            color: #00574b;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .notice-box p {
+            margin: 0;
+            color: #00574b;
+            font-size: 14px;
+        }
+        .benefits-box {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .cta-button {
+            background-color: #00796b;
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #00574b;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #d0d0d0;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
+        p {
+            line-height: 1.6;
+            color: #333333;
+            margin: 0 0 16px 0;
+        }
+        @media (max-width: 600px) {
+            .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Anmeldung zu Mitarbeiterleistungen</div>
+        </div>
+
+        <div class="content">
+            <div class="notice-box">
+                <h3>Handlung erforderlich: Schließen Sie Ihre Anmeldung ab</h3>
+                <p>Unsere Unterlagen zeigen, dass Ihre jährliche Auswahl noch nicht abgeschlossen ist.</p>
+            </div>
+
+            <h1>Schließen Sie Ihre Anmeldung zu den Zusatzleistungen ab</h1>
+
+            <p>Guten Tag {{.FirstName}} {{.LastName}},</p>
+
+            <p>Unsere Unterlagen zeigen, dass Sie Ihre jährliche Anmeldung zu den Zusatzleistungen noch nicht abgeschlossen haben. Das Anmeldefenster schließt am Ende dieser Woche. Wenn Ihre Auswahl nicht bis zur Frist übermittelt wird, wird Ihre Absicherung bis zur nächsten Anmeldephase auf den Standardtarif zurückgesetzt, sofern kein besonderes Lebensereignis vorliegt.</p>
+
+            <div class="benefits-box">
+                <p style="margin: 0; font-weight: 600;">Anmeldezeitraum: Jetzt geöffnet</p>
+                <p style="margin: 8px 0 0 0;">Frist: Diesen Freitag um 23:59 Uhr (Ortszeit)</p>
+                <p style="margin: 8px 0 0 0; color: #00796b; font-weight: 600;">Ihr Status: Noch nicht übermittelt</p>
+            </div>
+
+            <p><strong>Verfügbare Leistungen:</strong></p>
+            <ul>
+                <li>Kranken-, Zahn- und Sehhilfeversicherung</li>
+                <li>Lebens- und Berufsunfähigkeitsversicherung</li>
+                <li>Betriebliche Altersvorsorge</li>
+                <li>Flexible Gesundheitsbudgets (FSA/HSA)</li>
+                <li>Bezahlter Urlaub und Krankheitstage</li>
+            </ul>
+
+            <p>Ihre Auswahl wird über bswift, unseren Anbieter für die Leistungsanmeldung, verwaltet. Der Vorgang dauert etwa 15 Minuten.</p>
+
+            <p style="text-align: center;">
+                <a href="{{.URL}}" class="cta-button">Anmeldung abschließen</a>
+            </p>
+
+            <p>Wenn Sie Unterstützung benötigen, wenden Sie sich an das HR-Leistungsteam unter benefits@bswift.com oder rufen Sie Ihr HR Service Center an.</p>
+
+            <p>Mit freundlichen Grüßen,<br>
+            <strong>Karen Whitfield</strong><br>
+            Human Resources Benefits Team</p>
+        </div>
+
+        <div class="footer">
+            <p>Dieser Hinweis wurde an {{.Email}} gesendet.</p>
+            <p style="margin-top: 12px;">© 2026 HR Benefits Service Center. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

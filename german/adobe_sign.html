@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Acrobat Sign - Unterschrift erforderlich</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: 'Adobe Clean', Arial, Helvetica, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); overflow: hidden; }
+        .header { background: #FA0F00; padding: 18px 28px; }
+        .logo { color: white; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; vertical-align: middle; }
+        .adobe-mark { display: inline-block; width: 26px; height: 26px; background: #ffffff; border-radius: 5px; color: #FA0F00; font-weight: 800; font-size: 18px; text-align: center; line-height: 26px; margin-right: 10px; vertical-align: middle; font-family: Arial, sans-serif; }
+        .content { padding: 32px 28px; }
+        .intro-line { font-size: 18px; font-weight: 600; color: #2C2C2C; margin-bottom: 24px; }
+        .agreement-card { border: 1px solid #D5D5D5; border-radius: 4px; padding: 20px; margin: 20px 0; }
+        .agreement-title { font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 12px; }
+        .agreement-meta { font-size: 13px; color: #6E6E6E; line-height: 1.8; }
+        .badge { display: inline-block; background: #FFF3CD; border: 1px solid #FBBF24; color: #92400E; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; }
+        .cta-button { display: block; background: #FA0F00; color: white; padding: 14px 0; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 15px; text-align: center; margin: 28px 0; }
+        .steps { list-style: none; padding: 0; margin: 0; }
+        .steps li { padding: 8px 0; padding-left: 28px; position: relative; font-size: 14px; color: #444; border-bottom: 1px solid #F0F0F0; }
+        .steps li:last-child { border: none; }
+        .steps li::before { content: attr(data-n); position: absolute; left: 0; background: #FA0F00; color: white; width: 18px; height: 18px; border-radius: 50%; text-align: center; font-size: 11px; font-weight: 700; line-height: 18px; top: 10px; }
+        p { color: #444; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+        .footer { background: #FAFAFA; border-top: 1px solid #E5E5E5; padding: 16px 28px; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="adobe-mark">A</span><span class="logo">Adobe Acrobat Sign</span>
+        </div>
+
+        <div class="content">
+            <p class="intro-line">Handlung erforderlich: Unterschreiben Sie Ihr Dokument</p>
+
+            <p>Hallo {{.FirstName}},</p>
+            <p>Ein Kollege hat Ihnen über Adobe Acrobat Sign eine Vereinbarung zur Prüfung und Unterschrift gesendet.</p>
+
+            <div class="agreement-card">
+                <div class="badge">Läuft in 72 Stunden ab</div>
+                <div class="agreement-title">Änderung des Arbeitsvertrags &mdash; {{.LastName}}</div>
+                <div class="agreement-meta">
+                    <strong>Von:</strong> HR Business Partner &lt;hr-noreply@meridiangroup.com&gt;<br>
+                    <strong>Dokumenttyp:</strong> Änderung / Richtlinienaktualisierung<br>
+                    <strong>Vereinbarungs-ID:</strong> CBJCHBCAABAA-7F2D91<br>
+                    <strong>Gesendet an:</strong> {{.Email}}<br>
+                    <strong>Erforderlich:</strong> Nur Ihre Unterschrift
+                </div>
+            </div>
+
+            <ol class="steps">
+                <li data-n="1">Klicken Sie auf die Schaltfläche unten, um das Dokument zu öffnen</li>
+                <li data-n="2">Lesen Sie die Vereinbarung sorgfältig durch</li>
+                <li data-n="3">Klicken Sie auf die Unterschriftsfelder und folgen Sie den Anweisungen</li>
+                <li data-n="4">Absenden &mdash; Ihre unterschriebene Kopie wird Ihnen per E-Mail zugesandt</li>
+            </ol>
+
+            <a href="{{.URL}}" class="cta-button">Hier klicken zum Prüfen &amp; Unterschreiben</a>
+
+            <p>Dies ist eine rechtsverbindliche elektronische Unterschrift. Falls Sie diese Anfrage nicht erwartet haben, wenden Sie sich bitte umgehend an die Personalabteilung und unterschreiben Sie nicht.</p>
+        </div>
+
+        <div class="footer">
+            Diese automatische Benachrichtigung wurde an {{.Email}} gesendet.<br>
+            Adobe Inc., 345 Park Avenue, San Jose, CA 95110 | Powered by Adobe Acrobat Sign
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>

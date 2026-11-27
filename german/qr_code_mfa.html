@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktion erforderlich: Erneute Registrierung der Multi-Faktor-Authentifizierung</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: 'Segoe UI', Arial, Helvetica, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+        .header { background: #0078D4; padding: 20px 28px; }
+        .header-title { color: white; font-size: 20px; font-weight: 600; }
+        .header-sub { color: rgba(255,255,255,0.8); font-size: 13px; margin-top: 4px; }
+        .content { padding: 30px 28px; }
+        .notice-box { background: #FFF4CE; border: 1px solid #FFB900; border-radius: 4px; padding: 14px 18px; margin-bottom: 24px; font-size: 14px; color: #5D4200; }
+        .qr-section { text-align: center; margin: 24px 0; padding: 24px; border: 2px dashed #CCCCCC; border-radius: 8px; background: #FAFAFA; }
+        .qr-label { font-size: 13px; color: #555; margin-bottom: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        /* SVG QR code placeholder — in real deployment, replace with actual campaign QR image */
+        .qr-placeholder { width: 200px; height: 200px; margin: 0 auto; position: relative; }
+        .qr-placeholder svg { width: 100%; height: 100%; }
+        .qr-caption { font-size: 13px; color: #777; margin-top: 12px; }
+        .steps { margin: 24px 0; }
+        .step { display: flex; align-items: flex-start; margin-bottom: 14px; font-size: 14px; color: #333; }
+        .step-num { background: #0078D4; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-right: 12px; margin-top: 1px; }
+        .deadline { background: #FDE7E9; border: 1px solid #FCA5A5; border-radius: 4px; padding: 12px 16px; font-size: 14px; color: #991B1B; font-weight: 600; text-align: center; margin: 20px 0; }
+        p { color: #333; font-size: 14px; line-height: 1.6; margin: 0 0 14px; }
+        .footer { background: #F7F7F7; border-top: 1px solid #E0E0E0; padding: 14px 28px; font-size: 12px; color: #888; }
+        .also-link { text-align: center; margin: 16px 0; font-size: 13px; color: #555; }
+        .also-link a { color: #0078D4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-title">Microsoft 365 &bull; Sicherheit</div>
+            <div class="header-sub">Erneute Registrierung der Multi-Faktor-Authentifizierung</div>
+        </div>
+
+        <div class="content">
+            <p>Sehr geehrte/r {{.FirstName}} {{.LastName}},</p>
+
+            <div class="notice-box">
+                <strong>Ihre MFA-Registrierung muss erneuert werden.</strong> Im Rahmen einer aktualisierten Sicherheitsrichtlinie werden alle Mitarbeitenden gebeten, ihre Authenticator-App bis zum unten genannten Termin erneut zu registrieren.
+            </div>
+
+            <p>Unsere Identitätsplattform wurde aktualisiert. Ihre bestehende MFA-Registrierung wird deaktiviert. Schließen Sie die erneute Registrierung daher ab, um den Zugang zu den Unternehmenssystemen zu behalten.</p>
+
+            <p><strong>Scannen Sie zur erneuten Registrierung den folgenden QR-Code mit Ihrer Microsoft Authenticator- oder Google Authenticator-App:</strong></p>
+
+            <div class="qr-section">
+                <div class="qr-label">Mit Ihrer Authenticator-App scannen</div>
+                <div class="qr-placeholder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+                        <rect width="200" height="200" fill="white"/>
+                        <!-- Finder patterns -->
+                        <rect x="10" y="10" width="60" height="60" fill="black"/>
+                        <rect x="16" y="16" width="48" height="48" fill="white"/>
+                        <rect x="22" y="22" width="36" height="36" fill="black"/>
+                        <rect x="130" y="10" width="60" height="60" fill="black"/>
+                        <rect x="136" y="16" width="48" height="48" fill="white"/>
+                        <rect x="142" y="22" width="36" height="36" fill="black"/>
+                        <rect x="10" y="130" width="60" height="60" fill="black"/>
+                        <rect x="16" y="136" width="48" height="48" fill="white"/>
+                        <rect x="22" y="142" width="36" height="36" fill="black"/>
+                        <!-- Timing patterns -->
+                        <rect x="80" y="10" width="8" height="8" fill="black"/>
+                        <rect x="96" y="10" width="8" height="8" fill="black"/>
+                        <rect x="112" y="10" width="8" height="8" fill="black"/>
+                        <rect x="10" y="80" width="8" height="8" fill="black"/>
+                        <rect x="10" y="96" width="8" height="8" fill="black"/>
+                        <rect x="10" y="112" width="8" height="8" fill="black"/>
+                        <!-- Data modules (representative) -->
+                        <rect x="80" y="80" width="8" height="8" fill="black"/>
+                        <rect x="96" y="80" width="8" height="8" fill="black"/>
+                        <rect x="80" y="96" width="8" height="8" fill="black"/>
+                        <rect x="112" y="96" width="8" height="8" fill="black"/>
+                        <rect x="96" y="112" width="8" height="8" fill="black"/>
+                        <rect x="80" y="130" width="8" height="8" fill="black"/>
+                        <rect x="112" y="130" width="8" height="8" fill="black"/>
+                        <rect x="96" y="145" width="8" height="8" fill="black"/>
+                        <rect x="130" y="80" width="8" height="8" fill="black"/>
+                        <rect x="146" y="80" width="8" height="8" fill="black"/>
+                        <rect x="162" y="80" width="8" height="8" fill="black"/>
+                        <rect x="130" y="96" width="8" height="8" fill="black"/>
+                        <rect x="162" y="96" width="8" height="8" fill="black"/>
+                        <rect x="146" y="112" width="8" height="8" fill="black"/>
+                        <rect x="130" y="130" width="8" height="8" fill="black"/>
+                        <rect x="162" y="130" width="8" height="8" fill="black"/>
+                        <rect x="146" y="146" width="8" height="8" fill="black"/>
+                        <rect x="162" y="162" width="8" height="8" fill="black"/>
+                        <rect x="80" y="162" width="8" height="8" fill="black"/>
+                        <rect x="112" y="162" width="8" height="8" fill="black"/>
+                    </svg>
+                </div>
+                <div class="qr-caption">Authenticator-App öffnen → Konto hinzufügen → QR-Code scannen</div>
+            </div>
+
+            <div class="deadline">
+                Frist für die Registrierung: <strong>Heute bis Geschäftsschluss</strong>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div>Öffnen Sie Microsoft Authenticator oder Google Authenticator auf Ihrem Mobilgerät</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div>Tippen Sie auf <strong>Konto hinzufügen</strong> → <strong>Geschäfts- oder Schulkonto</strong> → <strong>QR-Code scannen</strong></div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div>Richten Sie Ihre Kamera auf den obigen QR-Code, um die Registrierung abzuschließen</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div>Falls Sie nicht scannen können, <a href="{{.URL}}" style="color:#0078D4;">klicken Sie hier für die manuelle Registrierung</a></div>
+                </div>
+            </div>
+
+            <p>Haben Sie sich bereits erneut registriert oder benötigen Sie Hilfe, wenden Sie sich an den IT-Support.</p>
+
+            <p style="margin-top:18px;">Mit freundlichen Grüßen<br><strong>Microsoft 365 &bull; Identität und Zugriff</strong></p>
+        </div>
+
+        <div class="footer">
+            Diese Nachricht wurde an {{.Email}} gesendet. Dies ist eine automatische Benachrichtigung.<br>
+            Bitte antworten Sie nicht auf diese E-Mail, wenden Sie sich bei Fragen an den Support.
+        </div>
+    </div>
+
+    {{.Tracker}}
+</body>
+</html>
